@@ -1,0 +1,43 @@
+# ============================================
+# Project Dragonn — "Hexagon Bridge"
+# PREP HOST requirements (x64 or ARM64) — export + quantize + scan
+# Snapdragon AI Lab Challenge
+# ============================================
+#
+# This file does NOT enable the NPU. The `onnxruntime` wheel below ships no QNN
+# Execution Provider — it is here for quantization tooling and CPU baselines.
+#
+# To actually run on the Hexagon NPU, use requirements-device.txt on an ARM64
+# Snapdragon X device. It installs `onnxruntime-qnn`, which conflicts with the
+# stock `onnxruntime` wheel below — do not install both in one environment.
+# ============================================
+
+# --- P0: Model Conversion & Quantization ---
+optimum[exporters]>=1.19.0       # HuggingFace → ONNX export (Whisper support)
+onnx>=1.16.0                     # ONNX graph inspection & manipulation
+onnxruntime>=1.18.0              # Quantization tools + CPU baseline. NO QNN EP —
+                                 # 1.18+ required for the QNN quantization helpers
+                                 # (onnxruntime.quantization.execution_providers.qnn)
+onnxruntime-extensions>=0.10.0   # Extended ops support
+transformers>=4.40.0             # Model loading
+datasets>=2.19.0                 # Calibration data for quantization
+soundfile>=0.12.0                # Audio file handling
+librosa>=0.10.0                  # Audio preprocessing
+
+# --- P0: QNN Op Coverage Scanner ---
+# (uses onnx + onnxruntime already listed above)
+rich>=13.7.0                     # Pretty terminal reports
+tabulate>=0.9.0                  # Table formatting
+
+# --- P1: Inference Server ---
+fastapi>=0.111.0                 # OpenAI-compatible API server
+uvicorn[standard]>=0.29.0        # ASGI server
+python-multipart>=0.0.9          # File upload support (audio files)
+websockets>=12.0                 # Real-time metrics streaming
+
+# --- P1: Benchmarking & Metrics ---
+psutil>=5.9.0                    # System metrics (CPU, memory, battery)
+numpy>=1.26.0                    # Numerical operations
+
+# --- P2: AI Hub Integration ---
+qai-hub>=0.17.0                  # Qualcomm AI Hub SDK (profiling jobs)

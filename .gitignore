@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Generated models — rebuild with: python -m scripts.run_pipeline
+# The evidence reports stay committed: they back every number in the README.
+models/*
+!models/reports/
+*.onnx
+*.onnx.data
+*.ort
+*.qnn
+
+# Downloaded speech — re-fetch with: python -m scripts.fetch_speech
+data/
+
+# Build / misc
+dist/
+build/
+*.log
+*.prof
+*.json.bak
+.env
+node_modules/
+
+# Local editor/agent tooling
+.claude/

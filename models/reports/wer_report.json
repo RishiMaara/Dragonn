@@ -1,0 +1,132 @@
+{
+  "clips": 57,
+  "speech_seconds": 324.9,
+  "dataset": "hf-internal-testing/librispeech_asr_dummy (held-out split)",
+  "results": [
+    {
+      "config": "PyTorch reference (FP32)",
+      "wer_percent": 12.7,
+      "edits": 102,
+      "ref_words": 803,
+      "encoder_provider": "PyTorch (reference)",
+      "mean_encoder_ms_here": null,
+      "examples": [
+        {
+          "ref": "he has gone and gone for good answered polychrome who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest",
+          "hyp": "he has gone and gone for good answered paul icrom who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest"
+        },
+        {
+          "ref": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stout chains as easily as if they had been threads",
+          "hyp": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stoutchains as easily as if they had been threads"
+        },
+        {
+          "ref": "the king has fled in disgrace and your friends are asking for you",
+          "hyp": "the king is flooded disgrace and your friends are asking for you"
+        },
+        {
+          "ref": "i begged ruggedo long ago to send him away but he would not do so",
+          "hyp": "i begged ruggano a long ago to send him away but he would not do so"
+        },
+        {
+          "ref": "he eats and sleeps very steadily replied the new king",
+          "hyp": "it eats and sleeps very steadily replied the new king"
+        }
+      ],
+      "delta_vs_reference": 0.0
+    },
+    {
+      "config": "ONNX FP32 encoder (CPU)",
+      "wer_percent": 12.7,
+      "edits": 102,
+      "ref_words": 803,
+      "encoder_provider": "CPUExecutionProvider",
+      "mean_encoder_ms_here": 238.9,
+      "examples": [
+        {
+          "ref": "he has gone and gone for good answered polychrome who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest",
+          "hyp": "he has gone and gone for good answered paul icrom who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest"
+        },
+        {
+          "ref": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stout chains as easily as if they had been threads",
+          "hyp": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stoutchains as easily as if they had been threads"
+        },
+        {
+          "ref": "the king has fled in disgrace and your friends are asking for you",
+          "hyp": "the king is flooded disgrace and your friends are asking for you"
+        },
+        {
+          "ref": "i begged ruggedo long ago to send him away but he would not do so",
+          "hyp": "i begged ruggano a long ago to send him away but he would not do so"
+        },
+        {
+          "ref": "he eats and sleeps very steadily replied the new king",
+          "hyp": "it eats and sleeps very steadily replied the new king"
+        }
+      ],
+      "delta_vs_reference": 0.0
+    },
+    {
+      "config": "ONNX a16w8 encoder (CPU)",
+      "wer_percent": 12.7,
+      "edits": 102,
+      "ref_words": 803,
+      "encoder_provider": "CPUExecutionProvider",
+      "mean_encoder_ms_here": 353.2,
+      "examples": [
+        {
+          "ref": "he has gone and gone for good answered polychrome who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest",
+          "hyp": "he has gone and gone for good answered paul icrom who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest"
+        },
+        {
+          "ref": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stout chains as easily as if they had been threads",
+          "hyp": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stoutchains as easily as if they had been threads"
+        },
+        {
+          "ref": "the king has fled in disgrace and your friends are asking for you",
+          "hyp": "the king is flooded disgrace and your friends are asking for you"
+        },
+        {
+          "ref": "i begged ruggedo long ago to send him away but he would not do so",
+          "hyp": "i begged ruggano a long ago to send him away but he would not do so"
+        },
+        {
+          "ref": "he eats and sleeps very steadily replied the new king",
+          "hyp": "it eats and sleeps very steadily replied the new king"
+        }
+      ],
+      "delta_vs_reference": 0.0
+    },
+    {
+      "config": "ONNX a16w8 on Snapdragon X Elite CRD NPU",
+      "wer_percent": 14.07,
+      "edits": 113,
+      "ref_words": 803,
+      "encoder_provider": "QNNExecutionProvider (on device)",
+      "aihub_job": "https://workbench.aihub.qualcomm.com/jobs/jg9z991wp/",
+      "examples": [
+        {
+          "ref": "he has gone and gone for good answered polychrome who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest",
+          "hyp": "he has gone and gone for good answered paulicrom who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest"
+        },
+        {
+          "ref": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stout chains as easily as if they had been threads",
+          "hyp": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stoutchains as easily as if they had been threads"
+        },
+        {
+          "ref": "the little girl had been asleep but she heard the raps and opened the door",
+          "hyp": "the little girl had been asleep but she had her wraps and opened the door"
+        },
+        {
+          "ref": "the king has fled in disgrace and your friends are asking for you",
+          "hyp": "the king is flooded disgrace and your friends are asking for you"
+        },
+        {
+          "ref": "i begged ruggedo long ago to send him away but he would not do so",
+          "hyp": "i begged ruggano a long ago to send him away but he would not do so"
+        }
+      ],
+      "delta_vs_reference": 1.37
+    }
+  ],
+  "wall_time_s": 655.5
+}

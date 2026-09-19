@@ -1,0 +1,1 @@
+encoder_model is 100.0% NPU-eligible (147/147 compute nodes). All compute operators are NPU-eligible — no CPU fallback needed. Local HTP compile: Compiled into ONE NPU graph, no compute ops left on CPU. 4.7 s, QNN 2.50.40.

@@ -1,0 +1,60 @@
+# ============================================
+# Project Dragonn — "Hexagon Bridge"
+# SNAPDRAGON X DEVICE (Windows on ARM64) requirements
+# ============================================
+#
+# This file is for the deployment/profiling device ONLY.
+# Use requirements.txt on the x64 prep host for export + quantization.
+#
+# BEFORE INSTALLING — verify you are on ARM64-native Python:
+#
+#     python -c "import platform; print(platform.machine())"
+#
+# Must print ARM64. If it prints AMD64 you are running x64 Python under Prism
+# emulation; QnnHtp.dll is an ARM64 binary and will never load, so QNN EP will
+# silently not appear in the provider list. Reinstall ARM64-native Python.
+#
+# onnxruntime-qnn 2.6.0 publishes wheels up to CPython 3.14.
+# ============================================
+
+# --- The one that matters ---
+# onnxruntime-qnn 2.x is a PLUGIN execution provider: it loads into stock
+# onnxruntime (>= 1.24) rather than replacing it, and bundles the Hexagon
+# backend (QnnHtp.dll, QNN SDK 2.50.40 as of 2.6.0).
+#
+# It is invisible until registered, and the classic
+# providers=[("QNNExecutionProvider", ...)] argument silently yields a CPU-only
+# session with it. All code here goes through scripts/qnn_ep.py, which
+# registers the plugin, attaches it properly, and verifies it attached.
+onnxruntime>=1.24.2
+onnxruntime-qnn>=2.6.0
+
+# --- Inference + profiling ---
+numpy>=1.26.0
+psutil>=5.9.0                    # CPU/memory/battery telemetry
+
+# --- Reports ---
+rich>=13.7.0
+tabulate>=0.9.0
+
+# --- Inference server (optional on device) ---
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+websockets>=12.0
+
+# --- Graph inspection (for running the scanner on-device) ---
+onnx>=1.16.0
+
+# ============================================
+# DELIBERATELY EXCLUDED — these are prep-host only
+# ============================================
+# torch / transformers / optimum : export happens on the prep host.
+#   PyTorch's Windows-ARM64 support is recent; don't make it a device dependency.
+# librosa / numba / llvmlite     : no reliable win-arm64 wheels.
+# datasets / pyarrow             : no reliable win-arm64 wheels.
+# qai-hub                        : cloud profiling, run it from the prep host.
+#
+# Verify the install worked:
+#     python -c "import onnxruntime as o; print(o.get_available_providers())"
+# The list must contain QNNExecutionProvider.

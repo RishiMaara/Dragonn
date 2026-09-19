@@ -1,0 +1,117 @@
+{
+  "coverage": {
+    "encoder_model.onnx": {
+      "model_path": "D:\\PROJECTS\\Dragonn\\models\\whisper-tiny-qdq\\encoder_model.onnx",
+      "model_name": "encoder_model",
+      "total_nodes": 147,
+      "supported_nodes": 147,
+      "unsupported_nodes": 0,
+      "coverage_percent": 100.0,
+      "full_support_count": 128,
+      "partial_support_count": 19,
+      "unsupported_count": 0,
+      "unknown_count": 0,
+      "category_coverage": {
+        "activation": {
+          "total": 6,
+          "supported": 6,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "attention": {
+          "total": 4,
+          "supported": 4,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "convolution": {
+          "total": 2,
+          "supported": 2,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "elementwise": {
+          "total": 13,
+          "supported": 13,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "linear": {
+          "total": 32,
+          "supported": 32,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "normalization": {
+          "total": 9,
+          "supported": 9,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "tensor": {
+          "total": 81,
+          "supported": 81,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        }
+      },
+      "fallback_ops": [],
+      "op_type_counts": {
+        "DequantizeLinear": 216,
+        "QuantizeLinear": 148,
+        "Reshape": 60,
+        "Transpose": 21,
+        "Gemm": 20,
+        "MatMul": 12,
+        "Add": 9,
+        "LayerNormalization": 9,
+        "Gelu": 6,
+        "Mul": 4,
+        "Softmax": 4,
+        "Conv": 2
+      },
+      "format_error": null,
+      "htp_compile": {
+        "available": true,
+        "qnn_version": "2.50.40",
+        "compile_s": 4.7,
+        "npu_graphs": 1,
+        "cpu_ops": {},
+        "boundary_ops": 2,
+        "ok": true
+      }
+    }
+  },
+  "coverage_summary": "encoder_model is 100.0% NPU-eligible (147/147 compute nodes). All compute operators are NPU-eligible \u2014 no CPU fallback needed. Local HTP compile: Compiled into ONE NPU graph, no compute ops left on CPU. 4.7 s, QNN 2.50.40.",
+  "profiling": {
+    "cpu_baseline": {
+      "model_path": "D:\\PROJECTS\\Dragonn\\models\\whisper-tiny-qdq\\encoder_model.onnx",
+      "model_name": "encoder_model",
+      "session_creation_time_ms": 61.65,
+      "providers_used": [
+        "CPUExecutionProvider"
+      ],
+      "node_placements": {},
+      "ep_distribution": {},
+      "ep_summary": {},
+      "total_profiled_nodes": 0,
+      "latency_stats": {
+        "mean_ms": 326.31,
+        "min_ms": 320.72,
+        "max_ms": 330.77,
+        "std_ms": 3.24,
+        "median_ms": 326.34,
+        "p95_ms": 330.12,
+        "num_runs": 5,
+        "all_latencies_ms": [
+          326.34,
+          327.49,
+          326.2,
+          320.72,
+          330.77
+        ]
+      },
+      "profile_file": null
+    }
+  }
+}

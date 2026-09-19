@@ -1,0 +1,69 @@
+{
+  "model": "D:\\PROJECTS\\Dragonn\\models\\whisper-tiny-qdq\\encoder_model.onnx",
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all",
+  "scanner_prediction": {
+    "effective_coverage_percent": 100.0,
+    "node_coverage_percent": 100.0,
+    "compute_nodes": 147,
+    "format_error": null,
+    "predicted_fallback_ops": [],
+    "partial_ops": [
+      "Gelu",
+      "LayerNormalization",
+      "Softmax"
+    ]
+  },
+  "local": {
+    "qdq_cpu_vs_fp32": {
+      "cosine": 0.991889,
+      "rel_l2_percent": 12.711,
+      "max_abs_err": 19.07168,
+      "verdict": "PASS"
+    }
+  },
+  "profile_job": "https://workbench.aihub.qualcomm.com/jobs/jpxlee83p/",
+  "device_placement": {
+    "total_layers": 187,
+    "layers_by_unit": {
+      "CPU": 2,
+      "NPU": 185
+    },
+    "npu_layer_percent": 98.9,
+    "npu_time_percent": 98.4,
+    "non_npu_layer_types": {
+      "QuantizeLinear": 1,
+      "DequantizeLinear": 1
+    },
+    "inference_ms_median": 17.81,
+    "inference_ms_p90": 18.06,
+    "inference_ms_min": 17.624,
+    "inference_runs": 100,
+    "inference_peak_memory_mb": 43.04,
+    "first_load_ms": 5165.546,
+    "warm_load_ms": 515.22
+  },
+  "reconciliation": {
+    "predicted_npu_percent": 100.0,
+    "device_npu_layer_percent": 98.9,
+    "device_npu_time_percent": 98.4,
+    "unexpected_fallback_types": [],
+    "verdict": "CONFIRMED \u2014 every compute layer ran on the NPU, as the scanner predicted (graph I/O quantize/dequantize run on CPU by design)."
+  },
+  "inference_job": "https://workbench.aihub.qualcomm.com/jobs/jg9z9918p/",
+  "device_accuracy": {
+    "device_vs_qdq_cpu": {
+      "cosine": 0.999221,
+      "rel_l2_percent": 3.95,
+      "max_abs_err": 8.80717,
+      "verdict": "PASS"
+    },
+    "device_vs_fp32": {
+      "cosine": 0.992489,
+      "rel_l2_percent": 12.235,
+      "max_abs_err": 19.16467,
+      "verdict": "PASS"
+    }
+  },
+  "wall_time_s": 617.8
+}

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagon Bridge — QNN Inference Dashboard</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            /* Premium Dark Mode Color Palette */
+            --bg-base: #09090b;
+            --bg-surface: rgba(24, 24, 27, 0.65);
+            --bg-surface-hover: rgba(39, 39, 42, 0.8);
+            
+            --brand-primary: #8b5cf6; /* Vibrant Violet */
+            --brand-secondary: #0ea5e9; /* Cyan */
+            --accent-success: #10b981;
+            --accent-warning: #f59e0b;
+            --accent-error: #ef4444;
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            
+            --font-sans: 'Outfit', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.15), transparent 25%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Layout --- */
+        header {
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(9, 9, 11, 0.7);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent-success);
+            transition: all 0.3s ease;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent-success);
+            box-shadow: 0 0 10px var(--accent-success);
+            animation: pulse 2s infinite;
+        }
+
+        main {
+            padding: 2rem 3rem;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* --- Glassmorphism Cards --- */
+        .card {
+            background: var(--bg-surface);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--glass-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* --- Metrics & Dashboard Grid --- */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 300;
+            font-family: var(--font-mono);
+            background: linear-gradient(to right, #fff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .metric-value.highlight {
+            background: linear-gradient(to right, var(--brand-secondary), var(--brand-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 500;
+        }
+
+        /* --- Coverage Section --- */
+        .coverage-bar-container {
+            width: 100%;
+            height: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .coverage-npu {
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .coverage-cpu {
+            height: 100%;
+            background: var(--accent-warning);
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        /* --- Live Inference Log --- */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .log-container {
+            height: 350px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            padding-right: 0.5rem;
+        }
+        
+        /* Custom Scrollbar */
+        .log-container::-webkit-scrollbar { width: 6px; }
+        .log-container::-webkit-scrollbar-track { background: transparent; }
+        .log-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .log-container::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+        .log-entry {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--brand-secondary);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        .log-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .log-text {
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        /* --- Actions --- */
+        .actions-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 1rem;
+            border-radius: 12px;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-1px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            border: none;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #7c3aed, #0284c7);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+        }
+
+        /* --- Animations --- */
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .inferencing-indicator {
+            display: none;
+            color: var(--brand-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            animation: blink 1s infinite;
+        }
+        
+        .show-indicator {
+            display: block !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">H</div>
+            <div>
+                <div class="title">Hexagon Bridge</div>
+                <div class="subtitle">Snapdragon X NPU Inference Dashboard</div>
+            </div>
+        </div>
+        <div class="status-badge" id="connection-status">
+            <div class="status-dot"></div>
+            Connecting...
+        </div>
+    </header>
+
+    <main>
+        <!-- Main Dashboard Area -->
+        <div class="dashboard-content">
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Execution Provider</div>
+                    <div class="metric-value highlight" id="metric-ep">CPU</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Last Request (ms)</div>
+                    <div class="metric-value" id="metric-latency">--</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Total Requests</div>
+                    <div class="metric-value" id="metric-requests">0</div>
+                </div>
+            </div>
+
+            <!-- Model Coverage Card -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        NPU Operator Coverage
+                    </div>
+                    <div id="coverage-percentage" style="font-family: var(--font-mono); font-weight: 600; color: var(--brand-secondary);">--%</div>
+                </div>
+                <p id="coverage-caption" style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Static analysis of the quantized Whisper-tiny encoder against the QNN Execution Provider.
+                </p>
+                <div class="coverage-bar-container">
+                    <div class="coverage-npu" id="bar-npu" style="width: 0%;"></div>
+                    <div class="coverage-cpu" id="bar-cpu" style="width: 0%;"></div>
+                </div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));"></div>
+                        Runs on the Hexagon NPU
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--accent-warning);"></div>
+                        Falls back to CPU
+                    </div>
+                </div>
+                <p id="htp-compile-line" style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.75rem;"></p>
+            </div>
+
+            <!-- Latency Chart Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Inference Latency Profile
+                    </div>
+                    <div class="inferencing-indicator" id="inferencing-indicator">INFERENCING...</div>
+                </div>
+                <div style="height: 250px; width: 100%;">
+                    <canvas id="latencyChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Area -->
+        <div class="sidebar">
+            <!-- Controls -->
+            <div class="card actions-panel">
+                <div class="card-title" style="margin-bottom: 1rem;">Transcribe</div>
+                <button class="btn btn-primary" onclick="transcribeSample()">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    LibriSpeech sample (with reference)
+                </button>
+                <button class="btn btn-primary" style="margin-top: 0.75rem;" onclick="document.getElementById('audio-file').click()">
+                    Upload audio file
+                </button>
+                <input type="file" id="audio-file" accept="audio/*" style="display: none;" onchange="uploadAudio(this.files[0])">
+                <button class="btn btn-primary" style="margin-top: 0.75rem;" id="record-btn" onclick="toggleRecording()">
+                    Record from microphone
+                </button>
+            </div>
+
+            <!-- Transcript -->
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div class="card-title" style="margin-bottom: 0.75rem;">Transcript</div>
+                <div id="transcript-text" style="font-size: 1rem; line-height: 1.5;">No transcription yet.</div>
+                <div id="transcript-reference" style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.75rem;"></div>
+                <div id="transcript-meta" style="color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.8rem; margin-top: 0.75rem;"></div>
+            </div>
+
+            <!-- Logs -->
+            <div class="card" style="flex: 1; display: flex; flex-direction: column;">
+                <div class="card-title" style="margin-bottom: 1rem;">Live Telemetry</div>
+                <div class="log-container" id="log-container">
+                    <!-- Logs injected here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Chart.js Setup with Custom Dark Theme Styling
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.font.family = "'Outfit', sans-serif";
+        
+        const ctx = document.getElementById('latencyChart').getContext('2d');
+        
+        // Gradient for chart line
+        const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, 'rgba(14, 165, 233, 0.5)');
+        gradient.addColorStop(1, 'rgba(14, 165, 233, 0.0)');
+
+        const latencyChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Latency (ms)',
+                    data: [],
+                    borderColor: '#0ea5e9',
+                    backgroundColor: gradient,
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true,
+                    pointBackgroundColor: '#8b5cf6',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(9, 9, 11, 0.9)',
+                        titleColor: '#fff',
+                        bodyColor: '#cbd5e1',
+                        borderColor: 'rgba(255,255,255,0.1)',
+                        borderWidth: 1,
+                        padding: 10,
+                        displayColors: false,
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        border: { display: false }
+                    },
+                    x: {
+                        grid: { display: false },
+                        border: { display: false }
+                    }
+                },
+                animation: { duration: 500 }
+            }
+        });
+
+        // --- WebSocket & Telemetry Logic ---
+        const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        // Connect to same host/port
+        const wsUrl = `${wsProtocol}//${window.location.host}/ws/telemetry`;
+        
+        let ws;
+        let totalReqs = 0;
+        let latencyHistory = [];
+        const MAX_HISTORY = 15;
+
+        function connectWebSocket() {
+            try {
+                ws = new WebSocket(wsUrl);
+                
+                ws.onopen = () => {
+                    document.getElementById('connection-status').innerHTML = '<div class="status-dot"></div> Connected to Server';
+                    document.getElementById('connection-status').style.color = 'var(--accent-success)';
+                    document.getElementById('connection-status').style.background = 'rgba(16, 185, 129, 0.1)';
+                    document.getElementById('connection-status').style.borderColor = 'rgba(16, 185, 129, 0.2)';
+                    addLog("System", "WebSocket connection established");
+                };
+
+                ws.onclose = () => {
+                    document.getElementById('connection-status').innerHTML = '<div class="status-dot" style="background: var(--accent-error); box-shadow: none;"></div> Disconnected';
+                    document.getElementById('connection-status').style.color = 'var(--accent-error)';
+                    document.getElementById('connection-status').style.background = 'rgba(239, 68, 68, 0.1)';
+                    document.getElementById('connection-status').style.borderColor = 'rgba(239, 68, 68, 0.2)';
+                    // Reconnect after 3s
+                    setTimeout(connectWebSocket, 3000);
+                };
+
+                ws.onmessage = (event) => {
+                    const msg = JSON.parse(event.data);
+                    handleTelemetryEvent(msg);
+                };
+            } catch (e) {
+                console.error("WS error:", e);
+            }
+        }
+
+        function handleTelemetryEvent(msg) {
+            const data = msg.data;
+            
+            switch (msg.type) {
+                case 'init':
+                case 'status':
+                    document.getElementById('metric-ep').textContent = data.provider || "not loaded";
+                    updateCoverageUI(data.coverage);
+                    if (data.load_error) addLog("Error", data.load_error);
+                    break;
+                    
+                case 'inference_start':
+                    document.getElementById('inferencing-indicator').classList.add('show-indicator');
+                    break;
+                    
+                case 'inference_end':
+                    document.getElementById('inferencing-indicator').classList.remove('show-indicator');
+                    
+                    // Update metrics
+                    totalReqs++;
+                    document.getElementById('metric-requests').textContent = totalReqs;
+                    
+                    const latency = parseFloat(data.latency_ms.toFixed(2));
+                    document.getElementById('metric-latency').textContent = latency;
+                    
+                    // Update Chart
+                    updateChart(latency);
+                    
+                    // Add Log — the provider is what the session actually ran on
+                    addLog(data.provider,
+                        `${data.audio_seconds}s of audio in ${latency} ms ` +
+                        `(encoder ${data.encoder_ms} ms on ${data.provider}, decoder ${data.decoder_ms} ms on CPU)`);
+                    break;
+            }
+        }
+
+        function updateCoverageUI(coverageData) {
+            if (!coverageData || coverageData.error || !coverageData.models) return;
+            
+            // Get the first model's data (encoder_model.onnx)
+            const modelKeys = Object.keys(coverageData.models);
+            if (modelKeys.length === 0) return;
+            
+            const modelData = coverageData.models[modelKeys[0]];
+            // A quantization format error means nothing runs on the NPU,
+            // whatever the per-node percentage says.
+            const npuPct = modelData.format_error ? 0 : (modelData.coverage_percent || 0);
+            const cpuPct = 100 - npuPct;
+
+            document.getElementById('coverage-percentage').textContent = `${npuPct.toFixed(1)}%`;
+            document.getElementById('bar-npu').style.width = `${npuPct}%`;
+            document.getElementById('bar-cpu').style.width = `${cpuPct}%`;
+
+            const htp = modelData.htp_compile;
+            const line = document.getElementById('htp-compile-line');
+            if (htp && htp.available && !htp.error) {
+                line.textContent = htp.ok
+                    ? `Local HTP compiler (QNN ${htp.qnn_version}): one NPU graph, nothing left on CPU.`
+                    : `Local HTP compiler (QNN ${htp.qnn_version}): split into ${htp.npu_graphs} NPU graphs — ` +
+                      `left on CPU: ${Object.entries(htp.cpu_ops).map(([op, n]) => `${op} ×${n}`).join(', ')}.`;
+            } else if (htp && htp.error) {
+                line.textContent = `Local HTP compile: ${htp.error}`;
+            }
+        }
+
+        function updateChart(latency) {
+            const now = new Date();
+            const timeLabel = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+            
+            latencyChart.data.labels.push(timeLabel);
+            latencyChart.data.datasets[0].data.push(latency);
+            
+            if (latencyChart.data.labels.length > MAX_HISTORY) {
+                latencyChart.data.labels.shift();
+                latencyChart.data.datasets[0].data.shift();
+            }
+            
+            latencyChart.update();
+        }
+
+        function addLog(source, message) {
+            const logContainer = document.getElementById('log-container');
+            const now = new Date();
+            const timeStr = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}.${now.getMilliseconds().toString().padStart(3, '0')}`;
+            
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            
+            let sourceColor = 'var(--text-secondary)';
+            if (source === 'QNN') sourceColor = 'var(--brand-primary)';
+            if (source === 'CPU') sourceColor = 'var(--brand-secondary)';
+            
+            // Built with textContent: transcripts and server errors are untrusted text.
+            const header = document.createElement('div');
+            header.className = 'log-header';
+            const src = document.createElement('span');
+            src.style.color = sourceColor;
+            src.style.fontWeight = 'bold';
+            src.textContent = `[${source}]`;
+            const time = document.createElement('span');
+            time.textContent = timeStr;
+            header.append(src, time);
+            const text = document.createElement('div');
+            text.className = 'log-text';
+            text.textContent = message;
+            entry.append(header, text);
+            
+            logContainer.prepend(entry);
+            
+            // Keep max 50 logs
+            if (logContainer.children.length > 50) {
+                logContainer.removeChild(logContainer.lastChild);
+            }
+        }
+
+        function showResult(r) {
+            document.getElementById('transcript-text').textContent = r.text || '(no speech detected)';
+            document.getElementById('transcript-reference').textContent =
+                r.reference ? `Reference: ${r.reference}` : '';
+            const wer = (r.wer_percent !== undefined) ? `  |  WER ${r.wer_percent}% (${r.edits}/${r.ref_words} words)` : '';
+            document.getElementById('transcript-meta').textContent =
+                `${r.seconds}s audio · encoder ${r.encoder_ms ?? r.x_hexagon_bridge?.encoder_ms} ms on ` +
+                `${(r.encoder_provider ?? r.x_hexagon_bridge?.encoder_provider ?? '').replace('ExecutionProvider', '')}` + wer;
+        }
+
+        async function postJson(url, options) {
+            const res = await fetch(url, options);
+            const body = await res.json().catch(() => ({}));
+            if (!res.ok) throw new Error(body.detail || `HTTP ${res.status}`);
+            return body;
+        }
+
+        // A held-out LibriSpeech clip, scored against its reference transcript.
+        async function transcribeSample() {
+            addLog("Client", "Transcribing a held-out LibriSpeech clip...");
+            try {
+                showResult(await postJson('/api/transcribe-sample', { method: 'POST' }));
+            } catch (err) {
+                addLog("Error", err.message);
+            }
+        }
+
+        async function uploadAudio(file) {
+            if (!file) return;
+            addLog("Client", `Uploading ${file.name} (${(file.size / 1024).toFixed(0)} KB)`);
+            const form = new FormData();
+            form.append('file', file, file.name);
+            form.append('model', 'whisper-1');
+            form.append('response_format', 'verbose_json');
+            try {
+                const r = await postJson('/v1/audio/transcriptions', { method: 'POST', body: form });
+                showResult({ ...r, seconds: r.duration });
+            } catch (err) {
+                addLog("Error", err.message);
+            }
+            document.getElementById('audio-file').value = '';
+        }
+
+        // Microphone capture as raw PCM, encoded to WAV here: MediaRecorder's
+        // WebM/Opus output is not something the server's audio decoder reads.
+        let recorder = null;
+
+        async function toggleRecording() {
+            const btn = document.getElementById('record-btn');
+            if (recorder) {
+                const { stream, context, processor, chunks } = recorder;
+                recorder = null;
+                processor.disconnect();
+                stream.getTracks().forEach(t => t.stop());
+                await context.close();
+                btn.textContent = 'Record from microphone';
+                await uploadAudio(new File([encodeWav(chunks, context.sampleRate)], 'recording.wav', { type: 'audio/wav' }));
+                return;
+            }
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                const context = new AudioContext();
+                const source = context.createMediaStreamSource(stream);
+                const processor = context.createScriptProcessor(4096, 1, 1);
+                const chunks = [];
+                processor.onaudioprocess = e => chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+                source.connect(processor);
+                processor.connect(context.destination);
+                recorder = { stream, context, processor, chunks };
+                btn.textContent = 'Stop and transcribe';
+                addLog("Client", "Recording... click again to stop");
+            } catch (err) {
+                addLog("Error", `Microphone unavailable: ${err.message}`);
+            }
+        }
+
+        function encodeWav(chunks, sampleRate) {
+            const length = chunks.reduce((n, c) => n + c.length, 0);
+            const buffer = new ArrayBuffer(44 + length * 2);
+            const view = new DataView(buffer);
+            const writeString = (offset, s) => [...s].forEach((ch, i) => view.setUint8(offset + i, ch.charCodeAt(0)));
+            writeString(0, 'RIFF'); view.setUint32(4, 36 + length * 2, true); writeString(8, 'WAVE');
+            writeString(12, 'fmt '); view.setUint32(16, 16, true); view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true); view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * 2, true); view.setUint16(32, 2, true); view.setUint16(34, 16, true);
+            writeString(36, 'data'); view.setUint32(40, length * 2, true);
+            let offset = 44;
+            for (const chunk of chunks) {
+                for (const sample of chunk) {
+                    const s = Math.max(-1, Math.min(1, sample));
+                    view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+                    offset += 2;
+                }
+            }
+            return new Blob([view], { type: 'audio/wav' });
+        }
+
+        // Start connection
+        connectWebSocket();
+    </script>
+</body>
+</html>

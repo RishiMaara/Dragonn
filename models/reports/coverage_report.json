@@ -1,0 +1,87 @@
+{
+  "tool": "Hexagon Bridge",
+  "version": "1.0.0",
+  "models": {
+    "encoder_model.onnx": {
+      "model_path": "D:\\PROJECTS\\Dragonn\\models\\whisper-tiny-qdq\\encoder_model.onnx",
+      "model_name": "encoder_model",
+      "total_nodes": 147,
+      "supported_nodes": 147,
+      "unsupported_nodes": 0,
+      "coverage_percent": 100.0,
+      "full_support_count": 128,
+      "partial_support_count": 19,
+      "unsupported_count": 0,
+      "unknown_count": 0,
+      "category_coverage": {
+        "activation": {
+          "total": 6,
+          "supported": 6,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "attention": {
+          "total": 4,
+          "supported": 4,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "convolution": {
+          "total": 2,
+          "supported": 2,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "elementwise": {
+          "total": 13,
+          "supported": 13,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "linear": {
+          "total": 32,
+          "supported": 32,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "normalization": {
+          "total": 9,
+          "supported": 9,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "tensor": {
+          "total": 81,
+          "supported": 81,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        }
+      },
+      "fallback_ops": [],
+      "op_type_counts": {
+        "DequantizeLinear": 216,
+        "QuantizeLinear": 148,
+        "Reshape": 60,
+        "Transpose": 21,
+        "Gemm": 20,
+        "MatMul": 12,
+        "Add": 9,
+        "LayerNormalization": 9,
+        "Gelu": 6,
+        "Mul": 4,
+        "Softmax": 4,
+        "Conv": 2
+      },
+      "format_error": null,
+      "htp_compile": {
+        "available": true,
+        "qnn_version": "2.50.40",
+        "compile_s": 4.7,
+        "npu_graphs": 1,
+        "cpu_ops": {},
+        "boundary_ops": 2,
+        "ok": true
+      }
+    }
+  }
+}
