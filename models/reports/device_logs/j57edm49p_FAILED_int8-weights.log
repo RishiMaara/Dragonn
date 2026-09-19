@@ -1,0 +1,85 @@
+[18/Sept/2026:04:21:51 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[18/Sept/2026:04:21:51 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[18/Sept/2026:04:21:51 -08:00: profiler/info] -=- Tungsten running task: compiling -=-
+[18/Sept/2026:04:21:51 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.45.0\aarch64-windows-msvc.
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] No on-device processing required for ONNX model Models/model.onnx.
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Status Successfully Compiled with t = 0 us and usage: before = 0.0 kB; peakBefore = 0.0 kB; mallocUnusedBefore = 0.0 kB; after = 0.0 kB; peakAfter = 0.0 kB; mallocUnusedAfter = 0.0 kB; increase = 0.0-0.0 kB; peak = 0.0-0.0 kB
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j57edm49p\job_j57edm49p_results.bin
+[18/Sept/2026:04:21:51 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[18/Sept/2026:04:21:51 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[18/Sept/2026:04:21:51 -08:00: profiler/info] -=- Tungsten running task: loading -=-
+[18/Sept/2026:04:21:51 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.45.0\aarch64-windows-msvc.
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j57edm49p\job_j57edm49p_results.bin
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Loading onnx model C:\Temp\TestContent\Models\model.onnx
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] PageFaultCount: 5758
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] PeakWorkingSetSize: 20946944
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] WorkingSetSize: 20946944
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] QuotaPeakPagedPoolUsage: 262160
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] QuotaPagedPoolUsage: 254920
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] QuotaPeakNonPagedPoolUsage: 13880
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] PagefileUsage: 4886528
+[17/Sept/2026:21:21:51 -07:00: profiler/debug] [job_id: j57edm49p] [model.onnx] PeakPagefileUsage: 4886528
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Current memory commmit: 4772.0 kB.
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Adding QNN Execution Provider using C:\Temp\TestContent\bin\qnn_sdk\default\2.45.0\aarch64-windows-msvc\QnnHtp.dll.
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] profiling_level = optrace
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Creating context binary cache: C:\Temp\QDC_logs\TungstenCache\model.onnx_11670091639314237005_13434178910822\model_ctx.onnx
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] htp_performance_mode = burst
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] htp_graph_finalization_optimization_mode = 3
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] enable_htp_fp16_precision = 1. This should normally be '1' unless the model is fully quantized or on a device that does not support fp16.
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] skip_qnn_version_check = 1
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] context_priority = normal
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] offload_graph_io_quantization = 1
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Adding CPU Execution Provider
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Loaded ONNX Runtime version 1.27.1.
+[17/Sept/2026:21:21:51 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Loading ONNX model from mapped file C:\Temp\TestContent\Models\model.onnx.
+[17/Sept/2026:21:21:51 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:51 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_1` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:51 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:51 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_3` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_4` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_5` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_6` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_7` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_8` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_1_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_2_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_3_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_4_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_5_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_6_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_7_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/warning] [job_id: j57edm49p] [model.onnx] [onnxruntime] QNN.backendValidateOpConfig() failed for node `node_layer_norm_8_2` of type `LayerNorm` with error code 3110
+
+[17/Sept/2026:21:21:52 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:53 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:53 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:53 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:53 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:54 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:54 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 1002 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:54 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 1002 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:54 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 1002 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:54 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:55 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:55 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:55 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] [onnxruntime] Failed to finalize QNN graph. Error code: 6000 at location qnn_model.cc:382 onnxruntime::qnn::QnnModel::FinalizeGraphs 
+[17/Sept/2026:21:21:59 -07:00: profiler/error] [job_id: j57edm49p] [model.onnx] Error loading: Failed to finalize QNN graph.
+[17/Sept/2026:21:21:59 -07:00: profiler/info] [job_id: j57edm49p] [model.onnx] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j57edm49p\job_j57edm49p_results.bin

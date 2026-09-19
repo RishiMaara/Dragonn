@@ -22,6 +22,8 @@ data/
 dist/
 build/
 *.log
+# ...except the device logs, which are evidence
+!models/reports/device_logs/*.log
 *.prof
 *.json.bak
 .env

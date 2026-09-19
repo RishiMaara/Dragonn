@@ -1,0 +1,572 @@
+[
+ {
+  "file": "1272-135031-0001.wav",
+  "cos": 0.998356819152832,
+  "npu_edits": 1,
+  "cpu_edits": 2,
+  "ref": "he has gone and gone for good answered polychrome who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest",
+  "npu": "he has gone and gone for good answered paulicrom who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest",
+  "cpu": "he has gone and gone for good answered paul icrom who had managed to squeeze into the room beside the dragon and had witnessed the occurrences with much interest",
+  "words": 28
+ },
+ {
+  "file": "1272-135031-0002.wav",
+  "cos": 0.9988209009170532,
+  "npu_edits": 2,
+  "cpu_edits": 2,
+  "ref": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stout chains as easily as if they had been threads",
+  "npu": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stoutchains as easily as if they had been threads",
+  "cpu": "i have remained a prisoner only because i wished to be one and with this he stepped forward and burst the stoutchains as easily as if they had been threads",
+  "words": 31
+ },
+ {
+  "file": "1272-135031-0003.wav",
+  "cos": 0.9983100891113281,
+  "npu_edits": 3,
+  "cpu_edits": 0,
+  "ref": "the little girl had been asleep but she heard the raps and opened the door",
+  "npu": "the little girl had been asleep but she had her wraps and opened the door",
+  "cpu": "the little girl had been asleep but she heard the raps and opened the door",
+  "words": 15
+ },
+ {
+  "file": "1272-135031-0004.wav",
+  "cos": 0.9985877871513367,
+  "npu_edits": 3,
+  "cpu_edits": 3,
+  "ref": "the king has fled in disgrace and your friends are asking for you",
+  "npu": "the king is flooded disgrace and your friends are asking for you",
+  "cpu": "the king is flooded disgrace and your friends are asking for you",
+  "words": 13
+ },
+ {
+  "file": "1272-135031-0005.wav",
+  "cos": 0.9985727667808533,
+  "npu_edits": 2,
+  "cpu_edits": 2,
+  "ref": "i begged ruggedo long ago to send him away but he would not do so",
+  "npu": "i begged ruggano a long ago to send him away but he would not do so",
+  "cpu": "i begged ruggano a long ago to send him away but he would not do so",
+  "words": 15
+ },
+ {
+  "file": "1272-135031-0006.wav",
+  "cos": 0.9988553524017334,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "i also offered to help your brother to escape but he would not go",
+  "npu": "i also offered to help your brother to escape but he would not go",
+  "cpu": "i also offered to help your brother to escape but he would not go",
+  "words": 14
+ },
+ {
+  "file": "1272-135031-0007.wav",
+  "cos": 0.9984698295593262,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "he eats and sleeps very steadily replied the new king",
+  "npu": "it eats and sleeps very steadily replied the new king",
+  "cpu": "it eats and sleeps very steadily replied the new king",
+  "words": 10
+ },
+ {
+  "file": "1272-135031-0008.wav",
+  "cos": 0.9983144998550415,
+  "npu_edits": 4,
+  "cpu_edits": 4,
+  "ref": "i hope he does not work too hard said shaggy",
+  "npu": "i hope he does not work too hard since she got me",
+  "cpu": "i hope he does not work too hard since she got me",
+  "words": 10
+ },
+ {
+  "file": "1272-135031-0009.wav",
+  "cos": 0.9986781477928162,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "he does not work at all",
+  "npu": "he does not work at all",
+  "cpu": "he does not work at all",
+  "words": 6
+ },
+ {
+  "file": "1272-135031-0010.wav",
+  "cos": 0.9987581372261047,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "in fact there is nothing he can do in these dominions as well as our nomes whose numbers are so great that it worries us to keep them all busy",
+  "npu": "in fact there is nothing he can do in these dominions as well as our nooms whose numbers are so great that it worries us to keep them all busy",
+  "cpu": "in fact there is nothing he can do in these dominions as well as our nooms whose numbers are so great that it worries us to keep them all busy",
+  "words": 30
+ },
+ {
+  "file": "1272-135031-0011.wav",
+  "cos": 0.9990164637565613,
+  "npu_edits": 4,
+  "cpu_edits": 4,
+  "ref": "not exactly returned kaliko",
+  "npu": "not exactly we have turned calico",
+  "cpu": "not exactly we have turned calico",
+  "words": 4
+ },
+ {
+  "file": "1272-135031-0012.wav",
+  "cos": 0.9983682036399841,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "where is my brother now",
+  "npu": "where is my brother now",
+  "cpu": "where is my brother now",
+  "words": 5
+ },
+ {
+  "file": "1272-135031-0013.wav",
+  "cos": 0.9983671307563782,
+  "npu_edits": 3,
+  "cpu_edits": 3,
+  "ref": "inquired shaggy in the metal forest",
+  "npu": "in quarage and the metal forest",
+  "cpu": "in quarage and the metal forest",
+  "words": 6
+ },
+ {
+  "file": "1272-135031-0014.wav",
+  "cos": 0.9991265535354614,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "where is that",
+  "npu": "where is that",
+  "cpu": "where is that",
+  "words": 3
+ },
+ {
+  "file": "1272-135031-0015.wav",
+  "cos": 0.998997151851654,
+  "npu_edits": 5,
+  "cpu_edits": 5,
+  "ref": "the metal forest is in the great domed cavern the largest in all our dominions replied kaliko",
+  "npu": "the middle forest is in the great do not cavern the largest and all our dominions replied calico",
+  "cpu": "the middle forest is in the great do not cavern the largest and all our dominions replied calico",
+  "words": 17
+ },
+ {
+  "file": "1272-135031-0016.wav",
+  "cos": 0.9993875622749329,
+  "npu_edits": 3,
+  "cpu_edits": 1,
+  "ref": "kaliko hesitated",
+  "npu": "calaccio has succeeded",
+  "cpu": "calico hesitated",
+  "words": 2
+ },
+ {
+  "file": "1272-135031-0017.wav",
+  "cos": 0.9975985884666443,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "however if we look sharp we may be able to discover one of these secret ways",
+  "npu": "however if we look sharp we may be able to discover one of these secret ways",
+  "cpu": "however if we look sharp we may be able to discover one of these secret ways",
+  "words": 16
+ },
+ {
+  "file": "1272-135031-0018.wav",
+  "cos": 0.9988325238227844,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "0 no i am quite sure he did not",
+  "npu": "0 no i am quite sure he did not",
+  "cpu": "0 no i am quite sure he did not",
+  "words": 9
+ },
+ {
+  "file": "1272-135031-0019.wav",
+  "cos": 0.9989388585090637,
+  "npu_edits": 6,
+  "cpu_edits": 6,
+  "ref": "that is funny remarked betsy thoughtfully",
+  "npu": "that is funny remarked a bit see you thought funny",
+  "cpu": "that is funny remarked a bit see you thought funny",
+  "words": 6
+ },
+ {
+  "file": "1272-135031-0020.wav",
+  "cos": 0.9984694719314575,
+  "npu_edits": 2,
+  "cpu_edits": 0,
+  "ref": "i do not believe ann knew any magic or she would have worked it before",
+  "npu": "i do not believe and knew any magic or she would have worked before",
+  "cpu": "i do not believe ann knew any magic or she would have worked it before",
+  "words": 15
+ },
+ {
+  "file": "1272-135031-0021.wav",
+  "cos": 0.998601496219635,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "i do not know confessed shaggy",
+  "npu": "i do not know confess shaggy",
+  "cpu": "i do not know confess shaggy",
+  "words": 6
+ },
+ {
+  "file": "1272-135031-0022.wav",
+  "cos": 0.9990909099578857,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "true agreed kaliko",
+  "npu": "true agreed calico",
+  "cpu": "true agreed calico",
+  "words": 3
+ },
+ {
+  "file": "1272-135031-0023.wav",
+  "cos": 0.9983960390090942,
+  "npu_edits": 5,
+  "cpu_edits": 5,
+  "ref": "kaliko went to the big gong and pounded on it just as ruggedo used to do but no one answered the summons",
+  "npu": "gallico went to the big gong and pounded on it just as we are good or used to do but no one answered the summons",
+  "cpu": "gallico went to the big gong and pounded on it just as we are good or used to do but no one answered the summons",
+  "words": 22
+ },
+ {
+  "file": "1272-135031-0024.wav",
+  "cos": 0.999451756477356,
+  "npu_edits": 5,
+  "cpu_edits": 5,
+  "ref": "having returned to the royal cavern kaliko 1st pounded the gong and then sat in the throne wearing ruggedo is discarded ruby crown and holding in his hand the scepter which ruggedo had so often thrown at his head",
+  "npu": "having returned to the royal cavern calico 1st pounded the gong and then sat in the throne wearing regados discarded ruby crown and holding in his hand to scepter which regato had so often thrown at his head",
+  "cpu": "having returned to the royal cavern calico 1st pounded the gong and then sat in the throne wearing reggos discarded ruby crown and holding in his hand to scepter which reggo had so often thrown at his head",
+  "words": 39
+ },
+ {
+  "file": "1272-141231-0000.wav",
+  "cos": 0.9988307356834412,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "a man said to the universe sir i exist",
+  "npu": "a man said to the universe sir i exist",
+  "cpu": "a man said to the universe sir i exist",
+  "words": 9
+ },
+ {
+  "file": "1272-141231-0001.wav",
+  "cos": 0.9985382556915283,
+  "npu_edits": 2,
+  "cpu_edits": 3,
+  "ref": "sweat covered brion is body trickling into the tight loincloth that was the only garment he wore",
+  "npu": "sweat covered brion is body trickling into the tight winged cloth that was the only garment he wore",
+  "cpu": "sweat covered brianna is body trickling into the tight winged cloth that was the only garment he wore",
+  "words": 17
+ },
+ {
+  "file": "1272-141231-0002.wav",
+  "cos": 0.999351441860199,
+  "npu_edits": 8,
+  "cpu_edits": 5,
+  "ref": "the cut on his chest still dripping blood the ache of his overstrained eyes even the soaring arena around him with the 1000s of spectators were trivialities not worth thinking about",
+  "npu": "the kodana is chest is still dripping blood the ache of his overstrain eyes even the soaring arena around him with 1000s of spectators retrievalidies not worth thinking about",
+  "cpu": "the cut on his chest is still dripping blood the ache of his overstrain eyes even the soaring arena around him with 1000s of spectators retrievalidies not worth thinking about",
+  "words": 31
+ },
+ {
+  "file": "1272-141231-0003.wav",
+  "cos": 0.9986041784286499,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "his instant of panic was followed by a small sharp blow high on his chest",
+  "npu": "his instant panic was followed by a small sharp blow high on his chest",
+  "cpu": "his instinct of panic was followed by a small sharp blow high on his chest",
+  "words": 15
+ },
+ {
+  "file": "1272-141231-0004.wav",
+  "cos": 0.9982863664627075,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "one minute a voice said and the time buzzer sounded",
+  "npu": "one minute of voice said and the time buzzer sounded",
+  "cpu": "one minute of voice said and the time buzzer sounded",
+  "words": 10
+ },
+ {
+  "file": "1272-141231-0005.wav",
+  "cos": 0.9988524317741394,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "a minute is not a very large measure of time and his body needed every fraction of it",
+  "npu": "a minute is not a very large measure of time and his body needed every fraction of it",
+  "cpu": "a minute is not a very large measure of time and his body needed every fraction of it",
+  "words": 18
+ },
+ {
+  "file": "1272-141231-0006.wav",
+  "cos": 0.9991865754127502,
+  "npu_edits": 4,
+  "cpu_edits": 4,
+  "ref": "the buzzer is whirr triggered his muscles into complete relaxation",
+  "npu": "the buzzers were triggered as muscles into complete relaxation",
+  "cpu": "the buzzers were triggered as muscles into complete relaxation",
+  "words": 10
+ },
+ {
+  "file": "1272-141231-0007.wav",
+  "cos": 0.9986572265625,
+  "npu_edits": 3,
+  "cpu_edits": 3,
+  "ref": "only his heart and lungs worked on at a strong measured rate",
+  "npu": "0 reilly is heart and lungs worked on at a strong measured rate",
+  "cpu": "0 reilly is heart and lungs worked on at a strong measured rate",
+  "words": 12
+ },
+ {
+  "file": "1272-141231-0008.wav",
+  "cos": 0.9988656640052795,
+  "npu_edits": 2,
+  "cpu_edits": 2,
+  "ref": "he was in reverie sliding along the borders of consciousness",
+  "npu": "he was in reverie sliding out on the borders of consciousness",
+  "cpu": "he was in reverie sliding out on the borders of consciousness",
+  "words": 10
+ },
+ {
+  "file": "1272-141231-0009.wav",
+  "cos": 0.9985043406486511,
+  "npu_edits": 2,
+  "cpu_edits": 2,
+  "ref": "the contestants in the 20s needed undisturbed rest therefore nights in the dormitories were as quiet as death",
+  "npu": "the contestants in the 20s needed undisturbed rest therefore knights and the dormitories were as quiet as death",
+  "cpu": "the contestants in the 20s needed undisturbed rest therefore knights and the dormitories were as quiet as death",
+  "words": 18
+ },
+ {
+  "file": "1272-141231-0010.wav",
+  "cos": 0.9985988140106201,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "particularly so on this last night when only 2 of the little cubicles were occupied the 1000s of others standing with dark empty doors",
+  "npu": "particularly so on this last night when only 2 of the little cubicles were occupied the 1000s of others standing with dark empty doors",
+  "cpu": "particularly so on this last night when only 2 of the little cubicles were occupied the 1000s of others standing with dark empty doors",
+  "words": 24
+ },
+ {
+  "file": "1272-141231-0011.wav",
+  "cos": 0.9984741806983948,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "the other voice snapped with a harsh urgency clearly used to command",
+  "npu": "the other voice snapped with a harsh urgency clearly used to command",
+  "cpu": "the other voice snapped with a harsh urgency clearly used to command",
+  "words": 12
+ },
+ {
+  "file": "1272-141231-0012.wav",
+  "cos": 0.9980772733688354,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "i am here because the matter is of utmost importance and brandd is the one i must see now stand aside",
+  "npu": "i am here because the matter is of utmost importance and brand is the one i must see now stand aside",
+  "cpu": "i am here because the matter is of utmost importance and brand is the one i must see now stand aside",
+  "words": 21
+ },
+ {
+  "file": "1272-141231-0013.wav",
+  "cos": 0.9984983801841736,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "the 20s",
+  "npu": "the 20s",
+  "cpu": "the 20s",
+  "words": 2
+ },
+ {
+  "file": "1272-141231-0014.wav",
+  "cos": 0.9989417791366577,
+  "npu_edits": 2,
+  "cpu_edits": 2,
+  "ref": "he must have drawn his gun because the intruder said quickly put that away you are being a fool out",
+  "npu": "he must have drawn his gun because the intruder said quickly but that away you are being a fool",
+  "cpu": "you must have drawn his gun because the intruder said quickly but that away you are being a fool out",
+  "words": 20
+ },
+ {
+  "file": "1272-141231-0015.wav",
+  "cos": 0.9982861876487732,
+  "npu_edits": 4,
+  "cpu_edits": 2,
+  "ref": "there was silence then and still wondering brion was once more asleep",
+  "npu": "the ressalence then and still wondering brienne was once more asleep",
+  "cpu": "there is silence then and still wondering brienne was once more asleep",
+  "words": 12
+ },
+ {
+  "file": "1272-141231-0016.wav",
+  "cos": 0.9985125660896301,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "10 seconds",
+  "npu": "10 seconds",
+  "cpu": "10 seconds",
+  "words": 2
+ },
+ {
+  "file": "1272-141231-0017.wav",
+  "cos": 0.9985671043395996,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "he asked the handler who was kneading his aching muscles",
+  "npu": "he asked the handler who was needing his aching muscles",
+  "cpu": "he asked the handler who was needing his aching muscles",
+  "words": 10
+ },
+ {
+  "file": "1272-141231-0018.wav",
+  "cos": 0.9991108179092407,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "a red haired mountain of a man with an apparently inexhaustible store of energy",
+  "npu": "a red haired mountain of a man with an apparently inexhaustible story of energy",
+  "cpu": "a red haired mountain of a man with an apparently inexhaustible story of energy",
+  "words": 14
+ },
+ {
+  "file": "1272-141231-0019.wav",
+  "cos": 0.998988926410675,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "there could be little art in this last and final round of fencing",
+  "npu": "there could be a little art in this last and final round of fencing",
+  "cpu": "there could be a little art in this last and final round of fencing",
+  "words": 13
+ },
+ {
+  "file": "1272-141231-0020.wav",
+  "cos": 0.9987186789512634,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "just thrust and parry and victory to the stronger",
+  "npu": "just thrust and parry and victory to the stronger",
+  "cpu": "just thrust and parry and victory to the stronger",
+  "words": 9
+ },
+ {
+  "file": "1272-141231-0021.wav",
+  "cos": 0.9987456202507019,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "every man who entered the 20s had his own training tricks",
+  "npu": "every man who entered the 20s had his own training tricks",
+  "cpu": "every man who entered the 20s had his own training tricks",
+  "words": 11
+ },
+ {
+  "file": "1272-141231-0022.wav",
+  "cos": 0.9987474083900452,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "there appeared to be an immediate association with the death trauma as if the 2 were inextricably linked into one",
+  "npu": "there appeared to be an immediate association with the death trauma as if the 2 were inextricably linked into one",
+  "cpu": "there appeared to be an immediate association with the death trauma as if the 2 were inextricably linked into one",
+  "words": 20
+ },
+ {
+  "file": "1272-141231-0023.wav",
+  "cos": 0.9985396265983582,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "the strength that enables someone in a trance to hold his body stiff and unsupported except at 2 points the head and heels",
+  "npu": "the strength that enables someone in a trance to hold his body stiff and unsupported except at 2 points the head and heels",
+  "cpu": "the strength that enables someone in a trance to hold his body stiff and unsupported except at 2 points the head and heels",
+  "words": 23
+ },
+ {
+  "file": "1272-141231-0024.wav",
+  "cos": 0.9992069602012634,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "this is physically impossible when conscious",
+  "npu": "this is physically impossible when conscious",
+  "cpu": "this is physically impossible when conscious",
+  "words": 6
+ },
+ {
+  "file": "1272-141231-0025.wav",
+  "cos": 0.9985984563827515,
+  "npu_edits": 0,
+  "cpu_edits": 0,
+  "ref": "others had died before during the 20s and death during the last round was in some ways easier than defeat",
+  "npu": "others had died before during the 20s and death during the last round was in some ways easier than defeat",
+  "cpu": "others had died before during the 20s and death during the last round was in some ways easier than defeat",
+  "words": 20
+ },
+ {
+  "file": "1272-141231-0026.wav",
+  "cos": 0.998518705368042,
+  "npu_edits": 2,
+  "cpu_edits": 2,
+  "ref": "breathing deeply brion softly spoke the auto hypnotic phrases that triggered the process",
+  "npu": "breathing deeply brianna softly spoke the other hypnotic phrases that triggered the process",
+  "cpu": "breathing deeply brianna softly spoke the other hypnotic phrases that triggered the process",
+  "words": 13
+ },
+ {
+  "file": "1272-141231-0027.wav",
+  "cos": 0.9990168809890747,
+  "npu_edits": 1,
+  "cpu_edits": 1,
+  "ref": "when the buzzer sounded he pulled his foil from his 2nd is startled grasp and ran forward",
+  "npu": "when the buzzer sounded he pulled his foil from his 2nd startled grasp and ran forward",
+  "cpu": "when the buzzer sounded he pulled his foil from his 2nd startled grasp and ran forward",
+  "words": 17
+ },
+ {
+  "file": "1272-141231-0028.wav",
+  "cos": 0.9985051155090332,
+  "npu_edits": 8,
+  "cpu_edits": 8,
+  "ref": "irolg looked amazed at the sudden fury of the attack then smiled",
+  "npu": "i roll it up the maze at the sudden fear of the attack then smile",
+  "cpu": "i roll it up the maze at the sudden fear of the attack then smile",
+  "words": 12
+ },
+ {
+  "file": "1272-141231-0029.wav",
+  "cos": 0.9986778497695923,
+  "npu_edits": 2,
+  "cpu_edits": 2,
+  "ref": "he thought it was a last burst of energy he knew how close they both were to exhaustion",
+  "npu": "he said it was the last burst of energy he knew how close they both were to exhaustion",
+  "cpu": "he said it was the last burst of energy he knew how close they both were to exhaustion",
+  "words": 18
+ },
+ {
+  "file": "1272-141231-0030.wav",
+  "cos": 0.9989691972732544,
+  "npu_edits": 2,
+  "cpu_edits": 1,
+  "ref": "brion saw something close to panic on his opponent is face when the man finally recognized his error",
+  "npu": "breonsaw has something close to panic on his opponent is face when the man finally recognized his error",
+  "cpu": "brianna saw something close to panic on his opponent is face when the man finally recognized his error",
+  "words": 18
+ },
+ {
+  "file": "1272-141231-0031.wav",
+  "cos": 0.9986966848373413,
+  "npu_edits": 8,
+  "cpu_edits": 8,
+  "ref": "a wave of despair rolled out from irolg brion sensed it and knew the 5th point was his",
+  "npu": "a wave of despair rolled out from erolg being insunced at a new defeat point was his",
+  "cpu": "a wave of despair rolled out from erolg being insunced at a new defeat point was his",
+  "words": 18
+ },
+ {
+  "file": "1272-141231-0032.wav",
+  "cos": 0.9990840554237366,
+  "npu_edits": 5,
+  "cpu_edits": 5,
+  "ref": "then the powerful twist that thrust it aside in and under the guard",
+  "npu": "then the powerful twist that is for us to decide in and under the guard",
+  "cpu": "then the powerful twist that is for us to decide in and under the guard",
+  "words": 13
+ }
+]

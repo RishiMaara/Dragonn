@@ -1,0 +1,41 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: ubuntu (core)
+            os: ubuntu-latest
+            qnn: false
+          # Windows x64 with the QNN plugin: runs the tests that attach QNN EP,
+          # compile for the HTP and exercise the compiled-graph cache.
+          - name: windows + onnxruntime-qnn
+            os: windows-latest
+            qnn: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # onnxruntime is pinned to the version the plugin-attachment behaviour was
+      # verified on; tests/test_runtime.py documents that behaviour as a canary.
+      - name: Install test dependencies
+        run: pip install onnxruntime==1.26.0 numpy onnx fastapi httpx python-multipart soundfile librosa rich pytest
+
+      - name: Install QNN plugin (x64 HTP compiler, compile-only)
+        if: matrix.qnn
+        run: pip install "onnxruntime-qnn>=2.6"
+
+      - name: Run tests
+        run: python -m pytest -rs

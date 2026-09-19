@@ -1,0 +1,98 @@
+{
+  "tool": "Hexagon Bridge",
+  "version": "1.0.0",
+  "models": {
+    "encoder_model.onnx": {
+      "model_path": "D:\\PROJECTS\\Dragonn\\models\\whisper-tiny-int8w\\encoder_model.onnx",
+      "model_name": "encoder_model",
+      "total_nodes": 147,
+      "supported_nodes": 138,
+      "unsupported_nodes": 9,
+      "coverage_percent": 93.9,
+      "full_support_count": 128,
+      "partial_support_count": 10,
+      "unsupported_count": 9,
+      "unknown_count": 0,
+      "category_coverage": {
+        "activation": {
+          "total": 6,
+          "supported": 6,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "attention": {
+          "total": 4,
+          "supported": 4,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "convolution": {
+          "total": 2,
+          "supported": 2,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "elementwise": {
+          "total": 13,
+          "supported": 13,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "linear": {
+          "total": 32,
+          "supported": 32,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        },
+        "normalization": {
+          "total": 9,
+          "supported": 0,
+          "unsupported": 9,
+          "coverage_percent": 0.0
+        },
+        "tensor": {
+          "total": 81,
+          "supported": 81,
+          "unsupported": 0,
+          "coverage_percent": 100.0
+        }
+      },
+      "fallback_ops": [
+        {
+          "op_type": "LayerNormalization",
+          "support_level": "rejected",
+          "reason": "HTP rejects LayerNorm with a SIGNED int8 gamma under 16-bit activations (backendValidateOpConfig error 3110). Verified on a real Snapdragon X Elite (QNN 2.45) and the local HTP compiler (QNN 2.50). Quantize weights as uint8: --weight-type UINT8.",
+          "count": 9,
+          "category": "normalization",
+          "example_node": "node_layer_norm"
+        }
+      ],
+      "op_type_counts": {
+        "DequantizeLinear": 216,
+        "QuantizeLinear": 148,
+        "Reshape": 60,
+        "Transpose": 21,
+        "Gemm": 20,
+        "MatMul": 12,
+        "Add": 9,
+        "LayerNormalization": 9,
+        "Gelu": 6,
+        "Mul": 4,
+        "Softmax": 4,
+        "Conv": 2
+      },
+      "format_error": null,
+      "htp_compile": {
+        "available": true,
+        "qnn_version": "2.50.40",
+        "compile_s": 4.7,
+        "npu_graphs": 9,
+        "cpu_ops": {
+          "LayerNormalization": 9
+        },
+        "boundary_ops": 38,
+        "ok": false
+      }
+    }
+  }
+}

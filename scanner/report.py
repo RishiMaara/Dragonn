@@ -20,7 +20,7 @@ from typing import Optional
 logger = logging.getLogger("hexagon-bridge.report")
 
 
-def print_coverage_report(report, use_rich: bool = True) -> None:
+def print_coverage_report(report, use_rich: bool = True, console=None) -> None:
     """
     Print a formatted coverage report to the terminal.
 
@@ -30,7 +30,7 @@ def print_coverage_report(report, use_rich: bool = True) -> None:
     """
     if use_rich:
         try:
-            _print_rich_report(report)
+            _print_rich_report(report, console)
             return
         except ImportError:
             pass
@@ -38,7 +38,7 @@ def print_coverage_report(report, use_rich: bool = True) -> None:
     _print_plain_report(report)
 
 
-def _print_rich_report(report) -> None:
+def _print_rich_report(report, console=None) -> None:
     """Rich-formatted terminal report with colors and tables."""
     from rich.console import Console
     from rich.table import Table
@@ -46,7 +46,7 @@ def _print_rich_report(report) -> None:
     from rich.text import Text
     from rich import box
 
-    console = Console()
+    console = console or Console()
 
     # ── Header ──
     # Format errors override the node-level grade entirely: a graph can look
@@ -294,40 +294,44 @@ def _print_rich_report(report) -> None:
     console.print(op_table)
 
     # ── Next Steps ──
+    # Driven by the same signals as the headline verdict, so the report can never
+    # say "strong candidate" under a red verdict. Only suggests commands that exist,
+    # and makes no performance or battery claims it hasn't measured.
     console.print()
-    if coverage >= 90:
-        console.print(
-            Panel(
-                "[green]This model is a strong candidate for NPU acceleration.[/green]\n"
-                "Deploy with QNN EP and expect significant battery/performance gains.\n\n"
-                "[dim]Next: python -m scripts.benchmark --model <path> --compare cpu,qnn[/dim]",
-                title="✅ Recommendation",
-                border_style="green",
-            )
+    compiler_failed = bool(htp and htp.get("available") and not htp.get("ok"))
+    if fmt_err:
+        text = (
+            "[red]Nothing in this model will run on the NPU.[/red]\n"
+            f"{fmt_err['fix']}\n\n"
+            "[dim]Then re-scan: python -m scanner --input <model> --compile-check[/dim]"
         )
-    elif coverage >= 70:
-        console.print(
-            Panel(
-                "[yellow]This model will benefit from NPU acceleration, "
-                "but some ops will fall back to CPU.[/yellow]\n"
-                "The NPU-eligible portion will still reduce battery draw and improve throughput.\n\n"
-                "[dim]Consider: Can the fallback ops be replaced with NPU-friendly alternatives?[/dim]",
-                title="⚠️  Recommendation",
-                border_style="yellow",
-            )
+        title, style = "🔴 Next step", "red"
+    elif compiler_failed:
+        text = (
+            "[red]The HTP compiler did not build this as one NPU graph.[/red]\n"
+            "Fix the ops it left on CPU (reasons above), then re-scan with --compile-check.\n\n"
+            "[dim]A model that splits locally may fail outright on a device — "
+            "one like this did on a real Snapdragon X Elite.[/dim]"
         )
+        title, style = "🔴 Next step", "red"
+    elif fallback_nodes:
+        text = (
+            f"[yellow]{fallback_nodes} compute node(s) fall back to CPU, splitting the NPU graph.[/yellow]\n"
+            "Each split costs a CPU round trip. Fix the reasons listed above, then re-scan "
+            "with --compile-check to confirm against the real HTP compiler."
+        )
+        title, style = "🟡 Next step", "yellow"
     else:
-        console.print(
-            Panel(
-                "[red]This model has limited NPU eligibility.[/red]\n"
-                "Consider using a different model architecture or checking if newer QNN SDK "
-                "versions support the missing operators.\n\n"
-                "[dim]Tip: Models with decomposed attention (separate Q/K/V MatMul) "
-                "tend to have better QNN coverage than fused-attention variants.[/dim]",
-                title="⚠️  Recommendation",
-                border_style="red",
-            )
+        verified = " and the HTP compiler built one NPU graph" if htp and htp.get("ok") else ""
+        text = (
+            f"[green]No CPU fallback predicted{verified}.[/green]\n"
+            "Static checks can't see everything a device does — confirm on real hardware:\n\n"
+            "[dim]python -m scripts.aihub_validate --model <model>[/dim]"
         )
+        if not htp:
+            text += "\n[dim]Or first, locally: python -m scanner --input <model> --compile-check[/dim]"
+        title, style = "🟢 Next step", "green"
+    console.print(Panel(text, title=title, border_style=style))
 
     console.print()
 
@@ -467,10 +471,11 @@ def generate_summary_text(reports: dict) -> str:
     Generate a one-paragraph plain-English summary suitable for a pitch.
 
     Example output:
-      "Whisper-Medium encoder is 94.2% NPU-eligible (247/262 compute nodes).
-       3 operators fall back to CPU: Softmax (×8, attention layers),
-       Erf (×4, GELU decomposition), Range (×2, positional encoding).
-       Expected battery improvement: significant."
+      "encoder_model is 93.9% NPU-eligible (138/147 compute nodes).
+       1 operator type(s) fall back to CPU: LayerNormalization (×9, normalization).
+       Local HTP compile: Split into 9 NPU graphs; compiler left on CPU:
+       LayerNormalization ×9. ..."
+    (real output, for the signed-int8-weight model a Snapdragon X Elite rejected)
     """
     lines = []
     for filename, report in reports.items():

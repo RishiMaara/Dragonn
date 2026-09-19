@@ -1,0 +1,94 @@
+{
+  "device": "Snapdragon X Elite CRD",
+  "session": 1,
+  "note": "Earlier calibration (synthetic audio); same graph structure as the shipped model.",
+  "configs": {
+    "FP32 on CPU": {
+      "total_layers": 174,
+      "layers_by_unit": {
+        "CPU": 174
+      },
+      "npu_layer_percent": 0.0,
+      "npu_time_percent": 0.0,
+      "non_npu_layer_types": {
+        "Reshape": 64,
+        "Transpose": 21,
+        "Gemm": 20,
+        "Mul": 16,
+        "Add": 14,
+        "MatMul": 12,
+        "LayerNormalization": 8,
+        "Div": 6,
+        "Erf": 6,
+        "Softmax": 4,
+        "Conv": 2,
+        "SkipLayerNormalization": 1
+      },
+      "inference_ms_median": 986.28,
+      "inference_ms_p90": 1095.74,
+      "inference_ms_min": 554.379,
+      "inference_runs": 100,
+      "inference_peak_memory_mb": 220.09,
+      "first_load_ms": 95.322,
+      "warm_load_ms": 71.713,
+      "meaning": "today, without this project",
+      "job": "https://workbench.aihub.qualcomm.com/jobs/jgk2yj9ng/",
+      "speedup_vs_fp32_cpu": 1.0
+    },
+    "QDQ on CPU": {
+      "total_layers": 368,
+      "layers_by_unit": {
+        "CPU": 368
+      },
+      "npu_layer_percent": 0.0,
+      "npu_time_percent": 0.0,
+      "non_npu_layer_types": {
+        "DequantizeLinear": 154,
+        "QuantizeLinear": 67,
+        "Reshape": 60,
+        "Transpose": 21,
+        "Gemm": 20,
+        "MatMul": 12,
+        "Add": 9,
+        "LayerNormalization": 9,
+        "Gelu": 6,
+        "Mul": 4,
+        "Softmax": 4,
+        "Conv": 2
+      },
+      "inference_ms_median": 1240.62,
+      "inference_ms_p90": 1345.46,
+      "inference_ms_min": 840.335,
+      "inference_runs": 100,
+      "inference_peak_memory_mb": 201.05,
+      "first_load_ms": 122.331,
+      "warm_load_ms": 78.882,
+      "meaning": "silent fallback",
+      "job": "https://workbench.aihub.qualcomm.com/jobs/j5ql2jmop/",
+      "speedup_vs_fp32_cpu": 0.79
+    },
+    "QDQ on NPU": {
+      "total_layers": 187,
+      "layers_by_unit": {
+        "CPU": 2,
+        "NPU": 185
+      },
+      "npu_layer_percent": 98.9,
+      "npu_time_percent": 52.5,
+      "non_npu_layer_types": {
+        "QuantizeLinear": 1,
+        "DequantizeLinear": 1
+      },
+      "inference_ms_median": 41.71,
+      "inference_ms_p90": 51.0,
+      "inference_ms_min": 17.627,
+      "inference_runs": 100,
+      "inference_peak_memory_mb": 44.11,
+      "first_load_ms": 5283.661,
+      "warm_load_ms": 526.612,
+      "meaning": "this project",
+      "job": "https://workbench.aihub.qualcomm.com/jobs/jp2rm1o6g/",
+      "speedup_vs_fp32_cpu": 23.65
+    }
+  }
+}

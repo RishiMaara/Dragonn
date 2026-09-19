@@ -1,5 +1,8 @@
 # 🐉 Project Dragonn — "Hexagon Bridge"
 
+[![tests](https://github.com/RishiMaara/Dragonn/actions/workflows/tests.yml/badge.svg)](https://github.com/RishiMaara/Dragonn/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 > **Know whether your model will actually touch the Hexagon NPU — before you ship it, not after the battery dies.**
 
 Hexagon Bridge is a pre-flight check, conversion pipeline and real-hardware
@@ -24,6 +27,17 @@ number links to its job in [Results](#results):
 | **Accuracy** | Quantized encoder on CPU: **12.70% WER = the FP32 reference**. On the NPU: 14.07% (+1.37, not statistically significant at this sample size) |
 | **Catches the failures** | The scanner flags the exact model a real X Elite rejected — statically, and by running Qualcomm's HTP compiler locally in ~4 s |
 | **Cold start** | Compiled NPU graph cached: session start 3.3 s → 0.1 s (device: 5.2 s cold vs 0.5 s warm) |
+
+**Evidence anyone can open:** the AI Hub job links below only work for the account
+owner, so every result — including the X Elite's own log of rejecting the broken
+model — is committed in [`models/reports/`](models/reports/README.md), indexed claim
+by claim.
+
+![Dashboard transcribing a held-out LibriSpeech clip: transcript, reference, word error rate, and the provider that actually ran the encoder](docs/dashboard.png)
+
+*The dashboard mid-transcription. Captured on the x64 development PC, so the
+encoder ran on CPU — and the dashboard says so. It reports the provider the
+session actually attached, never the one requested.*
 
 ---
 
@@ -94,16 +108,17 @@ Dynamic quantization (above). Fix: static QDQ via ORT's QNN config helpers.
 
 ### Trap 2 — the right format at the wrong precision: 100% NPU, wrong answers
 
-Measured on the whisper-tiny encoder, cosine similarity against FP32 on held-out
-input, identical calibration set:
+Same graph, same real-speech calibration, 57 held-out LibriSpeech clips — only the
+activation precision differs ([evidence](models/reports/wer_calibration_and_precision.json)):
 
-| Activation precision | Cosine vs FP32 | Verdict |
-|---|---|---|
-| uint8 (`a8w8`) | **0.553** | structurally perfect, numerically useless |
-| uint16 (`a16w8`) | **0.995** | usable |
+| Activation precision | Encoder cosine vs FP32 | Word error rate | Verdict |
+|---|---|---|---|
+| 8-bit (`a8w8`) | **0.521** | **93.5%** — 751 of 803 words wrong | structurally perfect, useless |
+| 16-bit (`a16w8`) | **0.994** | **12.70%** — identical to FP32 | shipped |
 
-This encoder's outputs span roughly [-18, 18]. 256 levels cannot represent that
-through nine LayerNorms without destroying the signal.
+The 8-bit model scans 100% NPU-eligible and compiles to one NPU graph. It just
+transcribes gibberish. This encoder's activations span roughly [-18, 18]; 256
+levels cannot carry that through nine LayerNorms.
 
 ### Trap 3 — only the chip knows
 
@@ -124,8 +139,15 @@ chip rejected:
 
 | Model | Static check | Local HTP compiler (`--compile-check`) |
 |---|---|---|
-| int8 weights — **failed on the X Elite** | 🟡 SPLIT: LayerNorm ×9 rejected (93.9%) | 🔴 Split into 9 NPU graphs, LayerNorm ×9 on CPU |
-| uint8 weights — **passed on the X Elite** | 🟢 100% | 🟢 One NPU graph, 4 s |
+| int8 weights — **failed on the X Elite** ([device log](models/reports/device_logs/j57edm49p_FAILED_int8-weights.log)) | 🟡 SPLIT: LayerNorm ×9 rejected (93.9%) | 🔴 Split into 9 NPU graphs, LayerNorm ×9 on CPU |
+| uint8 weights — **passed on the X Elite** ([device log](models/reports/device_logs/jpxlee83p_PASSED_shipped-model.log)) | 🟢 100% | 🟢 One NPU graph, 4 s |
+
+<table>
+<tr>
+<td width="50%" valign="top"><b>The model the X Elite rejected</b><br><img src="docs/scanner-rejected.svg" alt="Scanner report: red verdict, the HTP compiler split the graph into 9 NPU graphs with 9 LayerNorms left on CPU"></td>
+<td width="50%" valign="top"><b>The shipped model</b><br><img src="docs/scanner-accepted.svg" alt="Scanner report: green verdict, 100% NPU-eligible, compiled into one NPU graph"></td>
+</tr>
+</table>
 
 ---
 
@@ -134,7 +156,7 @@ chip rejected:
 | # | Constraint | Why | Naive path violates it? |
 |---|---|---|---|
 | 1 | **Static** QDQ quantization | HTP is fixed-point; it fuses `DequantizeLinear → Op → QuantizeLinear` node units | ✅ `quantize_dynamic()` emits ops QNN can't build |
-| 2 | **uint16 activations**, **unsigned** uint8 weights ("a16w8") | 8-bit activations: cosine 0.553. Signed int8 gamma: LayerNorm rejected on silicon | ✅ `activation_type=QInt8`; "int8 weights" |
+| 2 | **uint16 activations**, **unsigned** uint8 weights ("a16w8") | 8-bit activations: 93.5% word error rate. Signed int8 gamma: LayerNorm rejected on silicon | ✅ `activation_type=QInt8`; "int8 weights" |
 | 3 | **Static input shapes** | HTP compiles a fixed graph; symbolic dims can't be resolved | ✅ exporters default to dynamic axes |
 | 4 | **ARM64-native Python** | `QnnHtp.dll` is ARM64; x64 Python under Prism can't load it | ✅ silently no QNN EP |
 | 5 | **`onnxruntime-qnn` 2.x, attached correctly** | It's a plugin: invisible until registered, and the classic `providers=[...]` argument yields a **CPU-only session with no error** | ✅ every tutorial's `providers=[...]` |
@@ -291,6 +313,9 @@ Device: `Snapdragon X Elite CRD` via Qualcomm AI Hub (SC8380XP, Hexagon v73,
 QNN SDK 2.45, ONNX Runtime 1.27.1). Model: whisper-tiny encoder, 8.2M params,
 static `[1,80,3000]` → `[1,1500,384]`, a16w8, 31.5 MB → 8.5 MB (3.7x).
 
+Job links open only for the AI Hub account owner. The same results are committed
+in [`models/reports/`](models/reports/README.md) — [evidence index](models/reports/README.md).
+
 ### On the NPU — shipped model
 
 Profile [jpxlee83p](https://workbench.aihub.qualcomm.com/jobs/jpxlee83p/),
@@ -334,16 +359,17 @@ session 2: [jp2rjx74g](https://workbench.aihub.qualcomm.com/jobs/jp2rjx74g/),
 ### Accuracy — word error rate on real speech
 
 57 held-out LibriSpeech clips (325 s, 803 words), disjoint from the 16 calibration
-clips ([`scripts/eval_wer.py`](scripts/eval_wer.py); NPU run
-[jg9z991wp](https://workbench.aihub.qualcomm.com/jobs/jg9z991wp/)):
+clips ([`scripts/eval_wer.py`](scripts/eval_wer.py); evidence:
+[CPU rows](models/reports/wer_calibration_and_precision.json),
+[NPU row](models/reports/wer_report.json), AI Hub job `jg9z991wp`):
 
-| Encoder | WER | vs reference |
-|---|---|---|
-| PyTorch reference (whisper-tiny as released) | 12.70% | — |
-| ONNX FP32 export | 12.70% | +0.00 — export is exact |
-| Quantized, synthetic-audio calibration | 13.33% | +0.63 |
-| **Quantized, real-speech calibration (shipped)** — CPU | **12.70%** | **+0.00** |
-| **Same model on the X Elite NPU** | **14.07%** | **+1.37** |
+| Encoder | WER | vs reference | Encoder cosine vs FP32 |
+|---|---|---|---|
+| PyTorch reference (whisper-tiny as released) | 12.70% | — | — |
+| ONNX FP32 export | 12.70% | +0.00 — export is exact | 1.0000 |
+| Quantized, synthetic-audio calibration | 13.33% | +0.63 | 0.9939 |
+| **Quantized, real-speech calibration (shipped)** — CPU | **12.70%** | **+0.00** | 0.9941 |
+| **Same model on the X Elite NPU** | **14.07%** | **+1.37** | 0.9987 vs CPU (median) |
 
 What happened on the NPU, clip by clip: 11 of 57 transcripts changed — 6 got worse,
 2 better, 3 moved sideways — net 11 more errors. The NPU's encoder outputs match
@@ -356,9 +382,8 @@ size. Settling it needs a larger evaluation set.
 Absolute WER is above whisper-tiny's published LibriSpeech figure because this
 small subset is an Oz book dense with invented names ("Polychrome", "Ruggedo");
 compare rows, not the absolute number. Cosine alone would have hidden both
-effects: switching to real-speech calibration moved encoder cosine only from 0.9937
-to 0.9940 while removing all 5 extra word errors, and the NPU's 0.999 agreement
-with CPU still hid 11.
+effects: the two calibrations differ by 0.0002 in cosine (0.9939 vs 0.9941) but by
+5 word errors, and the NPU's 0.9987 agreement with CPU still hid 11.
 
 ---
 
@@ -402,9 +427,12 @@ Dragonn/
 ├── scripts/       QNN EP attach/cache, AI Hub validation, WER eval, transcriber, pipeline
 ├── server/        OpenAI-compatible transcription API
 ├── dashboard/     live UI: upload, microphone, scored samples, provider telemetry
-├── tests/         28 tests, one per real bug
+├── tests/         28 tests, one per real bug — run on every push (Ubuntu, and Windows + QNN plugin)
 ├── models/        generated models (gitignored) + reports/ — the evidence, committed
+├── docs/          README images
 └── data/          downloaded speech (gitignored; python -m scripts.fetch_speech)
 ```
 
-Built for the Snapdragon AI Lab Challenge.
+## License
+
+[MIT](LICENSE). Built for the Snapdragon AI Lab Challenge.

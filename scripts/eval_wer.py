@@ -51,16 +51,37 @@ def score(label: str, refs: list[str], hyps: list[str], extra: dict) -> dict:
     return result
 
 
-def evaluate_local(label: str, transcriber: WhisperTranscriber, rows, audio_dir) -> dict:
-    refs, hyps, enc_ms = [], [], []
+def _cosine(a: np.ndarray, b: np.ndarray) -> float:
+    a, b = a.ravel().astype(np.float64), b.ravel().astype(np.float64)
+    return float(a @ b / (np.linalg.norm(a) * np.linalg.norm(b)))
+
+
+def fp32_hidden_states(fp32: WhisperTranscriber, rows, audio_dir) -> dict:
+    """FP32 encoder output per clip — the reference each quantized encoder's cosine is taken against."""
+    out = {}
     for row in rows:
-        out = transcriber.transcribe(load_audio((audio_dir / row["file"]).read_bytes()))
+        feats = fp32.features(load_audio((audio_dir / row["file"]).read_bytes()))
+        out[row["file"]] = fp32.session.run(None, {fp32.input_name: feats})[0]
+    return out
+
+
+def evaluate_local(label: str, transcriber: WhisperTranscriber, rows, audio_dir,
+                   fp32_hidden: dict | None = None) -> dict:
+    refs, hyps, enc_ms, cosines = [], [], [], []
+    for row in rows:
+        audio = load_audio((audio_dir / row["file"]).read_bytes())
+        out = transcriber.transcribe(audio)
         refs.append(transcriber.normalize(row["text"]))
         hyps.append(transcriber.normalize(out["text"]))
         enc_ms.append(out["encoder_ms"])
+        # Cosine next to WER, per config: the two can disagree, and WER is the one users feel.
+        if fp32_hidden is not None and transcriber.session is not None:
+            hidden = transcriber.session.run(None, {transcriber.input_name: transcriber.features(audio)})[0]
+            cosines.append(_cosine(fp32_hidden[row["file"]], hidden))
     logger.info(f"{label}: done")
     return score(label, refs, hyps, {
         "encoder_provider": transcriber.provider,
+        "encoder_cosine_vs_fp32": round(float(np.mean(cosines)), 5) if cosines else None,
         "mean_encoder_ms_here": round(float(np.mean(enc_ms)), 1) if transcriber.session else None,
     })
 
@@ -112,6 +133,8 @@ def main():
     parser.add_argument("--audio-dir", default="./data/speech/eval")
     parser.add_argument("--fp32", default="./models/whisper-tiny-onnx/encoder_model.onnx")
     parser.add_argument("--qdq", default="./models/whisper-tiny-qdq/encoder_model.onnx")
+    parser.add_argument("--variant", action="append", default=[], metavar="LABEL=PATH",
+                        help="Extra quantized encoder to evaluate on CPU (repeatable)")
     parser.add_argument("--limit", type=int, default=None, help="Evaluate only the first N clips")
     parser.add_argument("--aihub", action="store_true", help="Also run the QDQ encoder on a real device NPU")
     parser.add_argument("--device", default="Snapdragon X Elite CRD")
@@ -133,11 +156,18 @@ def main():
 
     started = time.time()
     reference = WhisperTranscriber(None)
+    fp32 = WhisperTranscriber(args.fp32, use_npu=False)
+    fp32_hidden = fp32_hidden_states(fp32, rows, audio_dir)
     results = [
         evaluate_local("PyTorch reference (FP32)", reference, rows, audio_dir),
-        evaluate_local("ONNX FP32 encoder (CPU)", WhisperTranscriber(args.fp32, use_npu=False), rows, audio_dir),
-        evaluate_local("ONNX a16w8 encoder (CPU)", WhisperTranscriber(args.qdq, use_npu=False), rows, audio_dir),
+        evaluate_local("ONNX FP32 encoder (CPU)", fp32, rows, audio_dir, fp32_hidden),
+        evaluate_local("ONNX a16w8 encoder (CPU)", WhisperTranscriber(args.qdq, use_npu=False),
+                       rows, audio_dir, fp32_hidden),
     ]
+    for variant in args.variant:
+        label, _, path = variant.partition("=")
+        results.append(evaluate_local(label, WhisperTranscriber(path, use_npu=False),
+                                      rows, audio_dir, fp32_hidden))
     if args.aihub:
         results.append(evaluate_on_aihub(Path(args.qdq), args.device, reference, rows, audio_dir))
 
@@ -155,11 +185,12 @@ def main():
     bar = "=" * 78
     print(f"\n{bar}\n  WORD ERROR RATE — {len(rows)} held-out LibriSpeech clips, "
           f"{report['speech_seconds']:.0f} s of speech\n{bar}")
-    print(f"  {'encoder':44} {'WER':>7} {'Δ vs ref':>9} {'errors':>11}")
-    print(f"  {'-' * 74}")
+    print(f"  {'encoder':44} {'WER':>7} {'Δ vs ref':>9} {'errors':>11} {'cosine':>8}")
+    print(f"  {'-' * 83}")
     for r in results:
+        cos = f"{r['encoder_cosine_vs_fp32']:.4f}" if r.get("encoder_cosine_vs_fp32") else "—"
         print(f"  {r['config']:44} {r['wer_percent']:>6.2f}% {r['delta_vs_reference']:>+8.2f} "
-              f"{r['edits']:>5}/{r['ref_words']:<5}")
+              f"{r['edits']:>5}/{r['ref_words']:<5} {cos:>8}")
         if r.get("aihub_job"):
             print(f"  {'':44} {r['aihub_job']}")
     print(f"\n  Report: {out}\n{bar}")

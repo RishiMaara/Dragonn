@@ -401,6 +401,12 @@ Examples:
         help="Save detailed JSON report to this path",
     )
     parser.add_argument(
+        "--svg",
+        type=str,
+        default=None,
+        help="Also save the colored report as an SVG image (e.g. for a README)",
+    )
+    parser.add_argument(
         "--compile-check",
         action="store_true",
         help="Also compile with the real HTP compiler (needs onnxruntime-qnn; works on x64)",
@@ -461,8 +467,17 @@ Examples:
     # Import and use the report formatter
     from scanner.report import print_coverage_report, save_json_report
 
+    console = None
+    if args.svg:
+        from rich.console import Console
+        console = Console(record=True, width=100)
+
     for filename, report in reports.items():
-        print_coverage_report(report)
+        print_coverage_report(report, console=console)
+
+    if args.svg:
+        console.save_svg(args.svg, title=f"python -m scanner --input {input_path.name}")
+        print(f"\nSVG report saved to: {args.svg}")
 
     if args.json:
         save_json_report(reports, args.json)
