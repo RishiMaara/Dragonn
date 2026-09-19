@@ -144,8 +144,8 @@ chip rejected:
 
 <table>
 <tr>
-<td width="50%" valign="top"><b>The model the X Elite rejected</b><br><img src="docs/scanner-rejected.svg" alt="Scanner report: red verdict, the HTP compiler split the graph into 9 NPU graphs with 9 LayerNorms left on CPU"></td>
-<td width="50%" valign="top"><b>The shipped model</b><br><img src="docs/scanner-accepted.svg" alt="Scanner report: green verdict, 100% NPU-eligible, compiled into one NPU graph"></td>
+<td width="50%" valign="top"><b>The model the X Elite rejected</b><br><img width="100%" src="docs/scanner-rejected.svg" alt="Scanner report: red verdict, the HTP compiler split the graph into 9 NPU graphs with 9 LayerNorms left on CPU"></td>
+<td width="50%" valign="top"><b>The shipped model</b><br><img width="100%" src="docs/scanner-accepted.svg" alt="Scanner report: green verdict, 100% NPU-eligible, compiled into one NPU graph"></td>
 </tr>
 </table>
 
