@@ -11,6 +11,11 @@ import onnx
 import pytest
 from onnx import TensorProto, helper, numpy_helper
 
+# Test models carry the IR version the real pipeline's models carry (torch's
+# exporter writes 10). Newer onnx releases default to IR 14, which ONNX Runtime
+# 1.26 refuses to load — that broke CI when it picked up onnx 1.23.
+IR_VERSION = 10
+
 from scanner.graph_analyzer import analyze_onnx_model
 from scanner.op_registry import (
     check_quant_constraints,
@@ -78,7 +83,7 @@ def _layernorm_model(gamma_dtype: int) -> onnx.ModelProto:
         [helper.make_tensor_value_info("y", TensorProto.FLOAT, [1, 4])],
         inits,
     )
-    return helper.make_model(graph, opset_imports=[helper.make_opsetid("", 21)])
+    return helper.make_model(graph, ir_version=IR_VERSION, opset_imports=[helper.make_opsetid("", 21)])
 
 
 def test_analyzer_rejects_signed_gamma_layernorm(tmp_path):
@@ -113,7 +118,7 @@ def test_dynamic_quant_graph_reports_zero_effective_coverage(tmp_path):
         [numpy_helper.from_array(np.ones((4, 4), np.uint8), "w")],
     )
     path = tmp_path / "dyn.onnx"
-    onnx.save(helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)]), path)
+    onnx.save(helper.make_model(graph, ir_version=IR_VERSION, opset_imports=[helper.make_opsetid("", 17)]), path)
 
     report = analyze_onnx_model(path)
     assert report.format_error["error"] == "dynamic_quantization"

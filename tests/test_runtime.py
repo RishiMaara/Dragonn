@@ -11,6 +11,11 @@ import onnx
 import pytest
 from onnx import TensorProto, helper, numpy_helper
 
+# Test models carry the IR version the real pipeline's models carry (torch's
+# exporter writes 10). Newer onnx releases default to IR 14, which ONNX Runtime
+# 1.26 refuses to load — that broke CI when it picked up onnx 1.23.
+IR_VERSION = 10
+
 from converter.quantize import _model_size_mb
 from scripts.aihub_validate import reconcile, summarize_profile
 from scripts.transcriber import load_audio, word_error_rate
@@ -100,7 +105,7 @@ def test_model_size_counts_external_data(tmp_path):
         [helper.make_tensor_value_info("y", TensorProto.FLOAT, [1, 512])], [w],
     )
     path = tmp_path / "m.onnx"
-    onnx.save(helper.make_model(graph), path, save_as_external_data=True,
+    onnx.save(helper.make_model(graph, ir_version=IR_VERSION), path, save_as_external_data=True,
               all_tensors_to_one_file=True, location="m.onnx.data", size_threshold=0)
     assert path.stat().st_size < 10_000
     assert _model_size_mb(path) >= 1.0          # 512*512*4 bytes = 1 MB of weights
@@ -133,7 +138,7 @@ def _add_model(path, doc=""):
         [helper.make_tensor_value_info("x", TensorProto.FLOAT, [1, 4])],
         [helper.make_tensor_value_info("y", TensorProto.FLOAT, [1, 4])],
     )
-    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)])
+    model = helper.make_model(graph, ir_version=IR_VERSION, opset_imports=[helper.make_opsetid("", 17)])
     model.doc_string = doc
     onnx.save(model, path)
 
@@ -170,7 +175,7 @@ def test_classic_provider_list_silently_drops_the_plugin_but_create_session_does
         [helper.make_tensor_value_info("y", TensorProto.FLOAT, [1, 4])],
     )
     path = tmp_path / "add.onnx"
-    onnx.save(helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)]), path)
+    onnx.save(helper.make_model(graph, ir_version=IR_VERSION, opset_imports=[helper.make_opsetid("", 17)]), path)
     register_plugin()
 
     so = ort.SessionOptions(); so.log_severity_level = 3
