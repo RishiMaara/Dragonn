@@ -16,9 +16,9 @@ from onnx import TensorProto, helper, numpy_helper
 # 1.26 refuses to load — that broke CI when it picked up onnx 1.23.
 IR_VERSION = 10
 
-from converter.quantize import _model_size_mb, clamp_extreme_constants
-from scripts.aihub_validate import reconcile, summarize_profile
-from scripts.transcriber import load_audio, word_error_rate
+from converter.quantize import model_size_mb, clamp_extreme_constants
+from validate.aihub import reconcile, summarize_profile
+from speech.transcriber import load_audio, word_error_rate
 
 
 # ── AI Hub profile parsing ────────────────────────────────────────────────────
@@ -108,7 +108,7 @@ def test_model_size_counts_external_data(tmp_path):
     onnx.save(helper.make_model(graph, ir_version=IR_VERSION), path, save_as_external_data=True,
               all_tensors_to_one_file=True, location="m.onnx.data", size_threshold=0)
     assert path.stat().st_size < 10_000
-    assert _model_size_mb(path) >= 1.0          # 512*512*4 bytes = 1 MB of weights
+    assert model_size_mb(path) >= 1.0          # 512*512*4 bytes = 1 MB of weights
 
 
 # ── Attention-mask constants ──────────────────────────────────────────────────
@@ -150,7 +150,7 @@ needs_qnn = pytest.mark.skipif(not HAS_QNN, reason="onnxruntime-qnn not installe
 @needs_qnn
 @pytest.mark.skipif(platform.machine().lower() in ("arm64", "aarch64"), reason="x64-only expectation")
 def test_x64_reports_no_npu_even_with_qnn_installed():
-    from scripts.qnn_ep import compile_only_available, npu_available
+    from runtime.qnn_ep import compile_only_available, npu_available
     assert compile_only_available()
     assert not npu_available()
 
@@ -169,7 +169,7 @@ def _add_model(path, doc=""):
 @needs_qnn
 def test_compiled_graph_cache_is_reused_and_invalidated_by_model_changes(tmp_path):
     """Cold start was 5.28 s vs 0.53 s warm on a real X Elite; the cache must never go stale."""
-    from scripts.qnn_ep import create_session
+    from runtime.qnn_ep import create_session
 
     model, cache = tmp_path / "m.onnx", tmp_path / "cache"
     _add_model(model)
@@ -190,7 +190,7 @@ def test_compiled_graph_cache_is_reused_and_invalidated_by_model_changes(tmp_pat
 def test_classic_provider_list_silently_drops_the_plugin_but_create_session_does_not(tmp_path):
     """The ORT 1.26 + onnxruntime-qnn 2.x trap that would have run the server on CPU."""
     import onnxruntime as ort
-    from scripts.qnn_ep import create_session, htp_backend_path, register_plugin
+    from runtime.qnn_ep import create_session, htp_backend_path, register_plugin
 
     graph = helper.make_graph(
         [helper.make_node("Add", ["x", "x"], ["y"])], "g",
@@ -216,7 +216,7 @@ def test_classic_provider_list_silently_drops_the_plugin_but_create_session_does
 @needs_qnn
 def test_strict_mode_refuses_a_model_that_would_fall_back_to_cpu(tmp_path):
     """ONNX Runtime's own guard: an all-or-nothing answer to 'is all of this on the NPU?'."""
-    from scripts.qnn_ep import create_session
+    from runtime.qnn_ep import create_session
 
     graph = helper.make_graph(
         [helper.make_node("DynamicQuantizeLinear", ["x"], ["q", "scale", "zp"])], "g",

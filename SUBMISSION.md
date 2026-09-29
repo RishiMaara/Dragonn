@@ -62,7 +62,7 @@ Every number below is committed as machine-readable evidence in
 
 Five popular models, each through the naive path and this pipeline
 ([`models/reports/zoo/README.md`](models/reports/zoo/README.md), reproduce with
-`python -m scripts.model_zoo`):
+`python -m tools.model_zoo`):
 
 | Model | What it's for | Accuracy: FP32 → naive → this pipeline | Size |
 |---|---|---|---|

@@ -12,10 +12,10 @@ We parse that into our coverage report format for dashboard consumption.
 
 Usage:
     # On Snapdragon X ARM64 device only (QNN EP requires Hexagon NPU):
-    python -m scripts.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx
+    python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx
 
     # Dry run on x86 (CPU EP only, validates the profiling code works):
-    python -m scripts.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --dry-run
+    python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --dry-run
 """
 
 import argparse
@@ -39,10 +39,10 @@ def check_qnn_available() -> bool:
 
     Not `"QNNExecutionProvider" in ort.get_available_providers()`: the
     onnxruntime-qnn 2.x plugin is absent from that list until registered, and on
-    x64 it registers but can only compile, not execute. See scripts/qnn_ep.py.
+    x64 it registers but can only compile, not execute. See runtime/qnn_ep.py.
     """
     try:
-        from scripts.qnn_ep import npu_available
+        from runtime.qnn_ep import npu_available
         return npu_available()
     except ImportError:
         return False
@@ -115,7 +115,7 @@ def profile_model_on_qnn(
 
     try:
         if use_qnn:
-            from scripts.qnn_ep import create_session
+            from runtime.qnn_ep import create_session
             session = create_session(model_path, qnn_options, sess_options)
         else:
             session = ort.InferenceSession(
@@ -131,7 +131,7 @@ def profile_model_on_qnn(
                 "  1. x64 Python on ARM64 Windows (Prism) — QnnHtp.dll cannot load\n"
                 "  2. onnxruntime-qnn not installed (pip install -r requirements-device.txt)\n"
                 "  3. The HTP compiler rejected the graph — run the scanner, and\n"
-                "     python -m scripts.aihub_validate to see which ops"
+                "     python -m validate.aihub to see which ops"
             )
         raise
 
@@ -383,16 +383,16 @@ def main():
         epilog="""
 Examples:
   # Profile on Snapdragon device (QNN EP available)
-  python -m scripts.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx
+  python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx
 
   # Dry run on x86 (CPU EP only, validates code)
-  python -m scripts.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --dry-run
+  python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --dry-run
 
   # Full before/after comparison
-  python -m scripts.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --compare
+  python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --compare
 
   # Save results as JSON
-  python -m scripts.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --json ./results/profile.json
+  python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --json ./results/profile.json
         """,
     )
     parser.add_argument(

@@ -30,8 +30,8 @@ All device results come from **Snapdragon X Elite CRD** on Qualcomm AI Hub
 | README claim | File | Reproduce |
 |---|---|---|
 | Scanner flags the rejected model (SPLIT, LayerNorm ×9) and passes the shipped one (one NPU graph) | [`scanner_whisper-tiny-int8w.json`](scanner_whisper-tiny-int8w.json), [`scanner_whisper-tiny-qdq.json`](scanner_whisper-tiny-qdq.json) | `python -m scanner --input <model> --compile-check` |
-| WER and encoder cosine: real vs synthetic calibration (12.70% vs 13.33%), 16-bit vs 8-bit activations (12.70% vs 93.5%) | [`wer_calibration_and_precision.json`](wer_calibration_and_precision.json) | `python -m scripts.eval_wer --variant ...` |
-| Pipeline: coverage, local HTP compile, x86 CPU baseline | [`pipeline_results.json`](pipeline_results.json), [`coverage_report.json`](coverage_report.json), [`pitch_summary.txt`](pitch_summary.txt) | `python -m scripts.run_pipeline ...` |
+| WER and encoder cosine: real vs synthetic calibration (12.70% vs 13.33%), 16-bit vs 8-bit activations (12.70% vs 93.5%) | [`wer_calibration_and_precision.json`](wer_calibration_and_precision.json) | `python -m tools.eval_wer --variant ...` |
+| Pipeline: coverage, local HTP compile, x86 CPU baseline | [`pipeline_results.json`](pipeline_results.json), [`coverage_report.json`](coverage_report.json), [`pitch_summary.txt`](pitch_summary.txt) | `python -m tools.run_pipeline ...` |
 
 ## Reproducing the device results
 
@@ -40,7 +40,7 @@ device jobs tests the exact model these files describe. With your own free AI
 Hub account:
 
 ```bash
-python -m scripts.aihub_validate
-python -m scripts.aihub_validate --cpu-baseline --profile-job <your-profile-job-id>
-python -m scripts.eval_wer --aihub
+python -m validate.aihub
+python -m validate.aihub --cpu-baseline --profile-job <your-profile-job-id>
+python -m tools.eval_wer --aihub
 ```

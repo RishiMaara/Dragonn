@@ -9,7 +9,7 @@ the honest baseline to measure this project's own conversions against.
 Nothing here converts anything: it uploads the compiled asset, profiles it on
 the device, and records what the device reported.
 
-    python -m scripts.aihub_precompiled --dir <asset-dir> --name whisper-tiny-encoder
+    python -m validate.precompiled --dir <asset-dir> --name whisper-tiny-encoder
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ import shutil
 import tempfile
 from pathlib import Path
 
-from scripts.aihub_validate import _with_network_retry, summarize_profile
+from validate.aihub import with_network_retry, summarize_profile
 
 logger = logging.getLogger("hexagon-bridge.aihub")
 
@@ -79,19 +79,19 @@ def profile_precompiled(model_dir: Path, name: str, device_name: str, options: s
     device = hub.Device(device_name)
     model_dir = stage_for_hub(model_dir)
     logger.info(f"[{name}] uploading {model_dir}")
-    model = _with_network_retry(
+    model = with_network_retry(
         lambda: hub.upload_model(str(model_dir)), None, f"[{name}] upload"
     )
     job = hub.submit_profile_job(model=model, device=device, name=f"hexagon-bridge {name}",
                                  options=options)
     logger.info(f"[{name}] profile job: {job.url}")
 
-    status = _with_network_retry(lambda: job.wait(), job, f"[{name}] profile")
+    status = with_network_retry(lambda: job.wait(), job, f"[{name}] profile")
     if not status.success:
         return {"name": name, "job": job.job_id, "url": job.url,
                 "failed": status.message or "profile job failed"}
 
-    profile = _with_network_retry(lambda: job.download_profile(), job, f"[{name}] download")
+    profile = with_network_retry(lambda: job.download_profile(), job, f"[{name}] download")
     summary = summarize_profile(profile)
     return {"name": name, "job": job.job_id, "url": job.url, **summary}
 

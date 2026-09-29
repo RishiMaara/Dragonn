@@ -24,7 +24,7 @@
 #
 # It is invisible until registered, and the classic
 # providers=[("QNNExecutionProvider", ...)] argument silently yields a CPU-only
-# session with it. All code here goes through scripts/qnn_ep.py, which
+# session with it. All code here goes through runtime/qnn_ep.py, which
 # registers the plugin, attaches it properly, and verifies it attached.
 onnxruntime>=1.24.2
 onnxruntime-qnn>=2.6.0

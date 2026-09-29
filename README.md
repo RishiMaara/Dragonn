@@ -205,7 +205,7 @@ chip rejected:
 | 6 | **Cache the compiled graph** | HTP compilation is slow: 5.2 s cold vs 0.5 s warm on X Elite | ✅ recompiles every start |
 
 All six are handled here. Constraint 5 is its own silent failure, inside ONNX
-Runtime's API: [`scripts/qnn_ep.py`](scripts/qnn_ep.py) registers the plugin,
+Runtime's API: [`runtime/qnn_ep.py`](runtime/qnn_ep.py) registers the plugin,
 attaches it via `add_provider_for_devices`, and raises if `get_providers()` doesn't
 show QNN — no session labelled "NPU" ever runs on CPU.
 
@@ -224,12 +224,12 @@ HF model → ONNX (static) → QNN static QDQ, real-speech calibration
 | `converter/hf_to_onnx.py` | Export → ONNX with static shapes |
 | `converter/quantize.py` | Static a16w8 QDQ via ORT's QNN helpers; real-speech calibration; format self-check |
 | `scanner/` | Registry + per-node quantization rules + **local HTP compile check** — the deliverable |
-| `scripts/qnn_ep.py` | Attaches QNN EP correctly, verifies it, caches compiled graphs |
-| `scripts/aihub_validate.py` | Real X Elite: placement, accuracy on HTP, latency distribution, CPU baseline |
-| `scripts/aihub_precompiled.py` | Profiles an already-compiled model on the device — used to measure Qualcomm's own NPU Whisper as a baseline |
-| `scripts/model_zoo.py` | Runs the naive path and this pipeline across five popular models and writes the comparison |
-| `scripts/eval_wer.py` | Word error rate on held-out speech — locally and with the encoder on a real NPU |
-| `scripts/transcriber.py` | Speech-to-text: encoder on NPU (ONNX), decoder on CPU (PyTorch) |
+| `runtime/qnn_ep.py` | Attaches QNN EP correctly, verifies it, caches compiled graphs |
+| `validate/aihub.py` | Real X Elite: placement, accuracy on HTP, latency distribution, CPU baseline |
+| `validate/precompiled.py` | Profiles an already-compiled model on the device — used to measure Qualcomm's own NPU Whisper as a baseline |
+| `tools/model_zoo.py` | Runs the naive path and this pipeline across five popular models and writes the comparison |
+| `tools/eval_wer.py` | Word error rate on held-out speech — locally and with the encoder on a real NPU |
+| `speech/transcriber.py` | Speech-to-text: encoder on NPU (ONNX), decoder on CPU (PyTorch) |
 | `server/` + `dashboard/` | OpenAI-compatible API; live dashboard with upload, microphone, and scored samples |
 | `tests/` | 31 tests — each pins a bug that produced a wrong number at some point |
 
@@ -282,11 +282,11 @@ pip install -r requirements-device.txt
 ## Quick Start
 
 ```bash
-python -m scripts.fetch_speech
+python -m tools.fetch_speech
 ```
 
 ```bash
-python -m scripts.run_pipeline --model openai/whisper-tiny --quantized-dir ./models/whisper-tiny-qdq
+python -m tools.run_pipeline --model openai/whisper-tiny --quantized-dir ./models/whisper-tiny-qdq
 ```
 
 ```bash
@@ -300,7 +300,7 @@ python -m server.app
 Then open http://127.0.0.1:8000. Accuracy and tests:
 
 ```bash
-python -m scripts.eval_wer
+python -m tools.eval_wer
 ```
 
 ```bash
@@ -326,15 +326,15 @@ If Windows says `qai-hub` is not recognized (per-user pip installs aren't on PAT
 ```
 
 ```bash
-python -m scripts.aihub_validate
+python -m validate.aihub
 ```
 
 ```bash
-python -m scripts.aihub_validate --cpu-baseline --profile-job <npu-profile-job-id>
+python -m validate.aihub --cpu-baseline --profile-job <npu-profile-job-id>
 ```
 
 ```bash
-python -m scripts.eval_wer --aihub
+python -m tools.eval_wer --aihub
 ```
 
 Validation reports placement by layer count **and** time share, accuracy on HTP
@@ -444,7 +444,7 @@ see [Honest Status](#honest-status).
 
 ### Beyond Whisper — five models, both paths, same device
 
-`python -m scripts.model_zoo` runs each model through the naive path and this
+`python -m tools.model_zoo` runs each model through the naive path and this
 one, then checks placement three ways and accuracy on held-out real data. Full
 table, including what each one did on the X Elite:
 [`models/reports/zoo/README.md`](models/reports/zoo/README.md).
@@ -484,7 +484,7 @@ Error loading: Failed to finalize QNN graph. Error: QNN_COMMON_ERROR_MEM_ALLOC .
 ### Accuracy — word error rate on real speech
 
 57 held-out LibriSpeech clips (325 s, 803 words), disjoint from the 16 calibration
-clips ([`scripts/eval_wer.py`](scripts/eval_wer.py); evidence:
+clips ([`tools/eval_wer.py`](tools/eval_wer.py); evidence:
 [CPU rows](models/reports/wer_calibration_and_precision.json),
 [NPU row](models/reports/wer_report.json), AI Hub job `jg9z991wp`):
 
@@ -569,7 +569,7 @@ Dragonn/
 ├── tests/         31 tests, one per real bug — run on every push (Ubuntu, and Windows + QNN plugin)
 ├── models/        generated models (gitignored) + reports/ — the evidence, committed
 ├── docs/          README images + the submission deck
-└── data/          downloaded speech (gitignored; python -m scripts.fetch_speech)
+└── data/          downloaded speech (gitignored; python -m tools.fetch_speech)
 ```
 
 ## For the judges

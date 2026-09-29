@@ -15,9 +15,9 @@ Cosine similarity on encoder outputs says the numbers are close; WER says
 whether the words are still right.
 
 Usage:
-    python -m scripts.fetch_speech                 # once
-    python -m scripts.eval_wer                     # local configurations
-    python -m scripts.eval_wer --aihub             # + encoder on a real X Elite
+    python -m tools.fetch_speech                 # once
+    python -m tools.eval_wer                     # local configurations
+    python -m tools.eval_wer --aihub             # + encoder on a real X Elite
 """
 
 import argparse
@@ -29,7 +29,7 @@ from pathlib import Path
 
 import numpy as np
 
-from scripts.transcriber import CHUNK_SECONDS, SAMPLE_RATE, WhisperTranscriber, load_audio, word_error_rate
+from speech.transcriber import CHUNK_SECONDS, SAMPLE_RATE, WhisperTranscriber, load_audio, word_error_rate
 
 logger = logging.getLogger("hexagon-bridge.wer")
 
@@ -37,7 +37,7 @@ logger = logging.getLogger("hexagon-bridge.wer")
 def load_rows(audio_dir: Path, limit: int | None) -> list[dict]:
     manifest = audio_dir / "transcripts.jsonl"
     if not manifest.exists():
-        logger.error(f"No {manifest}. Run: python -m scripts.fetch_speech")
+        logger.error(f"No {manifest}. Run: python -m tools.fetch_speech")
         sys.exit(1)
     rows = [json.loads(line) for line in manifest.read_text(encoding="utf-8").splitlines() if line.strip()]
     return rows[:limit] if limit else rows
@@ -89,8 +89,8 @@ def evaluate_local(label: str, transcriber: WhisperTranscriber, rows, audio_dir,
 def evaluate_on_aihub(encoder_path: Path, device_name: str, reference: WhisperTranscriber,
                       rows, audio_dir) -> dict:
     """Encoder on a real device's NPU; features and decoding stay local."""
-    from scripts.aihub_validate import (
-        QNN_OPTIONS, _upload, _wait, _with_network_retry, check_auth, import_hub, resolve_device,
+    from validate.aihub import (
+        QNN_OPTIONS, _upload, _wait, with_network_retry, check_auth, import_hub, resolve_device,
     )
 
     hub = import_hub()
@@ -114,7 +114,7 @@ def evaluate_on_aihub(encoder_path: Path, device_name: str, reference: WhisperTr
         inputs={"input_features": features}, options=QNN_OPTIONS,
     )
     _wait(job, "Inference job")
-    outputs = _with_network_retry(job.download_output_data, job, "Inference job")
+    outputs = with_network_retry(job.download_output_data, job, "Inference job")
     hidden = next(iter(outputs.values()))
 
     pieces = [[] for _ in rows]

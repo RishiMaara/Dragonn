@@ -14,8 +14,8 @@ and three checks per path:
                 matches each model's job (search agreement, accuracy, WER)
 
 Usage:
-    python -m scripts.model_zoo                    # every model
-    python -m scripts.model_zoo --model minilm     # one model
+    python -m tools.model_zoo                    # every model
+    python -m tools.model_zoo --model minilm     # one model
 """
 
 import argparse
@@ -100,7 +100,7 @@ def image_data() -> dict:
 def speech_data() -> dict:
     root = Path("data/speech")
     if not (root / "eval" / "transcripts.jsonl").exists():
-        raise SystemExit("No speech data. Run: python -m scripts.fetch_speech")
+        raise SystemExit("No speech data. Run: python -m tools.fetch_speech")
     load = lambda split: [json.loads(l) for l in (root / split / "transcripts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     return {"calib": load("calib"), "eval": load("eval"), "root": str(root)}
 
@@ -319,7 +319,7 @@ def _clip_vision() -> ZooModel:
 
 
 def _whisper_base() -> ZooModel:
-    from scripts.transcriber import WhisperTranscriber, load_audio, word_error_rate
+    from speech.transcriber import WhisperTranscriber, load_audio, word_error_rate
     hf = "openai/whisper-base"
 
     def export(out):
@@ -381,7 +381,7 @@ def _checks(path: Path) -> dict:
 
 
 def run_model(name: str) -> dict:
-    from converter.quantize import _model_size_mb, quantize_qnn
+    from converter.quantize import model_size_mb, quantize_qnn
     from onnxruntime.quantization import quantize_dynamic
 
     spec = MODELS[name]()
@@ -437,7 +437,7 @@ def run_model(name: str) -> dict:
 
     report = {
         "model": name, "hf_id": spec.hf_id, "use_case": spec.use_case, "metric": spec.metric_name,
-        "size_mb": {v: round(_model_size_mb(p), 2) for v, p in paths.items()},
+        "size_mb": {v: round(model_size_mb(p), 2) for v, p in paths.items()},
         "headline_key": spec.headline_key,
         "checks": checks, "accuracy": accuracy, "notes": notes,
         "wall_time_s": round(time.time() - started, 1),
@@ -463,7 +463,7 @@ def _headline(acc: dict, key: str) -> str:
 
 def write_summary():
     # Only this script's own per-model reports — device profiles written by
-    # scripts/aihub_precompiled.py live in the same folder.
+    # validate/precompiled.py live in the same folder.
     paths = [REPORT_DIR / f"{name}.json" for name in MODELS]
     reports = [json.loads(p.read_text(encoding="utf-8")) for p in paths if p.exists()]
     lines = [
@@ -472,7 +472,7 @@ def write_summary():
         "Each model through two paths — **naive** (`quantize_dynamic`, what most tutorials "
         "show) and **Hexagon Bridge** (static a16w8 QDQ, real calibration data) — checked by "
         "the scanner, Qualcomm's HTP compiler run locally, and accuracy on held-out real data.",
-        "Reproduce: `python -m scripts.model_zoo`.",
+        "Reproduce: `python -m tools.model_zoo`.",
         "",
         "| Model | Use on a laptop | Naive path | Hexagon Bridge | Accuracy: FP32 → naive → bridge | Size FP32 → bridge |",
         "|---|---|---|---|---|---|",
@@ -493,7 +493,7 @@ def write_summary():
             "",
             "## On a real Snapdragon X Elite",
             "",
-            "Written by `python -m scripts.aihub_precompiled` — Qualcomm AI Hub, device "
+            "Written by `python -m validate.precompiled` — Qualcomm AI Hub, device "
             "`Snapdragon X Elite CRD`. Local checks predict; only this settles it.",
             "",
             "| Model | Median | Placement | Outcome |",

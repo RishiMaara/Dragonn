@@ -142,6 +142,7 @@ def analyze_onnx_model(
         is_supported,
         get_category,
         detect_quantization_format_error,
+        format_error_note,
         check_quant_constraints,
     )
 
@@ -327,9 +328,7 @@ def analyze_onnx_model(
             f"  QUANTIZATION FORMAT ERROR: {format_error['error']}\n"
             f"    Offending ops: {', '.join(format_error['offending_ops'])}\n"
             f"    {format_error['verdict']}\n"
-            f"    Node-level coverage reads {coverage_pct:.1f}%, but this count means "
-            f"little for a model in the wrong format — run --compile-check to see what "
-            f"Qualcomm's compiler actually does with it, and validate on a device."
+            f"    {format_error_note(coverage_pct)}"
         )
     else:
         logger.info(

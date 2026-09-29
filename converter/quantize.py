@@ -221,7 +221,7 @@ class WhisperCalibrationDataReader:
             if audio.ndim > 1:
                 audio = audio.mean(axis=1)
             if sr != self._sampling_rate:
-                from scripts.transcriber import resample
+                from runtime.audio import resample
                 audio = resample(audio, sr, self._sampling_rate)
             return audio
 
@@ -261,7 +261,7 @@ class WhisperCalibrationDataReader:
         self.sample_index = 0
 
 
-def _model_size_mb(model_path: Path) -> float:
+def model_size_mb(model_path: Path) -> float:
     """
     Total on-disk size of a model, including any external-data sidecar.
 
@@ -353,7 +353,7 @@ def clamp_extreme_constants(
             if attribute.name == "value" and attribute.HasField("t"):
                 rewritten += fix(attribute.t, node.output[0])
 
-    onnx.save(model, str(output_path), save_as_external_data=_model_size_mb(Path(model_path)) > 1900)
+    onnx.save(model, str(output_path), save_as_external_data=model_size_mb(Path(model_path)) > 1900)
     return rewritten
 
 
@@ -443,8 +443,8 @@ def quantize_qnn(
 
     ops = [n.op_type for n in onnx.load(str(output_path), load_external_data=False).graph.node]
     return {
-        "input_size_mb": round(_model_size_mb(input_path), 2),
-        "output_size_mb": round(_model_size_mb(output_path), 2),
+        "input_size_mb": round(model_size_mb(input_path), 2),
+        "output_size_mb": round(model_size_mb(output_path), 2),
         "qdq_nodes": sum(op in ("QuantizeLinear", "DequantizeLinear") for op in ops),
         "format_error": detect_quantization_format_error(ops),
         "mask_constants_clamped": rewritten,
@@ -554,7 +554,7 @@ def quantize_onnx_model(
     # size/speed comparisons, not for deployment.
     atype = QuantType.QUInt16 if activation_type.upper() == "UINT16" else QuantType.QUInt8
 
-    input_size_mb = _model_size_mb(input_path)
+    input_size_mb = model_size_mb(input_path)
     logger.info(f"Quantizing: {input_path.name} ({input_size_mb:.1f} MB)")
     logger.info(
         f"  Format: {quant_format}, Weight: {weight_type}, "
@@ -693,7 +693,7 @@ def quantize_onnx_model(
     if not output_path.exists():
         raise RuntimeError(f"Quantization produced no output at {output_path}")
 
-    output_size_mb = _model_size_mb(output_path)
+    output_size_mb = model_size_mb(output_path)
     compression_ratio = input_size_mb / output_size_mb if output_size_mb > 0 else 0
 
     # Count QDQ nodes in the quantized model

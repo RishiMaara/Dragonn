@@ -10,13 +10,13 @@ One-command orchestrator that runs the entire pipeline:
 
 Usage:
     # Full pipeline (on x86 for export/quantize, then transfer to ARM64 for profiling)
-    python -m scripts.run_pipeline --model openai/whisper-medium
+    python -m tools.run_pipeline --model openai/whisper-medium
 
     # Skip export if already have ONNX files
-    python -m scripts.run_pipeline --skip-export --onnx-dir ./models/whisper-medium-onnx
+    python -m tools.run_pipeline --skip-export --onnx-dir ./models/whisper-medium-onnx
 
     # Quick test with whisper-small
-    python -m scripts.run_pipeline --model openai/whisper-small --quick
+    python -m tools.run_pipeline --model openai/whisper-small --quick
 """
 
 import argparse
@@ -85,12 +85,12 @@ def run_full_pipeline(
         # Real speech sets far better activation ranges than synthetic audio: on
         # 57 held-out LibriSpeech clips it took the quantized encoder from +0.63
         # to +0.00 WER vs the FP32 reference. Fetch it once with
-        # `python -m scripts.fetch_speech`.
+        # `python -m tools.fetch_speech`.
         calib_dir = Path("data/speech/calib")
         if not calib_dir.is_dir():
             logger.warning(
                 "No real calibration speech at data/speech/calib — falling back to "
-                "synthetic audio (measured +0.63 WER). Run: python -m scripts.fetch_speech"
+                "synthetic audio (measured +0.63 WER). Run: python -m tools.fetch_speech"
             )
         quantize_result = quantize_whisper_pipeline(
             input_dir=onnx_dir,
@@ -120,7 +120,7 @@ def run_full_pipeline(
 
     # Static analysis can't see per-node encoding rejections; the real HTP
     # compiler can, and runs on x64 when onnxruntime-qnn is installed.
-    from scripts.qnn_ep import compile_only_available
+    from runtime.qnn_ep import compile_only_available
     if compile_only_available():
         from scanner.htp_compile import compile_check
         for filename, report in coverage_reports.items():
@@ -154,7 +154,7 @@ def run_full_pipeline(
     logger.info("  STAGE 4: Performance Profiling")
     logger.info("=" * 70)
 
-    from scripts.profile_qnn import (
+    from tools.profile_qnn import (
         check_qnn_available,
         profile_model_on_qnn,
         run_cpu_baseline,
@@ -218,7 +218,7 @@ def run_full_pipeline(
     logger.info(f"  Combined results: {combined_path}")
     if not qnn_available:
         logger.info(f"\n  ⚠️  Transfer {scan_target}/ to Snapdragon X device")
-        logger.info(f"     then run: python -m scripts.profile_qnn --input <path> --compare")
+        logger.info(f"     then run: python -m tools.profile_qnn --input <path> --compare")
     logger.info(f"{'='*70}")
 
     return results

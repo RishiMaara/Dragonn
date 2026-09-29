@@ -6,6 +6,8 @@ Scanner tests. Each one pins a failure this project hit for real:
   compile on a real Snapdragon X Elite
 """
 
+from pathlib import Path
+
 import numpy as np
 import onnx
 import pytest
@@ -133,3 +135,25 @@ def test_float_model_that_compiles_locally_still_carries_a_device_warning():
               "npu_graphs": 1, "cpu_ops": {}, "boundary_ops": 0}
     assert "Float model" in describe_htp_compile({**passed, "float_model": True})
     assert "Float model" not in describe_htp_compile({**passed, "float_model": False})
+
+
+def test_only_one_module_authors_the_format_error_note():
+    """
+    One wrong claim about this format took four edits to retract, and two were
+    missed. The note has a single owner now; renderers may only place it.
+    """
+    from scanner.op_registry import format_error_note
+
+    note = format_error_note(82.7)
+    assert "82.7%" in note
+
+    root = Path(__file__).resolve().parent.parent
+    renderers = ["scanner/report.py", "scanner/graph_analyzer.py"]
+    for name in renderers:
+        source = (root / name).read_text(encoding="utf-8")
+        assert "format_error_note(" in source, f"{name} should call the shared note"
+        for phrase in ("Node-level coverage reads", "Node-level analysis reads"):
+            assert phrase not in source, (
+                f"{name} writes its own version of the note. Change it in "
+                "scanner/op_registry.format_error_note instead."
+            )

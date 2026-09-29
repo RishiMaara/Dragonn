@@ -2,7 +2,7 @@
   "what": "Qualcomm's own AI Hub Whisper-Tiny, compiled by Qualcomm for this chipset, profiled on the same device this project validates on \u2014 the baseline for 'what does a vendor-optimised NPU model cost?'",
   "source": "https://huggingface.co/qualcomm/Whisper-Tiny release assets v0.63.0, qnn_context_binary for qualcomm-snapdragon-x-elite (QAIRT 2.50, float/FP16)",
   "device": "Snapdragon X Elite CRD (SC8380XP, Hexagon v73) via Qualcomm AI Hub",
-  "reproduce": "python -m scripts.aihub_precompiled --dir <asset-dir> --name <name>",
+  "reproduce": "python -m validate.precompiled --dir <asset-dir> --name <name>",
   "date": "2026-09-29",
   "encoder": {
     "job": "jpyokezl5",

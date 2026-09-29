@@ -17,6 +17,8 @@ import logging
 from pathlib import Path
 from typing import Optional
 
+from scanner.op_registry import format_error_note
+
 logger = logging.getLogger("hexagon-bridge.report")
 
 
@@ -62,11 +64,7 @@ def _print_rich_report(report, console=None) -> None:
                 f"[bold]{fmt_err['verdict']}[/bold]\n\n"
                 f"Offending ops: [yellow]{', '.join(fmt_err['offending_ops'])}[/yellow]\n\n"
                 f"{fmt_err['explanation']}\n\n"
-                f"[bold]Node-level coverage reads {report.coverage_percent:.1f}%, "
-                f"but that count means little in this format.[/bold]\n"
-                f"This is the silent part: the model loads and returns plausible "
-                f"outputs either way. Run --compile-check for what the compiler "
-                f"does with it, and validate on a device before trusting either.\n\n"
+                f"{format_error_note(report.coverage_percent)}\n\n"
                 f"[bold green]FIX[/bold green]\n{fmt_err['fix']}"
             ),
             title=f"🔴 {report.model_name}",
@@ -331,7 +329,7 @@ def _print_rich_report(report, console=None) -> None:
         text = (
             f"[green]No CPU fallback predicted{verified}.[/green]\n"
             "Static checks can't see everything a device does — confirm on real hardware:\n\n"
-            "[dim]python -m scripts.aihub_validate --model <model>[/dim]"
+            "[dim]python -m validate.aihub --model <model>[/dim]"
         )
         if not htp:
             text += "\n[dim]Or first, locally: python -m scanner --input <model> --compile-check[/dim]"
@@ -388,7 +386,7 @@ def describe_htp_compile(htp: dict, markup: bool = False) -> str:
         )
     return body + (
         "\nPassing locally is necessary, not sufficient — the device's QNN version may differ. "
-        "Confirm with: python -m scripts.aihub_validate"
+        "Confirm with: python -m validate.aihub"
     )
 
 
@@ -498,10 +496,8 @@ def generate_summary_text(reports: dict) -> str:
             lines.append(
                 f"{report.model_name} was quantized as "
                 f"{fmt_err['error'].replace('_', ' ')} "
-                f"({', '.join(fmt_err['offending_ops'])}), which is not the format QNN EP "
-                f"quantizes for. Node-level analysis reads {report.coverage_percent:.1f}% "
-                f"NPU-eligible, but that count doesn't describe this model: placement "
-                f"varies by model and SDK version, and accuracy is worse either way. "
+                f"({', '.join(fmt_err['offending_ops'])}). "
+                f"{format_error_note(report.coverage_percent)} "
                 f"{fmt_err['fix'].splitlines()[0]}"
             )
             continue

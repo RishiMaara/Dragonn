@@ -1,7 +1,7 @@
 # Model zoo: the silent failure, across popular models
 
 Each model through two paths — **naive** (`quantize_dynamic`, what most tutorials show) and **Hexagon Bridge** (static a16w8 QDQ, real calibration data) — checked by the scanner, Qualcomm's HTP compiler run locally, and accuracy on held-out real data.
-Reproduce: `python -m scripts.model_zoo`.
+Reproduce: `python -m tools.model_zoo`.
 
 | Model | Use on a laptop | Naive path | Hexagon Bridge | Accuracy: FP32 → naive → bridge | Size FP32 → bridge |
 |---|---|---|---|---|---|
@@ -13,7 +13,7 @@ Reproduce: `python -m scripts.model_zoo`.
 
 ## On a real Snapdragon X Elite
 
-Written by `python -m scripts.aihub_precompiled` — Qualcomm AI Hub, device `Snapdragon X Elite CRD`. Local checks predict; only this settles it.
+Written by `python -m validate.precompiled` — Qualcomm AI Hub, device `Snapdragon X Elite CRD`. Local checks predict; only this settles it.
 
 | Model | Median | Placement | Outcome |
 |---|---|---|---|

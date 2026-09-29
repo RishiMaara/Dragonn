@@ -27,13 +27,13 @@ Setup (once):
 
 Usage:
     # Everything local — no upload, no account needed. Validates the harness.
-    python -m scripts.aihub_validate --dry-run
+    python -m validate.aihub --dry-run
 
     # Real run on a cloud Snapdragon X Elite
-    python -m scripts.aihub_validate
+    python -m validate.aihub
 
     # See which Snapdragon PC devices your account can target
-    python -m scripts.aihub_validate --list-devices
+    python -m validate.aihub --list-devices
 """
 
 import argparse
@@ -76,7 +76,7 @@ Qualcomm AI Hub is not configured on this machine.
   2. Copy your API token:    Account -> Settings -> API Token
   3. Configure the client:   qai-hub configure --api_token <YOUR_TOKEN>
 
-Then re-run:  python -m scripts.aihub_validate
+Then re-run:  python -m validate.aihub
 
 (--dry-run works without an account and validates everything except the device.)
 """
@@ -239,7 +239,7 @@ def list_pc_devices(hub) -> None:
     print(f"\nSnapdragon PC devices available ({len(pcs)}):")
     for d in sorted({(d.name, d.os) for d in pcs}):
         print(f"  {d[0]:40}  os={d[1]}")
-    print(f"\nUse one with:  python -m scripts.aihub_validate --device \"<name>\"")
+    print(f"\nUse one with:  python -m validate.aihub --device \"<name>\"")
 
 
 def resolve_device(hub, name: str):
@@ -250,7 +250,7 @@ def resolve_device(hub, name: str):
     sys.exit(1)
 
 
-def _with_network_retry(fn, job, label: str, attempts: int = 20, delay_s: int = 30):
+def with_network_retry(fn, job, label: str, attempts: int = 20, delay_s: int = 30):
     """
     Call fn(), riding out network drops.
 
@@ -271,7 +271,7 @@ def _with_network_retry(fn, job, label: str, attempts: int = 20, delay_s: int = 
                 raise RuntimeError(
                     f"{label}: network kept failing ({e.__class__.__name__}). The job is "
                     f"still running on the device — re-attach instead of resubmitting:\n"
-                    f"  python -m scripts.aihub_validate {flag} {job.job_id}"
+                    f"  python -m validate.aihub {flag} {job.job_id}"
                 ) from e
             logger.warning(
                 f"  {label}: network error ({e.__class__.__name__}) — job keeps running "
@@ -283,12 +283,12 @@ def _with_network_retry(fn, job, label: str, attempts: int = 20, delay_s: int = 
 def _upload(hub, model_path, name: str):
     """Upload a model, retrying through network drops — re-sending is always safe."""
     path = str(ensure_inline_weights(Path(model_path)))
-    return _with_network_retry(lambda: hub.upload_model(path, name=name), None, f"Upload {name}")
+    return with_network_retry(lambda: hub.upload_model(path, name=name), None, f"Upload {name}")
 
 
 def _wait(job, label: str):
     logger.info(f"  {label}: {job.url}")
-    status = _with_network_retry(job.wait, job, label)
+    status = with_network_retry(job.wait, job, label)
     if not getattr(status, "success", False):
         message = getattr(status, "message", "") or str(status)
         raise RuntimeError(f"{label} failed: {message}\n  Logs: {job.url}")
@@ -426,7 +426,7 @@ def run_cpu_baseline(hub, args, model_path: Path, fp32_path: Path) -> None:
     for label, meaning, job in jobs:
         try:
             _wait(job, label)
-            summary = summarize_profile(_with_network_retry(job.download_profile, job, label))
+            summary = summarize_profile(with_network_retry(job.download_profile, job, label))
         except Exception as e:
             logger.error(f"{label} failed: {e}")
             summary = {"error": str(e)}
@@ -510,7 +510,7 @@ def main():
     fp32_path = Path(args.fp32)
     for p in (model_path, fp32_path):
         if not p.exists():
-            logger.error(f"Not found: {p}  (run the pipeline first: python -m scripts.run_pipeline)")
+            logger.error(f"Not found: {p}  (run the pipeline first: python -m tools.run_pipeline)")
             sys.exit(1)
 
     if args.cpu_baseline:
@@ -580,7 +580,7 @@ def main():
     report["profile_job"] = profile_job.url
     _wait(profile_job, "Profile job")
     placement = summarize_profile(
-        _with_network_retry(profile_job.download_profile, profile_job, "Profile job")
+        with_network_retry(profile_job.download_profile, profile_job, "Profile job")
     )
     report["device_placement"] = placement
     report["reconciliation"] = reconcile(prediction, placement)
@@ -597,7 +597,7 @@ def main():
             )
         report["inference_job"] = inference_job.url
         _wait(inference_job, "Inference job")
-        outputs = _with_network_retry(
+        outputs = with_network_retry(
             inference_job.download_output_data, inference_job, "Inference job"
         )
         device_out = np.asarray(next(iter(outputs.values()))[0]).reshape(ref_fp32.shape)

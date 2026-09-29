@@ -3,14 +3,14 @@ Hexagon Bridge — Inference Server
 ==================================
 OpenAI-compatible transcription API. Whisper's encoder runs as the quantized
 ONNX model — on the Hexagon NPU (QNN EP) when this machine has one, CPU EP
-otherwise — and the decoder runs on CPU. See scripts/transcriber.py.
+otherwise — and the decoder runs on CPU. See speech/transcriber.py.
 
 Every response and telemetry event reports the provider the encoder ACTUALLY
 ran on, read back from the session — never the one that was requested.
 
 Endpoints:
   POST /v1/audio/transcriptions   OpenAI-compatible; WAV/FLAC/OGG/MP3 upload
-  GET  /api/samples               held-out LibriSpeech clips (python -m scripts.fetch_speech)
+  GET  /api/samples               held-out LibriSpeech clips (python -m tools.fetch_speech)
   POST /api/transcribe-sample     transcribe one clip; returns reference + WER
   GET  /api/status                model/provider/coverage status
   WS   /ws/telemetry              live events for the dashboard
@@ -60,7 +60,7 @@ class TelemetryState:
                 return json.loads(COVERAGE_REPORT.read_text(encoding="utf-8"))
             except Exception as e:
                 logger.error(f"Failed to load coverage report: {e}")
-        return {"error": "Coverage report not found — run python -m scripts.run_pipeline"}
+        return {"error": "Coverage report not found — run python -m tools.run_pipeline"}
 
     async def broadcast(self, event_type: str, data: Dict[str, Any]):
         message = json.dumps({"type": event_type, "data": data})
@@ -86,13 +86,13 @@ class InferenceEngine:
     def load(self):
         if not self.encoder_path.exists():
             self.load_error = (
-                f"No encoder at {self.encoder_path}. Build it: python -m scripts.run_pipeline "
+                f"No encoder at {self.encoder_path}. Build it: python -m tools.run_pipeline "
                 "--model openai/whisper-tiny --quantized-dir ./models/whisper-tiny-qdq"
             )
             logger.error(self.load_error)
             return
         try:
-            from scripts.transcriber import WhisperTranscriber
+            from speech.transcriber import WhisperTranscriber
             self.transcriber = WhisperTranscriber(self.encoder_path)
             telemetry.current_ep = self.transcriber.provider.replace("ExecutionProvider", "")
             logger.info(f"Encoder loaded on {self.transcriber.provider}")
@@ -148,7 +148,7 @@ async def create_transcription(
     response_format: Optional[str] = Form("json"),
 ):
     """OpenAI-compatible transcription. English only (the model is run with language='en')."""
-    from scripts.transcriber import load_audio
+    from speech.transcriber import load_audio
 
     engine.require()
     data = await file.read()
@@ -183,18 +183,18 @@ def _sample_manifest() -> list[dict]:
 async def list_samples():
     rows = _sample_manifest()
     if not rows:
-        raise HTTPException(status_code=404, detail="No samples. Run: python -m scripts.fetch_speech")
+        raise HTTPException(status_code=404, detail="No samples. Run: python -m tools.fetch_speech")
     return [{"file": r["file"], "seconds": r["seconds"]} for r in rows]
 
 
 @app.post("/api/transcribe-sample")
 async def transcribe_sample(name: Optional[str] = None):
     """Transcribe a held-out LibriSpeech clip and score it against its reference."""
-    from scripts.transcriber import load_audio, word_error_rate
+    from speech.transcriber import load_audio, word_error_rate
 
     rows = _sample_manifest()
     if not rows:
-        raise HTTPException(status_code=404, detail="No samples. Run: python -m scripts.fetch_speech")
+        raise HTTPException(status_code=404, detail="No samples. Run: python -m tools.fetch_speech")
     if name is None:
         row = rows[telemetry.total_requests % len(rows)]
     else:

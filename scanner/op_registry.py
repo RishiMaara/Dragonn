@@ -650,13 +650,32 @@ def check_quant_constraints(op_type: str, input_qtypes: list) -> str | None:
     return None
 
 
+def format_error_note(coverage_percent: float) -> str:
+    """
+    The one sentence every renderer prints when a model is in the wrong format.
+
+    It lives here because it used to live in four places — this module, the
+    analyzer's log line, the rich panel and the plain-text summary — each
+    phrased slightly differently. Correcting the claim they made (that such a
+    model runs 100% on CPU, which a real X Elite disproved) meant four edits,
+    and two of them were missed on the first pass. Renderers format; they do
+    not get to author the verdict.
+    """
+    return (
+        f"Node-level coverage reads {coverage_percent:.1f}%, but that count only "
+        "describes a model QNN EP quantizes for, and this one isn't. Placement varies "
+        "by model and SDK version, accuracy is worse either way, and the model loads "
+        "and returns plausible outputs throughout — that is the silent part. Run "
+        "--compile-check for what the compiler does with it, and confirm on a device."
+    )
+
+
 def detect_quantization_format_error(op_types) -> dict | None:
     """
     Check whether a model was quantized in a format QNN EP cannot consume.
 
     This is a whole-model verdict, not a per-node one. If it fires, the node-level
-    coverage percentage is meaningless — nothing runs on the NPU regardless of how
-    NPU-friendly the individual ops look.
+    coverage percentage stops describing the model — see format_error_note().
 
     Args:
         op_types: iterable of op_type strings present in the graph

@@ -5,7 +5,7 @@ needed to record it: that is the point of the tool, and worth saying out loud.
 
 Set up before recording: `pip install -r requirements.txt`, then
 `pip install onnxruntime-qnn` (the local HTP compiler), and
-`python -m scripts.fetch_speech` for the audio. Terminal at a large font.
+`python -m tools.fetch_speech` for the audio. Terminal at a large font.
 
 ---
 

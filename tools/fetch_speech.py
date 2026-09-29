@@ -12,9 +12,9 @@ Keeping them disjoint matters: calibrating on the clips you evaluate on would
 flatter the accuracy number.
 
 Usage:
-    python -m scripts.fetch_speech
+    python -m tools.fetch_speech
     python -m converter.quantize ... --audio-dir data/speech/calib
-    python -m scripts.eval_wer --audio-dir data/speech/eval
+    python -m tools.eval_wer --audio-dir data/speech/eval
 """
 
 import argparse
@@ -51,7 +51,7 @@ def fetch(out_dir: Path, n_calib: int) -> dict:
         if audio.ndim > 1:
             audio = audio.mean(axis=1)
         if sr != SAMPLE_RATE:
-            from scripts.transcriber import resample
+            from speech.transcriber import resample
             audio = resample(audio, sr, SAMPLE_RATE)
 
         split_dir = out_dir / split

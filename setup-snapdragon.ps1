@@ -57,7 +57,7 @@ if (-not $SkipInstall) {
 Step "Hexagon NPU"
 $probe = @'
 import json, platform
-from scripts.qnn_ep import register_plugin, npu_available, _plugin_devices
+from runtime.qnn_ep import register_plugin, npu_available, _plugin_devices
 registered = register_plugin()
 devices = [(d.ep_name, str(d.device.type), d.device.vendor) for d in _plugin_devices()]
 print(json.dumps({"registered": registered, "npu": npu_available(),
@@ -88,14 +88,14 @@ Step "Shipped model on the NPU"
 $model = "models\whisper-tiny-qdq\encoder_model.onnx"
 if (-not (Test-Path $model)) {
     Note "No converted model yet. Build one on a prep host:"
-    Note "  python -m scripts.run_pipeline --model openai/whisper-tiny --quantized-dir ./models/whisper-tiny-qdq"
+    Note "  python -m tools.run_pipeline --model openai/whisper-tiny --quantized-dir ./models/whisper-tiny-qdq"
     Note "Skipping the model check."
 } else {
     python -m scanner --input models\whisper-tiny-qdq\ --compile-check
     $strict = @'
 import sys
 from pathlib import Path
-from scripts.qnn_ep import create_session
+from runtime.qnn_ep import create_session
 try:
     session = create_session(Path(r"models/whisper-tiny-qdq/encoder_model.onnx"),
                              {"htp_arch": "73"}, cache_dir=Path(".qnn_cache"), strict=True)
@@ -119,7 +119,7 @@ except Exception as exc:
 Step "Ready"
 Note "Dashboard:      python -m server.app      then open http://127.0.0.1:8000"
 Note "Scan any model: python -m scanner --input <model.onnx> --compile-check"
-Note "Accuracy:       python -m scripts.eval_wer"
+Note "Accuracy:       python -m tools.eval_wer"
 
 if ($Serve) {
     Step "Starting the dashboard on http://127.0.0.1:8000"

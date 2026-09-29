@@ -16,7 +16,7 @@ binaries without executing them. Needs `pip install onnxruntime-qnn`.
 
 Passing locally is necessary, not sufficient: the local QNN SDK version may
 differ from a given device's, and graph finalization can still fail on silicon.
-Confirm with `python -m scripts.aihub_validate`.
+Confirm with `python -m validate.aihub`.
 """
 
 import logging
@@ -66,7 +66,7 @@ def compile_check(
       error          compiler/session error text, if compilation failed
       float_model    no Q/DQ nodes: QNN EP will run it as FP16 on the HTP
     """
-    from scripts.qnn_ep import compile_only_available, create_session
+    from runtime.qnn_ep import compile_only_available, create_session
 
     result = {"available": compile_only_available(), "qnn_version": local_qnn_version()}
     if not result["available"]:
