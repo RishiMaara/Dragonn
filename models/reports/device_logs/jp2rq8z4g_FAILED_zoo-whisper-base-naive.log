@@ -1,0 +1,76 @@
+[29/Sept/2026:05:25:15 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:05:25:15 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:05:25:15 -08:00: profiler/info] -=- Tungsten running task: compiling -=-
+[29/Sept/2026:05:25:15 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:22:25:15 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] No on-device processing required for ONNX model Models/model.onnx.
+[28/Sept/2026:22:25:15 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Status Successfully Compiled with t = 0 us and usage: before = 0.0 kB; peakBefore = 0.0 kB; mallocUnusedBefore = 0.0 kB; after = 0.0 kB; peakAfter = 0.0 kB; mallocUnusedAfter = 0.0 kB; increase = 0.0-0.0 kB; peak = 0.0-0.0 kB
+[28/Sept/2026:22:25:15 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp2rq8z4g\job_jp2rq8z4g_results.bin
+[29/Sept/2026:05:25:15 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:05:25:15 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:05:25:15 -08:00: profiler/info] -=- Tungsten running task: loading -=-
+[29/Sept/2026:05:25:16 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp2rq8z4g\job_jp2rq8z4g_results.bin
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Loading onnx model C:\Temp\TestContent\Models\model.onnx
+[28/Sept/2026:22:25:16 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] PageFaultCount: 5819
+[28/Sept/2026:22:25:16 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] PeakWorkingSetSize: 21151744
+[28/Sept/2026:22:25:16 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] WorkingSetSize: 21151744
+[28/Sept/2026:22:25:16 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:22:25:16 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] QuotaPagedPoolUsage: 257784
+[28/Sept/2026:22:25:16 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] QuotaPeakNonPagedPoolUsage: 13384
+[28/Sept/2026:22:25:16 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] PagefileUsage: 4972544
+[28/Sept/2026:22:25:16 -07:00: profiler/debug] [job_id: jp2rq8z4g] [model.onnx] PeakPagefileUsage: 4972544
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Current memory commmit: 4856.0 kB.
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Adding QNN Execution Provider using C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll.
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] profiling_level = optrace
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Creating context binary cache: C:\Temp\QDC_logs\TungstenCache\model.onnx_11670091639314237005_13435177446000\model_ctx.onnx
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] htp_performance_mode = burst
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] htp_graph_finalization_optimization_mode = 3
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] enable_htp_fp16_precision = 1. This should normally be '1' unless the model is fully quantized or on a device that does not support fp16.
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] skip_qnn_version_check = 1
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] context_priority = normal
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] offload_graph_io_quantization = 1
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Adding CPU Execution Provider
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Loaded ONNX Runtime version 1.30.0.
+[28/Sept/2026:22:25:16 -07:00: profiler/info] [job_id: jp2rq8z4g] [model.onnx] Loading ONNX model from mapped file C:\Temp\TestContent\Models\model.onnx.
+[28/Sept/2026:22:25:16 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'input_features_scale' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:16 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'conv1d_output_quantized' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:16 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'val_2' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:16 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'conv1d' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'gelu_scale' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'conv1d_1_output_quantized' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'val_9' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'conv1d_1' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'embedding' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'val_80' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'linear_4' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'node_add_1' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'val_145' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'linear_10' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'node_add_3' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'val_210' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'linear_16' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'node_add_5' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'val_275' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'linear_22' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'node_add_7' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'val_340' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'linear_28' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'node_add_9' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'val_405' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'linear_34' that is not owned by an OrtGraph.
+[28/Sept/2026:22:25:17 -07:00: profiler/warning] [job_id: jp2rq8z4g] [model.onnx] [onnxruntime] Unable to get producer node for OrtValueInfo 'node_add_11' that is not owned by an OrtGraph.
+The process ended because of an access violation. * Float16::to_float_alt (QnnHtp)
+ * Float16::to_float_alt (QnnHtp)
+ * Float16::to_float_alt (QnnHtp)
+ * Float16::from_raw (QnnHtp)
+ * getPkgPerChannelOpsTmpMap (QnnHtp)
+ * getPkgPerChannelOpsTmpMap (QnnHtp)
+ * getPkgPerChannelOpsTmpMap (QnnHtp)
+ * QnnInterface_getProviders (QnnHtp)
+ * QnnInterface_getProviders (QnnHtp)
+ * ReleaseEpFactory (onnxruntime_providers_qnn)
+ * ReleaseEpFactory (onnxruntime_providers_qnn)
+ * ReleaseEpFactory (onnxruntime_providers_qnn)
+ * ReleaseEpFactory (onnxruntime_providers_qnn)
+ * ReleaseEpFactory (onnxruntime_providers_qnn)
+ * ? (?)

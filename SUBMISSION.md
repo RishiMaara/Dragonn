@@ -105,6 +105,8 @@ Then `python -m server.app` and open http://127.0.0.1:8000.
 
 ## Demo (5 minutes)
 
+Word-for-word recording script: [`docs/DEMO-SCRIPT.md`](docs/DEMO-SCRIPT.md).
+
 1. **The model the chip rejects** — scan it before owning the chip:
    `python -m scanner --input models/whisper-tiny-int8w/ --compile-check`
    → flagged twice, statically and by Qualcomm's compiler: 9 LayerNorms left on

@@ -1,0 +1,1246 @@
+[29/Sept/2026:00:27:08 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:27:08 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:27:08 -08:00: profiler/info] -=- Tungsten running task: compiling -=-
+[29/Sept/2026:00:27:08 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:27:08 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Status Successfully Compiled with t = 0 us and usage: before = 0.0 kB; peakBefore = 0.0 kB; mallocUnusedBefore = 0.0 kB; after = 0.0 kB; peakAfter = 0.0 kB; mallocUnusedAfter = 0.0 kB; increase = 0.0-0.0 kB; peak = 0.0-0.0 kB
+[28/Sept/2026:17:27:08 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[29/Sept/2026:00:27:08 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:27:08 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:27:08 -08:00: profiler/info] -=- Tungsten running task: loading -=-
+[29/Sept/2026:00:27:08 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:27:08 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[28/Sept/2026:17:27:08 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loading QNN model Models/model.bin.
+[28/Sept/2026:17:27:08 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 5847
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 21282816
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 21282816
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 258648
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 13976
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 4997120
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 4997120
+[28/Sept/2026:17:27:09 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Current memory commmit: 4880.0 kB.
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:17:27:09 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> Initializing HtpProvider
+[28/Sept/2026:17:27:09 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded QNN backend from C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll (version 5.50.0; core API 2.39.0; build ID v2.50.0.260828221209)
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:27:09 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:27:09 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnSystem.dll, with version 1.14.0.
+[28/Sept/2026:17:27:09 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded QNN context binary with build id=v2.50.0.260828221209, for soc '' with 1 cores.
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Creating context from binary with 0 configurations set.
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel: not supported for DeviceId 0 coreId 0 pdId 0
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel not supported on this platform
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded graph hf_whisper_decoder.
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 105817
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 384245760
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 384245760
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 1043256
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 1041288
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 20672
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 17096704
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 17096704
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Status Successfully Loaded Cold with t = 402117 us and usage: before = 4880.0 kB; peakBefore = 4880.0 kB; mallocUnusedBefore = 0.0 kB; after = 16696.0 kB; peakAfter = 16696.0 kB; mallocUnusedAfter = 0.0 kB; increase = 11816.0-11816.0 kB; peak = 11816.0-11816.0 kB
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[28/Sept/2026:17:27:10 -07:00: profiler/info]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[29/Sept/2026:00:27:10 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:27:10 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:27:10 -08:00: profiler/info] -=- Tungsten running task: loading -=-
+[29/Sept/2026:00:27:10 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loading QNN model Models/model.bin.
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 5853
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 21315584
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 21315584
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 264848
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 257608
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 13784
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 4976640
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 4976640
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Current memory commmit: 4860.0 kB.
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> Initializing HtpProvider
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded QNN backend from C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll (version 5.50.0; core API 2.39.0; build ID v2.50.0.260828221209)
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:27:10 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnSystem.dll, with version 1.14.0.
+[28/Sept/2026:17:27:10 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded QNN context binary with build id=v2.50.0.260828221209, for soc '' with 1 cores.
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Creating context from binary with 0 configurations set.
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel: not supported for DeviceId 0 coreId 0 pdId 0
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel not supported on this platform
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded graph hf_whisper_decoder.
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 72479
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 247943168
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 247943168
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 777056
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 775096
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 21328
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 16826368
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 16826368
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Status Successfully Loaded Warm with t = 283875 us and usage: before = 4860.0 kB; peakBefore = 4860.0 kB; mallocUnusedBefore = 0.0 kB; after = 16432.0 kB; peakAfter = 16432.0 kB; mallocUnusedAfter = 0.0 kB; increase = 11572.0-11572.0 kB; peak = 11572.0-11572.0 kB
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[28/Sept/2026:17:27:11 -07:00: profiler/info]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[29/Sept/2026:00:27:11 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:27:11 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:27:11 -08:00: profiler/info] -=- Tungsten running task: performing inference -=-
+[29/Sept/2026:00:27:11 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Starting profiler
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loading QNN model Models/model.bin.
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 5859
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 21336064
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 21336064
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 257688
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 13800
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 5001216
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 5001216
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Current memory commmit: 4884.0 kB.
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> Initializing HtpProvider
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded QNN backend from C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll (version 5.50.0; core API 2.39.0; build ID v2.50.0.260828221209)
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:27:11 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnSystem.dll, with version 1.14.0.
+[28/Sept/2026:17:27:11 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded QNN context binary with build id=v2.50.0.260828221209, for soc '' with 1 cores.
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Creating context from binary with 0 configurations set.
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel: not supported for DeviceId 0 coreId 0 pdId 0
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel not supported on this platform
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded graph hf_whisper_decoder.
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 72476
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 247263232
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 247263232
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 777560
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 775080
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 20672
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 16150528
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 16150528
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Status Successfully Loaded Warm with t = 292714 us and usage: before = 4884.0 kB; peakBefore = 4884.0 kB; mallocUnusedBefore = 0.0 kB; after = 15772.0 kB; peakAfter = 15772.0 kB; mallocUnusedAfter = 0.0 kB; increase = 10888.0-10888.0 kB; peak = 10888.0-10888.0 kB
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Applying performance mode Burst to device 0, core 0.
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 75151
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 258199552
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 258199552
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 777560
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 776040
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 22488
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 26804224
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 26804224
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Current memory commmit: 26176.0 kB.
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 77739
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 268722176
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 263004160
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 777832
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 777832
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 24512
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 31571968
+[28/Sept/2026:17:27:12 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 37335040
+[28/Sept/2026:17:27:12 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Successfully ran model for 100 iterations across 1 batches in 0.265 sec.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Status Successfully Performed Inference with t = 2408 us and usage: before = 26176.0 kB; peakBefore = 26176.0 kB; mallocUnusedBefore = 0.0 kB; after = 30832.0 kB; peakAfter = 36460.0 kB; mallocUnusedAfter = 0.0 kB; increase = 4656.0-4656.0 kB; peak = 10284.0-10284.0 kB
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[28/Sept/2026:17:27:13 -07:00: profiler/info]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[29/Sept/2026:00:27:13 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:27:13 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:27:13 -08:00: profiler/info] -=- Tungsten running task: performing inference by layer -=-
+[29/Sept/2026:00:27:13 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Starting profiler
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loading QNN model Models/model.bin.
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 5861
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 21340160
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 21340160
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 258744
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 14168
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 4993024
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 4993024
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Current memory commmit: 4876.0 kB.
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> Initializing HtpProvider
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded QNN backend from C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll (version 5.50.0; core API 2.39.0; build ID v2.50.0.260828221209)
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnSystem.dll, with version 1.14.0.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded QNN context binary with build id=v2.50.0.260828221209, for soc '' with 1 cores.
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] Creating context from binary with 0 configurations set.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel: not supported for DeviceId 0 coreId 0 pdId 0
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel not supported on this platform
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Loaded graph hf_whisper_decoder.
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 105830
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 384303104
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 384303104
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 1043248
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 1041288
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 20560
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 17092608
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 17092608
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Status Successfully Loaded Warm with t = 302064 us and usage: before = 4876.0 kB; peakBefore = 4876.0 kB; mallocUnusedBefore = 0.0 kB; after = 16692.0 kB; peakAfter = 16692.0 kB; mallocUnusedAfter = 0.0 kB; increase = 11816.0-11816.0 kB; peak = 11816.0-11816.0 kB
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Applying performance mode Burst to device 0, core 0.
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 108376
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 394711040
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 394711040
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 1043248
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 1042248
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 22504
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 27217920
+[28/Sept/2026:17:27:13 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 27217920
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Current memory commmit: 26580.0 kB.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 11 profiler events.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 509 profiler sub-events.
+[28/Sept/2026:17:27:13 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PageFaultCount: 111444
+[28/Sept/2026:17:27:14 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakWorkingSetSize: 405237760
+[28/Sept/2026:17:27:14 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] WorkingSetSize: 396472320
+[28/Sept/2026:17:27:14 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakPagedPoolUsage: 1045384
+[28/Sept/2026:17:27:14 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPagedPoolUsage: 1042504
+[28/Sept/2026:17:27:14 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] QuotaPeakNonPagedPoolUsage: 26760
+[28/Sept/2026:17:27:14 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PagefileUsage: 28676096
+[28/Sept/2026:17:27:14 -07:00: profiler/debug] [job_id: jp0m8y4ng] [model.bin] PeakPagefileUsage: 37752832
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 11 profiler events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 509 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:14 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Successfully ran model for 2 iterations across 1 batches in 1.994 sec.
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Status Successfully Performed Inference By Layer with t = 661292 us and usage: before = 26580.0 kB; peakBefore = 26580.0 kB; mallocUnusedBefore = 0.0 kB; after = 28004.0 kB; peakAfter = 36868.0 kB; mallocUnusedAfter = 0.0 kB; increase = 1424.0-1424.0 kB; peak = 10288.0-10288.0 kB
+[28/Sept/2026:17:27:15 -07:00: profiler/info] [job_id: jp0m8y4ng] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jp0m8y4ng\job_jp0m8y4ng_results.bin
+[28/Sept/2026:17:27:15 -07:00: profiler/info]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList

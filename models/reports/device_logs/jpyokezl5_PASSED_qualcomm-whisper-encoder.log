@@ -1,0 +1,816 @@
+[29/Sept/2026:00:30:55 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:30:55 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:30:55 -08:00: profiler/info] -=- Tungsten running task: compiling -=-
+[29/Sept/2026:00:30:55 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Status Successfully Compiled with t = 0 us and usage: before = 0.0 kB; peakBefore = 0.0 kB; mallocUnusedBefore = 0.0 kB; after = 0.0 kB; peakAfter = 0.0 kB; mallocUnusedAfter = 0.0 kB; increase = 0.0-0.0 kB; peak = 0.0-0.0 kB
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[29/Sept/2026:00:30:55 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:30:55 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:30:55 -08:00: profiler/info] -=- Tungsten running task: loading -=-
+[29/Sept/2026:00:30:55 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loading QNN model Models/model.bin.
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 5854
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 21278720
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 21278720
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 264848
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 258664
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 13976
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 5017600
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 5017600
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Current memory commmit: 4900.0 kB.
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> Initializing HtpProvider
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded QNN backend from C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll (version 5.50.0; core API 2.39.0; build ID v2.50.0.260828221209)
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnSystem.dll, with version 1.14.0.
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded QNN context binary with build id=v2.50.0.260828221209, for soc '' with 1 cores.
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Creating context from binary with 0 configurations set.
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel: not supported for DeviceId 0 coreId 0 pdId 0
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel not supported on this platform
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded graph hf_whisper_encoder.
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 69347
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 234594304
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 234594304
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 737912
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 734928
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 20536
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 24039424
+[28/Sept/2026:17:30:55 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 24039424
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Status Successfully Loaded Cold with t = 380360 us and usage: before = 4900.0 kB; peakBefore = 4900.0 kB; mallocUnusedBefore = 0.0 kB; after = 23476.0 kB; peakAfter = 23476.0 kB; mallocUnusedAfter = 0.0 kB; increase = 18576.0-18576.0 kB; peak = 18576.0-18576.0 kB
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[28/Sept/2026:17:30:55 -07:00: profiler/info]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[29/Sept/2026:00:30:55 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:30:55 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:30:55 -08:00: profiler/info] -=- Tungsten running task: loading -=-
+[29/Sept/2026:00:30:55 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:30:55 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loading QNN model Models/model.bin.
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 5858
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 21282816
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 21282816
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 257592
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 13784
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 4968448
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 4968448
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Current memory commmit: 4852.0 kB.
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> Initializing HtpProvider
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded QNN backend from C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll (version 5.50.0; core API 2.39.0; build ID v2.50.0.260828221209)
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnSystem.dll, with version 1.14.0.
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded QNN context binary with build id=v2.50.0.260828221209, for soc '' with 1 cores.
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Creating context from binary with 0 configurations set.
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel: not supported for DeviceId 0 coreId 0 pdId 0
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel not supported on this platform
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded graph hf_whisper_encoder.
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 36017
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 98275328
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 98275328
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 471672
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 468688
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 21328
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 23760896
+[28/Sept/2026:17:30:56 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 23760896
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Status Successfully Loaded Warm with t = 244394 us and usage: before = 4852.0 kB; peakBefore = 4852.0 kB; mallocUnusedBefore = 0.0 kB; after = 23204.0 kB; peakAfter = 23204.0 kB; mallocUnusedAfter = 0.0 kB; increase = 18352.0-18352.0 kB; peak = 18352.0-18352.0 kB
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[28/Sept/2026:17:30:56 -07:00: profiler/info]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[29/Sept/2026:00:30:56 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:30:56 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:30:56 -08:00: profiler/info] -=- Tungsten running task: performing inference -=-
+[29/Sept/2026:00:30:56 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:30:56 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Starting profiler
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loading QNN model Models/model.bin.
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 5854
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 21291008
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 21291008
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 257688
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 13800
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 4968448
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 4968448
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Current memory commmit: 4852.0 kB.
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> Initializing HtpProvider
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded QNN backend from C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll (version 5.50.0; core API 2.39.0; build ID v2.50.0.260828221209)
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnSystem.dll, with version 1.14.0.
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded QNN context binary with build id=v2.50.0.260828221209, for soc '' with 1 cores.
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Creating context from binary with 0 configurations set.
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel: not supported for DeviceId 0 coreId 0 pdId 0
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel not supported on this platform
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded graph hf_whisper_encoder.
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 36168
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 98193408
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 98193408
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 471672
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 468688
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 20704
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 23674880
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 23674880
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Status Successfully Loaded Warm with t = 255517 us and usage: before = 4852.0 kB; peakBefore = 4852.0 kB; mallocUnusedBefore = 0.0 kB; after = 23120.0 kB; peakAfter = 23120.0 kB; mallocUnusedAfter = 0.0 kB; increase = 18268.0-18268.0 kB; peak = 18268.0-18268.0 kB
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Applying performance mode Burst to device 0, core 0.
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 36354
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 98955264
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 98955264
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 471672
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 469648
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 22488
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 24170496
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 24170496
+[28/Sept/2026:17:30:57 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Current memory commmit: 23604.0 kB.
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 36484
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 99483648
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 99483648
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 471672
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 471440
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 24376
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 24645632
+[28/Sept/2026:17:30:57 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 24645632
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Successfully ran model for 100 iterations across 1 batches in 2.508 sec.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Status Successfully Performed Inference with t = 24748 us and usage: before = 23604.0 kB; peakBefore = 23604.0 kB; mallocUnusedBefore = 0.0 kB; after = 24068.0 kB; peakAfter = 24068.0 kB; mallocUnusedAfter = 0.0 kB; increase = 464.0-464.0 kB; peak = 464.0-464.0 kB
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[28/Sept/2026:17:31:00 -07:00: profiler/info]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[29/Sept/2026:00:31:00 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:00:31:00 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:00:31:00 -08:00: profiler/info] -=- Tungsten running task: performing inference by layer -=-
+[29/Sept/2026:00:31:00 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Starting profiler
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loading QNN model Models/model.bin.
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 5849
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 21262336
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 21262336
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 258744
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 14168
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 4939776
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 4939776
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Current memory commmit: 4824.0 kB.
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> Initializing HtpProvider
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded QNN backend from C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll (version 5.50.0; core API 2.39.0; build ID v2.50.0.260828221209)
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Found asset Models/model.bin in C:\Temp\TestContent\Models/model.bin.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnSystem.dll, with version 1.14.0.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded QNN context binary with build id=v2.50.0.260828221209, for soc '' with 1 cores.
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] Creating context from binary with 0 configurations set.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel: not supported for DeviceId 0 coreId 0 pdId 0
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin]  <W> setInferenceBufferForHtpExtensionSkel not supported on this platform
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Loaded graph hf_whisper_encoder.
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 69379
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 234700800
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 234700800
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 738152
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 734912
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 20672
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 24088576
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 24088576
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Status Successfully Loaded Warm with t = 546387 us and usage: before = 4824.0 kB; peakBefore = 4824.0 kB; mallocUnusedBefore = 0.0 kB; after = 23524.0 kB; peakAfter = 23524.0 kB; mallocUnusedAfter = 0.0 kB; increase = 18700.0-18700.0 kB; peak = 18700.0-18700.0 kB
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Applying performance mode Burst to device 0, core 0.
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 69565
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 235462656
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 235462656
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 738152
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 735872
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 22488
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 24584192
+[28/Sept/2026:17:31:00 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 24584192
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Current memory commmit: 24008.0 kB.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 11 profiler events.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 294 profiler sub-events.
+[28/Sept/2026:17:31:00 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PageFaultCount: 70038
+[28/Sept/2026:17:31:01 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakWorkingSetSize: 236683264
+[28/Sept/2026:17:31:01 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] WorkingSetSize: 236638208
+[28/Sept/2026:17:31:01 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakPagedPoolUsage: 739008
+[28/Sept/2026:17:31:01 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPagedPoolUsage: 737760
+[28/Sept/2026:17:31:01 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] QuotaPeakNonPagedPoolUsage: 26624
+[28/Sept/2026:17:31:01 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PagefileUsage: 25456640
+[28/Sept/2026:17:31:01 -07:00: profiler/debug] [job_id: jpyokezl5] [model.bin] PeakPagefileUsage: 25616384
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 11 profiler events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 294 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:01 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Got 0 profiler sub-events.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Successfully ran model for 2 iterations across 1 batches in 1.591 sec.
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Status Successfully Performed Inference By Layer with t = 410113 us and usage: before = 24008.0 kB; peakBefore = 24008.0 kB; mallocUnusedBefore = 0.0 kB; after = 24860.0 kB; peakAfter = 25016.0 kB; mallocUnusedAfter = 0.0 kB; increase = 852.0-852.0 kB; peak = 1008.0-1008.0 kB
+[28/Sept/2026:17:31:02 -07:00: profiler/info] [job_id: jpyokezl5] [model.bin] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_jpyokezl5\job_jpyokezl5_results.bin
+[28/Sept/2026:17:31:02 -07:00: profiler/info]  <W> m_CFBCallbackInfoObj is not initialized, return emptyList

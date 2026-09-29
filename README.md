@@ -473,6 +473,14 @@ Exporting with the TorchScript exporter and eager attention removed those ops;
 the same models then compiled into one graph and ran — MiniLM at 1.29 ms,
 DistilBERT at 2.44 ms. The model was never the problem.
 
+The device said so itself, in as many words
+([log](models/reports/device_logs/jp8edo2op_FAILED_minilm-bridge-dynamo-export.log)):
+
+```
+QNN.backendValidateOpConfig() failed for node `node_GatherND_46` of type `GatherNd` with error code 3110
+Error loading: Failed to finalize QNN graph. Error: QNN_COMMON_ERROR_MEM_ALLOC ... Code: 1002
+```
+
 ### Accuracy — word error rate on real speech
 
 57 held-out LibriSpeech clips (325 s, 803 words), disjoint from the 16 calibration
@@ -570,6 +578,7 @@ Dragonn/
   verified on real hardware, how to run it on an HP Snapdragon laptop, and what
   I did not prove.
 - [`docs/Hexagon-Bridge-Submission.pptx`](docs/Hexagon-Bridge-Submission.pptx) — the deck.
+- [`docs/DEMO-SCRIPT.md`](docs/DEMO-SCRIPT.md) — the five-minute demo, command by command.
 - [`models/reports/README.md`](models/reports/README.md) — every claim above,
   indexed to the file that backs it, including the X Elite's own logs.
 

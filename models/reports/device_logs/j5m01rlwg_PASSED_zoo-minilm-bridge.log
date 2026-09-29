@@ -1,0 +1,209 @@
+[29/Sept/2026:05:19:42 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:05:19:42 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:05:19:43 -08:00: profiler/info] -=- Tungsten running task: compiling -=-
+[29/Sept/2026:05:19:43 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] No on-device processing required for ONNX model Models/model.onnx.
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Status Successfully Compiled with t = 0 us and usage: before = 0.0 kB; peakBefore = 0.0 kB; mallocUnusedBefore = 0.0 kB; after = 0.0 kB; peakAfter = 0.0 kB; mallocUnusedAfter = 0.0 kB; increase = 0.0-0.0 kB; peak = 0.0-0.0 kB
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
+[29/Sept/2026:05:19:43 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:05:19:43 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:05:19:43 -08:00: profiler/info] -=- Tungsten running task: loading -=-
+[29/Sept/2026:05:19:43 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading onnx model C:\Temp\TestContent\Models\model.onnx
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 5817
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 21147648
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 21147648
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 257880
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 13224
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 4956160
+[28/Sept/2026:22:19:43 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 4956160
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Current memory commmit: 4840.0 kB.
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Adding QNN Execution Provider using C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll.
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] profiling_level = optrace
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Creating context binary cache: C:\Temp\QDC_logs\TungstenCache\model.onnx_11670091639314237005_13435177424000\model_ctx.onnx
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] htp_performance_mode = burst
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] htp_graph_finalization_optimization_mode = 3
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] enable_htp_fp16_precision = 1. This should normally be '1' unless the model is fully quantized or on a device that does not support fp16.
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] skip_qnn_version_check = 1
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] context_priority = normal
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] offload_graph_io_quantization = 1
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Adding CPU Execution Provider
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loaded ONNX Runtime version 1.30.0.
+[28/Sept/2026:22:19:43 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading ONNX model from file path C:\Temp\TestContent\Models\model.onnx with an external weight file.
+[28/Sept/2026:22:19:47 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.
+[28/Sept/2026:22:19:47 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Rerunning with verbose output on a non-minimal build will show node assignments.
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 248440
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 676098048
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 532598784
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 994696
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 988856
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 36456
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 329510912
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 474349568
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Status Successfully Loaded Cold with t = 3930121 us and usage: before = 4840.0 kB; peakBefore = 4840.0 kB; mallocUnusedBefore = 0.0 kB; after = 321788.0 kB; peakAfter = 463232.0 kB; mallocUnusedAfter = 0.0 kB; increase = 316948.0-316948.0 kB; peak = 458392.0-458392.0 kB
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loaded onnx model.
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] Found QNN interface provider with API version 2.39.
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
+[29/Sept/2026:05:19:47 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:05:19:47 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:05:19:47 -08:00: profiler/info] -=- Tungsten running task: loading -=-
+[29/Sept/2026:05:19:47 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading onnx model C:\Temp\TestContent\Models\model.onnx
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 5841
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 21241856
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 21241856
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 264848
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 257512
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 14088
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 4988928
+[28/Sept/2026:22:19:47 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 4988928
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Current memory commmit: 4872.0 kB.
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Adding QNN Execution Provider using C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll.
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] htp_performance_mode = burst
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] htp_graph_finalization_optimization_mode = 3
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] enable_htp_fp16_precision = 1. This should normally be '1' unless the model is fully quantized or on a device that does not support fp16.
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] skip_qnn_version_check = 1
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] context_priority = normal
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] offload_graph_io_quantization = 1
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Adding CPU Execution Provider
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loaded ONNX Runtime version 1.30.0.
+[28/Sept/2026:22:19:47 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading ONNX cached context binary from file path C:\Temp\QDC_logs\TungstenCache\model.onnx_11670091639314237005_13435177424000\model_ctx.onnx.
+[28/Sept/2026:22:19:47 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] EP QNNExecutionProvider reports compiled model is supported but suboptimal. Consider recompiling for better performance.
+[28/Sept/2026:22:19:48 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Failed to create context with file mapping enabled. Error: QNN_COMMON_ERROR_NOT_SUPPORTED: API or feature is not supported by implementation., Code : 1000. Retrying with feature disabled.
+[28/Sept/2026:22:19:48 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.
+[28/Sept/2026:22:19:48 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Rerunning with verbose output on a non-minimal build will show node assignments.
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 57164
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 136392704
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 100323328
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 548712
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 546848
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 24112
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 29380608
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 65916928
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Status Successfully Loaded Warm with t = 654318 us and usage: before = 4872.0 kB; peakBefore = 4872.0 kB; mallocUnusedBefore = 0.0 kB; after = 28692.0 kB; peakAfter = 64372.0 kB; mallocUnusedAfter = 0.0 kB; increase = 23820.0-23820.0 kB; peak = 59500.0-59500.0 kB
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loaded onnx model.
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
+[29/Sept/2026:05:19:48 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:05:19:48 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:05:19:48 -08:00: profiler/info] -=- Tungsten running task: performing inference -=-
+[29/Sept/2026:05:19:48 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] Starting profiler
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading onnx model C:\Temp\TestContent\Models\model.onnx
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 5840
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 21241856
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 21241856
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 257784
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 13624
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 4984832
+[28/Sept/2026:22:19:48 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 4984832
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Current memory commmit: 4868.0 kB.
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Adding QNN Execution Provider using C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll.
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] htp_performance_mode = burst
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] htp_graph_finalization_optimization_mode = 3
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] enable_htp_fp16_precision = 1. This should normally be '1' unless the model is fully quantized or on a device that does not support fp16.
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] skip_qnn_version_check = 1
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] context_priority = normal
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] offload_graph_io_quantization = 1
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Adding CPU Execution Provider
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loaded ONNX Runtime version 1.30.0.
+[28/Sept/2026:22:19:48 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading ONNX cached context binary from file path C:\Temp\QDC_logs\TungstenCache\model.onnx_11670091639314237005_13435177424000\model_ctx.onnx.
+[28/Sept/2026:22:19:48 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] EP QNNExecutionProvider reports compiled model is supported but suboptimal. Consider recompiling for better performance.
+[28/Sept/2026:22:19:49 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Failed to create context with file mapping enabled. Error: QNN_COMMON_ERROR_NOT_SUPPORTED: API or feature is not supported by implementation., Code : 1000. Retrying with feature disabled.
+[28/Sept/2026:22:19:49 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.
+[28/Sept/2026:22:19:49 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Rerunning with verbose output on a non-minimal build will show node assignments.
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 57215
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 135655424
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 99586048
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 548696
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 546832
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 24112
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 28639232
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 66101248
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Status Successfully Loaded Warm with t = 653022 us and usage: before = 4868.0 kB; peakBefore = 4868.0 kB; mallocUnusedBefore = 0.0 kB; after = 27968.0 kB; peakAfter = 64552.0 kB; mallocUnusedAfter = 0.0 kB; increase = 23100.0-23100.0 kB; peak = 59684.0-59684.0 kB
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loaded onnx model.
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 57272
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 135655424
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 99819520
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 548696
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 547792
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 26144
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 28647424
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 66101248
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Current memory commmit: 27976.0 kB.
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 57459
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 135655424
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 100585472
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 552240
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 552240
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 27776
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 29753344
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 66101248
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Successfully ran model for 100 iterations across 1 batches in 0.134 sec.
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Status Successfully Performed Inference with t = 1273 us and usage: before = 27976.0 kB; peakBefore = 64552.0 kB; mallocUnusedBefore = 0.0 kB; after = 29056.0 kB; peakAfter = 64552.0 kB; mallocUnusedAfter = 0.0 kB; increase = 1080.0-1080.0 kB; peak = 36576.0-36576.0 kB
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
+[29/Sept/2026:05:19:49 -08:00: profiler/info] Detected Qualcomm SOC=SC8380XP. SOC Model=60, Hexagon arch=73, supports QNN=true, unsigned PDs=true, fp16=true, QNN flavor=default.
+[29/Sept/2026:05:19:49 -08:00: profiler/info] This device type has up to 1 HTP cores but this may not reflect the current device's configuration.
+[29/Sept/2026:05:19:49 -08:00: profiler/info] -=- Tungsten running task: performing inference by layer -=-
+[29/Sept/2026:05:19:49 -08:00: profiler/info] Setting Windows DLL directory to C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc.
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading previously saved results in C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] Starting profiler
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading onnx model C:\Temp\TestContent\Models\model.onnx
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 5837
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 21233664
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 21233664
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 264832
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 258840
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 14280
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 4980736
+[28/Sept/2026:22:19:49 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 4980736
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Current memory commmit: 4864.0 kB.
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Adding QNN Execution Provider using C:\Temp\TestContent\bin\qnn_sdk\default\2.50.0\aarch64-windows-msvc\QnnHtp.dll.
+[28/Sept/2026:22:19:49 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] profiling_level = optrace
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] htp_performance_mode = burst
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] htp_graph_finalization_optimization_mode = 3
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] enable_htp_fp16_precision = 1. This should normally be '1' unless the model is fully quantized or on a device that does not support fp16.
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] skip_qnn_version_check = 1
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] context_priority = normal
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] offload_graph_io_quantization = 1
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Adding CPU Execution Provider
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loaded ONNX Runtime version 1.30.0.
+[28/Sept/2026:22:19:50 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loading ONNX cached context binary from file path C:\Temp\QDC_logs\TungstenCache\model.onnx_11670091639314237005_13435177424000\model_ctx.onnx.
+[28/Sept/2026:22:19:51 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] EP QNNExecutionProvider reports compiled model is supported but suboptimal. Consider recompiling for better performance.
+[28/Sept/2026:22:19:51 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Failed to create context with file mapping enabled. Error: QNN_COMMON_ERROR_NOT_SUPPORTED: API or feature is not supported by implementation., Code : 1000. Retrying with feature disabled.
+[28/Sept/2026:22:19:51 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.
+[28/Sept/2026:22:19:51 -07:00: profiler/warning] [job_id: j5m01rlwg] [model.onnx] [onnxruntime] Rerunning with verbose output on a non-minimal build will show node assignments.
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 123918
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 272097280
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 236355584
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 814920
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 813056
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 24112
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 28942336
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 65499136
+[28/Sept/2026:22:19:51 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Status Successfully Loaded Warm with t = 1556888 us and usage: before = 4864.0 kB; peakBefore = 4864.0 kB; mallocUnusedBefore = 0.0 kB; after = 28264.0 kB; peakAfter = 63964.0 kB; mallocUnusedAfter = 0.0 kB; increase = 23400.0-23400.0 kB; peak = 59100.0-59100.0 kB
+[28/Sept/2026:22:19:51 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Loaded onnx model.
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 123973
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 272097280
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 236580864
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 814920
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 814016
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 26144
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 28942336
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 65499136
+[28/Sept/2026:22:19:51 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Current memory commmit: 28264.0 kB.
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PageFaultCount: 124264
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakWorkingSetSize: 272097280
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] WorkingSetSize: 237740032
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakPagedPoolUsage: 818464
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPagedPoolUsage: 818464
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] QuotaPeakNonPagedPoolUsage: 28040
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PagefileUsage: 30347264
+[28/Sept/2026:22:19:51 -07:00: profiler/debug] [job_id: j5m01rlwg] [model.onnx] PeakPagefileUsage: 65499136
+[28/Sept/2026:22:19:51 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Successfully ran model for 2 iterations across 1 batches in 0.031 sec.
+[28/Sept/2026:22:19:51 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Status Successfully Performed Inference By Layer with t = 11514 us and usage: before = 28264.0 kB; peakBefore = 63964.0 kB; mallocUnusedBefore = 0.0 kB; after = 29636.0 kB; peakAfter = 63964.0 kB; mallocUnusedAfter = 0.0 kB; increase = 1372.0-1372.0 kB; peak = 35700.0-35700.0 kB
+[28/Sept/2026:22:19:51 -07:00: profiler/info] [job_id: j5m01rlwg] [model.onnx] Saving results to C:\Temp\QDC_logs\TungstenArtifacts\Results\job_j5m01rlwg\job_j5m01rlwg_results.bin
