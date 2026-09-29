@@ -133,7 +133,7 @@ failure. Measured on a real X Elite, one model per row
 
 | Naively quantized model | What the chip did | What it cost |
 |---|---|---|
-| CLIP ViT-B/32 vision | ran **fully on the NPU** — 557/557 layers | nothing measurable |
+| CLIP ViT-B/32 vision | ran **fully on the NPU** — 450/450 layers, 3.06 ms | nothing measurable |
 | MiniLM-L6 | ran on the NPU — 232/234 layers, 1.09 ms | same top search hit: 100% → **63.3%** |
 | MobileNetV2 | one NPU graph, nothing on CPU | top-1: 79.5% → **7.2%** |
 | whisper-base | **crashed the device runtime** — access violation; locally the compiler had left `ConvInteger` ×2 and `DynamicQuantizeLinear` ×2 on CPU | WER 8.84% → **11.33%**, when it runs at all |
@@ -560,9 +560,18 @@ Dragonn/
 ├── dashboard/     live UI: upload, microphone, scored samples, provider telemetry
 ├── tests/         31 tests, one per real bug — run on every push (Ubuntu, and Windows + QNN plugin)
 ├── models/        generated models (gitignored) + reports/ — the evidence, committed
-├── docs/          README images
+├── docs/          README images + the submission deck
 └── data/          downloaded speech (gitignored; python -m scripts.fetch_speech)
 ```
+
+## For the judges
+
+- [`SUBMISSION.md`](SUBMISSION.md) — the one-page version: what it is, what's
+  verified on real hardware, how to run it on an HP Snapdragon laptop, and what
+  I did not prove.
+- [`docs/Hexagon-Bridge-Submission.pptx`](docs/Hexagon-Bridge-Submission.pptx) — the deck.
+- [`models/reports/README.md`](models/reports/README.md) — every claim above,
+  indexed to the file that backs it, including the X Elite's own logs.
 
 ## License
 

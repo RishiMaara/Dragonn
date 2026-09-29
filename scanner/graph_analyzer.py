@@ -81,8 +81,8 @@ class CoverageReport:
         for. In the wrong format the honest answer is "this number doesn't
         apply", and 0.0 is how that is reported here — not a prediction that
         every node lands on CPU. On a real X Elite a dynamically quantized CLIP
-        ran 557/557 layers on the NPU, while MiniLM in the same format failed to
-        finalize; the compile check and the device are the authorities.
+        ran 450/450 layers on the NPU, while whisper-base in the same format crashed
+        the device runtime; the compile check and the device are the authorities.
         """
         return 0.0 if self.format_error else self.coverage_percent
 

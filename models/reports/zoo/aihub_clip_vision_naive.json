@@ -1,0 +1,21 @@
+{
+  "name": "clip-vision-naive",
+  "job": "j5wl0vemp",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/j5wl0vemp/",
+  "total_layers": 450,
+  "layers_by_unit": {
+    "NPU": 450
+  },
+  "npu_layer_percent": 100.0,
+  "npu_time_percent": 100.0,
+  "non_npu_layer_types": {},
+  "inference_ms_median": 3.06,
+  "inference_ms_p90": 3.17,
+  "inference_ms_min": 3.007,
+  "inference_runs": 100,
+  "inference_peak_memory_mb": 197.97,
+  "first_load_ms": 16333.361,
+  "warm_load_ms": 709.457,
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all"
+}

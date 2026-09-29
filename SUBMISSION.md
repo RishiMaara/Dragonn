@@ -105,12 +105,14 @@ Then `python -m server.app` and open http://127.0.0.1:8000.
 
 ## Demo (5 minutes)
 
-1. **The silent failure** — scan the naively quantized model:
+1. **The model the chip rejects** — scan it before owning the chip:
    `python -m scanner --input models/whisper-tiny-int8w/ --compile-check`
-   → 0% NPU, the exact ops named, no error anywhere else in the stack.
-2. **The fix** — scan the shipped model: one NPU graph, 100%.
-3. **The chip's verdict** — the committed device logs: the same tool's prediction
-   next to the X Elite's own log rejecting one model and accepting the other.
+   → flagged twice, statically and by Qualcomm's compiler: 9 LayerNorms left on
+   CPU, the graph split into 9 NPU fragments. No other tool in the stack complains.
+2. **The fix** — scan the shipped model: 100%, one NPU graph, in about 4 seconds.
+3. **The chip's verdict** — the committed device logs, side by side: this tool's
+   prediction, and the X Elite's own log rejecting that first model
+   (`error 3110`, nine times) and accepting the second.
 4. **The app** — dashboard transcribes a held-out clip and reports which provider
    actually ran the encoder, with word error rate against the reference.
 5. **Breadth** — `models/reports/zoo/README.md`: the same two paths across five

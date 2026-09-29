@@ -678,7 +678,7 @@ def detect_quantization_format_error(op_types) -> dict | None:
                 "fixed-point engine that needs them baked in. QNN EP's QDQ builders do "
                 "not consume this family, and what happens next varies by model and SDK "
                 "version. Measured on a real Snapdragon X Elite: a CLIP vision tower ran "
-                "entirely on the NPU (557/557 layers), whisper-base kept its ConvInteger "
+                "entirely on the NPU (450/450 layers), whisper-base kept its ConvInteger "
                 "and DynamicQuantizeLinear nodes on CPU, and MiniLM failed to finalize at "
                 "all (QNN_COMMON_ERROR_MEM_ALLOC). What did not vary is accuracy: this "
                 "format lost to static a16w8 on every model tested — MobileNetV2 drops "

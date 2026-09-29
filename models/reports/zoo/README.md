@@ -17,8 +17,8 @@ Written by `python -m scripts.aihub_precompiled` — Qualcomm AI Hub, device `Sn
 
 | Model | Median | Placement | Outcome |
 |---|---|---|---|
-| clip-naive | 3.19 ms | 557 on NPU | ✅ ran |
 | clip-vision-bridge | 2.55 ms | 2 on CPU, 482 on NPU | ✅ ran |
+| clip-vision-naive | 3.06 ms | 450 on NPU | ✅ ran |
 | distilbert-sst2-bridge | 2.44 ms | 248 on NPU, 1 on CPU | ✅ ran |
 | minilm-bridge | 1.29 ms | 245 on NPU, 1 on CPU | ✅ ran |
 | minilm-naive | 1.09 ms | 2 on CPU, 232 on NPU | ✅ ran |
