@@ -1,0 +1,27 @@
+{
+  "question": "Can the unquantized FP32 whisper-tiny encoder run on the Hexagon NPU through ONNX Runtime QNN EP (enable_htp_fp16_precision=1, the default)?",
+  "model": "models/whisper-tiny-onnx/encoder_model.onnx (FP32, no quantization)",
+  "local_compile_check": {
+    "qnn_sdk": "2.50 (onnxruntime-qnn 2.6.0, x64, compile-only)",
+    "session.disable_cpu_ep_fallback": "PASS - every node assigned to QNN EP",
+    "scanner_coverage": "100.0% (156/156 compute nodes)"
+  },
+  "device": "Snapdragon X Elite CRD (SC8380XP, Hexagon v73) via Qualcomm AI Hub",
+  "device_runtime": {
+    "qnn_sdk": "2.45.0",
+    "onnxruntime": "1.27.1",
+    "enable_htp_fp16_precision": "1"
+  },
+  "jobs": {
+    "jg9zk7ywp": "FAILED - Failed to finalize QNN graph. Error code: 6000 (qnn_model.cc:382 QnnModel::FinalizeGraphs)",
+    "jgdd8yqrg": "FAILED - Failed to finalize QNN graph (same model, second device, reproduced)"
+  },
+  "device_log": "device_logs/jg9zk7ywp_FAILED_fp32-as-fp16.log",
+  "same_device_a16w8_model": "PASSED - 185/187 layers on NPU, 17.8 ms median (aihub_validation.json)",
+  "conclusion": [
+    "Runtime FP32->FP16 conversion by QNN EP is not a safe path to the NPU on the device's QNN version, even though it compiles on a newer local SDK.",
+    "A local compile check can pass on a model the device rejects when the SDK versions differ; the real-device check stays the final word.",
+    "Qualcomm's own float Whisper is compiled ahead of time by AI Hub (--quantize_full_type float16) rather than converted at runtime by QNN EP."
+  ],
+  "date": "2026-09-21"
+}

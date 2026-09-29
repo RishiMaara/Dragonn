@@ -145,6 +145,7 @@ def create_session(
     sess_options=None,
     require_qnn: bool = True,
     cache_dir: str | Path | None = None,
+    strict: bool = False,
 ):
     """
     Build an InferenceSession on QNN EP (HTP backend) with CPU fallback for any
@@ -157,6 +158,10 @@ def create_session(
     it on later starts instead of recompiling. On a real Snapdragon X Elite,
     whisper-tiny's cold load (which includes HTP graph finalization) measured
     5.28 s vs 0.53 s warm. Not combinable with caller-supplied sess_options.
+
+    strict: refuse to build the session if any node would fall back to CPU,
+    using ONNX Runtime's own session.disable_cpu_ep_fallback. It answers
+    "all on the NPU?" but not which nodes or why — the scanner does that.
     """
     import onnxruntime as ort
 
@@ -166,8 +171,17 @@ def create_session(
         )
     options = {"backend_path": htp_backend_path(), **(provider_options or {})}
 
+    def fresh():
+        so = ort.SessionOptions()
+        if strict:
+            so.add_session_config_entry("session.disable_cpu_ep_fallback", "1")
+        return so
+
     if cache_dir is None:
-        session = _open(model_path, options, sess_options or ort.SessionOptions())
+        so = sess_options or ort.SessionOptions()
+        if strict:
+            so.add_session_config_entry("session.disable_cpu_ep_fallback", "1")
+        session = _open(model_path, options, so)
         _verify(session, require_qnn)
         return session
 
@@ -177,7 +191,7 @@ def create_session(
     ctx_path = context_cache_path(model_path, cache_dir, options)
     if ctx_path.exists():
         try:
-            session = _open(ctx_path, options, ort.SessionOptions())
+            session = _open(ctx_path, options, fresh())
             _verify(session, require_qnn)
             logger.info(f"Loaded cached HTP context {ctx_path.name} — graph compilation skipped")
             return session
@@ -186,7 +200,7 @@ def create_session(
             ctx_path.unlink(missing_ok=True)
 
     ctx_path.parent.mkdir(parents=True, exist_ok=True)
-    so = ort.SessionOptions()
+    so = fresh()
     so.add_session_config_entry("ep.context_enable", "1")
     so.add_session_config_entry("ep.context_file_path", str(ctx_path))
     session = _open(model_path, options, so)

@@ -33,7 +33,7 @@ jobs:
       # The annotate plugin turns each test failure into a check annotation, so
       # failures are readable from the public API without opening the log.
       - name: Install test dependencies
-        run: pip install onnxruntime==1.26.0 numpy onnx fastapi httpx python-multipart soundfile librosa rich pytest pytest-github-actions-annotate-failures
+        run: pip install onnxruntime==1.26.0 numpy onnx fastapi httpx python-multipart soundfile soxr scipy rich pytest pytest-github-actions-annotate-failures
 
       - name: Install QNN plugin (x64 HTP compiler, compile-only)
         if: matrix.qnn

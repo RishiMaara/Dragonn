@@ -16,6 +16,7 @@ All device results come from **Snapdragon X Elite CRD** on Qualcomm AI Hub
 | Same device, session 1: FP32-CPU 986 ms, **silent fallback 1241 ms (0.79x)**, NPU 41.7 ms (24x) | [`aihub_baseline_session1.json`](aihub_baseline_session1.json) | `jgk2yj9ng`, `j5ql2jmop`, `jp2rm1o6g` |
 | **Trap 3:** the X Elite rejecting signed-int8 LayerNorm — 18 × `backendValidateOpConfig ... error code 3110`, 14 × `Failed to finalize QNN graph` | [`device_logs/j57edm49p_FAILED_int8-weights.log`](device_logs/j57edm49p_FAILED_int8-weights.log) | profile `j57edm49p` |
 | The same device accepting the fixed model — zero rejections | [`device_logs/jpxlee83p_PASSED_shipped-model.log`](device_logs/jpxlee83p_PASSED_shipped-model.log) | profile `jpxlee83p` |
+| **Skipping quantization doesn't work either:** the FP32 encoder compiles fully for the HTP on the local QNN 2.50 SDK, then fails `Failed to finalize QNN graph` (error 6000) on the X Elite's QNN 2.45 — twice | [`aihub_fp32_on_htp_FAILED.json`](aihub_fp32_on_htp_FAILED.json), [`device_logs/jg9zk7ywp_FAILED_fp32-as-fp16.log`](device_logs/jg9zk7ywp_FAILED_fp32-as-fp16.log) | profiles `jg9zk7ywp`, `jgdd8yqrg` |
 | WER with the encoder on the NPU: **14.07%** vs 12.70% on CPU | [`wer_report.json`](wer_report.json) | inference `jg9z991wp` |
 | Why: per clip, the NPU's encoder outputs vs CPU (median cosine 0.9987); 11 transcripts changed — 6 worse, 2 better, net +11 errors; sign test p ≈ 0.29 | [`wer_npu_vs_cpu_per_clip.json`](wer_npu_vs_cpu_per_clip.json) | outputs of `jg9z991wp`, decoded locally |
 

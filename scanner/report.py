@@ -374,6 +374,13 @@ def describe_htp_compile(htp: dict, markup: bool = False) -> str:
         body = (f"{b(f'Split into {graphs} NPU graphs', 'red')}; compiler left on CPU: {cpu}. "
                 f"{htp.get('boundary_ops', 0)} quantize/dequantize nodes shuttle data between "
                 f"the NPU fragments and the CPU. Static analysis cannot see this; the compiler can.")
+    if htp.get("float_model") and not htp.get("error"):
+        body += (
+            f"\n{b('Float model:', 'yellow')} QNN EP converts it to FP16 when the session loads. "
+            "The FP32 whisper-tiny encoder passed this exact check on QNN 2.50 and then failed "
+            "to finalize on a real X Elite running QNN 2.45 (AI Hub jobs jg9zk7ywp, jgdd8yqrg). "
+            "Quantize statically, or compile ahead of time with AI Hub, before relying on the NPU."
+        )
     return body + (
         "\nPassing locally is necessary, not sufficient — the device's QNN version may differ. "
         "Confirm with: python -m scripts.aihub_validate"

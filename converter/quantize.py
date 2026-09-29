@@ -221,10 +221,8 @@ class WhisperCalibrationDataReader:
             if audio.ndim > 1:
                 audio = audio.mean(axis=1)
             if sr != self._sampling_rate:
-                import librosa
-                audio = librosa.resample(
-                    audio, orig_sr=sr, target_sr=self._sampling_rate
-                )
+                from scripts.transcriber import resample
+                audio = resample(audio, sr, self._sampling_rate)
             return audio
 
         # Synthetic voiced speech: harmonic stack on a varying f0, shaped by a
@@ -291,6 +289,159 @@ def _model_size_mb(model_path: Path) -> float:
         logger.debug(f"Could not resolve external data for {model_path.name}: {e}")
 
     return total / (1024 * 1024)
+
+
+# Ops an attention mask feeds (Olive's ReplaceAttentionMaskValue.ALLOWED_CONSUMER_OPS).
+MASK_CONSUMER_OPS = {"Add", "Mul", "Expand", "Where", "Shape"}
+
+
+def clamp_extreme_constants(
+    model_path: str | Path,
+    output_path: str | Path,
+    limit: float = -30.0,
+    threshold: float = -1e30,
+) -> int:
+    """
+    Replace attention-mask "negative infinity" constants with a finite value.
+
+    PyTorch masks padded attention positions by adding torch.finfo(float32).min
+    (-3.4e38). Static quantization calibrates on the result: the tensor's range
+    becomes ±3.4e38, the 16-bit step size lands at ~5e33, and every real
+    activation (~1-10) quantizes to zero. Measured on MiniLM: embedding cosine
+    vs FP32 fell to 0.37 — worse than no quantization at all, with no error
+    anywhere.
+
+    -30 is equivalent after softmax: a masked position ends up ~1e-13 of the
+    weight of an unmasked one, while the tensor's range stays quantizable.
+
+    This is a known fix, not a new one: Olive's ReplaceAttentionMaskValue graph
+    surgery does the same (its QNN CLIP recipe uses -50) and Qualcomm's AI Hub
+    Whisper builds its masks with MASK_NEG = -100. Like Olive, only constants
+    whose every consumer is a mask-style op are touched, so a large negative
+    weight elsewhere in the graph is left alone.
+
+    Returns the number of constants rewritten (0 means the graph was clean).
+    """
+    import onnx
+    from onnx import numpy_helper
+
+    model = onnx.load(str(model_path))
+    rewritten = 0
+
+    consumers: dict[str, set[str]] = {}
+    for node in model.graph.node:
+        for name in node.input:
+            consumers.setdefault(name, set()).add(node.op_type)
+
+    def fix(tensor, name: str) -> bool:
+        if not consumers.get(name, {""}) <= MASK_CONSUMER_OPS:
+            return False
+        array = numpy_helper.to_array(tensor)
+        if not np.issubdtype(array.dtype, np.floating):
+            return False
+        bad = ~np.isfinite(array) & (array < 0) | (array <= threshold)
+        if not bad.any():
+            return False
+        patched = np.where(bad, np.array(limit, array.dtype), array)
+        tensor.CopyFrom(numpy_helper.from_array(patched.astype(array.dtype), tensor.name))
+        return True
+
+    for initializer in model.graph.initializer:
+        rewritten += fix(initializer, initializer.name)
+    for node in model.graph.node:
+        for attribute in node.attribute:
+            if attribute.name == "value" and attribute.HasField("t"):
+                rewritten += fix(attribute.t, node.output[0])
+
+    onnx.save(model, str(output_path), save_as_external_data=_model_size_mb(Path(model_path)) > 1900)
+    return rewritten
+
+
+class ListCalibrationReader:
+    """Calibration reader over a prepared list of input feeds — works for any model."""
+
+    def __init__(self, feeds):
+        self._feeds = list(feeds)
+        self._i = 0
+
+    def get_next(self) -> Optional[dict]:
+        if self._i >= len(self._feeds):
+            return None
+        self._i += 1
+        return self._feeds[self._i - 1]
+
+    def rewind(self):
+        self._i = 0
+
+
+def quantize_qnn(
+    input_model_path: str | Path,
+    output_model_path: str | Path,
+    calibration_feeds: list,
+    activation_type: str = "UINT16",
+    weight_type: str = "UINT8",
+    calibration_method: str = "MinMax",
+) -> dict:
+    """
+    Model-agnostic static QDQ quantization for the Hexagon NPU.
+
+    The same recipe the Whisper pipeline validated on a real Snapdragon X Elite —
+    QNN preprocessing (Gelu / LayerNorm fusion), 16-bit activations, unsigned 8-bit
+    weights, per-tensor — for any ONNX model and any calibration data. The Whisper
+    entry point (quantize_onnx_model) is kept separate so its validated output
+    stays bit-for-bit reproducible.
+
+    Args:
+        calibration_feeds: list of {input_name: np.ndarray} dicts, real data
+    """
+    from onnxruntime.quantization import CalibrationMethod, QuantType, quantize
+    from onnxruntime.quantization.execution_providers.qnn import (
+        get_qnn_qdq_config,
+        qnn_preprocess_model,
+    )
+
+    input_path, output_path = Path(input_model_path), Path(output_model_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    work = Path(tempfile.mkdtemp(prefix="hexbridge_q_"))
+    try:
+        # Rewrite -inf attention-mask constants first: calibrating on them
+        # collapses every real activation to zero (see clamp_extreme_constants).
+        clamped = work / "clamped.onnx"
+        rewritten = clamp_extreme_constants(input_path, clamped)
+        if rewritten:
+            logger.info(f"  Clamped {rewritten} extreme mask constant(s) to -30 before calibration")
+        prepared = clamped if rewritten else input_path
+
+        pre = work / "pre.onnx"
+        changed = qnn_preprocess_model(
+            str(prepared), str(pre), fuse_layernorm=True,
+            save_as_external_data=True, all_tensors_to_one_file=True,
+        )
+        source = pre if changed else prepared
+        config = get_qnn_qdq_config(
+            str(source),
+            ListCalibrationReader(calibration_feeds),
+            calibrate_method=getattr(CalibrationMethod, calibration_method),
+            activation_type=QuantType.QUInt16 if activation_type.upper() == "UINT16" else QuantType.QUInt8,
+            weight_type=QuantType.QUInt8 if weight_type.upper() == "UINT8" else QuantType.QInt8,
+            per_channel=False,
+        )
+        quantize(str(source), str(output_path), config)
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+    import onnx
+    from scanner.op_registry import detect_quantization_format_error
+
+    ops = [n.op_type for n in onnx.load(str(output_path), load_external_data=False).graph.node]
+    return {
+        "input_size_mb": round(_model_size_mb(input_path), 2),
+        "output_size_mb": round(_model_size_mb(output_path), 2),
+        "qdq_nodes": sum(op in ("QuantizeLinear", "DequantizeLinear") for op in ops),
+        "format_error": detect_quantization_format_error(ops),
+        "mask_constants_clamped": rewritten,
+    }
 
 
 def quantize_onnx_model(

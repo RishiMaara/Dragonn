@@ -64,6 +64,7 @@ def compile_check(
       compile_s      wall-clock compile time
       qnn_version    local QNN SDK version
       error          compiler/session error text, if compilation failed
+      float_model    no Q/DQ nodes: QNN EP will run it as FP16 on the HTP
     """
     from scripts.qnn_ep import compile_only_available, create_session
 
@@ -74,6 +75,9 @@ def compile_check(
 
     import onnx
     import onnxruntime as ort
+
+    source_ops = {n.op_type for n in onnx.load(str(model_path), load_external_data=False).graph.node}
+    result["float_model"] = not source_ops & {"QuantizeLinear", "DequantizeLinear"}
 
     work = Path(tempfile.mkdtemp(prefix="hexbridge_htp_"))
     ctx_path = work / "model_ctx.onnx"

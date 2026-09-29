@@ -1,0 +1,61 @@
+{
+  "model": "minilm",
+  "hf_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "use_case": "Text embeddings for local semantic search / RAG",
+  "metric": "same top search result",
+  "size_mb": {
+    "fp32": 86.19,
+    "naive": 21.68,
+    "bridge": 32.93
+  },
+  "headline_key": "same_nearest_neighbour_pct",
+  "checks": {
+    "naive": {
+      "scanner_npu_pct": 0.0,
+      "scanner_format_error": "dynamic_quantization",
+      "scanner_fallback_ops": {
+        "MatMulInteger": 36,
+        "DynamicQuantizeLinear": 24,
+        "IsNaN": 6
+      },
+      "htp_ok": false,
+      "htp_npu_graphs": 2,
+      "htp_cpu_ops": {
+        "Gather": 1,
+        "GatherND": 1
+      },
+      "htp_error": null,
+      "htp_compile_s": 4.4
+    },
+    "bridge": {
+      "scanner_npu_pct": 97.5,
+      "scanner_format_error": null,
+      "scanner_fallback_ops": {
+        "IsNaN": 6
+      },
+      "htp_ok": false,
+      "htp_npu_graphs": 2,
+      "htp_cpu_ops": {
+        "GatherND": 1
+      },
+      "htp_error": null,
+      "htp_compile_s": 1.9
+    }
+  },
+  "accuracy": {
+    "fp32": {
+      "embedding_cosine_vs_fp32": 1.0,
+      "same_nearest_neighbour_pct": 100.0
+    },
+    "naive": {
+      "embedding_cosine_vs_fp32": 0.9576,
+      "same_nearest_neighbour_pct": 62.7
+    },
+    "bridge": {
+      "embedding_cosine_vs_fp32": 0.987,
+      "same_nearest_neighbour_pct": 75.0
+    }
+  },
+  "notes": {},
+  "wall_time_s": 48.6
+}

@@ -16,7 +16,7 @@ from onnx import TensorProto, helper, numpy_helper
 # 1.26 refuses to load — that broke CI when it picked up onnx 1.23.
 IR_VERSION = 10
 
-from converter.quantize import _model_size_mb
+from converter.quantize import _model_size_mb, clamp_extreme_constants
 from scripts.aihub_validate import reconcile, summarize_profile
 from scripts.transcriber import load_audio, word_error_rate
 
@@ -111,6 +111,29 @@ def test_model_size_counts_external_data(tmp_path):
     assert _model_size_mb(path) >= 1.0          # 512*512*4 bytes = 1 MB of weights
 
 
+# ── Attention-mask constants ──────────────────────────────────────────────────
+
+def test_mask_constant_is_clamped_but_other_large_negatives_are_not(tmp_path):
+    """torch.finfo.min in a mask zeroed MiniLM's activations after calibration (cosine 0.37)."""
+    fmin = np.finfo(np.float32).min
+    mask = numpy_helper.from_array(np.array(fmin, np.float32), "mask_value")
+    weight = numpy_helper.from_array(np.full((4, 4), fmin, np.float32), "weight")
+    graph = helper.make_graph(
+        [helper.make_node("Where", ["keep", "x", "mask_value"], ["masked"]),
+         helper.make_node("MatMul", ["masked", "weight"], ["y"])], "g",
+        [helper.make_tensor_value_info("keep", TensorProto.BOOL, [1, 4]),
+         helper.make_tensor_value_info("x", TensorProto.FLOAT, [1, 4])],
+        [helper.make_tensor_value_info("y", TensorProto.FLOAT, [1, 4])], [mask, weight],
+    )
+    src, out = tmp_path / "m.onnx", tmp_path / "clamped.onnx"
+    onnx.save(helper.make_model(graph, ir_version=IR_VERSION, opset_imports=[helper.make_opsetid("", 17)]), src)
+
+    assert clamp_extreme_constants(src, out) == 1
+    inits = {t.name: numpy_helper.to_array(t) for t in onnx.load(out).graph.initializer}
+    assert float(inits["mask_value"]) == -30.0
+    assert (inits["weight"] == fmin).all()          # fed to MatMul: not a mask, untouched
+
+
 # ── QNN EP attachment ─────────────────────────────────────────────────────────
 
 # Scoped to these tests only — a module-level importorskip would silently skip
@@ -188,3 +211,26 @@ def test_classic_provider_list_silently_drops_the_plugin_but_create_session_does
     so.add_session_config_entry("ep.context_file_path", str(tmp_path / "ctx.onnx"))
     session = create_session(path, {"htp_arch": "73"}, so)
     assert "QNNExecutionProvider" in session.get_providers()
+
+
+@needs_qnn
+def test_strict_mode_refuses_a_model_that_would_fall_back_to_cpu(tmp_path):
+    """ONNX Runtime's own guard: an all-or-nothing answer to 'is all of this on the NPU?'."""
+    from scripts.qnn_ep import create_session
+
+    graph = helper.make_graph(
+        [helper.make_node("DynamicQuantizeLinear", ["x"], ["q", "scale", "zp"])], "g",
+        [helper.make_tensor_value_info("x", TensorProto.FLOAT, [1, 4])],
+        [helper.make_tensor_value_info("q", TensorProto.UINT8, [1, 4]),
+         helper.make_tensor_value_info("scale", TensorProto.FLOAT, []),
+         helper.make_tensor_value_info("zp", TensorProto.UINT8, [])],
+    )
+    path = tmp_path / "dq.onnx"
+    onnx.save(helper.make_model(graph, ir_version=IR_VERSION, opset_imports=[helper.make_opsetid("", 17)]), path)
+    create_session(path, {"htp_arch": "73"}, cache_dir=tmp_path / "a")      # default: falls back quietly
+    with pytest.raises(Exception, match="fallback to CPU EP has been explicitly disabled"):
+        create_session(path, {"htp_arch": "73"}, cache_dir=tmp_path / "b", strict=True)
+
+    ok = tmp_path / "add.onnx"
+    _add_model(ok)
+    assert "QNNExecutionProvider" in create_session(ok, {"htp_arch": "73"}, strict=True).get_providers()

@@ -51,8 +51,8 @@ def fetch(out_dir: Path, n_calib: int) -> dict:
         if audio.ndim > 1:
             audio = audio.mean(axis=1)
         if sr != SAMPLE_RATE:
-            import librosa
-            audio = librosa.resample(audio, orig_sr=sr, target_sr=SAMPLE_RATE)
+            from scripts.transcriber import resample
+            audio = resample(audio, sr, SAMPLE_RATE)
 
         split_dir = out_dir / split
         split_dir.mkdir(parents=True, exist_ok=True)

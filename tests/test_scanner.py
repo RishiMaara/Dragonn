@@ -124,3 +124,12 @@ def test_dynamic_quant_graph_reports_zero_effective_coverage(tmp_path):
     assert report.format_error["error"] == "dynamic_quantization"
     assert report.coverage_percent > 0          # node-level still looks partly fine...
     assert report.effective_coverage_percent == 0.0   # ...but nothing runs on the NPU
+
+
+def test_float_model_that_compiles_locally_still_carries_a_device_warning():
+    """FP32 whisper-tiny compiled on QNN 2.50 and failed to finalize on a real X Elite (QNN 2.45)."""
+    from scanner.report import describe_htp_compile
+    passed = {"available": True, "ok": True, "compile_s": 4.1, "qnn_version": "2.50.40",
+              "npu_graphs": 1, "cpu_ops": {}, "boundary_ops": 0}
+    assert "Float model" in describe_htp_compile({**passed, "float_model": True})
+    assert "Float model" not in describe_htp_compile({**passed, "float_model": False})
