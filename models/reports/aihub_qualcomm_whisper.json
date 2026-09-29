@@ -1,0 +1,37 @@
+{
+  "what": "Qualcomm's own AI Hub Whisper-Tiny, compiled by Qualcomm for this chipset, profiled on the same device this project validates on \u2014 the baseline for 'what does a vendor-optimised NPU model cost?'",
+  "source": "https://huggingface.co/qualcomm/Whisper-Tiny release assets v0.63.0, qnn_context_binary for qualcomm-snapdragon-x-elite (QAIRT 2.50, float/FP16)",
+  "device": "Snapdragon X Elite CRD (SC8380XP, Hexagon v73) via Qualcomm AI Hub",
+  "reproduce": "python -m scripts.aihub_precompiled --dir <asset-dir> --name <name>",
+  "date": "2026-09-29",
+  "encoder": {
+    "job": "jpyokezl5",
+    "url": "https://workbench.aihub.qualcomm.com/jobs/jpyokezl5/",
+    "inference_ms_median": 25.021,
+    "inference_ms_min": 24.748,
+    "inference_ms_p90": 25.442,
+    "runs": 100,
+    "first_load_ms": 380.4,
+    "warm_load_ms": 244.4,
+    "peak_memory_mb": 23.5,
+    "compute_units": {
+      "NPU": 294
+    },
+    "layers": 294
+  },
+  "decoder": {
+    "job": "jp0m8y4ng",
+    "url": "https://workbench.aihub.qualcomm.com/jobs/jp0m8y4ng/",
+    "inference_ms_median": 2.599,
+    "inference_ms_min": 2.408,
+    "inference_ms_p90": 2.926,
+    "runs": 100,
+    "first_load_ms": 402.1,
+    "warm_load_ms": 283.9,
+    "peak_memory_mb": 35.6,
+    "compute_units": {
+      "NPU": 509
+    },
+    "layers": 509
+  }
+}

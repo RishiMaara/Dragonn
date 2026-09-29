@@ -1,0 +1,8 @@
+{
+  "name": "whisper-base-naive",
+  "job": "jp2rq8z4g",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/jp2rq8z4g/",
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all",
+  "failed": "The process ended because of an access violation. Consult the runtime log for more details."
+}

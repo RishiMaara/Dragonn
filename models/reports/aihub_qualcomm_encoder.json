@@ -1,0 +1,7 @@
+{
+  "name": "qualcomm-whisper-tiny-encoder",
+  "job": "jgnzd26qg",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/jgnzd26qg/",
+  "failed": "ONNX model and QNN context binary file must have same basename.",
+  "device": "Snapdragon X Elite CRD"
+}

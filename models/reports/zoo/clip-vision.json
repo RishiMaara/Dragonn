@@ -1,0 +1,60 @@
+{
+  "model": "clip-vision",
+  "hf_id": "openai/clip-vit-base-patch32",
+  "use_case": "Image embeddings for photo search (zero-shot)",
+  "metric": "zero-shot accuracy",
+  "size_mb": {
+    "fp32": 335.24,
+    "naive": 84.39,
+    "bridge": 84.59
+  },
+  "headline_key": "zero_shot_accuracy_pct",
+  "checks": {
+    "naive": {
+      "scanner_npu_pct": 0.0,
+      "scanner_format_error": "dynamic_quantization",
+      "scanner_fallback_ops": {
+        "Constant": 81,
+        "MatMulInteger": 73,
+        "DynamicQuantizeLinear": 50,
+        "ConvInteger": 1
+      },
+      "htp_ok": true,
+      "htp_npu_graphs": 1,
+      "htp_cpu_ops": {},
+      "htp_error": null,
+      "htp_compile_s": 37.4
+    },
+    "bridge": {
+      "scanner_npu_pct": 83.7,
+      "scanner_format_error": null,
+      "scanner_fallback_ops": {
+        "Constant": 81
+      },
+      "htp_ok": true,
+      "htp_npu_graphs": 1,
+      "htp_cpu_ops": {},
+      "htp_error": null,
+      "htp_compile_s": 8.6
+    }
+  },
+  "accuracy": {
+    "fp32": {
+      "zero_shot_accuracy_pct": 98.2,
+      "embedding_cosine_vs_fp32": 1.0
+    },
+    "naive": {
+      "zero_shot_accuracy_pct": 98.8,
+      "embedding_cosine_vs_fp32": 0.9562
+    },
+    "bridge": {
+      "zero_shot_accuracy_pct": 98.2,
+      "embedding_cosine_vs_fp32": 0.9661
+    }
+  },
+  "notes": {
+    "mask_constants_clamped": 0,
+    "per_channel": false
+  },
+  "wall_time_s": 117.1
+}

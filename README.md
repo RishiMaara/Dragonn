@@ -11,8 +11,11 @@ exports, quantizes the *QNN-specific* way, and — the part nobody else does —
 you the truth about what will run on the NPU and what will silently fall back to CPU.
 
 **Scope, precisely:** the scanner, the local HTP compile check and the AI Hub
-validation work on any ONNX model. The export and calibration path is built and
-proven for **Whisper** (whisper-tiny's encoder), end to end, on a real Snapdragon X Elite.
+validation work on any ONNX model. The full export → quantize → validate path is
+proven end to end on a real Snapdragon X Elite for **whisper-tiny's encoder**, and
+run across **five more popular models** — MobileNetV2, Whisper-base, MiniLM,
+DistilBERT and CLIP — each profiled on the same device
+([model zoo](models/reports/zoo/README.md)).
 
 ## Results at a glance
 
@@ -27,6 +30,8 @@ number links to its job in [Results](#results):
 | **Accuracy** | Quantized encoder on CPU: **12.70% WER = the FP32 reference**. On the NPU: 14.07% (+1.37, not statistically significant at this sample size) |
 | **Catches the failures** | The scanner flags the exact model a real X Elite rejected — statically, and by running Qualcomm's HTP compiler locally in ~4 s |
 | **Cold start** | Compiled NPU graph cached: session start 3.3 s → 0.1 s (device: 5.2 s cold vs 0.5 s warm) |
+| **Not one model** | Five more models — MobileNetV2, Whisper-base, MiniLM, DistilBERT, CLIP — converted and profiled on the same X Elite. MobileNetV2's naive build places perfectly on the NPU and answers **7.2%** correct; this pipeline's build answers **79.5%**, matching FP32 |
+| **Against the vendor** | Qualcomm's own NPU Whisper-tiny encoder on this device: 25.0 ms. This pipeline's: **17.8 ms**. Their decoder — the piece this project doesn't yet run — is 2.60 ms/token, 509/509 layers on NPU |
 
 **Evidence anyone can open:** the AI Hub job links below only work for the account
 owner, so every result — including the X Elite's own log of rejecting the broken
@@ -98,13 +103,50 @@ numbers, both wrong, pointing the same wrong direction.
 
 ---
 
-## Three traps, stacked
+## The traps, stacked
 
 Fixing one exposed the next. Each one passes every check before it.
 
-### Trap 1 — the wrong format: 0% NPU, no error
+### Trap 0 — "then don't quantize"
 
-Dynamic quantization (above). Fix: static QDQ via ORT's QNN config helpers.
+The obvious escape: the HTP runs float graphs as FP16, and ONNX Runtime converts
+them for you (`enable_htp_fp16_precision`, on by default). The unquantized
+whisper-tiny encoder does compile into a single NPU graph locally, and ONNX
+Runtime's own strict mode accepts it.
+
+It then failed on a real X Elite — `Failed to finalize QNN graph`, error 6000 —
+and again on a second device
+([evidence](models/reports/aihub_fp32_on_htp_FAILED.json),
+[device log](models/reports/device_logs/jg9zk7ywp_FAILED_fp32-as-fp16.log)). The
+local compiler ships QNN 2.50; that device runs 2.45. Qualcomm's own float
+Whisper avoids this by being compiled ahead of time for the chipset instead of
+converted at load. So a local pass outranks a static scan, and only the device
+outranks a local pass.
+
+### Trap 1 — the wrong format: unpredictable placement, reliably worse answers
+
+`quantize_dynamic()` is the recipe most tutorials show. It computes activation
+ranges at runtime, which is not what QNN EP's QDQ path consumes — and the
+consequences turn out to depend on the model, which is worse than a clean
+failure. Measured on a real X Elite, one model per row
+([zoo evidence](models/reports/zoo/README.md)):
+
+| Naively quantized model | What the chip did | What it cost |
+|---|---|---|
+| CLIP ViT-B/32 vision | ran **fully on the NPU** — 557/557 layers | nothing measurable |
+| MiniLM-L6 | ran on the NPU — 232/234 layers, 1.09 ms | same top search hit: 100% → **63.3%** |
+| MobileNetV2 | one NPU graph, nothing on CPU | top-1: 79.5% → **7.2%** |
+| whisper-base | **crashed the device runtime** — access violation; locally the compiler had left `ConvInteger` ×2 and `DynamicQuantizeLinear` ×2 on CPU | WER 8.84% → **11.33%**, when it runs at all |
+
+So this format does not reliably cost you the NPU. It reliably costs you
+accuracy, and what the compiler does with it varies by model and SDK version —
+which is exactly why a scanner that only counts ops isn't enough, and why this
+one also runs the compiler and reconciles against a device.
+
+**This corrected an earlier claim of my own.** The scanner used to report
+"0% NPU — QNN EP will claim none of this graph" for these models. The device
+disagreed, so the wording changed. Fix either way: static QDQ via ORT's QNN
+config helpers, which matched FP32 accuracy on four of the five models here.
 
 ### Trap 2 — the right format at the wrong precision: 100% NPU, wrong answers
 
@@ -184,10 +226,12 @@ HF model → ONNX (static) → QNN static QDQ, real-speech calibration
 | `scanner/` | Registry + per-node quantization rules + **local HTP compile check** — the deliverable |
 | `scripts/qnn_ep.py` | Attaches QNN EP correctly, verifies it, caches compiled graphs |
 | `scripts/aihub_validate.py` | Real X Elite: placement, accuracy on HTP, latency distribution, CPU baseline |
+| `scripts/aihub_precompiled.py` | Profiles an already-compiled model on the device — used to measure Qualcomm's own NPU Whisper as a baseline |
+| `scripts/model_zoo.py` | Runs the naive path and this pipeline across five popular models and writes the comparison |
 | `scripts/eval_wer.py` | Word error rate on held-out speech — locally and with the encoder on a real NPU |
 | `scripts/transcriber.py` | Speech-to-text: encoder on NPU (ONNX), decoder on CPU (PyTorch) |
 | `server/` + `dashboard/` | OpenAI-compatible API; live dashboard with upload, microphone, and scored samples |
-| `tests/` | 28 tests — each pins a bug that produced a wrong number at some point |
+| `tests/` | 31 tests — each pins a bug that produced a wrong number at some point |
 
 ---
 
@@ -208,7 +252,22 @@ pip install onnxruntime-qnn
 The second line is optional on x64: it enables the local HTP compile check
 (Qualcomm's compiler, compile-only — x64 has no NPU to execute on).
 
-**Snapdragon X device (ARM64)** — run on the NPU:
+**Snapdragon X device (ARM64)** — run on the NPU. One command on an HP OmniBook
+or any Windows-on-ARM laptop:
+
+```bash
+powershell -ExecutionPolicy Bypass -File .\setup-snapdragon.ps1
+```
+
+It refuses to continue quietly: it checks that Python is ARM64-native (x64
+Python under Prism emulation can never load `QnnHtp.dll`), installs
+`requirements-device.txt`, confirms ONNX Runtime can actually see the Hexagon
+NPU, and then builds a session for the shipped model with CPU fallback
+*disabled* — so "it runs on the NPU" is proven on your own laptop, not assumed.
+If the NPU driver is too old it says which one you need (30.0.140.0+, via
+Windows Update → Optional updates, or HP Support Assistant).
+
+Manual equivalent:
 
 ```bash
 python -c "import platform; print(platform.machine())"
@@ -356,6 +415,64 @@ session 2: [jp2rjx74g](https://workbench.aihub.qualcomm.com/jobs/jp2rjx74g/),
   session 2 was tight at 17.8 ms. Same graph structure — so device conditions, not
   the model. Quote the range.
 
+### Against Qualcomm's own NPU Whisper
+
+Qualcomm publishes Whisper-Tiny pre-compiled for each chipset — the same model,
+optimised by the vendor, in float (FP16). Running their X Elite build on the same
+device through the same harness ([`aihub_qualcomm_whisper.json`](models/reports/aihub_qualcomm_whisper.json),
+profiles [jpyokezl5](https://workbench.aihub.qualcomm.com/jobs/jpyokezl5/) /
+[jp0m8y4ng](https://workbench.aihub.qualcomm.com/jobs/jp0m8y4ng/)):
+
+| Encoder on the X Elite | Median | Placement | Precision |
+|---|---|---|---|
+| Qualcomm's own build (vendor-compiled) | 25.0 ms | 294 / 294 layers on NPU | float16 |
+| **This project's conversion** | **17.8 ms** | 185 / 187 layers on NPU | a16w8 |
+
+Two honest caveats: the two models are not the same graph (Qualcomm restructures
+attention and keeps float precision, this pipeline quantizes), and the runs are
+eight days apart on a shared device pool. Read it as *"a general-purpose
+quantization path can land in the same league as the vendor's hand-optimised
+build"*, not as a benchmark win.
+
+**And the decoder — the part this project does not yet run on the NPU — measured
+on the same device:** Qualcomm's decoder is **2.60 ms per token**, 509 / 509
+layers on the NPU, with a static 199-slot KV cache. So an NPU-only Whisper-tiny
+transcription of a 30-second clip projects to roughly 17.8 ms + 50 × 2.6 ms ≈
+**150 ms**, against ~990 ms for the encoder alone in FP32 on that device's CPU.
+That is arithmetic over two measured numbers, not an end-to-end measurement —
+see [Honest Status](#honest-status).
+
+### Beyond Whisper — five models, both paths, same device
+
+`python -m scripts.model_zoo` runs each model through the naive path and this
+one, then checks placement three ways and accuracy on held-out real data. Full
+table, including what each one did on the X Elite:
+[`models/reports/zoo/README.md`](models/reports/zoo/README.md).
+
+| Model | Accuracy: FP32 → naive → **this pipeline** | Size FP32 → ours |
+|---|---|---|
+| MobileNetV2 (image classification) | 79.5% → **7.2%** → **79.5%** top-1 | 13.7 → 4.0 MB |
+| Whisper-base (speech) | 8.84% → 11.33% → **8.84%** WER | 78.6 → 20.6 MB |
+| MiniLM-L6 (embeddings) | 100% → 63.3% → 75.0% same top hit | 86.2 → 33.0 MB |
+| DistilBERT SST-2 (sentiment) | 90.7% → 90.7% → **91.0%** | 255.5 → 86.4 MB |
+| CLIP ViT-B/32 (image search) | 98.2% → 98.8% → 98.2% zero-shot | 335.2 → 84.6 MB |
+
+Two findings worth more than the table:
+
+**MobileNetV2 needed per-channel weights.** Per-tensor weights gave a model that
+scans 100% NPU-eligible, compiles to one NPU graph, runs entirely on the chip —
+and gets 1.2% of images right. Depthwise convolutions have per-channel ranges
+that one scale cannot hold. Nothing in the placement toolchain says so; only an
+accuracy check does.
+
+**The exporter mattered more than the quantizer.** PyTorch's newer dynamo
+exporter decomposes attention into a graph carrying `GatherND` and `IsNaN`. That
+split every transformer here into two NPU graphs, and on the real device the
+models then **failed to finalize at all** (`QNN_COMMON_ERROR_MEM_ALLOC`).
+Exporting with the TorchScript exporter and eager attention removed those ops;
+the same models then compiled into one graph and ran — MiniLM at 1.29 ms,
+DistilBERT at 2.44 ms. The model was never the problem.
+
 ### Accuracy — word error rate on real speech
 
 57 held-out LibriSpeech clips (325 s, 803 words), disjoint from the 16 calibration
@@ -400,20 +517,34 @@ effects: the two calibrations differ by 0.0002 in cosine (0.9939 vs 0.9941) but 
 - ✅ **Bit-for-bit reproducible**: rerunning the pipeline rebuilds the exact model
   validated on the X Elite (SHA-256 `7f84fa78…` / `67772ca7…` for `.onnx` / `.onnx.data`)
 - ✅ Compiled-graph cache (3.3 s → 0.1 s locally), invalidated by model or SDK changes
-- ✅ 28 tests; deliberately re-breaking the LayerNorm rule makes them fail
+- ✅ **Five more models converted and run on the same device** — MobileNetV2, MiniLM,
+  DistilBERT, CLIP vision, whisper-base — each landing on the NPU, four of the five
+  holding FP32 accuracy
+- ✅ 31 tests; deliberately re-breaking the LayerNorm rule makes them fail
 
 **Not proven, or known limits:**
 
 - ⚠️ **Only the encoder runs on the NPU.** The decoder runs on CPU (PyTorch), and on
   a Snapdragon it would dominate end-to-end transcription latency — locally the
   decoder takes ~640 ms vs the encoder's ~350 ms on CPU. The speedups above are
-  encoder speedups. Decoder on NPU (static KV cache) is the next step
+  encoder speedups. What is now measured (not assumed) is that a decoder *can* run
+  fully on this NPU: Qualcomm's own static-KV-cache build does, at 2.60 ms/token,
+  509/509 layers on the device. Wiring it into this app needs a physical
+  Snapdragon PC to verify, which I don't have — the 150 ms end-to-end figure above
+  is arithmetic over two measured numbers, not a measured pipeline
 - ⚠️ NPU WER +1.37 points vs CPU — likely small real cost; not yet significant
 - ⚠️ Speedup is 24–57x by AI Hub's CPU numbers, 4–10x against a well-tuned CPU
 - ⚠️ **No power or battery measurement.** AI Hub doesn't expose it; needs a physical device
 - ⚠️ Local QNN (2.50) and the device (2.45) differ: local compile passing is
   necessary, not sufficient. Confirm on device
-- ⚠️ Export/calibration are Whisper-specific; other models need their own calibration data
+- ⚠️ **MiniLM loses retrieval quality**: 75.0% same top hit vs FP32 (the naive path
+  gets 63.3%). Embedding cosine 0.987 looks fine and hides it — a16w8 is not free
+  for every model, and the accuracy check is the only thing that says so
+- ⚠️ **I corrected one of my own claims today.** The scanner used to say dynamic
+  quantization means "0% NPU, QNN EP claims none of this graph". On the device,
+  naive CLIP and MiniLM ran on the NPU anyway. The rule now reports an unsupported
+  format and defers to the compile check and the device
+- ⚠️ Calibration data is per model; the zoo builds it for each of the five
 - ⚠️ English only; like all Whisper models, it can hallucinate short words on non-speech
 
 ---
@@ -427,7 +558,7 @@ Dragonn/
 ├── scripts/       QNN EP attach/cache, AI Hub validation, WER eval, transcriber, pipeline
 ├── server/        OpenAI-compatible transcription API
 ├── dashboard/     live UI: upload, microphone, scored samples, provider telemetry
-├── tests/         28 tests, one per real bug — run on every push (Ubuntu, and Windows + QNN plugin)
+├── tests/         31 tests, one per real bug — run on every push (Ubuntu, and Windows + QNN plugin)
 ├── models/        generated models (gitignored) + reports/ — the evidence, committed
 ├── docs/          README images
 └── data/          downloaded speech (gitignored; python -m scripts.fetch_speech)

@@ -77,9 +77,12 @@ class CoverageReport:
         """
         Coverage after accounting for whole-model format errors.
 
-        A graph can look 85% NPU-eligible node-by-node and still run entirely on
-        CPU because its quantization format is one QNN EP cannot build from.
-        This is the number to report.
+        A node count is only meaningful for a model in a format QNN EP quantizes
+        for. In the wrong format the honest answer is "this number doesn't
+        apply", and 0.0 is how that is reported here — not a prediction that
+        every node lands on CPU. On a real X Elite a dynamically quantized CLIP
+        ran 557/557 layers on the NPU, while MiniLM in the same format failed to
+        finalize; the compile check and the device are the authorities.
         """
         return 0.0 if self.format_error else self.coverage_percent
 
@@ -324,8 +327,9 @@ def analyze_onnx_model(
             f"  QUANTIZATION FORMAT ERROR: {format_error['error']}\n"
             f"    Offending ops: {', '.join(format_error['offending_ops'])}\n"
             f"    {format_error['verdict']}\n"
-            f"    Node-level coverage reads {coverage_pct:.1f}%, but effective "
-            f"NPU coverage is 0% — QNN EP will claim none of this graph."
+            f"    Node-level coverage reads {coverage_pct:.1f}%, but this count means "
+            f"little for a model in the wrong format — run --compile-check to see what "
+            f"Qualcomm's compiler actually does with it, and validate on a device."
         )
     else:
         logger.info(

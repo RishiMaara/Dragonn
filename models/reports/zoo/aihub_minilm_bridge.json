@@ -1,0 +1,24 @@
+{
+  "name": "minilm-bridge",
+  "job": "j5m01rlwg",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/j5m01rlwg/",
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all",
+  "total_layers": 246,
+  "layers_by_unit": {
+    "NPU": 245,
+    "CPU": 1
+  },
+  "npu_layer_percent": 99.6,
+  "npu_time_percent": 98.2,
+  "non_npu_layer_types": {
+    "DequantizeLinear": 1
+  },
+  "inference_ms_median": 1.29,
+  "inference_ms_p90": 1.39,
+  "inference_ms_min": 1.273,
+  "inference_runs": 100,
+  "inference_peak_memory_mb": 63.04,
+  "first_load_ms": 3930.121,
+  "warm_load_ms": 654.318
+}

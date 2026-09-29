@@ -1,0 +1,25 @@
+{
+  "name": "minilm-naive",
+  "job": "jgnzd2wrg",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/jgnzd2wrg/",
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all",
+  "total_layers": 234,
+  "layers_by_unit": {
+    "CPU": 2,
+    "NPU": 232
+  },
+  "npu_layer_percent": 99.1,
+  "npu_time_percent": 98.1,
+  "non_npu_layer_types": {
+    "Gather": 1,
+    "DequantizeLinear": 1
+  },
+  "inference_ms_median": 1.09,
+  "inference_ms_p90": 1.13,
+  "inference_ms_min": 1.056,
+  "inference_runs": 100,
+  "inference_peak_memory_mb": 60.26,
+  "first_load_ms": 4462.167,
+  "warm_load_ms": 575.351
+}

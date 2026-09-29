@@ -112,8 +112,12 @@ def speech_data() -> dict:
 def _export(module, example_inputs: tuple, input_names: list, output_names: list, path: Path):
     import torch
     path.parent.mkdir(parents=True, exist_ok=True)
+    # dynamo=False keeps the TorchScript exporter. PyTorch's newer dynamo
+    # exporter decomposes scaled-dot-product attention into a graph carrying
+    # GatherND and IsNaN, which the HTP compiler leaves on CPU — splitting the
+    # graph in two and, on a real X Elite, failing to allocate memory at all.
     torch.onnx.export(module.eval(), example_inputs, str(path), input_names=input_names,
-                      output_names=output_names, opset_version=17)
+                      output_names=output_names, opset_version=17, dynamo=False)
 
 
 def _session(path: Path):
@@ -162,6 +166,7 @@ class ZooModel:
     export: Callable      # (out_path) -> None
     calib_feeds: Callable  # () -> list[feeds]
     evaluate: Callable     # ({variant: path}) -> {variant: {metric...}}
+    per_channel: bool = False   # depthwise convolutions need per-channel weights
 
 
 def _minilm() -> ZooModel:
@@ -177,7 +182,7 @@ def _minilm() -> ZooModel:
 
     def export(out):
         f = _text_feeds(tok, ["example"])[0]
-        _export(Wrap(AutoModel.from_pretrained(hf)),
+        _export(Wrap(AutoModel.from_pretrained(hf, attn_implementation="eager")),
                 (torch.from_numpy(f["input_ids"]), torch.from_numpy(f["attention_mask"])),
                 ["input_ids", "attention_mask"], ["last_hidden_state"], out)
 
@@ -221,7 +226,7 @@ def _distilbert() -> ZooModel:
 
     def export(out):
         f = _text_feeds(tok, ["example"])[0]
-        _export(Wrap(AutoModelForSequenceClassification.from_pretrained(hf)),
+        _export(Wrap(AutoModelForSequenceClassification.from_pretrained(hf, attn_implementation="eager")),
                 (torch.from_numpy(f["input_ids"]), torch.from_numpy(f["attention_mask"])),
                 ["input_ids", "attention_mask"], ["logits"], out)
 
@@ -269,7 +274,8 @@ def _mobilenet() -> ZooModel:
 
     return ZooModel("mobilenetv2", hf, "Image classification", "Imagenette top-1 accuracy",
                     "top1_accuracy_pct", export,
-                    lambda: _image_feeds(proc, image_data()["folder"], image_data()["calib"]), evaluate)
+                    lambda: _image_feeds(proc, image_data()["folder"], image_data()["calib"]), evaluate,
+                    per_channel=True)   # depthwise convs: per-tensor weights cost 78 points of top-1
 
 
 def _clip_vision() -> ZooModel:
@@ -283,7 +289,7 @@ def _clip_vision() -> ZooModel:
         def forward(s, pixel_values): return s.m(pixel_values=pixel_values).image_embeds
 
     def export(out):
-        _export(Wrap(CLIPVisionModelWithProjection.from_pretrained(hf)),
+        _export(Wrap(CLIPVisionModelWithProjection.from_pretrained(hf, attn_implementation="eager")),
                 (torch.zeros(1, 3, 224, 224),), ["pixel_values"], ["image_embeds"], out)
 
     def evaluate(paths):
@@ -408,8 +414,10 @@ def run_model(name: str) -> dict:
                 shutil.rmtree(work, ignore_errors=True)
     if not paths["bridge"].exists():
         logger.info(f"[{name}] Hexagon Bridge path: static a16w8 QDQ, real calibration data")
-        result = quantize_qnn(paths["fp32"], paths["bridge"], spec.calib_feeds())
+        result = quantize_qnn(paths["fp32"], paths["bridge"], spec.calib_feeds(),
+                              per_channel=spec.per_channel)
         notes["mask_constants_clamped"] = result["mask_constants_clamped"]
+        notes["per_channel"] = result["per_channel"]
 
     logger.info(f"[{name}] scanner + local HTP compiler")
     checks = {}
@@ -440,14 +448,13 @@ def run_model(name: str) -> dict:
 
 
 def _verdict(c: dict) -> str:
-    if c["scanner_format_error"]:
-        return "0% NPU (dynamic quantization)"
+    wrong_format = "wrong format (dynamic quantization) — " if c["scanner_format_error"] else ""
     if c["htp_ok"]:
-        return "one NPU graph"
+        return f"{wrong_format}one NPU graph" if wrong_format else "one NPU graph"
     if c["htp_error"]:
-        return "compile failed"
+        return f"{wrong_format}compile failed"
     cpu = ", ".join(f"{op} ×{n}" for op, n in (c["htp_cpu_ops"] or {}).items())
-    return f"{c['htp_npu_graphs']} NPU graphs; CPU: {cpu}"
+    return f"{wrong_format}{c['htp_npu_graphs']} NPU graph(s); CPU: {cpu}"
 
 
 def _headline(acc: dict, key: str) -> str:
@@ -455,7 +462,10 @@ def _headline(acc: dict, key: str) -> str:
 
 
 def write_summary():
-    reports = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(REPORT_DIR.glob("*.json"))]
+    # Only this script's own per-model reports — device profiles written by
+    # scripts/aihub_precompiled.py live in the same folder.
+    paths = [REPORT_DIR / f"{name}.json" for name in MODELS]
+    reports = [json.loads(p.read_text(encoding="utf-8")) for p in paths if p.exists()]
     lines = [
         "# Model zoo: the silent failure, across popular models",
         "",
@@ -477,6 +487,28 @@ def write_summary():
             f"{_verdict(r['checks']['naive'])} | {_verdict(r['checks']['bridge'])} | "
             f"{r['metric']}: {_headline(a, r['headline_key'])} | {s['fp32']} → {s['bridge']} MB |"
         )
+    device = sorted(REPORT_DIR.glob("aihub_*.json"))
+    if device:
+        lines += [
+            "",
+            "## On a real Snapdragon X Elite",
+            "",
+            "Written by `python -m scripts.aihub_precompiled` — Qualcomm AI Hub, device "
+            "`Snapdragon X Elite CRD`. Local checks predict; only this settles it.",
+            "",
+            "| Model | Median | Placement | Outcome |",
+            "|---|---|---|---|",
+        ]
+        for path in device:
+            r = json.loads(path.read_text(encoding="utf-8"))
+            name = r.get("name", path.stem)
+            if r.get("failed"):
+                lines.append(f"| {name} | — | — | ❌ {r['failed'].replace('Failed to profile the model: ', '')} |")
+                continue
+            units = r.get("layers_by_unit") or r.get("compute_units") or {}
+            placement = ", ".join(f"{n} on {u}" for u, n in units.items()) or f"{r.get('npu_time_percent')}% NPU time"
+            lines.append(f"| {name} | {r.get('inference_ms_median')} ms | {placement} | ✅ ran |")
+
     (REPORT_DIR / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
 

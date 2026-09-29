@@ -1,0 +1,25 @@
+{
+  "name": "clip-vision-bridge",
+  "job": "jpyokey75",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/jpyokey75/",
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all",
+  "total_layers": 484,
+  "layers_by_unit": {
+    "CPU": 2,
+    "NPU": 482
+  },
+  "npu_layer_percent": 99.6,
+  "npu_time_percent": 96.0,
+  "non_npu_layer_types": {
+    "QuantizeLinear": 1,
+    "DequantizeLinear": 1
+  },
+  "inference_ms_median": 2.55,
+  "inference_ms_p90": 28.03,
+  "inference_ms_min": 2.3,
+  "inference_runs": 100,
+  "inference_peak_memory_mb": 124.74,
+  "first_load_ms": 6772.636,
+  "warm_load_ms": 657.145
+}

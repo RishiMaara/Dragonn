@@ -1,0 +1,25 @@
+{
+  "name": "mobilenetv2-bridge",
+  "job": "jp0m8yx6g",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/jp0m8yx6g/",
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all",
+  "total_layers": 71,
+  "layers_by_unit": {
+    "CPU": 2,
+    "NPU": 69
+  },
+  "npu_layer_percent": 97.2,
+  "npu_time_percent": 3.2,
+  "non_npu_layer_types": {
+    "QuantizeLinear": 1,
+    "DequantizeLinear": 1
+  },
+  "inference_ms_median": 0.36,
+  "inference_ms_p90": 10.62,
+  "inference_ms_min": 0.311,
+  "inference_runs": 100,
+  "inference_peak_memory_mb": 31.34,
+  "first_load_ms": 2368.524,
+  "warm_load_ms": 529.053
+}

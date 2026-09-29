@@ -381,6 +381,7 @@ def quantize_qnn(
     activation_type: str = "UINT16",
     weight_type: str = "UINT8",
     calibration_method: str = "MinMax",
+    per_channel: bool = False,
 ) -> dict:
     """
     Model-agnostic static QDQ quantization for the Hexagon NPU.
@@ -393,6 +394,12 @@ def quantize_qnn(
 
     Args:
         calibration_feeds: list of {input_name: np.ndarray} dicts, real data
+        per_channel: one scale per output channel of each weight instead of one
+            per tensor. Depthwise convolutions need it — MobileNetV2's channels
+            span wildly different ranges, and per-tensor weights drop its top-1
+            from 79.5% to 1.2% while every placement check still reads 100% NPU.
+            Transformers don't need it, and it costs graph size, so it is off by
+            default.
     """
     from onnxruntime.quantization import CalibrationMethod, QuantType, quantize
     from onnxruntime.quantization.execution_providers.qnn import (
@@ -425,7 +432,7 @@ def quantize_qnn(
             calibrate_method=getattr(CalibrationMethod, calibration_method),
             activation_type=QuantType.QUInt16 if activation_type.upper() == "UINT16" else QuantType.QUInt8,
             weight_type=QuantType.QUInt8 if weight_type.upper() == "UINT8" else QuantType.QInt8,
-            per_channel=False,
+            per_channel=per_channel,
         )
         quantize(str(source), str(output_path), config)
     finally:
@@ -441,6 +448,7 @@ def quantize_qnn(
         "qdq_nodes": sum(op in ("QuantizeLinear", "DequantizeLinear") for op in ops),
         "format_error": detect_quantization_format_error(ops),
         "mask_constants_clamped": rewritten,
+        "per_channel": per_channel,
     }
 
 

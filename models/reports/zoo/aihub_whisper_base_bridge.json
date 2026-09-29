@@ -1,0 +1,25 @@
+{
+  "name": "whisper-base-bridge",
+  "job": "jp8edokxp",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/jp8edokxp/",
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all",
+  "total_layers": 243,
+  "layers_by_unit": {
+    "CPU": 2,
+    "NPU": 241
+  },
+  "npu_layer_percent": 99.2,
+  "npu_time_percent": 98.5,
+  "non_npu_layer_types": {
+    "QuantizeLinear": 1,
+    "DequantizeLinear": 1
+  },
+  "inference_ms_median": 45.7,
+  "inference_ms_p90": 61.53,
+  "inference_ms_min": 23.521,
+  "inference_runs": 100,
+  "inference_peak_memory_mb": 50.57,
+  "first_load_ms": 8074.762,
+  "warm_load_ms": 1509.194
+}

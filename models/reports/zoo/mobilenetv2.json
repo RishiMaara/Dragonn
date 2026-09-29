@@ -1,0 +1,57 @@
+{
+  "model": "mobilenetv2",
+  "hf_id": "google/mobilenet_v2_1.0_224",
+  "use_case": "Image classification",
+  "metric": "Imagenette top-1 accuracy",
+  "size_mb": {
+    "fp32": 13.67,
+    "naive": 3.61,
+    "bridge": 3.96
+  },
+  "headline_key": "top1_accuracy_pct",
+  "checks": {
+    "naive": {
+      "scanner_npu_pct": 0.0,
+      "scanner_format_error": "dynamic_quantization",
+      "scanner_fallback_ops": {
+        "DynamicQuantizeLinear": 53,
+        "ConvInteger": 52,
+        "MatMulInteger": 1
+      },
+      "htp_ok": true,
+      "htp_npu_graphs": 1,
+      "htp_cpu_ops": {},
+      "htp_error": null,
+      "htp_compile_s": 4.7
+    },
+    "bridge": {
+      "scanner_npu_pct": 100.0,
+      "scanner_format_error": null,
+      "scanner_fallback_ops": {},
+      "htp_ok": true,
+      "htp_npu_graphs": 1,
+      "htp_cpu_ops": {},
+      "htp_error": null,
+      "htp_compile_s": 1.1
+    }
+  },
+  "accuracy": {
+    "fp32": {
+      "top1_accuracy_pct": 79.5,
+      "agreement_with_fp32_pct": 100.0
+    },
+    "naive": {
+      "top1_accuracy_pct": 7.2,
+      "agreement_with_fp32_pct": 7.2
+    },
+    "bridge": {
+      "top1_accuracy_pct": 79.5,
+      "agreement_with_fp32_pct": 93.4
+    }
+  },
+  "notes": {
+    "mask_constants_clamped": 0,
+    "per_channel": true
+  },
+  "wall_time_s": 32.1
+}

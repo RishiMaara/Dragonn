@@ -1,0 +1,56 @@
+{
+  "model": "whisper-base",
+  "hf_id": "openai/whisper-base",
+  "use_case": "Speech recognition (encoder)",
+  "metric": "word error rate",
+  "size_mb": {
+    "fp32": 78.6,
+    "naive": 19.82,
+    "bridge": 20.64
+  },
+  "headline_key": "wer_pct",
+  "checks": {
+    "naive": {
+      "scanner_npu_pct": 0.0,
+      "scanner_format_error": "dynamic_quantization",
+      "scanner_fallback_ops": {
+        "MatMulInteger": 36,
+        "DynamicQuantizeLinear": 26,
+        "ConvInteger": 2
+      },
+      "htp_ok": false,
+      "htp_npu_graphs": 2,
+      "htp_cpu_ops": {
+        "DynamicQuantizeLinear": 2,
+        "ConvInteger": 2
+      },
+      "htp_error": null,
+      "htp_compile_s": 15.9
+    },
+    "bridge": {
+      "scanner_npu_pct": 100.0,
+      "scanner_format_error": null,
+      "scanner_fallback_ops": {},
+      "htp_ok": true,
+      "htp_npu_graphs": 1,
+      "htp_cpu_ops": {},
+      "htp_error": null,
+      "htp_compile_s": 11.8
+    }
+  },
+  "accuracy": {
+    "fp32": {
+      "wer_pct": 8.84
+    },
+    "naive": {
+      "wer_pct": 11.33
+    },
+    "bridge": {
+      "wer_pct": 8.84
+    }
+  },
+  "notes": {
+    "mask_constants_clamped": 0
+  },
+  "wall_time_s": 284.2
+}

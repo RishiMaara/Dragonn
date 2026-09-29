@@ -1,0 +1,24 @@
+{
+  "name": "distilbert-sst2-bridge",
+  "job": "jprlmk79p",
+  "url": "https://workbench.aihub.qualcomm.com/jobs/jprlmk79p/",
+  "device": "Snapdragon X Elite CRD",
+  "options": "--onnx_execution_providers qnn --compute_unit all",
+  "total_layers": 249,
+  "layers_by_unit": {
+    "NPU": 248,
+    "CPU": 1
+  },
+  "npu_layer_percent": 99.6,
+  "npu_time_percent": 99.2,
+  "non_npu_layer_types": {
+    "DequantizeLinear": 1
+  },
+  "inference_ms_median": 2.44,
+  "inference_ms_p90": 2.52,
+  "inference_ms_min": 2.397,
+  "inference_runs": 100,
+  "inference_peak_memory_mb": 118.6,
+  "first_load_ms": 5738.027,
+  "warm_load_ms": 750.585
+}

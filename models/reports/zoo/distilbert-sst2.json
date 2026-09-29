@@ -1,22 +1,22 @@
 {
-  "model": "minilm",
-  "hf_id": "sentence-transformers/all-MiniLM-L6-v2",
-  "use_case": "Text embeddings for local semantic search / RAG",
-  "metric": "same top search result",
+  "model": "distilbert-sst2",
+  "hf_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+  "use_case": "On-device text classification (sentiment)",
+  "metric": "SST-2 accuracy",
   "size_mb": {
-    "fp32": 86.15,
-    "naive": 21.74,
-    "bridge": 33.03
+    "fp32": 255.48,
+    "naive": 64.17,
+    "bridge": 86.44
   },
-  "headline_key": "same_nearest_neighbour_pct",
+  "headline_key": "accuracy_pct",
   "checks": {
     "naive": {
       "scanner_npu_pct": 0.0,
       "scanner_format_error": "dynamic_quantization",
       "scanner_fallback_ops": {
-        "Constant": 68,
-        "MatMulInteger": 36,
-        "DynamicQuantizeLinear": 24,
+        "Constant": 62,
+        "MatMulInteger": 38,
+        "DynamicQuantizeLinear": 26,
         "GreaterOrEqual": 1
       },
       "htp_ok": false,
@@ -25,7 +25,7 @@
         "Gather": 1
       },
       "htp_error": null,
-      "htp_compile_s": 5.5
+      "htp_compile_s": 16.3
     },
     "bridge": {
       "scanner_npu_pct": 100.0,
@@ -35,26 +35,26 @@
       "htp_npu_graphs": 1,
       "htp_cpu_ops": {},
       "htp_error": null,
-      "htp_compile_s": 3.2
+      "htp_compile_s": 6.0
     }
   },
   "accuracy": {
     "fp32": {
-      "embedding_cosine_vs_fp32": 1.0,
-      "same_nearest_neighbour_pct": 100.0
+      "accuracy_pct": 90.7,
+      "agreement_with_fp32_pct": 100.0
     },
     "naive": {
-      "embedding_cosine_vs_fp32": 0.9577,
-      "same_nearest_neighbour_pct": 63.3
+      "accuracy_pct": 90.7,
+      "agreement_with_fp32_pct": 97.3
     },
     "bridge": {
-      "embedding_cosine_vs_fp32": 0.987,
-      "same_nearest_neighbour_pct": 75.0
+      "accuracy_pct": 91.0,
+      "agreement_with_fp32_pct": 99.7
     }
   },
   "notes": {
     "mask_constants_clamped": 1,
     "per_channel": false
   },
-  "wall_time_s": 42.8
+  "wall_time_s": 93.8
 }

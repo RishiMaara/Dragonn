@@ -672,11 +672,17 @@ def detect_quantization_format_error(op_types) -> dict | None:
         return {
             "error": "dynamic_quantization",
             "offending_ops": found_dynamic,
-            "verdict": "This model will run 100% on CPU. The NPU will not be used.",
+            "verdict": "Not the format QNN EP quantizes for. What the NPU does with it is unpredictable.",
             "explanation": (
-                "These ops compute quantization ranges at runtime. The Hexagon NPU is "
-                "a fixed-point engine — ranges must be baked in ahead of time. QNN EP "
-                "has no builders for this op family, so it claims none of the graph."
+                "These ops compute quantization ranges at runtime; the Hexagon NPU is a "
+                "fixed-point engine that needs them baked in. QNN EP's QDQ builders do "
+                "not consume this family, and what happens next varies by model and SDK "
+                "version. Measured on a real Snapdragon X Elite: a CLIP vision tower ran "
+                "entirely on the NPU (557/557 layers), whisper-base kept its ConvInteger "
+                "and DynamicQuantizeLinear nodes on CPU, and MiniLM failed to finalize at "
+                "all (QNN_COMMON_ERROR_MEM_ALLOC). What did not vary is accuracy: this "
+                "format lost to static a16w8 on every model tested — MobileNetV2 drops "
+                "from 79.5% to 7.2% top-1."
             ),
             "fix": (
                 "Re-quantize with static QDQ:\n"
@@ -690,7 +696,7 @@ def detect_quantization_format_error(op_types) -> dict | None:
     return {
         "error": "qoperator_format",
         "offending_ops": found_qoperator,
-        "verdict": "This model will run 100% on CPU. The NPU will not be used.",
+        "verdict": "Not the format QNN EP quantizes for — expect CPU fallback.",
         "explanation": (
             "QOperator format fuses quantization into single integer ops. QNN EP "
             "builds its graph from QDQ node units (DequantizeLinear -> Op -> "
