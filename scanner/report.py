@@ -49,9 +49,9 @@ def _print_rich_report(report, console=None) -> None:
     console = console or Console()
 
     # ── Header ──
-    # Format errors override the node-level grade entirely: a graph can look
-    # 85% NPU-eligible and still run 100% on CPU because QNN EP cannot build
-    # from its quantization format.
+    # Format errors override the node-level grade entirely: the count describes
+    # a model QNN EP quantizes for, and this one isn't. What the stack does with
+    # it varies by model and SDK — the compile check and the device decide.
     fmt_err = getattr(report, "format_error", None)
     if fmt_err:
         console.print()
@@ -63,9 +63,10 @@ def _print_rich_report(report, console=None) -> None:
                 f"Offending ops: [yellow]{', '.join(fmt_err['offending_ops'])}[/yellow]\n\n"
                 f"{fmt_err['explanation']}\n\n"
                 f"[bold]Node-level coverage reads {report.coverage_percent:.1f}%, "
-                f"but effective NPU coverage is 0%.[/bold]\n"
-                f"This is the silent failure: the model loads, returns correct "
-                f"outputs, and never touches the NPU.\n\n"
+                f"but that count means little in this format.[/bold]\n"
+                f"This is the silent part: the model loads and returns plausible "
+                f"outputs either way. Run --compile-check for what the compiler "
+                f"does with it, and validate on a device before trusting either.\n\n"
                 f"[bold green]FIX[/bold green]\n{fmt_err['fix']}"
             ),
             title=f"🔴 {report.model_name}",
@@ -74,15 +75,15 @@ def _print_rich_report(report, console=None) -> None:
         ))
         console.print()
 
-    # A format error forces the headline to 0%. Showing "80% — GOOD" underneath
-    # a panel that says nothing runs on the NPU is exactly the mixed signal this
-    # tool exists to eliminate.
+    # A format error voids the headline percentage: a node count only describes
+    # a model QNN EP quantizes for. Showing "80% — GOOD" above a panel about an
+    # unsupported format is exactly the mixed signal this tool exists to remove.
     coverage = 0.0 if fmt_err else report.coverage_percent
     fallback_nodes = sum(fb["count"] for fb in report.fallback_ops)
     if fmt_err:
         color = "red"
         emoji = "🔴"
-        verdict = "WILL NOT RUN ON NPU — incompatible quantization format"
+        verdict = "UNSUPPORTED QUANTIZATION FORMAT — placement is unpredictable, accuracy is worse"
     elif fallback_nodes and coverage >= 70:
         # A high percentage hides the damage: each CPU node inside the graph
         # splits the NPU graph and forces a round trip. 9 rejected LayerNorms
@@ -130,9 +131,13 @@ def _print_rich_report(report, console=None) -> None:
 
     # ── Coverage Summary ──
     console.print()
+    headline = (
+        "NPU-eligibility: not a meaningful number in this format"
+        if fmt_err else f"{coverage:.1f}% NPU-Eligible"
+    )
     console.print(
-        f"  {emoji} [bold {color}]{coverage:.1f}% NPU-Eligible[/bold {color}]  "
-        f"({report.supported_nodes}/{report.total_nodes} compute nodes)"
+        f"  {emoji} [bold {color}]{headline}[/bold {color}]  "
+        f"({report.supported_nodes}/{report.total_nodes} compute nodes are ops QNN EP supports)"
     )
     console.print(f"     {verdict}")
     console.print()
@@ -491,11 +496,12 @@ def generate_summary_text(reports: dict) -> str:
         fmt_err = getattr(report, "format_error", None)
         if fmt_err:
             lines.append(
-                f"{report.model_name} will NOT run on the NPU. It was quantized as "
+                f"{report.model_name} was quantized as "
                 f"{fmt_err['error'].replace('_', ' ')} "
-                f"({', '.join(fmt_err['offending_ops'])}), which QNN EP cannot consume. "
-                f"Node-level analysis reads {report.coverage_percent:.1f}% NPU-eligible, "
-                f"but effective coverage is 0% — every node falls back to CPU, silently. "
+                f"({', '.join(fmt_err['offending_ops'])}), which is not the format QNN EP "
+                f"quantizes for. Node-level analysis reads {report.coverage_percent:.1f}% "
+                f"NPU-eligible, but that count doesn't describe this model: placement "
+                f"varies by model and SDK version, and accuracy is worse either way. "
                 f"{fmt_err['fix'].splitlines()[0]}"
             )
             continue

@@ -441,16 +441,20 @@ QNN_SUPPORTED_OPS: dict[str, dict] = {
 # ============================================================================
 # QUANTIZATION FORMAT ERRORS
 # ============================================================================
-# These two sets are special. Their presence in a graph is not "one op fell
-# back to CPU" — it means the model was quantized in a format QNN EP cannot
-# consume at all, and the ENTIRE graph will run on CPU.
+# These two sets are special. Their presence is not "one op fell back to CPU" —
+# the model was quantized in a format QNN EP does not quantize for at all.
 #
 # QNN EP builds its graph from QDQ node units:
 #     DequantizeLinear -> Op -> QuantizeLinear
 #
-# It has no builders for either alternative encoding below. A model containing
-# these ops loads fine, produces correct outputs, and never touches the NPU —
-# which is exactly the silent failure this scanner exists to catch.
+# It has no QDQ builders for either encoding below. What the stack then does
+# with such a graph is genuinely unpredictable, and this registry used to claim
+# otherwise ("0% NPU, the entire graph runs on CPU"). Measured on a real X
+# Elite: dynamically quantized CLIP ran 450/450 layers on the NPU, MiniLM ran
+# 232/234, whisper-base kept four ops on CPU in one run and crashed the runtime
+# with an access violation in another. What is constant is the accuracy loss and
+# the unpredictability — and that the model loads and returns plausible outputs
+# throughout, which is the silent failure this scanner exists to catch.
 # ============================================================================
 
 # Emitted by onnxruntime.quantization.quantize_dynamic().
