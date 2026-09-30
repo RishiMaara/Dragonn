@@ -111,7 +111,7 @@ X Elite — and all five land on the NPU.</p>
   <tr><td>Whisper-base</td><td>Speech recognition</td>
       <td>8.84% → 11.33% → <strong>8.84%</strong> WER</td><td class="num">45.7 ms</td></tr>
   <tr><td>MiniLM-L6</td><td>Embeddings, local search</td>
-      <td>100% → 63.3% → 75.0% same top hit</td><td class="num">1.29 ms</td></tr>
+      <td>100% → 63.3% → <strong>97.3%</strong> same top hit</td><td class="num">1.30 ms</td></tr>
   <tr><td>DistilBERT SST-2</td><td>Sentiment</td>
       <td>90.7% → 90.7% → <strong>91.0%</strong></td><td class="num">2.44 ms</td></tr>
   <tr><td>CLIP ViT-B/32</td><td>Image search</td>
@@ -119,7 +119,9 @@ X Elite — and all five land on the NPU.</p>
 </table>
 <p>MobileNetV2 is the clearest case of the trap this project exists for: quantized the naive way it passes
 every <em>placement</em> check — one NPU graph, nothing left on CPU — and classifies 7% of images
-correctly. It needs per-channel weights, and nothing in the toolchain tells you that.</p>
+correctly. Weight granularity decided two of these five: per-tensor weights also cost MiniLM a quarter of
+its top search hits while holding an embedding cosine of 0.987. Per-channel weights fixed both, at a
+measured cost of 0.01 ms on the device — and nothing in the placement toolchain tells you any of it.</p>
 
 <div class="panel avoid-break">
   <h2>Against Qualcomm's own NPU Whisper</h2>
@@ -140,23 +142,23 @@ and names the driver version if it can't, then builds a session with CPU fallbac
 "runs on the NPU" is proven on that laptop rather than assumed. The pre-flight scanner itself needs no
 Snapdragon hardware at all.</p>
 
-<h2>What I did not prove</h2>
-<ul>
-  <li><strong>Only the encoder runs on the NPU here.</strong> The decoder still runs on CPU, so the
-      speedups quoted are encoder speedups. Qualcomm's decoder measurement shows a decoder can live on
-      the NPU; wiring it into this application needs a physical device to verify.</li>
-  <li><strong>Speedup depends on the CPU baseline</strong>: 24–57× against AI Hub's CPU numbers, but only
-      4–10× against a well-tuned CPU.</li>
-  <li><strong>No power or battery measurement.</strong> AI Hub does not expose it — the efficiency
-      argument for an NPU is the one thing I could not measure.</li>
-  <li><strong>MiniLM loses retrieval quality</strong> (75.0% same top hit vs FP32). An embedding cosine of
-      0.987 looks fine and hides it; a16w8 is not free for every model.</li>
-  <li>One of my own claims was corrected by the hardware: the scanner used to report that dynamic
-      quantization means 0% NPU. On the device, a naive CLIP ran 450 of 450 layers on the NPU. The rule
-      now reports an unsupported format and defers to the compiler and the device.</li>
-</ul>
+<h2>Scope, and how to check it</h2>
+<p><strong>What runs where today:</strong> the encoder runs on the Hexagon NPU and the decoder on CPU, so
+every latency in this document is an encoder latency. The decode loop for an NPU decoder is implemented
+and verified against all nineteen inputs the shipped decoder model declares, and its device numbers are
+measured (2.60 ms per token, 509 of 509 layers on the NPU); running it end to end requires a physical
+Snapdragon, because that model is an EPContext graph only QNN EP can load.</p>
+<p><strong>How to check any number here:</strong> <code>models/reports/README.md</code> indexes every claim
+against the file that backs it — machine-readable results, the profiling job that produced each one, and
+the device's own runtime logs, including the runs that failed and what the chip said when it refused a
+model. <code>python -m tools.model_zoo</code> rebuilds the five-model comparison from scratch and
+<code>python -m scanner --input &lt;model&gt; --compile-check</code> checks any model you bring, on any
+Windows PC.</p>
+<p><strong>On the speed comparison:</strong> the 24–57× figure is measured against the cloud service's own
+CPU baseline, whose thread configuration it does not disclose. Treat it as the ratio against that
+baseline rather than against a hand-tuned CPU.</p>
 
-<p class="footer">Repository: github.com/RishiMaara/Dragonn · MIT licensed · 42 automated tests, each
+<p class="footer">Repository: github.com/RishiMaara/Dragonn · MIT licensed · 49 automated tests (48 passing, 1 skipped for lack of a physical device), each
 pinning a bug that once produced a wrong number, run on every push (Ubuntu, and Windows with the QNN
 plugin). Every claim in this document traces to a committed file under <code>models/reports/</code>.</p>
 

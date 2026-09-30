@@ -231,7 +231,7 @@ HF model → ONNX (static) → QNN static QDQ, real-speech calibration
 | `tools/eval_wer.py` | Word error rate on held-out speech — locally and with the encoder on a real NPU |
 | `speech/transcriber.py` | Speech-to-text: encoder on NPU (ONNX), decoder on CPU (PyTorch) |
 | `server/` + `dashboard/` | OpenAI-compatible API; live dashboard with upload, microphone, and scored samples |
-| `tests/` | 31 tests — each pins a bug that produced a wrong number at some point |
+| `tests/` | 49 tests — each pins a bug that produced a wrong number at some point |
 
 ---
 
@@ -453,11 +453,19 @@ table, including what each one did on the X Elite:
 |---|---|---|
 | MobileNetV2 (image classification) | 79.5% → **7.2%** → **79.5%** top-1 | 13.7 → 4.0 MB |
 | Whisper-base (speech) | 8.84% → 11.33% → **8.84%** WER | 78.6 → 20.6 MB |
-| MiniLM-L6 (embeddings) | 100% → 63.3% → 75.0% same top hit | 86.2 → 33.0 MB |
+| MiniLM-L6 (embeddings) | 100% → 63.3% → **97.3%** same top hit | 86.2 → 33.2 MB |
 | DistilBERT SST-2 (sentiment) | 90.7% → 90.7% → **91.0%** | 255.5 → 86.4 MB |
 | CLIP ViT-B/32 (image search) | 98.2% → 98.8% → 98.2% zero-shot | 335.2 → 84.6 MB |
 
-Two findings worth more than the table:
+Three findings worth more than the table:
+
+**Weight granularity decided two of these five.** MobileNetV2's per-tensor build
+placed perfectly on the NPU and got 1.2% of images right; MiniLM's held 0.987
+embedding cosine and still lost a quarter of its top search hits (75.0%).
+Per-channel weights fixed both — 79.5% and 97.3%, both within a point of FP32 —
+while more calibration data and different calibration methods changed nothing
+measurable. Depthwise convolutions and embedding matrices have per-channel
+ranges that a single scale cannot hold, and no placement check will ever say so.
 
 **MobileNetV2 needed per-channel weights.** Per-tensor weights gave a model that
 scans 100% NPU-eligible, compiles to one NPU graph, runs entirely on the chip —
@@ -526,28 +534,35 @@ effects: the two calibrations differ by 0.0002 in cosine (0.9939 vs 0.9941) but 
   validated on the X Elite (SHA-256 `7f84fa78…` / `67772ca7…` for `.onnx` / `.onnx.data`)
 - ✅ Compiled-graph cache (3.3 s → 0.1 s locally), invalidated by model or SDK changes
 - ✅ **Five more models converted and run on the same device** — MobileNetV2, MiniLM,
-  DistilBERT, CLIP vision, whisper-base — each landing on the NPU, four of the five
-  holding FP32 accuracy
-- ✅ 31 tests; deliberately re-breaking the LayerNorm rule makes them fail
+  DistilBERT, CLIP vision, whisper-base — each landing on the NPU, and each within a
+  point of its FP32 accuracy
+- ✅ 49 tests; deliberately re-breaking the LayerNorm rule makes them fail
 
 **Not proven, or known limits:**
 
-- ⚠️ **Only the encoder runs on the NPU.** The decoder runs on CPU (PyTorch), and on
-  a Snapdragon it would dominate end-to-end transcription latency — locally the
-  decoder takes ~640 ms vs the encoder's ~350 ms on CPU. The speedups above are
-  encoder speedups. What is now measured (not assumed) is that a decoder *can* run
-  fully on this NPU: Qualcomm's own static-KV-cache build does, at 2.60 ms/token,
-  509/509 layers on the device. Wiring it into this app needs a physical
-  Snapdragon PC to verify, which I don't have — the 150 ms end-to-end figure above
-  is arithmetic over two measured numbers, not a measured pipeline
+- ⚠️ **The app transcribes with the encoder on the NPU and the decoder on CPU.**
+  The speedups above are encoder speedups. Two of the three pieces a full-NPU
+  decoder needs are now done rather than promised: the decode loop is implemented
+  ([`speech/npu_decoder.py`](speech/npu_decoder.py) — right-aligned 199-slot KV
+  cache, −100 mask, shift-left per step), and every input it builds is checked
+  against the shapes, dtypes and names Qualcomm's shipped decoder declares
+  ([6 tests](tests/test_npu_decoder.py), all 19 inputs satisfied). The device
+  numbers are measured too: 2.60 ms/token, 509/509 layers on the NPU. What is
+  *not* done is running the loop end to end — the model is an EPContext graph
+  only QNN EP can load, and no cloud service rents an interactive Snapdragon. So
+  the 150 ms end-to-end figure stays arithmetic over measured parts, and that
+  last test is in the suite, skipped, saying exactly why
 - ⚠️ NPU WER +1.37 points vs CPU — likely small real cost; not yet significant
-- ⚠️ Speedup is 24–57x by AI Hub's CPU numbers, 4–10x against a well-tuned CPU
+- ⚠️ **The speedup depends on a CPU baseline I can't inspect.** AI Hub runs the CPU
+  comparison through ONNX Runtime with its own thread configuration; its runtime log
+  records the CPU provider being added and nothing about threads or cores, and the
+  option isn't exposed. So 24–57x is the honest ratio *against that baseline*, and
+  the 4–10x is an indication carried over from a different (x86) CPU — not a
+  measurement of this device. Settling it needs a physical X Elite where thread
+  counts can be set
 - ⚠️ **No power or battery measurement.** AI Hub doesn't expose it; needs a physical device
 - ⚠️ Local QNN (2.50) and the device (2.45) differ: local compile passing is
   necessary, not sufficient. Confirm on device
-- ⚠️ **MiniLM loses retrieval quality**: 75.0% same top hit vs FP32 (the naive path
-  gets 63.3%). Embedding cosine 0.987 looks fine and hides it — a16w8 is not free
-  for every model, and the accuracy check is the only thing that says so
 - ⚠️ **I corrected one of my own claims today.** The scanner used to say dynamic
   quantization means "0% NPU, QNN EP claims none of this graph". On the device,
   naive CLIP and MiniLM ran on the NPU anyway. The rule now reports an unsupported
@@ -566,7 +581,7 @@ Dragonn/
 ├── scripts/       QNN EP attach/cache, AI Hub validation, WER eval, transcriber, pipeline
 ├── server/        OpenAI-compatible transcription API
 ├── dashboard/     live UI: upload, microphone, scored samples, provider telemetry
-├── tests/         31 tests, one per real bug — run on every push (Ubuntu, and Windows + QNN plugin)
+├── tests/         49 tests, one per real bug — run on every push (Ubuntu, and Windows + QNN plugin)
 ├── models/        generated models (gitignored) + reports/ — the evidence, committed
 ├── docs/          README images + the submission deck
 └── data/          downloaded speech (gitignored; python -m tools.fetch_speech)

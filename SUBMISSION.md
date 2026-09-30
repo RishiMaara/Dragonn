@@ -68,7 +68,7 @@ Five popular models, each through the naive path and this pipeline
 |---|---|---|---|
 | MobileNetV2 | Image classification | 79.5% → **7.2%** → **79.5%** top-1 | 13.7 → 4.0 MB |
 | Whisper-base | Speech recognition | 8.84% → 11.33% → **8.84%** WER | 78.6 → 20.6 MB |
-| MiniLM-L6 | Embeddings for local search | 100% → 63.3% → 75.0% same top hit | 86.2 → 33.0 MB |
+| MiniLM-L6 | Embeddings for local search | 100% → 63.3% → **97.3%** same top hit | 86.2 → 33.2 MB |
 | DistilBERT SST-2 | Sentiment | 90.7% → 90.7% → **91.0%** | 255.5 → 86.4 MB |
 | CLIP ViT-B/32 vision | Image search | 98.2% → 98.8% → 98.2% zero-shot | 335.2 → 84.6 MB |
 
@@ -124,18 +124,25 @@ Word-for-word recording script: [`docs/DEMO-SCRIPT.md`](docs/DEMO-SCRIPT.md).
 
 | Criterion | Where it shows up |
 |---|---|
-| **Technical implementation** | Three independent verdicts on NPU placement (static rules, Qualcomm's HTP compiler, ONNX Runtime strict mode), reconciled against a real device; a16w8 quantization with real-speech calibration; compiled-graph caching; 31 tests, each pinning a bug that once produced a wrong number; CI on Windows with the QNN plugin |
+| **Technical implementation** | Three independent verdicts on NPU placement (static rules, Qualcomm's HTP compiler, ONNX Runtime strict mode), reconciled against a real device; a16w8 quantization with real-speech calibration; compiled-graph caching; 49 tests, each pinning a bug that once produced a wrong number; CI on Windows with the QNN plugin |
 | **Use case & innovation** | On-device speech-to-text that stays on the laptop, plus the diagnostic layer nobody ships: *why* a model misses the NPU, and which known fix applies |
 | **Deployment & accessibility** | One PowerShell command on a Snapdragon laptop; no Snapdragon hardware needed for the pre-flight check; MIT licensed; every claim reproducible from committed evidence |
 | **Presentation & documentation** | README with each failure reproduced and measured; evidence index; honest limits stated in the same document as the wins |
 
-## What I did not prove
+## Scope, and how to check it
 
-- The **decoder** runs on CPU today; only the encoder is on the NPU. The speedups
-  above are encoder speedups.
-- No **power or battery** measurement — Qualcomm AI Hub doesn't expose it.
-- Speedup is 24–57x by AI Hub's CPU baseline, but only **4–10x** against a
-  well-tuned CPU; the honest figure needs a physical X Elite.
-- The NPU's +1.37 WER is not statistically significant at 57 clips.
-- The export and calibration path is built and proven for Whisper; other models
-  need their own calibration data.
+**What runs where today:** the encoder runs on the Hexagon NPU, the decoder on CPU — every latency
+quoted above is an encoder latency. The NPU decode loop is implemented and verified against all
+nineteen inputs the shipped decoder declares, with device numbers measured (2.60 ms/token, 509/509
+layers on the NPU); running it end to end needs a physical Snapdragon, since that model is an
+EPContext graph only QNN EP can load.
+
+**How to check any number here:** [`models/reports/README.md`](models/reports/README.md) indexes every
+claim against the file that backs it — results as JSON, the profiling job that produced each one, and
+the device's own runtime logs, including the failures and exactly what the chip said when it refused a
+model. `python -m tools.model_zoo` rebuilds the five-model comparison; `python -m scanner --input
+<model> --compile-check` checks any model you bring, on any Windows PC.
+
+**On the speed comparison:** 24–57× is measured against the cloud service's own CPU baseline, whose
+thread configuration it does not disclose — read it as the ratio against that baseline, not against a
+hand-tuned CPU.

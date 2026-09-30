@@ -6,7 +6,7 @@
   "size_mb": {
     "fp32": 86.15,
     "naive": 21.74,
-    "bridge": 33.03
+    "bridge": 33.18
   },
   "headline_key": "same_nearest_neighbour_pct",
   "checks": {
@@ -25,7 +25,7 @@
         "Gather": 1
       },
       "htp_error": null,
-      "htp_compile_s": 5.5
+      "htp_compile_s": 8.5
     },
     "bridge": {
       "scanner_npu_pct": 100.0,
@@ -35,7 +35,7 @@
       "htp_npu_graphs": 1,
       "htp_cpu_ops": {},
       "htp_error": null,
-      "htp_compile_s": 3.2
+      "htp_compile_s": 2.6
     }
   },
   "accuracy": {
@@ -48,13 +48,13 @@
       "same_nearest_neighbour_pct": 63.3
     },
     "bridge": {
-      "embedding_cosine_vs_fp32": 0.987,
-      "same_nearest_neighbour_pct": 75.0
+      "embedding_cosine_vs_fp32": 0.9992,
+      "same_nearest_neighbour_pct": 97.3
     }
   },
   "notes": {
     "mask_constants_clamped": 1,
-    "per_channel": false
+    "per_channel": true
   },
-  "wall_time_s": 42.8
+  "wall_time_s": 56.8
 }

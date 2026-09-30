@@ -5,7 +5,7 @@ Reproduce: `python -m tools.model_zoo`.
 
 | Model | Use on a laptop | Naive path | Hexagon Bridge | Accuracy: FP32 → naive → bridge | Size FP32 → bridge |
 |---|---|---|---|---|---|
-| [minilm](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) | Text embeddings for local semantic search / RAG | wrong format (dynamic quantization) — 1 NPU graph(s); CPU: Gather ×1 | one NPU graph | same top search result: 100.0 → 63.3 → 75.0 | 86.15 → 33.03 MB |
+| [minilm](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) | Text embeddings for local semantic search / RAG | wrong format (dynamic quantization) — 1 NPU graph(s); CPU: Gather ×1 | one NPU graph | same top search result: 100.0 → 63.3 → 97.3 | 86.15 → 33.18 MB |
 | [distilbert-sst2](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) | On-device text classification (sentiment) | wrong format (dynamic quantization) — 1 NPU graph(s); CPU: Gather ×1 | one NPU graph | SST-2 accuracy: 90.7 → 90.7 → 91.0 | 255.48 → 86.44 MB |
 | [mobilenetv2](https://huggingface.co/google/mobilenet_v2_1.0_224) | Image classification | wrong format (dynamic quantization) — one NPU graph | one NPU graph | Imagenette top-1 accuracy: 79.5 → 7.2 → 79.5 | 13.67 → 3.96 MB |
 | [clip-vision](https://huggingface.co/openai/clip-vit-base-patch32) | Image embeddings for photo search (zero-shot) | wrong format (dynamic quantization) — one NPU graph | one NPU graph | zero-shot accuracy: 98.2 → 98.8 → 98.2 | 335.24 → 84.59 MB |
@@ -20,7 +20,7 @@ Written by `python -m validate.precompiled` — Qualcomm AI Hub, device `Snapdra
 | clip-vision-bridge | 2.55 ms | 2 on CPU, 482 on NPU | ✅ ran |
 | clip-vision-naive | 3.06 ms | 450 on NPU | ✅ ran |
 | distilbert-sst2-bridge | 2.44 ms | 248 on NPU, 1 on CPU | ✅ ran |
-| minilm-bridge | 1.29 ms | 245 on NPU, 1 on CPU | ✅ ran |
+| minilm-bridge | 1.3 ms | 245 on NPU, 1 on CPU | ✅ ran |
 | minilm-naive | 1.09 ms | 2 on CPU, 232 on NPU | ✅ ran |
 | mobilenetv2-bridge | 0.36 ms | 2 on CPU, 69 on NPU | ✅ ran |
 | whisper-base-bridge | 45.7 ms | 2 on CPU, 241 on NPU | ✅ ran |
