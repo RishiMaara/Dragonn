@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hexagon Bridge — Project Description</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  :root {
+    --ink: #23272e; --mid: #1a2238; --mute: #5b6472;
+    --amber: #b9791a; --line: #d8dee6; --panel: #f5f7f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: var(--ink); font-size: 10.4pt; line-height: 1.45; margin: 0;
+  }
+  h1 { font-family: Cambria, Georgia, serif; font-size: 21pt; color: var(--mid);
+       margin: 0 0 2mm; letter-spacing: -0.2px; }
+  .sub { font-size: 11pt; color: var(--mid); margin: 0 0 3mm; }
+  .meta { font-size: 9pt; color: var(--mute); margin: 0 0 5mm; }
+  h2 { font-family: Cambria, Georgia, serif; font-size: 13pt; color: var(--mid);
+       margin: 6mm 0 2mm; }
+  p { margin: 0 0 2.5mm; }
+  ul { margin: 0 0 2.5mm; padding-left: 5mm; }
+  li { margin-bottom: 1.2mm; }
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; font-size: 9.6pt; }
+  th { text-align: left; font-weight: bold; color: var(--mid);
+       border-bottom: 1.2px solid var(--line); padding: 1.6mm 2mm 1.6mm 0; }
+  td { padding: 1.6mm 2mm 1.6mm 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .num { color: var(--amber); font-weight: bold; white-space: nowrap; }
+  .panel { background: var(--panel); padding: 3mm 4mm; margin: 3mm 0; }
+  .panel h2 { margin-top: 0; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 9.2pt; }
+  .footer { font-size: 8.6pt; color: var(--mute); margin-top: 5mm;
+            border-top: 1px solid var(--line); padding-top: 2mm; }
+  .avoid-break { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<h1>Hexagon Bridge</h1>
+<p class="sub">Make the Hexagon NPU reachable for models nobody converted for you — and prove, on the
+laptop itself, that the NPU is really what ran them.</p>
+<p class="meta">Snapdragon® AI Lab Build &amp; Present Challenge 2026 &nbsp;·&nbsp; Rishi (RishiMaara)
+&nbsp;·&nbsp; github.com/RishiMaara/Dragonn &nbsp;·&nbsp; MIT licensed</p>
+
+<h2>The problem</h2>
+<p>A Snapdragon X Elite laptop ships with a 45 TOPS Hexagon NPU. For any model that isn't already in a
+vendor catalog — a fine-tune, a newer checkpoint — getting it onto that NPU fails in ways that produce
+<strong>no error message</strong>:</p>
+<ul>
+  <li>The standard quantization recipe (<code>quantize_dynamic</code>) cost MobileNetV2 <strong>72 points
+      of accuracy</strong> on a real X Elite, and crashed the device runtime outright on Whisper-base.</li>
+  <li>ONNX Runtime's documented provider argument silently yields a <strong>CPU-only session</strong>
+      while the application logs say NPU.</li>
+  <li>A model can pass every local check and still be <strong>rejected by the chip</strong> — in this
+      project's case over one sign bit, on one input, of one operator type.</li>
+</ul>
+<p>Every one of those failures is silent. The application works. The battery doesn't.</p>
+
+<h2>What I built</h2>
+<table>
+  <tr><th style="width:22%">Component</th><th>What it does</th></tr>
+  <tr><td><strong>Scanner</strong></td>
+      <td>Answers "will this model run on the Hexagon NPU, and if not, which operators and why" on any
+      Windows PC, with no Snapdragon device present: static operator and precision rules first, then
+      Qualcomm's own HTP compiler run locally in about four seconds.</td></tr>
+  <tr><td><strong>Converter</strong></td>
+      <td>Static a16w8 QDQ quantization done the QNN-specific way, calibrated on real data, including
+      the fixes that appear in no quickstart guide.</td></tr>
+  <tr><td><strong>Validator</strong></td>
+      <td>Runs the model on a real Snapdragon X Elite through Qualcomm AI Hub and reconciles the
+      prediction against what the device actually did.</td></tr>
+  <tr><td><strong>Application</strong></td>
+      <td>Offline speech-to-text server (OpenAI-compatible API) and dashboard that report the execution
+      provider that actually attached — never the one requested.</td></tr>
+</table>
+<p>It composes what already exists rather than reinventing it: ONNX Runtime's strict no-CPU-fallback
+session, Microsoft Olive's attention-mask surgery, Qualcomm's own mask convention and AI Hub models. The
+gap it fills is <strong>diagnosis</strong> — ONNX Runtime's strict mode answers yes or no, AI Hub needs a
+cloud upload per model, and Olive applies a fix only once you already know which one you need.</p>
+
+<h2>Verified on real Snapdragon hardware</h2>
+<p>Device: <code>Snapdragon X Elite CRD</code> (SC8380XP, Hexagon v73) via Qualcomm AI Hub. Every number
+below is committed as machine-readable evidence in the repository, indexed claim by claim, together with
+the device's own logs.</p>
+<table>
+  <tr><th style="width:46%">Claim</th><th style="width:26%">Measured</th><th>Evidence</th></tr>
+  <tr><td>Encoder runs on the NPU</td><td class="num">185 / 187 layers</td><td>aihub_validation.json</td></tr>
+  <tr><td>Latency, 100 runs</td><td class="num">17.8 ms median</td><td>profile jpxlee83p</td></tr>
+  <tr><td>A quantized model that misses the NPU is slower than not quantizing at all</td>
+      <td class="num">0.79× / 0.72×</td><td>two separate sessions</td></tr>
+  <tr><td>Quantization costs no accuracy on CPU (57 held-out clips)</td>
+      <td class="num">12.70% WER = FP32</td><td>wer_calibration_and_precision.json</td></tr>
+  <tr><td>The NPU costs a little accuracy</td><td class="num">14.07% WER</td>
+      <td>sign test p ≈ 0.29</td></tr>
+  <tr><td>Skipping quantization is not a shortcut: FP32 passes locally, fails on the device</td>
+      <td class="num">error 6000, twice</td><td>aihub_fp32_on_htp_FAILED.json</td></tr>
+  <tr><td>Rerunning the pipeline rebuilds the exact validated model</td>
+      <td class="num">bit-for-bit</td><td>SHA-256 pinned</td></tr>
+</table>
+
+<h2 class="avoid-break">It isn't one model</h2>
+<p>Five more popular models through both the naive path and this pipeline, each then profiled on the same
+X Elite — and all five land on the NPU.</p>
+<table class="avoid-break">
+  <tr><th style="width:24%">Model</th><th style="width:26%">Use on a laptop</th>
+      <th style="width:32%">FP32 → naive → this pipeline</th><th>On the NPU</th></tr>
+  <tr><td>MobileNetV2</td><td>Image classification</td>
+      <td>79.5% → <strong>7.2%</strong> → <strong>79.5%</strong> top-1</td><td class="num">0.36 ms</td></tr>
+  <tr><td>Whisper-base</td><td>Speech recognition</td>
+      <td>8.84% → 11.33% → <strong>8.84%</strong> WER</td><td class="num">45.7 ms</td></tr>
+  <tr><td>MiniLM-L6</td><td>Embeddings, local search</td>
+      <td>100% → 63.3% → 75.0% same top hit</td><td class="num">1.29 ms</td></tr>
+  <tr><td>DistilBERT SST-2</td><td>Sentiment</td>
+      <td>90.7% → 90.7% → <strong>91.0%</strong></td><td class="num">2.44 ms</td></tr>
+  <tr><td>CLIP ViT-B/32</td><td>Image search</td>
+      <td>98.2% → 98.8% → 98.2% zero-shot</td><td class="num">2.55 ms</td></tr>
+</table>
+<p>MobileNetV2 is the clearest case of the trap this project exists for: quantized the naive way it passes
+every <em>placement</em> check — one NPU graph, nothing left on CPU — and classifies 7% of images
+correctly. It needs per-channel weights, and nothing in the toolchain tells you that.</p>
+
+<div class="panel avoid-break">
+  <h2>Against Qualcomm's own NPU Whisper</h2>
+  <p>Qualcomm publishes Whisper-Tiny pre-compiled for each chipset. Running their X Elite build on the
+  same device, through the same harness: their encoder <span class="num">25.0 ms</span>, this pipeline's
+  <span class="num">17.8 ms</span>. Their decoder — the piece this project does not yet run on the NPU —
+  is <span class="num">2.60 ms per token</span>, 509 of 509 layers on the NPU. Read honestly: the two
+  models are not the same graph (Qualcomm restructures attention and stays in float, this pipeline
+  quantizes), so this shows a general-purpose conversion path landing in the same league as the vendor's
+  hand-optimised build, not a benchmark win.</p>
+</div>
+
+<h2>Running it on a Snapdragon-powered HP PC</h2>
+<p>One command: <code>powershell -ExecutionPolicy Bypass -File .\setup-snapdragon.ps1</code>. It refuses
+to pass quietly — it checks for ARM64-native Python (x64 Python under emulation can never load
+<code>QnnHtp.dll</code>), installs the device dependencies, confirms ONNX Runtime can see the Hexagon NPU
+and names the driver version if it can't, then builds a session with CPU fallback <em>disabled</em>, so
+"runs on the NPU" is proven on that laptop rather than assumed. The pre-flight scanner itself needs no
+Snapdragon hardware at all.</p>
+
+<h2>What I did not prove</h2>
+<ul>
+  <li><strong>Only the encoder runs on the NPU here.</strong> The decoder still runs on CPU, so the
+      speedups quoted are encoder speedups. Qualcomm's decoder measurement shows a decoder can live on
+      the NPU; wiring it into this application needs a physical device to verify.</li>
+  <li><strong>Speedup depends on the CPU baseline</strong>: 24–57× against AI Hub's CPU numbers, but only
+      4–10× against a well-tuned CPU.</li>
+  <li><strong>No power or battery measurement.</strong> AI Hub does not expose it — the efficiency
+      argument for an NPU is the one thing I could not measure.</li>
+  <li><strong>MiniLM loses retrieval quality</strong> (75.0% same top hit vs FP32). An embedding cosine of
+      0.987 looks fine and hides it; a16w8 is not free for every model.</li>
+  <li>One of my own claims was corrected by the hardware: the scanner used to report that dynamic
+      quantization means 0% NPU. On the device, a naive CLIP ran 450 of 450 layers on the NPU. The rule
+      now reports an unsupported format and defers to the compiler and the device.</li>
+</ul>
+
+<p class="footer">Repository: github.com/RishiMaara/Dragonn · MIT licensed · 42 automated tests, each
+pinning a bug that once produced a wrong number, run on every push (Ubuntu, and Windows with the QNN
+plugin). Every claim in this document traces to a committed file under <code>models/reports/</code>.</p>
+
+</body>
+</html>
