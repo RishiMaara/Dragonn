@@ -16,6 +16,15 @@ from onnx import TensorProto, helper, numpy_helper
 # 1.26 refuses to load — that broke CI when it picked up onnx 1.23.
 IR_VERSION = 10
 
+
+def _importable(name: str) -> bool:
+    import importlib.util
+    try:
+        return importlib.util.find_spec(name) is not None
+    except (ImportError, ValueError):
+        return False
+
+
 from converter.quantize import model_size_mb, clamp_extreme_constants
 from validate.aihub import reconcile, summarize_profile
 from speech.transcriber import load_audio, word_error_rate
@@ -80,6 +89,11 @@ def test_word_error_rate():
 
 
 def test_load_audio_resamples_and_downmixes_to_16k_mono():
+    """Needs a resampler backend: soxr normally, scipy as the fallback. On a
+    machine with neither there is nothing to test rather than something broken."""
+    pytest.importorskip("soundfile", reason="no audio decoder installed")
+    if not any(_importable(m) for m in ("soxr", "scipy")):
+        pytest.skip("no resampler backend installed (soxr or scipy)")
     import soundfile as sf
     stereo_48k = np.zeros((48_000, 2), np.float32)
     buf = io.BytesIO()

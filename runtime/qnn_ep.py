@@ -173,6 +173,9 @@ def create_session(
 
     def fresh():
         so = ort.SessionOptions()
+        # QNN EP logs C++ warnings straight to the console, where they arrive as
+        # wide characters and read as garbage. Errors still surface as exceptions.
+        so.log_severity_level = 3
         if strict:
             so.add_session_config_entry("session.disable_cpu_ep_fallback", "1")
         return so
