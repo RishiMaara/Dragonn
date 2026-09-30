@@ -1,0 +1,3644 @@
+
+onnx.quantize0.1.0:ƒä
+
+conv1.bias_quantized
+conv1.bias_quantized_scale
+conv1.bias_quantized_zero_point
+conv1.biasconv1.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+«
+conv1.weight_quantized
+conv1.weight_scale
+conv1.weight_zero_point$conv1.weight_DequantizeLinear_Outputconv1.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+
+conv2.bias_quantized
+conv2.bias_quantized_scale
+conv2.bias_quantized_zero_point
+conv2.biasconv2.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+«
+conv2.weight_quantized
+conv2.weight_scale
+conv2.weight_zero_point$conv2.weight_DequantizeLinear_Outputconv2.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+œ
+embedding_quantized
+embedding_scale
+embedding_zero_point!embedding_DequantizeLinear_Outputembedding_DequantizeLinear"DequantizeLinear:com.microsoft
+¥
+input_features
+input_features_scale
+input_features_zero_point$input_features_QuantizeLinear_Outputinput_features_QuantizeLinear"QuantizeLinear:com.microsoft
+¶
+layer_norm.bias_quantized
+layer_norm.bias_quantized_scale
+$layer_norm.bias_quantized_zero_pointlayer_norm.bias layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+Ä
+layer_norm.weight_quantized
+layer_norm.weight_scale
+layer_norm.weight_zero_point)layer_norm.weight_DequantizeLinear_Output"layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+À
+layers.0.fc1.bias_quantized
+!layers.0.fc1.bias_quantized_scale
+&layers.0.fc1.bias_quantized_zero_pointlayers.0.fc1.bias"layers.0.fc1.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+À
+layers.0.fc2.bias_quantized
+!layers.0.fc2.bias_quantized_scale
+&layers.0.fc2.bias_quantized_zero_pointlayers.0.fc2.bias"layers.0.fc2.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.0.final_layer_norm.bias_quantized
+.layers.0.final_layer_norm.bias_quantized_scale
+3layers.0.final_layer_norm.bias_quantized_zero_pointlayers.0.final_layer_norm.bias/layers.0.final_layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+*layers.0.final_layer_norm.weight_quantized
+&layers.0.final_layer_norm.weight_scale
++layers.0.final_layer_norm.weight_zero_point8layers.0.final_layer_norm.weight_DequantizeLinear_Output1layers.0.final_layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+‹
+*layers.0.self_attn.out_proj.bias_quantized
+0layers.0.self_attn.out_proj.bias_quantized_scale
+5layers.0.self_attn.out_proj.bias_quantized_zero_point layers.0.self_attn.out_proj.bias1layers.0.self_attn.out_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.0.self_attn.q_proj.bias_quantized
+.layers.0.self_attn.q_proj.bias_quantized_scale
+3layers.0.self_attn.q_proj.bias_quantized_zero_pointlayers.0.self_attn.q_proj.bias/layers.0.self_attn.q_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.0.self_attn.v_proj.bias_quantized
+.layers.0.self_attn.v_proj.bias_quantized_scale
+3layers.0.self_attn.v_proj.bias_quantized_zero_pointlayers.0.self_attn.v_proj.bias/layers.0.self_attn.v_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+•
+,layers.0.self_attn_layer_norm.bias_quantized
+2layers.0.self_attn_layer_norm.bias_quantized_scale
+7layers.0.self_attn_layer_norm.bias_quantized_zero_point"layers.0.self_attn_layer_norm.bias3layers.0.self_attn_layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+£
+.layers.0.self_attn_layer_norm.weight_quantized
+*layers.0.self_attn_layer_norm.weight_scale
+/layers.0.self_attn_layer_norm.weight_zero_point<layers.0.self_attn_layer_norm.weight_DequantizeLinear_Output5layers.0.self_attn_layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+À
+layers.1.fc1.bias_quantized
+!layers.1.fc1.bias_quantized_scale
+&layers.1.fc1.bias_quantized_zero_pointlayers.1.fc1.bias"layers.1.fc1.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+À
+layers.1.fc2.bias_quantized
+!layers.1.fc2.bias_quantized_scale
+&layers.1.fc2.bias_quantized_zero_pointlayers.1.fc2.bias"layers.1.fc2.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.1.final_layer_norm.bias_quantized
+.layers.1.final_layer_norm.bias_quantized_scale
+3layers.1.final_layer_norm.bias_quantized_zero_pointlayers.1.final_layer_norm.bias/layers.1.final_layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+*layers.1.final_layer_norm.weight_quantized
+&layers.1.final_layer_norm.weight_scale
++layers.1.final_layer_norm.weight_zero_point8layers.1.final_layer_norm.weight_DequantizeLinear_Output1layers.1.final_layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+‹
+*layers.1.self_attn.out_proj.bias_quantized
+0layers.1.self_attn.out_proj.bias_quantized_scale
+5layers.1.self_attn.out_proj.bias_quantized_zero_point layers.1.self_attn.out_proj.bias1layers.1.self_attn.out_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.1.self_attn.q_proj.bias_quantized
+.layers.1.self_attn.q_proj.bias_quantized_scale
+3layers.1.self_attn.q_proj.bias_quantized_zero_pointlayers.1.self_attn.q_proj.bias/layers.1.self_attn.q_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.1.self_attn.v_proj.bias_quantized
+.layers.1.self_attn.v_proj.bias_quantized_scale
+3layers.1.self_attn.v_proj.bias_quantized_zero_pointlayers.1.self_attn.v_proj.bias/layers.1.self_attn.v_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+•
+,layers.1.self_attn_layer_norm.bias_quantized
+2layers.1.self_attn_layer_norm.bias_quantized_scale
+7layers.1.self_attn_layer_norm.bias_quantized_zero_point"layers.1.self_attn_layer_norm.bias3layers.1.self_attn_layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+£
+.layers.1.self_attn_layer_norm.weight_quantized
+*layers.1.self_attn_layer_norm.weight_scale
+/layers.1.self_attn_layer_norm.weight_zero_point<layers.1.self_attn_layer_norm.weight_DequantizeLinear_Output5layers.1.self_attn_layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+À
+layers.2.fc1.bias_quantized
+!layers.2.fc1.bias_quantized_scale
+&layers.2.fc1.bias_quantized_zero_pointlayers.2.fc1.bias"layers.2.fc1.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+À
+layers.2.fc2.bias_quantized
+!layers.2.fc2.bias_quantized_scale
+&layers.2.fc2.bias_quantized_zero_pointlayers.2.fc2.bias"layers.2.fc2.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.2.final_layer_norm.bias_quantized
+.layers.2.final_layer_norm.bias_quantized_scale
+3layers.2.final_layer_norm.bias_quantized_zero_pointlayers.2.final_layer_norm.bias/layers.2.final_layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+*layers.2.final_layer_norm.weight_quantized
+&layers.2.final_layer_norm.weight_scale
++layers.2.final_layer_norm.weight_zero_point8layers.2.final_layer_norm.weight_DequantizeLinear_Output1layers.2.final_layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+‹
+*layers.2.self_attn.out_proj.bias_quantized
+0layers.2.self_attn.out_proj.bias_quantized_scale
+5layers.2.self_attn.out_proj.bias_quantized_zero_point layers.2.self_attn.out_proj.bias1layers.2.self_attn.out_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.2.self_attn.q_proj.bias_quantized
+.layers.2.self_attn.q_proj.bias_quantized_scale
+3layers.2.self_attn.q_proj.bias_quantized_zero_pointlayers.2.self_attn.q_proj.bias/layers.2.self_attn.q_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.2.self_attn.v_proj.bias_quantized
+.layers.2.self_attn.v_proj.bias_quantized_scale
+3layers.2.self_attn.v_proj.bias_quantized_zero_pointlayers.2.self_attn.v_proj.bias/layers.2.self_attn.v_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+•
+,layers.2.self_attn_layer_norm.bias_quantized
+2layers.2.self_attn_layer_norm.bias_quantized_scale
+7layers.2.self_attn_layer_norm.bias_quantized_zero_point"layers.2.self_attn_layer_norm.bias3layers.2.self_attn_layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+£
+.layers.2.self_attn_layer_norm.weight_quantized
+*layers.2.self_attn_layer_norm.weight_scale
+/layers.2.self_attn_layer_norm.weight_zero_point<layers.2.self_attn_layer_norm.weight_DequantizeLinear_Output5layers.2.self_attn_layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+À
+layers.3.fc1.bias_quantized
+!layers.3.fc1.bias_quantized_scale
+&layers.3.fc1.bias_quantized_zero_pointlayers.3.fc1.bias"layers.3.fc1.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+À
+layers.3.fc2.bias_quantized
+!layers.3.fc2.bias_quantized_scale
+&layers.3.fc2.bias_quantized_zero_pointlayers.3.fc2.bias"layers.3.fc2.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.3.final_layer_norm.bias_quantized
+.layers.3.final_layer_norm.bias_quantized_scale
+3layers.3.final_layer_norm.bias_quantized_zero_pointlayers.3.final_layer_norm.bias/layers.3.final_layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+*layers.3.final_layer_norm.weight_quantized
+&layers.3.final_layer_norm.weight_scale
++layers.3.final_layer_norm.weight_zero_point8layers.3.final_layer_norm.weight_DequantizeLinear_Output1layers.3.final_layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+‹
+*layers.3.self_attn.out_proj.bias_quantized
+0layers.3.self_attn.out_proj.bias_quantized_scale
+5layers.3.self_attn.out_proj.bias_quantized_zero_point layers.3.self_attn.out_proj.bias1layers.3.self_attn.out_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.3.self_attn.q_proj.bias_quantized
+.layers.3.self_attn.q_proj.bias_quantized_scale
+3layers.3.self_attn.q_proj.bias_quantized_zero_pointlayers.3.self_attn.q_proj.bias/layers.3.self_attn.q_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+
+(layers.3.self_attn.v_proj.bias_quantized
+.layers.3.self_attn.v_proj.bias_quantized_scale
+3layers.3.self_attn.v_proj.bias_quantized_zero_pointlayers.3.self_attn.v_proj.bias/layers.3.self_attn.v_proj.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+•
+,layers.3.self_attn_layer_norm.bias_quantized
+2layers.3.self_attn_layer_norm.bias_quantized_scale
+7layers.3.self_attn_layer_norm.bias_quantized_zero_point"layers.3.self_attn_layer_norm.bias3layers.3.self_attn_layer_norm.bias_DequantizeLinear"DequantizeLinear:com.microsoft
+£
+.layers.3.self_attn_layer_norm.weight_quantized
+*layers.3.self_attn_layer_norm.weight_scale
+/layers.3.self_attn_layer_norm.weight_zero_point<layers.3.self_attn_layer_norm.weight_DequantizeLinear_Output5layers.3.self_attn_layer_norm.weight_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_104_quantized
+val_104_scale
+val_104_zero_pointval_104_DequantizeLinear_Outputval_104_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_137_quantized
+val_137_scale
+val_137_zero_pointval_137_DequantizeLinear_Outputval_137_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_141_quantized
+val_141_scale
+val_141_zero_pointval_141_DequantizeLinear_Outputval_141_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_150_quantized
+val_150_scale
+val_150_zero_pointval_150_DequantizeLinear_Outputval_150_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_154_quantized
+val_154_scale
+val_154_zero_pointval_154_DequantizeLinear_Outputval_154_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_162_quantized
+val_162_scale
+val_162_zero_pointval_162_DequantizeLinear_Outputval_162_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_169_quantized
+val_169_scale
+val_169_zero_pointval_169_DequantizeLinear_Outputval_169_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_202_quantized
+val_202_scale
+val_202_zero_pointval_202_DequantizeLinear_Outputval_202_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_206_quantized
+val_206_scale
+val_206_zero_pointval_206_DequantizeLinear_Outputval_206_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_215_quantized
+val_215_scale
+val_215_zero_pointval_215_DequantizeLinear_Outputval_215_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_219_quantized
+val_219_scale
+val_219_zero_pointval_219_DequantizeLinear_Outputval_219_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_21_quantized
+val_21_scale
+val_21_zero_pointval_21_DequantizeLinear_Outputval_21_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_227_quantized
+val_227_scale
+val_227_zero_pointval_227_DequantizeLinear_Outputval_227_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_234_quantized
+val_234_scale
+val_234_zero_pointval_234_DequantizeLinear_Outputval_234_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_23_quantized
+val_23_scale
+val_23_zero_pointval_23_DequantizeLinear_Outputval_23_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_267_quantized
+val_267_scale
+val_267_zero_pointval_267_DequantizeLinear_Outputval_267_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_271_quantized
+val_271_scale
+val_271_zero_pointval_271_DequantizeLinear_Outputval_271_DequantizeLinear"DequantizeLinear:com.microsoft
+’
+val_280_quantized
+val_280_scale
+val_280_zero_pointval_280_DequantizeLinear_Outputval_280_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_30_quantized
+val_30_scale
+val_30_zero_pointval_30_DequantizeLinear_Outputval_30_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_37_quantized
+val_37_scale
+val_37_zero_pointval_37_DequantizeLinear_Outputval_37_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_72_quantized
+val_72_scale
+val_72_zero_pointval_72_DequantizeLinear_Outputval_72_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_76_quantized
+val_76_scale
+val_76_zero_pointval_76_DequantizeLinear_Outputval_76_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_85_quantized
+val_85_scale
+val_85_zero_pointval_85_DequantizeLinear_Outputval_85_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_89_quantized
+val_89_scale
+val_89_zero_pointval_89_DequantizeLinear_Outputval_89_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_97_quantized
+val_97_scale
+val_97_zero_pointval_97_DequantizeLinear_Outputval_97_DequantizeLinear"DequantizeLinear:com.microsoft
+Á
+$input_features_QuantizeLinear_Output
+input_features_scale
+input_features_zero_point&input_features_DequantizeLinear_Outputinput_features_DequantizeLinear"DequantizeLinear:com.microsoft
+à
+&input_features_DequantizeLinear_Output
+$conv1.weight_DequantizeLinear_Output
+
+conv1.biasconv1dnode_conv1d"Conv*
+kernel_shape@ *
+group *
+auto_pad"NOTSET *
+	dilations@ *
+strides@ *
+pads@@ 
+}
+conv1d
+conv1d_scale
+conv1d_zero_pointconv1d_QuantizeLinear_Outputconv1d_QuantizeLinear"QuantizeLinear:com.microsoft
+™
+conv1d_QuantizeLinear_Output
+conv1d_scale
+conv1d_zero_pointconv1d_DequantizeLinear_Outputconv1d_DequantizeLinear"DequantizeLinear:com.microsoft
+M
+conv1d_DequantizeLinear_OutputgeluGelu_fused_Erf_0"Gelu:com.microsoft
+s
+gelu
+
+gelu_scale
+gelu_zero_pointgelu_QuantizeLinear_Outputgelu_QuantizeLinear"QuantizeLinear:com.microsoft
+
+gelu_QuantizeLinear_Output
+
+gelu_scale
+gelu_zero_pointgelu_DequantizeLinear_Outputgelu_DequantizeLinear"DequantizeLinear:com.microsoft
+Ú
+gelu_DequantizeLinear_Output
+$conv2.weight_DequantizeLinear_Output
+
+conv2.biasconv1d_1node_conv1d_1"Conv*
+kernel_shape@ *
+group *
+auto_pad"NOTSET *
+	dilations@ *
+strides@ *
+pads@@ 
+‡
+conv1d_1
+conv1d_1_scale
+conv1d_1_zero_pointconv1d_1_QuantizeLinear_Outputconv1d_1_QuantizeLinear"QuantizeLinear:com.microsoft
+£
+conv1d_1_QuantizeLinear_Output
+conv1d_1_scale
+conv1d_1_zero_point conv1d_1_DequantizeLinear_Outputconv1d_1_DequantizeLinear"DequantizeLinear:com.microsoft
+Q
+ conv1d_1_DequantizeLinear_Outputgelu_1Gelu_fused_Erf_1"Gelu:com.microsoft
+}
+gelu_1
+gelu_1_scale
+gelu_1_zero_pointgelu_1_QuantizeLinear_Outputgelu_1_QuantizeLinear"QuantizeLinear:com.microsoft
+™
+gelu_1_QuantizeLinear_Output
+gelu_1_scale
+gelu_1_zero_pointgelu_1_DequantizeLinear_Outputgelu_1_DequantizeLinear"DequantizeLinear:com.microsoft
+S
+gelu_1_DequantizeLinear_Outputpermutenode_permute"	Transpose*
+perm@ @@ 
+€
+permute
+gelu_1_scale
+gelu_1_zero_pointpermute_QuantizeLinear_Outputpermute_QuantizeLinear"QuantizeLinear:com.microsoft
+œ
+permute_QuantizeLinear_Output
+gelu_1_scale
+gelu_1_zero_pointpermute_DequantizeLinear_Outputpermute_DequantizeLinear"DequantizeLinear:com.microsoft
+X
+permute_DequantizeLinear_Output
+!embedding_DequantizeLinear_Outputaddnode_add"Add
+n
+add
+	add_scale
+add_zero_pointadd_QuantizeLinear_Outputadd_QuantizeLinear"QuantizeLinear:com.microsoft
+Š
+add_QuantizeLinear_Output
+	add_scale
+add_zero_pointadd_DequantizeLinear_Outputadd_DequantizeLinear"DequantizeLinear:com.microsoft
+ì
+add_DequantizeLinear_Output
+<layers.0.self_attn_layer_norm.weight_DequantizeLinear_Output
+"layers.0.self_attn_layer_norm.bias
+layer_normnode_layer_norm"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+‘
+
+layer_norm
+layer_norm_scale
+layer_norm_zero_point layer_norm_QuantizeLinear_Outputlayer_norm_QuantizeLinear"QuantizeLinear:com.microsoft
+­
+ layer_norm_QuantizeLinear_Output
+layer_norm_scale
+layer_norm_zero_point"layer_norm_DequantizeLinear_Outputlayer_norm_DequantizeLinear"DequantizeLinear:com.microsoft
+e
+"layer_norm_DequantizeLinear_Output
+val_30_DequantizeLinear_Outputlinear_1node_linear_1"MatMul
+•
+"layer_norm_DequantizeLinear_Output
+gemm_input_shapegemm_input_reshape_arggemm_input_reshape"Reshape*
+	allowzero  2Reshape for gemm_input
+­
+"layer_norm_DequantizeLinear_Output
+gemm_input_shape_token_0gemm_input_reshape_arg_token_1gemm_input_reshape_token_2"Reshape*
+	allowzero  2Reshape for gemm_input
+‡
+linear_1
+linear_1_scale
+linear_1_zero_pointlinear_1_QuantizeLinear_Outputlinear_1_QuantizeLinear"QuantizeLinear:com.microsoft
+µ
+gemm_input_reshape_arg
+layer_norm_scale
+layer_norm_zero_point,gemm_input_reshape_arg_QuantizeLinear_Output%gemm_input_reshape_arg_QuantizeLinear"QuantizeLinear:com.microsoft
+Í
+gemm_input_reshape_arg_token_1
+layer_norm_scale
+layer_norm_zero_point4gemm_input_reshape_arg_token_1_QuantizeLinear_Output-gemm_input_reshape_arg_token_1_QuantizeLinear"QuantizeLinear:com.microsoft
+£
+linear_1_QuantizeLinear_Output
+linear_1_scale
+linear_1_zero_point linear_1_DequantizeLinear_Outputlinear_1_DequantizeLinear"DequantizeLinear:com.microsoft
+Ñ
+,gemm_input_reshape_arg_QuantizeLinear_Output
+layer_norm_scale
+layer_norm_zero_point.gemm_input_reshape_arg_DequantizeLinear_Output'gemm_input_reshape_arg_DequantizeLinear"DequantizeLinear:com.microsoft
+é
+4gemm_input_reshape_arg_token_1_QuantizeLinear_Output
+layer_norm_scale
+layer_norm_zero_point6gemm_input_reshape_arg_token_1_DequantizeLinear_Output/gemm_input_reshape_arg_token_1_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+ linear_1_DequantizeLinear_Output
+val_36view_1node_view_1"Reshape*
+	allowzero 
+„
+.gemm_input_reshape_arg_DequantizeLinear_Output
+val_21_DequantizeLinear_Output
+layers.0.self_attn.q_proj.biasgemm_output_reshape_argnode_MatMul_20/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+”
+6gemm_input_reshape_arg_token_1_DequantizeLinear_Output
+val_37_DequantizeLinear_Output
+layers.0.self_attn.v_proj.biasgemm_output_reshape_arg_token_4node_MatMul_36/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+
+view_1
+linear_1_scale
+linear_1_zero_pointview_1_QuantizeLinear_Outputview_1_QuantizeLinear"QuantizeLinear:com.microsoft
+Ò
+gemm_output_reshape_arg
+gemm_output_reshape_arg_scale
+"gemm_output_reshape_arg_zero_point-gemm_output_reshape_arg_QuantizeLinear_Output&gemm_output_reshape_arg_QuantizeLinear"QuantizeLinear:com.microsoft
+ú
+gemm_output_reshape_arg_token_4
+%gemm_output_reshape_arg_token_4_scale
+*gemm_output_reshape_arg_token_4_zero_point5gemm_output_reshape_arg_token_4_QuantizeLinear_Output.gemm_output_reshape_arg_token_4_QuantizeLinear"QuantizeLinear:com.microsoft
+
+view_1_QuantizeLinear_Output
+linear_1_scale
+linear_1_zero_pointview_1_DequantizeLinear_Outputview_1_DequantizeLinear"DequantizeLinear:com.microsoft
+î
+-gemm_output_reshape_arg_QuantizeLinear_Output
+gemm_output_reshape_arg_scale
+"gemm_output_reshape_arg_zero_point/gemm_output_reshape_arg_DequantizeLinear_Output(gemm_output_reshape_arg_DequantizeLinear"DequantizeLinear:com.microsoft
+–
+5gemm_output_reshape_arg_token_4_QuantizeLinear_Output
+%gemm_output_reshape_arg_token_4_scale
+*gemm_output_reshape_arg_token_4_zero_point7gemm_output_reshape_arg_token_4_DequantizeLinear_Output0gemm_output_reshape_arg_token_4_DequantizeLinear"DequantizeLinear:com.microsoft
+]
+view_1_DequantizeLinear_Outputtranspose_1node_transpose_1"	Transpose*
+perm@ @@@ 
+•
+/gemm_output_reshape_arg_DequantizeLinear_Output
+gemm_output_shapelineargemm_output_reshape"Reshape*
+	allowzero  2Reshape for gemm_output
+Õ
+7gemm_output_reshape_arg_token_4_DequantizeLinear_Output
+%gemm_output_reshape_token_5_new_shapeview_2'gemm_output_reshape_token_5_new_reshape"Reshape*
+	allowzero  2'Reshape for gemm_output_reshape_token_5
+
+transpose_1
+linear_1_scale
+linear_1_zero_point!transpose_1_QuantizeLinear_Outputtranspose_1_QuantizeLinear"QuantizeLinear:com.microsoft
+Ÿ
+linear
+gemm_output_reshape_arg_scale
+"gemm_output_reshape_arg_zero_pointlinear_QuantizeLinear_Outputlinear_QuantizeLinear"QuantizeLinear:com.microsoft
+¯
+view_2
+%gemm_output_reshape_arg_token_4_scale
+*gemm_output_reshape_arg_token_4_zero_pointview_2_QuantizeLinear_Outputview_2_QuantizeLinear"QuantizeLinear:com.microsoft
+¬
+!transpose_1_QuantizeLinear_Output
+linear_1_scale
+linear_1_zero_point#transpose_1_DequantizeLinear_Outputtranspose_1_DequantizeLinear"DequantizeLinear:com.microsoft
+»
+linear_QuantizeLinear_Output
+gemm_output_reshape_arg_scale
+"gemm_output_reshape_arg_zero_pointlinear_DequantizeLinear_Outputlinear_DequantizeLinear"DequantizeLinear:com.microsoft
+Ë
+view_2_QuantizeLinear_Output
+%gemm_output_reshape_arg_token_4_scale
+*gemm_output_reshape_arg_token_4_zero_pointview_2_DequantizeLinear_Outputview_2_DequantizeLinear"DequantizeLinear:com.microsoft
+a
+#transpose_1_DequantizeLinear_Output
+val_55val_56node_Reshape_54"Reshape*
+	allowzero  
+T
+linear_DequantizeLinear_Output
+val_23_DequantizeLinear_Outputmulnode_mul"Mul
+]
+view_2_DequantizeLinear_Outputtranspose_2node_transpose_2"	Transpose*
+perm@ @@@ 
+
+val_56
+linear_1_scale
+linear_1_zero_pointval_56_QuantizeLinear_Outputval_56_QuantizeLinear"QuantizeLinear:com.microsoft
+n
+mul
+	mul_scale
+mul_zero_pointmul_QuantizeLinear_Outputmul_QuantizeLinear"QuantizeLinear:com.microsoft
+¾
+transpose_2
+%gemm_output_reshape_arg_token_4_scale
+*gemm_output_reshape_arg_token_4_zero_point!transpose_2_QuantizeLinear_Outputtranspose_2_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_56_QuantizeLinear_Output
+linear_1_scale
+linear_1_zero_pointval_56_DequantizeLinear_Outputval_56_DequantizeLinear"DequantizeLinear:com.microsoft
+Š
+mul_QuantizeLinear_Output
+	mul_scale
+mul_zero_pointmul_DequantizeLinear_Outputmul_DequantizeLinear"DequantizeLinear:com.microsoft
+Ú
+!transpose_2_QuantizeLinear_Output
+%gemm_output_reshape_arg_token_4_scale
+*gemm_output_reshape_arg_token_4_zero_point#transpose_2_DequantizeLinear_Outputtranspose_2_DequantizeLinear"DequantizeLinear:com.microsoft
+W
+val_56_DequantizeLinear_Outputval_57node_Transpose_55"	Transpose*
+perm@ @@ 
+Q
+mul_DequantizeLinear_Output
+val_29view	node_view"Reshape*
+	allowzero 
+
+val_57
+linear_1_scale
+linear_1_zero_pointval_57_QuantizeLinear_Outputval_57_QuantizeLinear"QuantizeLinear:com.microsoft
+q
+view
+	mul_scale
+mul_zero_pointview_QuantizeLinear_Outputview_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_57_QuantizeLinear_Output
+linear_1_scale
+linear_1_zero_pointval_57_DequantizeLinear_Outputval_57_DequantizeLinear"DequantizeLinear:com.microsoft
+
+view_QuantizeLinear_Output
+	mul_scale
+mul_zero_pointview_DequantizeLinear_Outputview_DequantizeLinear"DequantizeLinear:com.microsoft
+\
+val_57_DequantizeLinear_Output
+val_58val_59node_Reshape_57"Reshape*
+	allowzero  
+W
+view_DequantizeLinear_Output	transposenode_transpose"	Transpose*
+perm@ @@@ 
+
+val_59
+linear_1_scale
+linear_1_zero_pointval_59_QuantizeLinear_Outputval_59_QuantizeLinear"QuantizeLinear:com.microsoft
+€
+	transpose
+	mul_scale
+mul_zero_pointtranspose_QuantizeLinear_Outputtranspose_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_59_QuantizeLinear_Output
+linear_1_scale
+linear_1_zero_pointval_59_DequantizeLinear_Outputval_59_DequantizeLinear"DequantizeLinear:com.microsoft
+œ
+transpose_QuantizeLinear_Output
+	mul_scale
+mul_zero_point!transpose_DequantizeLinear_Outputtranspose_DequantizeLinear"DequantizeLinear:com.microsoft
+c
+!transpose_DequantizeLinear_Output
+val_59_DequantizeLinear_Outputval_65node_MatMul_63"MatMul
+}
+val_65
+val_65_scale
+val_65_zero_pointval_65_QuantizeLinear_Outputval_65_QuantizeLinear"QuantizeLinear:com.microsoft
+™
+val_65_QuantizeLinear_Output
+val_65_scale
+val_65_zero_pointval_65_DequantizeLinear_Outputval_65_DequantizeLinear"DequantizeLinear:com.microsoft
+X
+val_65_DequantizeLinear_Outputval_66node_Softmax_64"Softmax*
+axisÿÿÿÿÿÿÿÿÿ 
+}
+val_66
+val_66_scale
+val_66_zero_pointval_66_QuantizeLinear_Outputval_66_QuantizeLinear"QuantizeLinear:com.microsoft
+™
+val_66_QuantizeLinear_Output
+val_66_scale
+val_66_zero_pointval_66_DequantizeLinear_Outputval_66_DequantizeLinear"DequantizeLinear:com.microsoft
+
+val_66_DequantizeLinear_Output
+#transpose_2_DequantizeLinear_Outputscaled_dot_product_attention!node_scaled_dot_product_attention"MatMul
+ë
+scaled_dot_product_attention
+"scaled_dot_product_attention_scale
+'scaled_dot_product_attention_zero_point2scaled_dot_product_attention_QuantizeLinear_Output+scaled_dot_product_attention_QuantizeLinear"QuantizeLinear:com.microsoft
+‡
+2scaled_dot_product_attention_QuantizeLinear_Output
+"scaled_dot_product_attention_scale
+'scaled_dot_product_attention_zero_point4scaled_dot_product_attention_DequantizeLinear_Output-scaled_dot_product_attention_DequantizeLinear"DequantizeLinear:com.microsoft
+s
+4scaled_dot_product_attention_DequantizeLinear_Outputtranspose_3node_transpose_3"	Transpose*
+perm@ @@@ 
+¸
+transpose_3
+"scaled_dot_product_attention_scale
+'scaled_dot_product_attention_zero_point!transpose_3_QuantizeLinear_Outputtranspose_3_QuantizeLinear"QuantizeLinear:com.microsoft
+Ô
+!transpose_3_QuantizeLinear_Output
+"scaled_dot_product_attention_scale
+'scaled_dot_product_attention_zero_point#transpose_3_DequantizeLinear_Outputtranspose_3_DequantizeLinear"DequantizeLinear:com.microsoft
+]
+#transpose_3_DequantizeLinear_Output
+val_71view_3node_view_3"Reshape*
+	allowzero 
+©
+view_3
+"scaled_dot_product_attention_scale
+'scaled_dot_product_attention_zero_pointview_3_QuantizeLinear_Outputview_3_QuantizeLinear"QuantizeLinear:com.microsoft
+Å
+view_3_QuantizeLinear_Output
+"scaled_dot_product_attention_scale
+'scaled_dot_product_attention_zero_pointview_3_DequantizeLinear_Outputview_3_DequantizeLinear"DequantizeLinear:com.microsoft
+©
+view_3_DequantizeLinear_Output
+gemm_input_shape_token_6gemm_input_reshape_arg_token_7gemm_input_reshape_token_8"Reshape*
+	allowzero  2Reshape for gemm_input
+ñ
+gemm_input_reshape_arg_token_7
+"scaled_dot_product_attention_scale
+'scaled_dot_product_attention_zero_point4gemm_input_reshape_arg_token_7_QuantizeLinear_Output-gemm_input_reshape_arg_token_7_QuantizeLinear"QuantizeLinear:com.microsoft
+
+4gemm_input_reshape_arg_token_7_QuantizeLinear_Output
+"scaled_dot_product_attention_scale
+'scaled_dot_product_attention_zero_point6gemm_input_reshape_arg_token_7_DequantizeLinear_Output/gemm_input_reshape_arg_token_7_DequantizeLinear"DequantizeLinear:com.microsoft
+—
+6gemm_input_reshape_arg_token_7_DequantizeLinear_Output
+val_72_DequantizeLinear_Output
+ layers.0.self_attn.out_proj.bias gemm_output_reshape_arg_token_10node_MatMul_71/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_10
+&gemm_output_reshape_arg_token_10_scale
++gemm_output_reshape_arg_token_10_zero_point6gemm_output_reshape_arg_token_10_QuantizeLinear_Output/gemm_output_reshape_arg_token_10_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_10_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_10_scale
++gemm_output_reshape_arg_token_10_zero_point8gemm_output_reshape_arg_token_10_DequantizeLinear_Output1gemm_output_reshape_arg_token_10_DequantizeLinear"DequantizeLinear:com.microsoft
+±
+8gemm_output_reshape_arg_token_10_DequantizeLinear_Output
+gemm_output_shape_token_9linear_3gemm_output_reshape_token_11"Reshape*
+	allowzero  2Reshape for gemm_output
+·
+linear_3
+&gemm_output_reshape_arg_token_10_scale
++gemm_output_reshape_arg_token_10_zero_pointlinear_3_QuantizeLinear_Outputlinear_3_QuantizeLinear"QuantizeLinear:com.microsoft
+Ó
+linear_3_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_10_scale
++gemm_output_reshape_arg_token_10_zero_point linear_3_DequantizeLinear_Outputlinear_3_DequantizeLinear"DequantizeLinear:com.microsoft
+W
+add_DequantizeLinear_Output
+ linear_3_DequantizeLinear_Outputadd_1
+node_add_1"Add
+x
+add_1
+add_1_scale
+add_1_zero_pointadd_1_QuantizeLinear_Outputadd_1_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+add_1_QuantizeLinear_Output
+add_1_scale
+add_1_zero_pointadd_1_DequantizeLinear_Outputadd_1_DequantizeLinear"DequantizeLinear:com.microsoft
+ê
+add_1_DequantizeLinear_Output
+8layers.0.final_layer_norm.weight_DequantizeLinear_Output
+layers.0.final_layer_norm.biaslayer_norm_1node_layer_norm_1"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+›
+layer_norm_1
+layer_norm_1_scale
+layer_norm_1_zero_point"layer_norm_1_QuantizeLinear_Outputlayer_norm_1_QuantizeLinear"QuantizeLinear:com.microsoft
+·
+"layer_norm_1_QuantizeLinear_Output
+layer_norm_1_scale
+layer_norm_1_zero_point$layer_norm_1_DequantizeLinear_Outputlayer_norm_1_DequantizeLinear"DequantizeLinear:com.microsoft
+²
+$layer_norm_1_DequantizeLinear_Output
+gemm_input_shape_token_12gemm_input_reshape_arg_token_13gemm_input_reshape_token_14"Reshape*
+	allowzero  2Reshape for gemm_input
+Ô
+gemm_input_reshape_arg_token_13
+layer_norm_1_scale
+layer_norm_1_zero_point5gemm_input_reshape_arg_token_13_QuantizeLinear_Output.gemm_input_reshape_arg_token_13_QuantizeLinear"QuantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_13_QuantizeLinear_Output
+layer_norm_1_scale
+layer_norm_1_zero_point7gemm_input_reshape_arg_token_13_DequantizeLinear_Output0gemm_input_reshape_arg_token_13_DequantizeLinear"DequantizeLinear:com.microsoft
+‰
+7gemm_input_reshape_arg_token_13_DequantizeLinear_Output
+val_76_DequantizeLinear_Output
+layers.0.fc1.bias gemm_output_reshape_arg_token_16node_MatMul_73/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_16
+&gemm_output_reshape_arg_token_16_scale
++gemm_output_reshape_arg_token_16_zero_point6gemm_output_reshape_arg_token_16_QuantizeLinear_Output/gemm_output_reshape_arg_token_16_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_16_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_16_scale
++gemm_output_reshape_arg_token_16_zero_point8gemm_output_reshape_arg_token_16_DequantizeLinear_Output1gemm_output_reshape_arg_token_16_DequantizeLinear"DequantizeLinear:com.microsoft
+²
+8gemm_output_reshape_arg_token_16_DequantizeLinear_Output
+gemm_output_shape_token_15linear_4gemm_output_reshape_token_17"Reshape*
+	allowzero  2Reshape for gemm_output
+·
+linear_4
+&gemm_output_reshape_arg_token_16_scale
++gemm_output_reshape_arg_token_16_zero_pointlinear_4_QuantizeLinear_Outputlinear_4_QuantizeLinear"QuantizeLinear:com.microsoft
+Ó
+linear_4_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_16_scale
++gemm_output_reshape_arg_token_16_zero_point linear_4_DequantizeLinear_Outputlinear_4_DequantizeLinear"DequantizeLinear:com.microsoft
+Q
+ linear_4_DequantizeLinear_Outputgelu_2Gelu_fused_Erf_2"Gelu:com.microsoft
+}
+gelu_2
+gelu_2_scale
+gelu_2_zero_pointgelu_2_QuantizeLinear_Outputgelu_2_QuantizeLinear"QuantizeLinear:com.microsoft
+™
+gelu_2_QuantizeLinear_Output
+gelu_2_scale
+gelu_2_zero_pointgelu_2_DequantizeLinear_Outputgelu_2_DequantizeLinear"DequantizeLinear:com.microsoft
+¬
+gelu_2_DequantizeLinear_Output
+gemm_input_shape_token_18gemm_input_reshape_arg_token_19gemm_input_reshape_token_20"Reshape*
+	allowzero  2Reshape for gemm_input
+È
+gemm_input_reshape_arg_token_19
+gelu_2_scale
+gelu_2_zero_point5gemm_input_reshape_arg_token_19_QuantizeLinear_Output.gemm_input_reshape_arg_token_19_QuantizeLinear"QuantizeLinear:com.microsoft
+ä
+5gemm_input_reshape_arg_token_19_QuantizeLinear_Output
+gelu_2_scale
+gelu_2_zero_point7gemm_input_reshape_arg_token_19_DequantizeLinear_Output0gemm_input_reshape_arg_token_19_DequantizeLinear"DequantizeLinear:com.microsoft
+‰
+7gemm_input_reshape_arg_token_19_DequantizeLinear_Output
+val_85_DequantizeLinear_Output
+layers.0.fc2.bias gemm_output_reshape_arg_token_22node_MatMul_82/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_22
+&gemm_output_reshape_arg_token_22_scale
++gemm_output_reshape_arg_token_22_zero_point6gemm_output_reshape_arg_token_22_QuantizeLinear_Output/gemm_output_reshape_arg_token_22_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_22_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_22_scale
++gemm_output_reshape_arg_token_22_zero_point8gemm_output_reshape_arg_token_22_DequantizeLinear_Output1gemm_output_reshape_arg_token_22_DequantizeLinear"DequantizeLinear:com.microsoft
+²
+8gemm_output_reshape_arg_token_22_DequantizeLinear_Output
+gemm_output_shape_token_21linear_5gemm_output_reshape_token_23"Reshape*
+	allowzero  2Reshape for gemm_output
+·
+linear_5
+&gemm_output_reshape_arg_token_22_scale
++gemm_output_reshape_arg_token_22_zero_pointlinear_5_QuantizeLinear_Outputlinear_5_QuantizeLinear"QuantizeLinear:com.microsoft
+Ó
+linear_5_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_22_scale
++gemm_output_reshape_arg_token_22_zero_point linear_5_DequantizeLinear_Outputlinear_5_DequantizeLinear"DequantizeLinear:com.microsoft
+Y
+add_1_DequantizeLinear_Output
+ linear_5_DequantizeLinear_Outputadd_2
+node_add_2"Add
+x
+add_2
+add_2_scale
+add_2_zero_pointadd_2_QuantizeLinear_Outputadd_2_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+add_2_QuantizeLinear_Output
+add_2_scale
+add_2_zero_pointadd_2_DequantizeLinear_Outputadd_2_DequantizeLinear"DequantizeLinear:com.microsoft
+ò
+add_2_DequantizeLinear_Output
+<layers.1.self_attn_layer_norm.weight_DequantizeLinear_Output
+"layers.1.self_attn_layer_norm.biaslayer_norm_2node_layer_norm_2"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+›
+layer_norm_2
+layer_norm_2_scale
+layer_norm_2_zero_point"layer_norm_2_QuantizeLinear_Outputlayer_norm_2_QuantizeLinear"QuantizeLinear:com.microsoft
+·
+"layer_norm_2_QuantizeLinear_Output
+layer_norm_2_scale
+layer_norm_2_zero_point$layer_norm_2_DequantizeLinear_Outputlayer_norm_2_DequantizeLinear"DequantizeLinear:com.microsoft
+g
+$layer_norm_2_DequantizeLinear_Output
+val_97_DequantizeLinear_Outputlinear_7node_linear_7"MatMul
+²
+$layer_norm_2_DequantizeLinear_Output
+gemm_input_shape_token_24gemm_input_reshape_arg_token_25gemm_input_reshape_token_26"Reshape*
+	allowzero  2Reshape for gemm_input
+²
+$layer_norm_2_DequantizeLinear_Output
+gemm_input_shape_token_30gemm_input_reshape_arg_token_31gemm_input_reshape_token_32"Reshape*
+	allowzero  2Reshape for gemm_input
+‡
+linear_7
+linear_7_scale
+linear_7_zero_pointlinear_7_QuantizeLinear_Outputlinear_7_QuantizeLinear"QuantizeLinear:com.microsoft
+Ô
+gemm_input_reshape_arg_token_25
+layer_norm_2_scale
+layer_norm_2_zero_point5gemm_input_reshape_arg_token_25_QuantizeLinear_Output.gemm_input_reshape_arg_token_25_QuantizeLinear"QuantizeLinear:com.microsoft
+Ô
+gemm_input_reshape_arg_token_31
+layer_norm_2_scale
+layer_norm_2_zero_point5gemm_input_reshape_arg_token_31_QuantizeLinear_Output.gemm_input_reshape_arg_token_31_QuantizeLinear"QuantizeLinear:com.microsoft
+£
+linear_7_QuantizeLinear_Output
+linear_7_scale
+linear_7_zero_point linear_7_DequantizeLinear_Outputlinear_7_DequantizeLinear"DequantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_25_QuantizeLinear_Output
+layer_norm_2_scale
+layer_norm_2_zero_point7gemm_input_reshape_arg_token_25_DequantizeLinear_Output0gemm_input_reshape_arg_token_25_DequantizeLinear"DequantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_31_QuantizeLinear_Output
+layer_norm_2_scale
+layer_norm_2_zero_point7gemm_input_reshape_arg_token_31_DequantizeLinear_Output0gemm_input_reshape_arg_token_31_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+ linear_7_DequantizeLinear_Output
+val_36view_5node_view_5"Reshape*
+	allowzero 
+–
+7gemm_input_reshape_arg_token_25_DequantizeLinear_Output
+val_89_DequantizeLinear_Output
+layers.1.self_attn.q_proj.bias gemm_output_reshape_arg_token_28node_MatMul_84/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+—
+7gemm_input_reshape_arg_token_31_DequantizeLinear_Output
+val_104_DequantizeLinear_Output
+layers.1.self_attn.v_proj.bias gemm_output_reshape_arg_token_34node_MatMul_99/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+
+view_5
+linear_7_scale
+linear_7_zero_pointview_5_QuantizeLinear_Outputview_5_QuantizeLinear"QuantizeLinear:com.microsoft
+ÿ
+ gemm_output_reshape_arg_token_28
+&gemm_output_reshape_arg_token_28_scale
++gemm_output_reshape_arg_token_28_zero_point6gemm_output_reshape_arg_token_28_QuantizeLinear_Output/gemm_output_reshape_arg_token_28_QuantizeLinear"QuantizeLinear:com.microsoft
+ÿ
+ gemm_output_reshape_arg_token_34
+&gemm_output_reshape_arg_token_34_scale
++gemm_output_reshape_arg_token_34_zero_point6gemm_output_reshape_arg_token_34_QuantizeLinear_Output/gemm_output_reshape_arg_token_34_QuantizeLinear"QuantizeLinear:com.microsoft
+
+view_5_QuantizeLinear_Output
+linear_7_scale
+linear_7_zero_pointview_5_DequantizeLinear_Outputview_5_DequantizeLinear"DequantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_28_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_28_scale
++gemm_output_reshape_arg_token_28_zero_point8gemm_output_reshape_arg_token_28_DequantizeLinear_Output1gemm_output_reshape_arg_token_28_DequantizeLinear"DequantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_34_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_34_scale
++gemm_output_reshape_arg_token_34_zero_point8gemm_output_reshape_arg_token_34_DequantizeLinear_Output1gemm_output_reshape_arg_token_34_DequantizeLinear"DequantizeLinear:com.microsoft
+]
+view_5_DequantizeLinear_Outputtranspose_5node_transpose_5"	Transpose*
+perm@ @@@ 
+²
+8gemm_output_reshape_arg_token_28_DequantizeLinear_Output
+gemm_output_shape_token_27linear_6gemm_output_reshape_token_29"Reshape*
+	allowzero  2Reshape for gemm_output
+Ù
+8gemm_output_reshape_arg_token_34_DequantizeLinear_Output
+&gemm_output_reshape_token_35_new_shapeview_6(gemm_output_reshape_token_35_new_reshape"Reshape*
+	allowzero  2(Reshape for gemm_output_reshape_token_35
+
+transpose_5
+linear_7_scale
+linear_7_zero_point!transpose_5_QuantizeLinear_Outputtranspose_5_QuantizeLinear"QuantizeLinear:com.microsoft
+·
+linear_6
+&gemm_output_reshape_arg_token_28_scale
++gemm_output_reshape_arg_token_28_zero_pointlinear_6_QuantizeLinear_Outputlinear_6_QuantizeLinear"QuantizeLinear:com.microsoft
+±
+view_6
+&gemm_output_reshape_arg_token_34_scale
++gemm_output_reshape_arg_token_34_zero_pointview_6_QuantizeLinear_Outputview_6_QuantizeLinear"QuantizeLinear:com.microsoft
+¬
+!transpose_5_QuantizeLinear_Output
+linear_7_scale
+linear_7_zero_point#transpose_5_DequantizeLinear_Outputtranspose_5_DequantizeLinear"DequantizeLinear:com.microsoft
+Ó
+linear_6_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_28_scale
++gemm_output_reshape_arg_token_28_zero_point linear_6_DequantizeLinear_Outputlinear_6_DequantizeLinear"DequantizeLinear:com.microsoft
+Í
+view_6_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_34_scale
++gemm_output_reshape_arg_token_34_zero_pointview_6_DequantizeLinear_Outputview_6_DequantizeLinear"DequantizeLinear:com.microsoft
+c
+#transpose_5_DequantizeLinear_Output
+val_55val_121node_Reshape_115"Reshape*
+	allowzero  
+Z
+ linear_6_DequantizeLinear_Output
+val_23_DequantizeLinear_Outputmul_1
+node_mul_1"Mul
+]
+view_6_DequantizeLinear_Outputtranspose_6node_transpose_6"	Transpose*
+perm@ @@@ 
+„
+val_121
+linear_7_scale
+linear_7_zero_pointval_121_QuantizeLinear_Outputval_121_QuantizeLinear"QuantizeLinear:com.microsoft
+x
+mul_1
+mul_1_scale
+mul_1_zero_pointmul_1_QuantizeLinear_Outputmul_1_QuantizeLinear"QuantizeLinear:com.microsoft
+À
+transpose_6
+&gemm_output_reshape_arg_token_34_scale
++gemm_output_reshape_arg_token_34_zero_point!transpose_6_QuantizeLinear_Outputtranspose_6_QuantizeLinear"QuantizeLinear:com.microsoft
+ 
+val_121_QuantizeLinear_Output
+linear_7_scale
+linear_7_zero_pointval_121_DequantizeLinear_Outputval_121_DequantizeLinear"DequantizeLinear:com.microsoft
+”
+mul_1_QuantizeLinear_Output
+mul_1_scale
+mul_1_zero_pointmul_1_DequantizeLinear_Outputmul_1_DequantizeLinear"DequantizeLinear:com.microsoft
+Ü
+!transpose_6_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_34_scale
++gemm_output_reshape_arg_token_34_zero_point#transpose_6_DequantizeLinear_Outputtranspose_6_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+val_121_DequantizeLinear_Outputval_122node_Transpose_116"	Transpose*
+perm@ @@ 
+W
+mul_1_DequantizeLinear_Output
+val_29view_4node_view_4"Reshape*
+	allowzero 
+„
+val_122
+linear_7_scale
+linear_7_zero_pointval_122_QuantizeLinear_Outputval_122_QuantizeLinear"QuantizeLinear:com.microsoft
+{
+view_4
+mul_1_scale
+mul_1_zero_pointview_4_QuantizeLinear_Outputview_4_QuantizeLinear"QuantizeLinear:com.microsoft
+ 
+val_122_QuantizeLinear_Output
+linear_7_scale
+linear_7_zero_pointval_122_DequantizeLinear_Outputval_122_DequantizeLinear"DequantizeLinear:com.microsoft
+—
+view_4_QuantizeLinear_Output
+mul_1_scale
+mul_1_zero_pointview_4_DequantizeLinear_Outputview_4_DequantizeLinear"DequantizeLinear:com.microsoft
+_
+val_122_DequantizeLinear_Output
+val_58val_124node_Reshape_118"Reshape*
+	allowzero  
+]
+view_4_DequantizeLinear_Outputtranspose_4node_transpose_4"	Transpose*
+perm@ @@@ 
+„
+val_124
+linear_7_scale
+linear_7_zero_pointval_124_QuantizeLinear_Outputval_124_QuantizeLinear"QuantizeLinear:com.microsoft
+Š
+transpose_4
+mul_1_scale
+mul_1_zero_point!transpose_4_QuantizeLinear_Outputtranspose_4_QuantizeLinear"QuantizeLinear:com.microsoft
+ 
+val_124_QuantizeLinear_Output
+linear_7_scale
+linear_7_zero_pointval_124_DequantizeLinear_Outputval_124_DequantizeLinear"DequantizeLinear:com.microsoft
+¦
+!transpose_4_QuantizeLinear_Output
+mul_1_scale
+mul_1_zero_point#transpose_4_DequantizeLinear_Outputtranspose_4_DequantizeLinear"DequantizeLinear:com.microsoft
+h
+#transpose_4_DequantizeLinear_Output
+val_124_DequantizeLinear_Outputval_130node_MatMul_124"MatMul
+‚
+val_130
+val_130_scale
+val_130_zero_pointval_130_QuantizeLinear_Outputval_130_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_130_QuantizeLinear_Output
+val_130_scale
+val_130_zero_pointval_130_DequantizeLinear_Outputval_130_DequantizeLinear"DequantizeLinear:com.microsoft
+[
+val_130_DequantizeLinear_Outputval_131node_Softmax_125"Softmax*
+axisÿÿÿÿÿÿÿÿÿ 
+‚
+val_131
+val_131_scale
+val_131_zero_pointval_131_QuantizeLinear_Outputval_131_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_131_QuantizeLinear_Output
+val_131_scale
+val_131_zero_pointval_131_DequantizeLinear_Outputval_131_DequantizeLinear"DequantizeLinear:com.microsoft
+“
+val_131_DequantizeLinear_Output
+#transpose_6_DequantizeLinear_Outputscaled_dot_product_attention_1#node_scaled_dot_product_attention_1"MatMul
+õ
+scaled_dot_product_attention_1
+$scaled_dot_product_attention_1_scale
+)scaled_dot_product_attention_1_zero_point4scaled_dot_product_attention_1_QuantizeLinear_Output-scaled_dot_product_attention_1_QuantizeLinear"QuantizeLinear:com.microsoft
+‘
+4scaled_dot_product_attention_1_QuantizeLinear_Output
+$scaled_dot_product_attention_1_scale
+)scaled_dot_product_attention_1_zero_point6scaled_dot_product_attention_1_DequantizeLinear_Output/scaled_dot_product_attention_1_DequantizeLinear"DequantizeLinear:com.microsoft
+u
+6scaled_dot_product_attention_1_DequantizeLinear_Outputtranspose_7node_transpose_7"	Transpose*
+perm@ @@@ 
+¼
+transpose_7
+$scaled_dot_product_attention_1_scale
+)scaled_dot_product_attention_1_zero_point!transpose_7_QuantizeLinear_Outputtranspose_7_QuantizeLinear"QuantizeLinear:com.microsoft
+Ø
+!transpose_7_QuantizeLinear_Output
+$scaled_dot_product_attention_1_scale
+)scaled_dot_product_attention_1_zero_point#transpose_7_DequantizeLinear_Outputtranspose_7_DequantizeLinear"DequantizeLinear:com.microsoft
+]
+#transpose_7_DequantizeLinear_Output
+val_71view_7node_view_7"Reshape*
+	allowzero 
+­
+view_7
+$scaled_dot_product_attention_1_scale
+)scaled_dot_product_attention_1_zero_pointview_7_QuantizeLinear_Outputview_7_QuantizeLinear"QuantizeLinear:com.microsoft
+É
+view_7_QuantizeLinear_Output
+$scaled_dot_product_attention_1_scale
+)scaled_dot_product_attention_1_zero_pointview_7_DequantizeLinear_Outputview_7_DequantizeLinear"DequantizeLinear:com.microsoft
+¬
+view_7_DequantizeLinear_Output
+gemm_input_shape_token_36gemm_input_reshape_arg_token_37gemm_input_reshape_token_38"Reshape*
+	allowzero  2Reshape for gemm_input
+ø
+gemm_input_reshape_arg_token_37
+$scaled_dot_product_attention_1_scale
+)scaled_dot_product_attention_1_zero_point5gemm_input_reshape_arg_token_37_QuantizeLinear_Output.gemm_input_reshape_arg_token_37_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+5gemm_input_reshape_arg_token_37_QuantizeLinear_Output
+$scaled_dot_product_attention_1_scale
+)scaled_dot_product_attention_1_zero_point7gemm_input_reshape_arg_token_37_DequantizeLinear_Output0gemm_input_reshape_arg_token_37_DequantizeLinear"DequantizeLinear:com.microsoft
+š
+7gemm_input_reshape_arg_token_37_DequantizeLinear_Output
+val_137_DequantizeLinear_Output
+ layers.1.self_attn.out_proj.bias gemm_output_reshape_arg_token_40node_MatMul_132/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_40
+&gemm_output_reshape_arg_token_40_scale
++gemm_output_reshape_arg_token_40_zero_point6gemm_output_reshape_arg_token_40_QuantizeLinear_Output/gemm_output_reshape_arg_token_40_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_40_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_40_scale
++gemm_output_reshape_arg_token_40_zero_point8gemm_output_reshape_arg_token_40_DequantizeLinear_Output1gemm_output_reshape_arg_token_40_DequantizeLinear"DequantizeLinear:com.microsoft
+²
+8gemm_output_reshape_arg_token_40_DequantizeLinear_Output
+gemm_output_shape_token_39linear_9gemm_output_reshape_token_41"Reshape*
+	allowzero  2Reshape for gemm_output
+·
+linear_9
+&gemm_output_reshape_arg_token_40_scale
++gemm_output_reshape_arg_token_40_zero_pointlinear_9_QuantizeLinear_Outputlinear_9_QuantizeLinear"QuantizeLinear:com.microsoft
+Ó
+linear_9_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_40_scale
++gemm_output_reshape_arg_token_40_zero_point linear_9_DequantizeLinear_Outputlinear_9_DequantizeLinear"DequantizeLinear:com.microsoft
+Y
+add_2_DequantizeLinear_Output
+ linear_9_DequantizeLinear_Outputadd_3
+node_add_3"Add
+x
+add_3
+add_3_scale
+add_3_zero_pointadd_3_QuantizeLinear_Outputadd_3_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+add_3_QuantizeLinear_Output
+add_3_scale
+add_3_zero_pointadd_3_DequantizeLinear_Outputadd_3_DequantizeLinear"DequantizeLinear:com.microsoft
+ê
+add_3_DequantizeLinear_Output
+8layers.1.final_layer_norm.weight_DequantizeLinear_Output
+layers.1.final_layer_norm.biaslayer_norm_3node_layer_norm_3"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+›
+layer_norm_3
+layer_norm_3_scale
+layer_norm_3_zero_point"layer_norm_3_QuantizeLinear_Outputlayer_norm_3_QuantizeLinear"QuantizeLinear:com.microsoft
+·
+"layer_norm_3_QuantizeLinear_Output
+layer_norm_3_scale
+layer_norm_3_zero_point$layer_norm_3_DequantizeLinear_Outputlayer_norm_3_DequantizeLinear"DequantizeLinear:com.microsoft
+²
+$layer_norm_3_DequantizeLinear_Output
+gemm_input_shape_token_42gemm_input_reshape_arg_token_43gemm_input_reshape_token_44"Reshape*
+	allowzero  2Reshape for gemm_input
+Ô
+gemm_input_reshape_arg_token_43
+layer_norm_3_scale
+layer_norm_3_zero_point5gemm_input_reshape_arg_token_43_QuantizeLinear_Output.gemm_input_reshape_arg_token_43_QuantizeLinear"QuantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_43_QuantizeLinear_Output
+layer_norm_3_scale
+layer_norm_3_zero_point7gemm_input_reshape_arg_token_43_DequantizeLinear_Output0gemm_input_reshape_arg_token_43_DequantizeLinear"DequantizeLinear:com.microsoft
+‹
+7gemm_input_reshape_arg_token_43_DequantizeLinear_Output
+val_141_DequantizeLinear_Output
+layers.1.fc1.bias gemm_output_reshape_arg_token_46node_MatMul_134/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_46
+&gemm_output_reshape_arg_token_46_scale
++gemm_output_reshape_arg_token_46_zero_point6gemm_output_reshape_arg_token_46_QuantizeLinear_Output/gemm_output_reshape_arg_token_46_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_46_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_46_scale
++gemm_output_reshape_arg_token_46_zero_point8gemm_output_reshape_arg_token_46_DequantizeLinear_Output1gemm_output_reshape_arg_token_46_DequantizeLinear"DequantizeLinear:com.microsoft
+³
+8gemm_output_reshape_arg_token_46_DequantizeLinear_Output
+gemm_output_shape_token_45	linear_10gemm_output_reshape_token_47"Reshape*
+	allowzero  2Reshape for gemm_output
+º
+	linear_10
+&gemm_output_reshape_arg_token_46_scale
++gemm_output_reshape_arg_token_46_zero_pointlinear_10_QuantizeLinear_Outputlinear_10_QuantizeLinear"QuantizeLinear:com.microsoft
+Ö
+linear_10_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_46_scale
++gemm_output_reshape_arg_token_46_zero_point!linear_10_DequantizeLinear_Outputlinear_10_DequantizeLinear"DequantizeLinear:com.microsoft
+R
+!linear_10_DequantizeLinear_Outputgelu_3Gelu_fused_Erf_3"Gelu:com.microsoft
+}
+gelu_3
+gelu_3_scale
+gelu_3_zero_pointgelu_3_QuantizeLinear_Outputgelu_3_QuantizeLinear"QuantizeLinear:com.microsoft
+™
+gelu_3_QuantizeLinear_Output
+gelu_3_scale
+gelu_3_zero_pointgelu_3_DequantizeLinear_Outputgelu_3_DequantizeLinear"DequantizeLinear:com.microsoft
+¬
+gelu_3_DequantizeLinear_Output
+gemm_input_shape_token_48gemm_input_reshape_arg_token_49gemm_input_reshape_token_50"Reshape*
+	allowzero  2Reshape for gemm_input
+È
+gemm_input_reshape_arg_token_49
+gelu_3_scale
+gelu_3_zero_point5gemm_input_reshape_arg_token_49_QuantizeLinear_Output.gemm_input_reshape_arg_token_49_QuantizeLinear"QuantizeLinear:com.microsoft
+ä
+5gemm_input_reshape_arg_token_49_QuantizeLinear_Output
+gelu_3_scale
+gelu_3_zero_point7gemm_input_reshape_arg_token_49_DequantizeLinear_Output0gemm_input_reshape_arg_token_49_DequantizeLinear"DequantizeLinear:com.microsoft
+‹
+7gemm_input_reshape_arg_token_49_DequantizeLinear_Output
+val_150_DequantizeLinear_Output
+layers.1.fc2.bias gemm_output_reshape_arg_token_52node_MatMul_143/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_52
+&gemm_output_reshape_arg_token_52_scale
++gemm_output_reshape_arg_token_52_zero_point6gemm_output_reshape_arg_token_52_QuantizeLinear_Output/gemm_output_reshape_arg_token_52_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_52_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_52_scale
++gemm_output_reshape_arg_token_52_zero_point8gemm_output_reshape_arg_token_52_DequantizeLinear_Output1gemm_output_reshape_arg_token_52_DequantizeLinear"DequantizeLinear:com.microsoft
+³
+8gemm_output_reshape_arg_token_52_DequantizeLinear_Output
+gemm_output_shape_token_51	linear_11gemm_output_reshape_token_53"Reshape*
+	allowzero  2Reshape for gemm_output
+º
+	linear_11
+&gemm_output_reshape_arg_token_52_scale
++gemm_output_reshape_arg_token_52_zero_pointlinear_11_QuantizeLinear_Outputlinear_11_QuantizeLinear"QuantizeLinear:com.microsoft
+Ö
+linear_11_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_52_scale
++gemm_output_reshape_arg_token_52_zero_point!linear_11_DequantizeLinear_Outputlinear_11_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+add_3_DequantizeLinear_Output
+!linear_11_DequantizeLinear_Outputadd_4
+node_add_4"Add
+x
+add_4
+add_4_scale
+add_4_zero_pointadd_4_QuantizeLinear_Outputadd_4_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+add_4_QuantizeLinear_Output
+add_4_scale
+add_4_zero_pointadd_4_DequantizeLinear_Outputadd_4_DequantizeLinear"DequantizeLinear:com.microsoft
+ò
+add_4_DequantizeLinear_Output
+<layers.2.self_attn_layer_norm.weight_DequantizeLinear_Output
+"layers.2.self_attn_layer_norm.biaslayer_norm_4node_layer_norm_4"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+›
+layer_norm_4
+layer_norm_4_scale
+layer_norm_4_zero_point"layer_norm_4_QuantizeLinear_Outputlayer_norm_4_QuantizeLinear"QuantizeLinear:com.microsoft
+·
+"layer_norm_4_QuantizeLinear_Output
+layer_norm_4_scale
+layer_norm_4_zero_point$layer_norm_4_DequantizeLinear_Outputlayer_norm_4_DequantizeLinear"DequantizeLinear:com.microsoft
+j
+$layer_norm_4_DequantizeLinear_Output
+val_162_DequantizeLinear_Output	linear_13node_linear_13"MatMul
+²
+$layer_norm_4_DequantizeLinear_Output
+gemm_input_shape_token_54gemm_input_reshape_arg_token_55gemm_input_reshape_token_56"Reshape*
+	allowzero  2Reshape for gemm_input
+²
+$layer_norm_4_DequantizeLinear_Output
+gemm_input_shape_token_60gemm_input_reshape_arg_token_61gemm_input_reshape_token_62"Reshape*
+	allowzero  2Reshape for gemm_input
+Œ
+	linear_13
+linear_13_scale
+linear_13_zero_pointlinear_13_QuantizeLinear_Outputlinear_13_QuantizeLinear"QuantizeLinear:com.microsoft
+Ô
+gemm_input_reshape_arg_token_55
+layer_norm_4_scale
+layer_norm_4_zero_point5gemm_input_reshape_arg_token_55_QuantizeLinear_Output.gemm_input_reshape_arg_token_55_QuantizeLinear"QuantizeLinear:com.microsoft
+Ô
+gemm_input_reshape_arg_token_61
+layer_norm_4_scale
+layer_norm_4_zero_point5gemm_input_reshape_arg_token_61_QuantizeLinear_Output.gemm_input_reshape_arg_token_61_QuantizeLinear"QuantizeLinear:com.microsoft
+¨
+linear_13_QuantizeLinear_Output
+linear_13_scale
+linear_13_zero_point!linear_13_DequantizeLinear_Outputlinear_13_DequantizeLinear"DequantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_55_QuantizeLinear_Output
+layer_norm_4_scale
+layer_norm_4_zero_point7gemm_input_reshape_arg_token_55_DequantizeLinear_Output0gemm_input_reshape_arg_token_55_DequantizeLinear"DequantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_61_QuantizeLinear_Output
+layer_norm_4_scale
+layer_norm_4_zero_point7gemm_input_reshape_arg_token_61_DequantizeLinear_Output0gemm_input_reshape_arg_token_61_DequantizeLinear"DequantizeLinear:com.microsoft
+[
+!linear_13_DequantizeLinear_Output
+val_36view_9node_view_9"Reshape*
+	allowzero 
+˜
+7gemm_input_reshape_arg_token_55_DequantizeLinear_Output
+val_154_DequantizeLinear_Output
+layers.2.self_attn.q_proj.bias gemm_output_reshape_arg_token_58node_MatMul_145/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+˜
+7gemm_input_reshape_arg_token_61_DequantizeLinear_Output
+val_169_DequantizeLinear_Output
+layers.2.self_attn.v_proj.bias gemm_output_reshape_arg_token_64node_MatMul_160/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ƒ
+view_9
+linear_13_scale
+linear_13_zero_pointview_9_QuantizeLinear_Outputview_9_QuantizeLinear"QuantizeLinear:com.microsoft
+ÿ
+ gemm_output_reshape_arg_token_58
+&gemm_output_reshape_arg_token_58_scale
++gemm_output_reshape_arg_token_58_zero_point6gemm_output_reshape_arg_token_58_QuantizeLinear_Output/gemm_output_reshape_arg_token_58_QuantizeLinear"QuantizeLinear:com.microsoft
+ÿ
+ gemm_output_reshape_arg_token_64
+&gemm_output_reshape_arg_token_64_scale
++gemm_output_reshape_arg_token_64_zero_point6gemm_output_reshape_arg_token_64_QuantizeLinear_Output/gemm_output_reshape_arg_token_64_QuantizeLinear"QuantizeLinear:com.microsoft
+Ÿ
+view_9_QuantizeLinear_Output
+linear_13_scale
+linear_13_zero_pointview_9_DequantizeLinear_Outputview_9_DequantizeLinear"DequantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_58_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_58_scale
++gemm_output_reshape_arg_token_58_zero_point8gemm_output_reshape_arg_token_58_DequantizeLinear_Output1gemm_output_reshape_arg_token_58_DequantizeLinear"DequantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_64_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_64_scale
++gemm_output_reshape_arg_token_64_zero_point8gemm_output_reshape_arg_token_64_DequantizeLinear_Output1gemm_output_reshape_arg_token_64_DequantizeLinear"DequantizeLinear:com.microsoft
+]
+view_9_DequantizeLinear_Outputtranspose_9node_transpose_9"	Transpose*
+perm@ @@@ 
+³
+8gemm_output_reshape_arg_token_58_DequantizeLinear_Output
+gemm_output_shape_token_57	linear_12gemm_output_reshape_token_59"Reshape*
+	allowzero  2Reshape for gemm_output
+Ú
+8gemm_output_reshape_arg_token_64_DequantizeLinear_Output
+&gemm_output_reshape_token_65_new_shapeview_10(gemm_output_reshape_token_65_new_reshape"Reshape*
+	allowzero  2(Reshape for gemm_output_reshape_token_65
+’
+transpose_9
+linear_13_scale
+linear_13_zero_point!transpose_9_QuantizeLinear_Outputtranspose_9_QuantizeLinear"QuantizeLinear:com.microsoft
+º
+	linear_12
+&gemm_output_reshape_arg_token_58_scale
++gemm_output_reshape_arg_token_58_zero_pointlinear_12_QuantizeLinear_Outputlinear_12_QuantizeLinear"QuantizeLinear:com.microsoft
+´
+view_10
+&gemm_output_reshape_arg_token_64_scale
++gemm_output_reshape_arg_token_64_zero_pointview_10_QuantizeLinear_Outputview_10_QuantizeLinear"QuantizeLinear:com.microsoft
+®
+!transpose_9_QuantizeLinear_Output
+linear_13_scale
+linear_13_zero_point#transpose_9_DequantizeLinear_Outputtranspose_9_DequantizeLinear"DequantizeLinear:com.microsoft
+Ö
+linear_12_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_58_scale
++gemm_output_reshape_arg_token_58_zero_point!linear_12_DequantizeLinear_Outputlinear_12_DequantizeLinear"DequantizeLinear:com.microsoft
+Ğ
+view_10_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_64_scale
++gemm_output_reshape_arg_token_64_zero_pointview_10_DequantizeLinear_Outputview_10_DequantizeLinear"DequantizeLinear:com.microsoft
+c
+#transpose_9_DequantizeLinear_Output
+val_55val_186node_Reshape_176"Reshape*
+	allowzero  
+[
+!linear_12_DequantizeLinear_Output
+val_23_DequantizeLinear_Outputmul_2
+node_mul_2"Mul
+`
+view_10_DequantizeLinear_Outputtranspose_10node_transpose_10"	Transpose*
+perm@ @@@ 
+†
+val_186
+linear_13_scale
+linear_13_zero_pointval_186_QuantizeLinear_Outputval_186_QuantizeLinear"QuantizeLinear:com.microsoft
+x
+mul_2
+mul_2_scale
+mul_2_zero_pointmul_2_QuantizeLinear_Outputmul_2_QuantizeLinear"QuantizeLinear:com.microsoft
+Ã
+transpose_10
+&gemm_output_reshape_arg_token_64_scale
++gemm_output_reshape_arg_token_64_zero_point"transpose_10_QuantizeLinear_Outputtranspose_10_QuantizeLinear"QuantizeLinear:com.microsoft
+¢
+val_186_QuantizeLinear_Output
+linear_13_scale
+linear_13_zero_pointval_186_DequantizeLinear_Outputval_186_DequantizeLinear"DequantizeLinear:com.microsoft
+”
+mul_2_QuantizeLinear_Output
+mul_2_scale
+mul_2_zero_pointmul_2_DequantizeLinear_Outputmul_2_DequantizeLinear"DequantizeLinear:com.microsoft
+ß
+"transpose_10_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_64_scale
++gemm_output_reshape_arg_token_64_zero_point$transpose_10_DequantizeLinear_Outputtranspose_10_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+val_186_DequantizeLinear_Outputval_187node_Transpose_177"	Transpose*
+perm@ @@ 
+W
+mul_2_DequantizeLinear_Output
+val_29view_8node_view_8"Reshape*
+	allowzero 
+†
+val_187
+linear_13_scale
+linear_13_zero_pointval_187_QuantizeLinear_Outputval_187_QuantizeLinear"QuantizeLinear:com.microsoft
+{
+view_8
+mul_2_scale
+mul_2_zero_pointview_8_QuantizeLinear_Outputview_8_QuantizeLinear"QuantizeLinear:com.microsoft
+¢
+val_187_QuantizeLinear_Output
+linear_13_scale
+linear_13_zero_pointval_187_DequantizeLinear_Outputval_187_DequantizeLinear"DequantizeLinear:com.microsoft
+—
+view_8_QuantizeLinear_Output
+mul_2_scale
+mul_2_zero_pointview_8_DequantizeLinear_Outputview_8_DequantizeLinear"DequantizeLinear:com.microsoft
+_
+val_187_DequantizeLinear_Output
+val_58val_189node_Reshape_179"Reshape*
+	allowzero  
+]
+view_8_DequantizeLinear_Outputtranspose_8node_transpose_8"	Transpose*
+perm@ @@@ 
+†
+val_189
+linear_13_scale
+linear_13_zero_pointval_189_QuantizeLinear_Outputval_189_QuantizeLinear"QuantizeLinear:com.microsoft
+Š
+transpose_8
+mul_2_scale
+mul_2_zero_point!transpose_8_QuantizeLinear_Outputtranspose_8_QuantizeLinear"QuantizeLinear:com.microsoft
+¢
+val_189_QuantizeLinear_Output
+linear_13_scale
+linear_13_zero_pointval_189_DequantizeLinear_Outputval_189_DequantizeLinear"DequantizeLinear:com.microsoft
+¦
+!transpose_8_QuantizeLinear_Output
+mul_2_scale
+mul_2_zero_point#transpose_8_DequantizeLinear_Outputtranspose_8_DequantizeLinear"DequantizeLinear:com.microsoft
+h
+#transpose_8_DequantizeLinear_Output
+val_189_DequantizeLinear_Outputval_195node_MatMul_185"MatMul
+‚
+val_195
+val_195_scale
+val_195_zero_pointval_195_QuantizeLinear_Outputval_195_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_195_QuantizeLinear_Output
+val_195_scale
+val_195_zero_pointval_195_DequantizeLinear_Outputval_195_DequantizeLinear"DequantizeLinear:com.microsoft
+[
+val_195_DequantizeLinear_Outputval_196node_Softmax_186"Softmax*
+axisÿÿÿÿÿÿÿÿÿ 
+‚
+val_196
+val_196_scale
+val_196_zero_pointval_196_QuantizeLinear_Outputval_196_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_196_QuantizeLinear_Output
+val_196_scale
+val_196_zero_pointval_196_DequantizeLinear_Outputval_196_DequantizeLinear"DequantizeLinear:com.microsoft
+”
+val_196_DequantizeLinear_Output
+$transpose_10_DequantizeLinear_Outputscaled_dot_product_attention_2#node_scaled_dot_product_attention_2"MatMul
+õ
+scaled_dot_product_attention_2
+$scaled_dot_product_attention_2_scale
+)scaled_dot_product_attention_2_zero_point4scaled_dot_product_attention_2_QuantizeLinear_Output-scaled_dot_product_attention_2_QuantizeLinear"QuantizeLinear:com.microsoft
+‘
+4scaled_dot_product_attention_2_QuantizeLinear_Output
+$scaled_dot_product_attention_2_scale
+)scaled_dot_product_attention_2_zero_point6scaled_dot_product_attention_2_DequantizeLinear_Output/scaled_dot_product_attention_2_DequantizeLinear"DequantizeLinear:com.microsoft
+w
+6scaled_dot_product_attention_2_DequantizeLinear_Outputtranspose_11node_transpose_11"	Transpose*
+perm@ @@@ 
+¿
+transpose_11
+$scaled_dot_product_attention_2_scale
+)scaled_dot_product_attention_2_zero_point"transpose_11_QuantizeLinear_Outputtranspose_11_QuantizeLinear"QuantizeLinear:com.microsoft
+Û
+"transpose_11_QuantizeLinear_Output
+$scaled_dot_product_attention_2_scale
+)scaled_dot_product_attention_2_zero_point$transpose_11_DequantizeLinear_Outputtranspose_11_DequantizeLinear"DequantizeLinear:com.microsoft
+`
+$transpose_11_DequantizeLinear_Output
+val_71view_11node_view_11"Reshape*
+	allowzero 
+°
+view_11
+$scaled_dot_product_attention_2_scale
+)scaled_dot_product_attention_2_zero_pointview_11_QuantizeLinear_Outputview_11_QuantizeLinear"QuantizeLinear:com.microsoft
+Ì
+view_11_QuantizeLinear_Output
+$scaled_dot_product_attention_2_scale
+)scaled_dot_product_attention_2_zero_pointview_11_DequantizeLinear_Outputview_11_DequantizeLinear"DequantizeLinear:com.microsoft
+­
+view_11_DequantizeLinear_Output
+gemm_input_shape_token_66gemm_input_reshape_arg_token_67gemm_input_reshape_token_68"Reshape*
+	allowzero  2Reshape for gemm_input
+ø
+gemm_input_reshape_arg_token_67
+$scaled_dot_product_attention_2_scale
+)scaled_dot_product_attention_2_zero_point5gemm_input_reshape_arg_token_67_QuantizeLinear_Output.gemm_input_reshape_arg_token_67_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+5gemm_input_reshape_arg_token_67_QuantizeLinear_Output
+$scaled_dot_product_attention_2_scale
+)scaled_dot_product_attention_2_zero_point7gemm_input_reshape_arg_token_67_DequantizeLinear_Output0gemm_input_reshape_arg_token_67_DequantizeLinear"DequantizeLinear:com.microsoft
+š
+7gemm_input_reshape_arg_token_67_DequantizeLinear_Output
+val_202_DequantizeLinear_Output
+ layers.2.self_attn.out_proj.bias gemm_output_reshape_arg_token_70node_MatMul_193/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_70
+&gemm_output_reshape_arg_token_70_scale
++gemm_output_reshape_arg_token_70_zero_point6gemm_output_reshape_arg_token_70_QuantizeLinear_Output/gemm_output_reshape_arg_token_70_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_70_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_70_scale
++gemm_output_reshape_arg_token_70_zero_point8gemm_output_reshape_arg_token_70_DequantizeLinear_Output1gemm_output_reshape_arg_token_70_DequantizeLinear"DequantizeLinear:com.microsoft
+³
+8gemm_output_reshape_arg_token_70_DequantizeLinear_Output
+gemm_output_shape_token_69	linear_15gemm_output_reshape_token_71"Reshape*
+	allowzero  2Reshape for gemm_output
+º
+	linear_15
+&gemm_output_reshape_arg_token_70_scale
++gemm_output_reshape_arg_token_70_zero_pointlinear_15_QuantizeLinear_Outputlinear_15_QuantizeLinear"QuantizeLinear:com.microsoft
+Ö
+linear_15_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_70_scale
++gemm_output_reshape_arg_token_70_zero_point!linear_15_DequantizeLinear_Outputlinear_15_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+add_4_DequantizeLinear_Output
+!linear_15_DequantizeLinear_Outputadd_5
+node_add_5"Add
+x
+add_5
+add_5_scale
+add_5_zero_pointadd_5_QuantizeLinear_Outputadd_5_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+add_5_QuantizeLinear_Output
+add_5_scale
+add_5_zero_pointadd_5_DequantizeLinear_Outputadd_5_DequantizeLinear"DequantizeLinear:com.microsoft
+ê
+add_5_DequantizeLinear_Output
+8layers.2.final_layer_norm.weight_DequantizeLinear_Output
+layers.2.final_layer_norm.biaslayer_norm_5node_layer_norm_5"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+›
+layer_norm_5
+layer_norm_5_scale
+layer_norm_5_zero_point"layer_norm_5_QuantizeLinear_Outputlayer_norm_5_QuantizeLinear"QuantizeLinear:com.microsoft
+·
+"layer_norm_5_QuantizeLinear_Output
+layer_norm_5_scale
+layer_norm_5_zero_point$layer_norm_5_DequantizeLinear_Outputlayer_norm_5_DequantizeLinear"DequantizeLinear:com.microsoft
+²
+$layer_norm_5_DequantizeLinear_Output
+gemm_input_shape_token_72gemm_input_reshape_arg_token_73gemm_input_reshape_token_74"Reshape*
+	allowzero  2Reshape for gemm_input
+Ô
+gemm_input_reshape_arg_token_73
+layer_norm_5_scale
+layer_norm_5_zero_point5gemm_input_reshape_arg_token_73_QuantizeLinear_Output.gemm_input_reshape_arg_token_73_QuantizeLinear"QuantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_73_QuantizeLinear_Output
+layer_norm_5_scale
+layer_norm_5_zero_point7gemm_input_reshape_arg_token_73_DequantizeLinear_Output0gemm_input_reshape_arg_token_73_DequantizeLinear"DequantizeLinear:com.microsoft
+‹
+7gemm_input_reshape_arg_token_73_DequantizeLinear_Output
+val_206_DequantizeLinear_Output
+layers.2.fc1.bias gemm_output_reshape_arg_token_76node_MatMul_195/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_76
+&gemm_output_reshape_arg_token_76_scale
++gemm_output_reshape_arg_token_76_zero_point6gemm_output_reshape_arg_token_76_QuantizeLinear_Output/gemm_output_reshape_arg_token_76_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_76_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_76_scale
++gemm_output_reshape_arg_token_76_zero_point8gemm_output_reshape_arg_token_76_DequantizeLinear_Output1gemm_output_reshape_arg_token_76_DequantizeLinear"DequantizeLinear:com.microsoft
+³
+8gemm_output_reshape_arg_token_76_DequantizeLinear_Output
+gemm_output_shape_token_75	linear_16gemm_output_reshape_token_77"Reshape*
+	allowzero  2Reshape for gemm_output
+º
+	linear_16
+&gemm_output_reshape_arg_token_76_scale
++gemm_output_reshape_arg_token_76_zero_pointlinear_16_QuantizeLinear_Outputlinear_16_QuantizeLinear"QuantizeLinear:com.microsoft
+Ö
+linear_16_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_76_scale
++gemm_output_reshape_arg_token_76_zero_point!linear_16_DequantizeLinear_Outputlinear_16_DequantizeLinear"DequantizeLinear:com.microsoft
+R
+!linear_16_DequantizeLinear_Outputgelu_4Gelu_fused_Erf_4"Gelu:com.microsoft
+}
+gelu_4
+gelu_4_scale
+gelu_4_zero_pointgelu_4_QuantizeLinear_Outputgelu_4_QuantizeLinear"QuantizeLinear:com.microsoft
+™
+gelu_4_QuantizeLinear_Output
+gelu_4_scale
+gelu_4_zero_pointgelu_4_DequantizeLinear_Outputgelu_4_DequantizeLinear"DequantizeLinear:com.microsoft
+¬
+gelu_4_DequantizeLinear_Output
+gemm_input_shape_token_78gemm_input_reshape_arg_token_79gemm_input_reshape_token_80"Reshape*
+	allowzero  2Reshape for gemm_input
+È
+gemm_input_reshape_arg_token_79
+gelu_4_scale
+gelu_4_zero_point5gemm_input_reshape_arg_token_79_QuantizeLinear_Output.gemm_input_reshape_arg_token_79_QuantizeLinear"QuantizeLinear:com.microsoft
+ä
+5gemm_input_reshape_arg_token_79_QuantizeLinear_Output
+gelu_4_scale
+gelu_4_zero_point7gemm_input_reshape_arg_token_79_DequantizeLinear_Output0gemm_input_reshape_arg_token_79_DequantizeLinear"DequantizeLinear:com.microsoft
+‹
+7gemm_input_reshape_arg_token_79_DequantizeLinear_Output
+val_215_DequantizeLinear_Output
+layers.2.fc2.bias gemm_output_reshape_arg_token_82node_MatMul_204/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+ÿ
+ gemm_output_reshape_arg_token_82
+&gemm_output_reshape_arg_token_82_scale
++gemm_output_reshape_arg_token_82_zero_point6gemm_output_reshape_arg_token_82_QuantizeLinear_Output/gemm_output_reshape_arg_token_82_QuantizeLinear"QuantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_82_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_82_scale
++gemm_output_reshape_arg_token_82_zero_point8gemm_output_reshape_arg_token_82_DequantizeLinear_Output1gemm_output_reshape_arg_token_82_DequantizeLinear"DequantizeLinear:com.microsoft
+³
+8gemm_output_reshape_arg_token_82_DequantizeLinear_Output
+gemm_output_shape_token_81	linear_17gemm_output_reshape_token_83"Reshape*
+	allowzero  2Reshape for gemm_output
+º
+	linear_17
+&gemm_output_reshape_arg_token_82_scale
++gemm_output_reshape_arg_token_82_zero_pointlinear_17_QuantizeLinear_Outputlinear_17_QuantizeLinear"QuantizeLinear:com.microsoft
+Ö
+linear_17_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_82_scale
++gemm_output_reshape_arg_token_82_zero_point!linear_17_DequantizeLinear_Outputlinear_17_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+add_5_DequantizeLinear_Output
+!linear_17_DequantizeLinear_Outputadd_6
+node_add_6"Add
+x
+add_6
+add_6_scale
+add_6_zero_pointadd_6_QuantizeLinear_Outputadd_6_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+add_6_QuantizeLinear_Output
+add_6_scale
+add_6_zero_pointadd_6_DequantizeLinear_Outputadd_6_DequantizeLinear"DequantizeLinear:com.microsoft
+ò
+add_6_DequantizeLinear_Output
+<layers.3.self_attn_layer_norm.weight_DequantizeLinear_Output
+"layers.3.self_attn_layer_norm.biaslayer_norm_6node_layer_norm_6"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+›
+layer_norm_6
+layer_norm_6_scale
+layer_norm_6_zero_point"layer_norm_6_QuantizeLinear_Outputlayer_norm_6_QuantizeLinear"QuantizeLinear:com.microsoft
+·
+"layer_norm_6_QuantizeLinear_Output
+layer_norm_6_scale
+layer_norm_6_zero_point$layer_norm_6_DequantizeLinear_Outputlayer_norm_6_DequantizeLinear"DequantizeLinear:com.microsoft
+j
+$layer_norm_6_DequantizeLinear_Output
+val_227_DequantizeLinear_Output	linear_19node_linear_19"MatMul
+²
+$layer_norm_6_DequantizeLinear_Output
+gemm_input_shape_token_84gemm_input_reshape_arg_token_85gemm_input_reshape_token_86"Reshape*
+	allowzero  2Reshape for gemm_input
+²
+$layer_norm_6_DequantizeLinear_Output
+gemm_input_shape_token_90gemm_input_reshape_arg_token_91gemm_input_reshape_token_92"Reshape*
+	allowzero  2Reshape for gemm_input
+Œ
+	linear_19
+linear_19_scale
+linear_19_zero_pointlinear_19_QuantizeLinear_Outputlinear_19_QuantizeLinear"QuantizeLinear:com.microsoft
+Ô
+gemm_input_reshape_arg_token_85
+layer_norm_6_scale
+layer_norm_6_zero_point5gemm_input_reshape_arg_token_85_QuantizeLinear_Output.gemm_input_reshape_arg_token_85_QuantizeLinear"QuantizeLinear:com.microsoft
+Ô
+gemm_input_reshape_arg_token_91
+layer_norm_6_scale
+layer_norm_6_zero_point5gemm_input_reshape_arg_token_91_QuantizeLinear_Output.gemm_input_reshape_arg_token_91_QuantizeLinear"QuantizeLinear:com.microsoft
+¨
+linear_19_QuantizeLinear_Output
+linear_19_scale
+linear_19_zero_point!linear_19_DequantizeLinear_Outputlinear_19_DequantizeLinear"DequantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_85_QuantizeLinear_Output
+layer_norm_6_scale
+layer_norm_6_zero_point7gemm_input_reshape_arg_token_85_DequantizeLinear_Output0gemm_input_reshape_arg_token_85_DequantizeLinear"DequantizeLinear:com.microsoft
+ğ
+5gemm_input_reshape_arg_token_91_QuantizeLinear_Output
+layer_norm_6_scale
+layer_norm_6_zero_point7gemm_input_reshape_arg_token_91_DequantizeLinear_Output0gemm_input_reshape_arg_token_91_DequantizeLinear"DequantizeLinear:com.microsoft
+]
+!linear_19_DequantizeLinear_Output
+val_36view_13node_view_13"Reshape*
+	allowzero 
+˜
+7gemm_input_reshape_arg_token_85_DequantizeLinear_Output
+val_219_DequantizeLinear_Output
+layers.3.self_attn.q_proj.bias gemm_output_reshape_arg_token_88node_MatMul_206/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+˜
+7gemm_input_reshape_arg_token_91_DequantizeLinear_Output
+val_234_DequantizeLinear_Output
+layers.3.self_attn.v_proj.bias gemm_output_reshape_arg_token_94node_MatMul_221/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+†
+view_13
+linear_19_scale
+linear_19_zero_pointview_13_QuantizeLinear_Outputview_13_QuantizeLinear"QuantizeLinear:com.microsoft
+ÿ
+ gemm_output_reshape_arg_token_88
+&gemm_output_reshape_arg_token_88_scale
++gemm_output_reshape_arg_token_88_zero_point6gemm_output_reshape_arg_token_88_QuantizeLinear_Output/gemm_output_reshape_arg_token_88_QuantizeLinear"QuantizeLinear:com.microsoft
+ÿ
+ gemm_output_reshape_arg_token_94
+&gemm_output_reshape_arg_token_94_scale
++gemm_output_reshape_arg_token_94_zero_point6gemm_output_reshape_arg_token_94_QuantizeLinear_Output/gemm_output_reshape_arg_token_94_QuantizeLinear"QuantizeLinear:com.microsoft
+¢
+view_13_QuantizeLinear_Output
+linear_19_scale
+linear_19_zero_pointview_13_DequantizeLinear_Outputview_13_DequantizeLinear"DequantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_88_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_88_scale
++gemm_output_reshape_arg_token_88_zero_point8gemm_output_reshape_arg_token_88_DequantizeLinear_Output1gemm_output_reshape_arg_token_88_DequantizeLinear"DequantizeLinear:com.microsoft
+›
+6gemm_output_reshape_arg_token_94_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_94_scale
++gemm_output_reshape_arg_token_94_zero_point8gemm_output_reshape_arg_token_94_DequantizeLinear_Output1gemm_output_reshape_arg_token_94_DequantizeLinear"DequantizeLinear:com.microsoft
+`
+view_13_DequantizeLinear_Outputtranspose_13node_transpose_13"	Transpose*
+perm@ @@@ 
+³
+8gemm_output_reshape_arg_token_88_DequantizeLinear_Output
+gemm_output_shape_token_87	linear_18gemm_output_reshape_token_89"Reshape*
+	allowzero  2Reshape for gemm_output
+Ú
+8gemm_output_reshape_arg_token_94_DequantizeLinear_Output
+&gemm_output_reshape_token_95_new_shapeview_14(gemm_output_reshape_token_95_new_reshape"Reshape*
+	allowzero  2(Reshape for gemm_output_reshape_token_95
+•
+transpose_13
+linear_19_scale
+linear_19_zero_point"transpose_13_QuantizeLinear_Outputtranspose_13_QuantizeLinear"QuantizeLinear:com.microsoft
+º
+	linear_18
+&gemm_output_reshape_arg_token_88_scale
++gemm_output_reshape_arg_token_88_zero_pointlinear_18_QuantizeLinear_Outputlinear_18_QuantizeLinear"QuantizeLinear:com.microsoft
+´
+view_14
+&gemm_output_reshape_arg_token_94_scale
++gemm_output_reshape_arg_token_94_zero_pointview_14_QuantizeLinear_Outputview_14_QuantizeLinear"QuantizeLinear:com.microsoft
+±
+"transpose_13_QuantizeLinear_Output
+linear_19_scale
+linear_19_zero_point$transpose_13_DequantizeLinear_Outputtranspose_13_DequantizeLinear"DequantizeLinear:com.microsoft
+Ö
+linear_18_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_88_scale
++gemm_output_reshape_arg_token_88_zero_point!linear_18_DequantizeLinear_Outputlinear_18_DequantizeLinear"DequantizeLinear:com.microsoft
+Ğ
+view_14_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_94_scale
++gemm_output_reshape_arg_token_94_zero_pointview_14_DequantizeLinear_Outputview_14_DequantizeLinear"DequantizeLinear:com.microsoft
+d
+$transpose_13_DequantizeLinear_Output
+val_55val_251node_Reshape_237"Reshape*
+	allowzero  
+[
+!linear_18_DequantizeLinear_Output
+val_23_DequantizeLinear_Outputmul_3
+node_mul_3"Mul
+`
+view_14_DequantizeLinear_Outputtranspose_14node_transpose_14"	Transpose*
+perm@ @@@ 
+†
+val_251
+linear_19_scale
+linear_19_zero_pointval_251_QuantizeLinear_Outputval_251_QuantizeLinear"QuantizeLinear:com.microsoft
+x
+mul_3
+mul_3_scale
+mul_3_zero_pointmul_3_QuantizeLinear_Outputmul_3_QuantizeLinear"QuantizeLinear:com.microsoft
+Ã
+transpose_14
+&gemm_output_reshape_arg_token_94_scale
++gemm_output_reshape_arg_token_94_zero_point"transpose_14_QuantizeLinear_Outputtranspose_14_QuantizeLinear"QuantizeLinear:com.microsoft
+¢
+val_251_QuantizeLinear_Output
+linear_19_scale
+linear_19_zero_pointval_251_DequantizeLinear_Outputval_251_DequantizeLinear"DequantizeLinear:com.microsoft
+”
+mul_3_QuantizeLinear_Output
+mul_3_scale
+mul_3_zero_pointmul_3_DequantizeLinear_Outputmul_3_DequantizeLinear"DequantizeLinear:com.microsoft
+ß
+"transpose_14_QuantizeLinear_Output
+&gemm_output_reshape_arg_token_94_scale
++gemm_output_reshape_arg_token_94_zero_point$transpose_14_DequantizeLinear_Outputtranspose_14_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+val_251_DequantizeLinear_Outputval_252node_Transpose_238"	Transpose*
+perm@ @@ 
+Y
+mul_3_DequantizeLinear_Output
+val_29view_12node_view_12"Reshape*
+	allowzero 
+†
+val_252
+linear_19_scale
+linear_19_zero_pointval_252_QuantizeLinear_Outputval_252_QuantizeLinear"QuantizeLinear:com.microsoft
+~
+view_12
+mul_3_scale
+mul_3_zero_pointview_12_QuantizeLinear_Outputview_12_QuantizeLinear"QuantizeLinear:com.microsoft
+¢
+val_252_QuantizeLinear_Output
+linear_19_scale
+linear_19_zero_pointval_252_DequantizeLinear_Outputval_252_DequantizeLinear"DequantizeLinear:com.microsoft
+š
+view_12_QuantizeLinear_Output
+mul_3_scale
+mul_3_zero_pointview_12_DequantizeLinear_Outputview_12_DequantizeLinear"DequantizeLinear:com.microsoft
+_
+val_252_DequantizeLinear_Output
+val_58val_254node_Reshape_240"Reshape*
+	allowzero  
+`
+view_12_DequantizeLinear_Outputtranspose_12node_transpose_12"	Transpose*
+perm@ @@@ 
+†
+val_254
+linear_19_scale
+linear_19_zero_pointval_254_QuantizeLinear_Outputval_254_QuantizeLinear"QuantizeLinear:com.microsoft
+
+transpose_12
+mul_3_scale
+mul_3_zero_point"transpose_12_QuantizeLinear_Outputtranspose_12_QuantizeLinear"QuantizeLinear:com.microsoft
+¢
+val_254_QuantizeLinear_Output
+linear_19_scale
+linear_19_zero_pointval_254_DequantizeLinear_Outputval_254_DequantizeLinear"DequantizeLinear:com.microsoft
+©
+"transpose_12_QuantizeLinear_Output
+mul_3_scale
+mul_3_zero_point$transpose_12_DequantizeLinear_Outputtranspose_12_DequantizeLinear"DequantizeLinear:com.microsoft
+i
+$transpose_12_DequantizeLinear_Output
+val_254_DequantizeLinear_Outputval_260node_MatMul_246"MatMul
+‚
+val_260
+val_260_scale
+val_260_zero_pointval_260_QuantizeLinear_Outputval_260_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_260_QuantizeLinear_Output
+val_260_scale
+val_260_zero_pointval_260_DequantizeLinear_Outputval_260_DequantizeLinear"DequantizeLinear:com.microsoft
+[
+val_260_DequantizeLinear_Outputval_261node_Softmax_247"Softmax*
+axisÿÿÿÿÿÿÿÿÿ 
+‚
+val_261
+val_261_scale
+val_261_zero_pointval_261_QuantizeLinear_Outputval_261_QuantizeLinear"QuantizeLinear:com.microsoft
+
+val_261_QuantizeLinear_Output
+val_261_scale
+val_261_zero_pointval_261_DequantizeLinear_Outputval_261_DequantizeLinear"DequantizeLinear:com.microsoft
+”
+val_261_DequantizeLinear_Output
+$transpose_14_DequantizeLinear_Outputscaled_dot_product_attention_3#node_scaled_dot_product_attention_3"MatMul
+õ
+scaled_dot_product_attention_3
+$scaled_dot_product_attention_3_scale
+)scaled_dot_product_attention_3_zero_point4scaled_dot_product_attention_3_QuantizeLinear_Output-scaled_dot_product_attention_3_QuantizeLinear"QuantizeLinear:com.microsoft
+‘
+4scaled_dot_product_attention_3_QuantizeLinear_Output
+$scaled_dot_product_attention_3_scale
+)scaled_dot_product_attention_3_zero_point6scaled_dot_product_attention_3_DequantizeLinear_Output/scaled_dot_product_attention_3_DequantizeLinear"DequantizeLinear:com.microsoft
+w
+6scaled_dot_product_attention_3_DequantizeLinear_Outputtranspose_15node_transpose_15"	Transpose*
+perm@ @@@ 
+¿
+transpose_15
+$scaled_dot_product_attention_3_scale
+)scaled_dot_product_attention_3_zero_point"transpose_15_QuantizeLinear_Outputtranspose_15_QuantizeLinear"QuantizeLinear:com.microsoft
+Û
+"transpose_15_QuantizeLinear_Output
+$scaled_dot_product_attention_3_scale
+)scaled_dot_product_attention_3_zero_point$transpose_15_DequantizeLinear_Outputtranspose_15_DequantizeLinear"DequantizeLinear:com.microsoft
+`
+$transpose_15_DequantizeLinear_Output
+val_71view_15node_view_15"Reshape*
+	allowzero 
+°
+view_15
+$scaled_dot_product_attention_3_scale
+)scaled_dot_product_attention_3_zero_pointview_15_QuantizeLinear_Outputview_15_QuantizeLinear"QuantizeLinear:com.microsoft
+Ì
+view_15_QuantizeLinear_Output
+$scaled_dot_product_attention_3_scale
+)scaled_dot_product_attention_3_zero_pointview_15_DequantizeLinear_Outputview_15_DequantizeLinear"DequantizeLinear:com.microsoft
+­
+view_15_DequantizeLinear_Output
+gemm_input_shape_token_96gemm_input_reshape_arg_token_97gemm_input_reshape_token_98"Reshape*
+	allowzero  2Reshape for gemm_input
+ø
+gemm_input_reshape_arg_token_97
+$scaled_dot_product_attention_3_scale
+)scaled_dot_product_attention_3_zero_point5gemm_input_reshape_arg_token_97_QuantizeLinear_Output.gemm_input_reshape_arg_token_97_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+5gemm_input_reshape_arg_token_97_QuantizeLinear_Output
+$scaled_dot_product_attention_3_scale
+)scaled_dot_product_attention_3_zero_point7gemm_input_reshape_arg_token_97_DequantizeLinear_Output0gemm_input_reshape_arg_token_97_DequantizeLinear"DequantizeLinear:com.microsoft
+›
+7gemm_input_reshape_arg_token_97_DequantizeLinear_Output
+val_267_DequantizeLinear_Output
+ layers.3.self_attn.out_proj.bias!gemm_output_reshape_arg_token_100node_MatMul_254/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+„
+!gemm_output_reshape_arg_token_100
+'gemm_output_reshape_arg_token_100_scale
+,gemm_output_reshape_arg_token_100_zero_point7gemm_output_reshape_arg_token_100_QuantizeLinear_Output0gemm_output_reshape_arg_token_100_QuantizeLinear"QuantizeLinear:com.microsoft
+ 
+7gemm_output_reshape_arg_token_100_QuantizeLinear_Output
+'gemm_output_reshape_arg_token_100_scale
+,gemm_output_reshape_arg_token_100_zero_point9gemm_output_reshape_arg_token_100_DequantizeLinear_Output2gemm_output_reshape_arg_token_100_DequantizeLinear"DequantizeLinear:com.microsoft
+µ
+9gemm_output_reshape_arg_token_100_DequantizeLinear_Output
+gemm_output_shape_token_99	linear_21gemm_output_reshape_token_101"Reshape*
+	allowzero  2Reshape for gemm_output
+¼
+	linear_21
+'gemm_output_reshape_arg_token_100_scale
+,gemm_output_reshape_arg_token_100_zero_pointlinear_21_QuantizeLinear_Outputlinear_21_QuantizeLinear"QuantizeLinear:com.microsoft
+Ø
+linear_21_QuantizeLinear_Output
+'gemm_output_reshape_arg_token_100_scale
+,gemm_output_reshape_arg_token_100_zero_point!linear_21_DequantizeLinear_Outputlinear_21_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+add_6_DequantizeLinear_Output
+!linear_21_DequantizeLinear_Outputadd_7
+node_add_7"Add
+x
+add_7
+add_7_scale
+add_7_zero_pointadd_7_QuantizeLinear_Outputadd_7_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+add_7_QuantizeLinear_Output
+add_7_scale
+add_7_zero_pointadd_7_DequantizeLinear_Outputadd_7_DequantizeLinear"DequantizeLinear:com.microsoft
+ê
+add_7_DequantizeLinear_Output
+8layers.3.final_layer_norm.weight_DequantizeLinear_Output
+layers.3.final_layer_norm.biaslayer_norm_7node_layer_norm_7"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+›
+layer_norm_7
+layer_norm_7_scale
+layer_norm_7_zero_point"layer_norm_7_QuantizeLinear_Outputlayer_norm_7_QuantizeLinear"QuantizeLinear:com.microsoft
+·
+"layer_norm_7_QuantizeLinear_Output
+layer_norm_7_scale
+layer_norm_7_zero_point$layer_norm_7_DequantizeLinear_Outputlayer_norm_7_DequantizeLinear"DequantizeLinear:com.microsoft
+µ
+$layer_norm_7_DequantizeLinear_Output
+gemm_input_shape_token_102 gemm_input_reshape_arg_token_103gemm_input_reshape_token_104"Reshape*
+	allowzero  2Reshape for gemm_input
+×
+ gemm_input_reshape_arg_token_103
+layer_norm_7_scale
+layer_norm_7_zero_point6gemm_input_reshape_arg_token_103_QuantizeLinear_Output/gemm_input_reshape_arg_token_103_QuantizeLinear"QuantizeLinear:com.microsoft
+ó
+6gemm_input_reshape_arg_token_103_QuantizeLinear_Output
+layer_norm_7_scale
+layer_norm_7_zero_point8gemm_input_reshape_arg_token_103_DequantizeLinear_Output1gemm_input_reshape_arg_token_103_DequantizeLinear"DequantizeLinear:com.microsoft
+
+8gemm_input_reshape_arg_token_103_DequantizeLinear_Output
+val_271_DequantizeLinear_Output
+layers.3.fc1.bias!gemm_output_reshape_arg_token_106node_MatMul_256/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+„
+!gemm_output_reshape_arg_token_106
+'gemm_output_reshape_arg_token_106_scale
+,gemm_output_reshape_arg_token_106_zero_point7gemm_output_reshape_arg_token_106_QuantizeLinear_Output0gemm_output_reshape_arg_token_106_QuantizeLinear"QuantizeLinear:com.microsoft
+ 
+7gemm_output_reshape_arg_token_106_QuantizeLinear_Output
+'gemm_output_reshape_arg_token_106_scale
+,gemm_output_reshape_arg_token_106_zero_point9gemm_output_reshape_arg_token_106_DequantizeLinear_Output2gemm_output_reshape_arg_token_106_DequantizeLinear"DequantizeLinear:com.microsoft
+¶
+9gemm_output_reshape_arg_token_106_DequantizeLinear_Output
+gemm_output_shape_token_105	linear_22gemm_output_reshape_token_107"Reshape*
+	allowzero  2Reshape for gemm_output
+¼
+	linear_22
+'gemm_output_reshape_arg_token_106_scale
+,gemm_output_reshape_arg_token_106_zero_pointlinear_22_QuantizeLinear_Outputlinear_22_QuantizeLinear"QuantizeLinear:com.microsoft
+Ø
+linear_22_QuantizeLinear_Output
+'gemm_output_reshape_arg_token_106_scale
+,gemm_output_reshape_arg_token_106_zero_point!linear_22_DequantizeLinear_Outputlinear_22_DequantizeLinear"DequantizeLinear:com.microsoft
+R
+!linear_22_DequantizeLinear_Outputgelu_5Gelu_fused_Erf_5"Gelu:com.microsoft
+}
+gelu_5
+gelu_5_scale
+gelu_5_zero_pointgelu_5_QuantizeLinear_Outputgelu_5_QuantizeLinear"QuantizeLinear:com.microsoft
+™
+gelu_5_QuantizeLinear_Output
+gelu_5_scale
+gelu_5_zero_pointgelu_5_DequantizeLinear_Outputgelu_5_DequantizeLinear"DequantizeLinear:com.microsoft
+¯
+gelu_5_DequantizeLinear_Output
+gemm_input_shape_token_108 gemm_input_reshape_arg_token_109gemm_input_reshape_token_110"Reshape*
+	allowzero  2Reshape for gemm_input
+Ë
+ gemm_input_reshape_arg_token_109
+gelu_5_scale
+gelu_5_zero_point6gemm_input_reshape_arg_token_109_QuantizeLinear_Output/gemm_input_reshape_arg_token_109_QuantizeLinear"QuantizeLinear:com.microsoft
+ç
+6gemm_input_reshape_arg_token_109_QuantizeLinear_Output
+gelu_5_scale
+gelu_5_zero_point8gemm_input_reshape_arg_token_109_DequantizeLinear_Output1gemm_input_reshape_arg_token_109_DequantizeLinear"DequantizeLinear:com.microsoft
+
+8gemm_input_reshape_arg_token_109_DequantizeLinear_Output
+val_280_DequantizeLinear_Output
+layers.3.fc2.bias!gemm_output_reshape_arg_token_112node_MatMul_265/MatMulAddFusion"Gemm*
+transA  *
+transB  *
+alpha  €? *
+beta  €? 2fused Matmul and Add
+„
+!gemm_output_reshape_arg_token_112
+'gemm_output_reshape_arg_token_112_scale
+,gemm_output_reshape_arg_token_112_zero_point7gemm_output_reshape_arg_token_112_QuantizeLinear_Output0gemm_output_reshape_arg_token_112_QuantizeLinear"QuantizeLinear:com.microsoft
+ 
+7gemm_output_reshape_arg_token_112_QuantizeLinear_Output
+'gemm_output_reshape_arg_token_112_scale
+,gemm_output_reshape_arg_token_112_zero_point9gemm_output_reshape_arg_token_112_DequantizeLinear_Output2gemm_output_reshape_arg_token_112_DequantizeLinear"DequantizeLinear:com.microsoft
+¶
+9gemm_output_reshape_arg_token_112_DequantizeLinear_Output
+gemm_output_shape_token_111	linear_23gemm_output_reshape_token_113"Reshape*
+	allowzero  2Reshape for gemm_output
+¼
+	linear_23
+'gemm_output_reshape_arg_token_112_scale
+,gemm_output_reshape_arg_token_112_zero_pointlinear_23_QuantizeLinear_Outputlinear_23_QuantizeLinear"QuantizeLinear:com.microsoft
+Ø
+linear_23_QuantizeLinear_Output
+'gemm_output_reshape_arg_token_112_scale
+,gemm_output_reshape_arg_token_112_zero_point!linear_23_DequantizeLinear_Outputlinear_23_DequantizeLinear"DequantizeLinear:com.microsoft
+Z
+add_7_DequantizeLinear_Output
+!linear_23_DequantizeLinear_Outputadd_8
+node_add_8"Add
+x
+add_8
+add_8_scale
+add_8_zero_pointadd_8_QuantizeLinear_Outputadd_8_QuantizeLinear"QuantizeLinear:com.microsoft
+”
+add_8_QuantizeLinear_Output
+add_8_scale
+add_8_zero_pointadd_8_DequantizeLinear_Outputadd_8_DequantizeLinear"DequantizeLinear:com.microsoft
+æ
+add_8_DequantizeLinear_Output
+)layer_norm.weight_DequantizeLinear_Output
+layer_norm.bias&last_hidden_state_QuantizeLinear_Inputnode_layer_norm_8"LayerNormalization*
+axisÿÿÿÿÿÿÿÿÿ *
+epsilon¬Å'7 *
+
+stash_type 
+É
+&last_hidden_state_QuantizeLinear_Input
+last_hidden_state_scale
+last_hidden_state_zero_point'last_hidden_state_QuantizeLinear_Output last_hidden_state_QuantizeLinear"QuantizeLinear:com.microsoft
+¸
+'last_hidden_state_QuantizeLinear_Output
+last_hidden_state_scale
+last_hidden_state_zero_pointlast_hidden_state"last_hidden_state_DequantizeLinear"DequantizeLinear:com.microsoft
+main_graph*.Bval_29J        Ü      ÿÿÿÿÿÿÿÿ@       *.Bval_36J        ÿÿÿÿÿÿÿÿ       @       *&Bval_55JÿÿÿÿÿÿÿÿÜ      @       *.Bval_58J               @       Ü      *&Bval_71J       Ü      ÿÿÿÿÿÿÿÿ*(Bgemm_input_shapeJÜ      €      *1Bgemm_output_shapeJ       Ü      €      *0Bgemm_input_shape_token_0JÜ      €      *NB&gemm_output_reshape_token_95_new_shapeJ        Ü             @       *0Bgemm_input_shape_token_6JÜ      €      *9Bgemm_output_shape_token_9J       Ü      €      *1Bgemm_input_shape_token_12JÜ      €      *:Bgemm_output_shape_token_15J       Ü             *1Bgemm_input_shape_token_18JÜ             *:Bgemm_output_shape_token_21J       Ü      €      *1Bgemm_input_shape_token_24JÜ      €      *:Bgemm_output_shape_token_27J       Ü      €      *1Bgemm_input_shape_token_30JÜ      €      *NB&gemm_output_reshape_token_65_new_shapeJ        Ü             @       *1Bgemm_input_shape_token_36JÜ      €      *:Bgemm_output_shape_token_39J       Ü      €      *1Bgemm_input_shape_token_42JÜ      €      *:Bgemm_output_shape_token_45J       Ü             *1Bgemm_input_shape_token_48JÜ             *:Bgemm_output_shape_token_51J       Ü      €      *1Bgemm_input_shape_token_54JÜ      €      *:Bgemm_output_shape_token_57J       Ü      €      *1Bgemm_input_shape_token_60JÜ      €      *NB&gemm_output_reshape_token_35_new_shapeJ        Ü             @       *1Bgemm_input_shape_token_66JÜ      €      *:Bgemm_output_shape_token_69J       Ü      €      *1Bgemm_input_shape_token_72JÜ      €      *:Bgemm_output_shape_token_75J       Ü             *1Bgemm_input_shape_token_78JÜ             *:Bgemm_output_shape_token_81J       Ü      €      *1Bgemm_input_shape_token_84JÜ      €      *:Bgemm_output_shape_token_87J       Ü      €      *1Bgemm_input_shape_token_90JÜ      €      *MB%gemm_output_reshape_token_5_new_shapeJ        Ü             @       *1Bgemm_input_shape_token_96JÜ      €      *:Bgemm_output_shape_token_99J       Ü      €      *2Bgemm_input_shape_token_102JÜ      €      *;Bgemm_output_shape_token_105J       Ü             *2Bgemm_input_shape_token_108JÜ             *;Bgemm_output_shape_token_111J       Ü      €      *"*ªÃBinput_features_zero_point*",8Binput_features_scale**¦ºBconv1d_zero_point*"QŒ9Bconv1d_scale**sBconv1.weight_zero_point*"›šz;Bconv1.weight_scale*f€PBconv1.weight_quantizedj#
+locationencoder_model.onnx.dataj
+offset0j
+length92160p**ÄBgelu_zero_point*".)Ş8B
+gelu_scale**ø‡Bconv1d_1_zero_point*"’–9Bconv1d_1_scale**˜Bconv2.weight_zero_point*"½¼¼;Bconv2.weight_scale*l€€Bconv2.weight_quantizedj#
+locationencoder_model.onnx.dataj
+offset92160j
+length442368p**şBgelu_1_zero_point*"‰ª’8Bgelu_1_scale**€€Bembedding_zero_point*"€  8Bembedding_scale*iÜ€Bembedding_quantizedj#
+locationencoder_model.onnx.dataj
+offset534528j
+length1152000p**ÿZBadd_zero_point*"ÉªÒ8B	add_scale*6* B/layers.0.self_attn_layer_norm.weight_zero_point*4")»ù<B*layers.0.self_attn_layer_norm.weight_scale*¸€B.layers.0.self_attn_layer_norm.weight_quantizedJ€9ı=CC>=$;6E $`8FTH"Jß6?$9F=./G=Iy/((%.73Ü5/<'1-/1/05(B,623",,3 M.#8)&* ;6,* +&9 +, ##@ QY,$+7!F 4'  ! ''0   '5
+,G;BF;]0<2:"],D.E :B0IABXLFVTk3EH;_>XŠQDJsULi[iLP@}NA§4e5_;V\IS~'?[ÿ.G*-G O+*FGJG"-0Fİ3 E=99:"t,>;C1)1İ/3,<3,)3+-D,D-*+2%'2I].7m{?T& &. . 1 (% & -1#  6=06/.)'1'' '%" ( 2( '10B<DrY)=N4S7 WP6IWmnwGp8ŠrçYVgYSNU]R/]mrq`T‹×^SR%MaRBJefb**­Blayer_norm_zero_point*"dà9Blayer_norm_scale**yBval_30_zero_point*"LLœ;Bval_30_scale*f€€Bval_30_quantizedj#
+locationencoder_model.onnx.dataj
+offset1686528j
+length147456p**¶…Blinear_1_zero_point*""Â€9Blinear_1_scale*+*Ñ¨B"gemm_output_reshape_arg_zero_point*'"ExŠ9Bgemm_output_reshape_arg_scale**sBval_21_zero_point*"üûK;Bval_21_scale*f€€Bval_21_quantizedj#
+locationencoder_model.onnx.dataj
+offset1833984j
+length147456p*3*ŠêB*gemm_output_reshape_arg_token_4_zero_point*/"4ú99B%gemm_output_reshape_arg_token_4_scale**ƒBval_37_zero_point*"llü:Bval_37_scale*f€€Bval_37_quantizedj#
+locationencoder_model.onnx.dataj
+offset1981440j
+length147456p** Bval_23_zero_point*"€  6Bval_23_scale*Bval_23_quantizedJÿÿ**Ñ¨Bmul_zero_point*"Ex
+8B	mul_scale**çãBval_65_zero_point*"1mY:Bval_65_scale** Bval_66_zero_point*"€ €7Bval_66_scale*0*èîB'scaled_dot_product_attention_zero_point*,"ğ,9B"scaled_dot_product_attention_scale*4*ÜÒB+gemm_output_reshape_arg_token_10_zero_point*0"Ló8B&gemm_output_reshape_arg_token_10_scale**†Bval_72_zero_point*"üû+;Bval_72_scale*f€€Bval_72_quantizedj#
+locationencoder_model.onnx.dataj
+offset2128896j
+length147456p**‰ºBadd_1_zero_point*"Ò–8Badd_1_scale*2*,B+layers.0.final_layer_norm.weight_zero_point*0"iié<B&layers.0.final_layer_norm.weight_scale*´€B*layers.0.final_layer_norm.weight_quantizedJ€CZ]LWS^ScNbLd]W^RVZUj|l}ohhZml+-o-^dk]ŸiU]^Y_]bkgddU^SW`ifl\qgrszpghpewwVl}fi,ysg`-,e,zqotpqts/ˆuozƒuj,ŠMz~‚lRym,ss~t‹eh€‡;`qlcv…kon‹k€{zŠk}epuqzb‡pgmon„¤oƒ‚ƒv‹trsy”h‚ vzy\{k‹nhÿuƒK[bNO\\inKwWg``nl)Ycdi`btjXuo\,-e-dhUP[hUos‘_Zd`^b`og[7^nhmqgsjgbzo]n‚dlpm,tsdgkt,`,Rf]hlrwpbozqq€/ms„ow zlfiiyflˆtjxmlfofph…iost|^w€jplr‚`m€…•uv‚jmy¥]sv{qƒs|~g„|ti‚Up+‚‹ªŠq“”zy†k”‹“ol* *°áBlayer_norm_1_zero_point*"bK
+:Blayer_norm_1_scale*4*ŸÜB+gemm_output_reshape_arg_token_16_zero_point*0":°9B&gemm_output_reshape_arg_token_16_scale**yBval_76_zero_point*"LL<;Bval_76_scale*f€€Bval_76_quantizedj#
+locationencoder_model.onnx.dataj
+offset2276352j
+length589824p**ìBgelu_2_zero_point*"ÌZK9Bgelu_2_scale*4*ÈşB+gemm_output_reshape_arg_token_22_zero_point*0"£
+9B&gemm_output_reshape_arg_token_22_scale**}Bval_85_zero_point*"
+
+*;Bval_85_scale*f€€Bval_85_quantizedj#
+locationencoder_model.onnx.dataj
+offset2866176j
+length589824p** “Badd_2_zero_point*"H‚9Badd_2_scale*6* B/layers.1.self_attn_layer_norm.weight_zero_point*4"~~^<B*layers.1.self_attn_layer_norm.weight_scale*¸€B.layers.1.self_attn_layer_norm.weight_quantizedJ€!0I.D2Y-S-V._^D]-@G=T‡y}Œ†rrŠ‡	Tnn\‘WTeJfsem™z‰iQpgM^}~|=z|wŒY‡sy‰yU‰z|T[ƒ}DEI^€{d]d{‡…Fƒ{‡£™„ˆƒ$‹—y¤wM‡eRƒ“‡¤®^vxÂ„‚ˆ˜•a}‰—ˆ°‰[¿™|’jw‰•£d†‰v{v”i²Ùm®™Ÿ¥”„»†d”Š†|Õ´ã–xÊ”‘„„Ç£ÿ«¶4=p57bD_q7n9n]KjvU9V‡o{g›{<‹}~lcZ*S?y|‘qut–h~rlcgSpo‚x}evtY_s•~xˆ‹UŒ‹dmzƒUZ.SŠbp‹rs\~’ˆ¦a~?‹ƒS¤‰k|~‡jkˆ…›¹‰zvr£jjˆ~˜}¢¶b€£cjœ‹š–Yc›a½ˆ‡_¬ÍšÖMP‘q½¹İ›q¨¿««¥;“T|­”°¾‘°À¹¤nª€¯«Ê©tÂ* *„ïBlayer_norm_2_zero_point*"d%°9Blayer_norm_2_scale**ƒBval_97_zero_point*"ª©i;Bval_97_scale*f€€Bval_97_quantizedj#
+locationencoder_model.onnx.dataj
+offset3456000j
+length147456p**‘úBlinear_7_zero_point*"MŞJ9Blinear_7_scale*4*½¥B+gemm_output_reshape_arg_token_28_zero_point*0"@¥~9B&gemm_output_reshape_arg_token_28_scale**ƒBval_89_zero_point*"rr;Bval_89_scale*f€€Bval_89_quantizedj#
+locationencoder_model.onnx.dataj
+offset3603456j
+length147456p*4*ˆB+gemm_output_reshape_arg_token_34_zero_point*0"9…&9B&gemm_output_reshape_arg_token_34_scale**}Bval_104_zero_point*"×Ö¦:Bval_104_scale*g€€Bval_104_quantizedj#
+locationencoder_model.onnx.dataj
+offset3750912j
+length147456p**½¥Bmul_1_zero_point*"@¥ş7Bmul_1_scale**¦×Bval_130_zero_point*"Tëé9Bval_130_scale** Bval_131_zero_point*"€ €7Bval_131_scale*2*ÜîB)scaled_dot_product_attention_1_zero_point*."w˜°8B$scaled_dot_product_attention_1_scale*4*ıåB+gemm_output_reshape_arg_token_40_zero_point*0"à§q8B&gemm_output_reshape_arg_token_40_scale**’Bval_137_zero_point*"±°;Bval_137_scale*g€€Bval_137_quantizedj#
+locationencoder_model.onnx.dataj
+offset3898368j
+length147456p**¡ıBadd_3_zero_point*"Œì 9Badd_3_scale*2*B+layers.1.final_layer_norm.weight_zero_point*0"9¹c<B&layers.1.final_layer_norm.weight_scale*´€B*layers.1.final_layer_norm.weight_quantizedJ€FmgR]upT{]vPf|eoK}ka‚ŒŠ‹~|ˆˆ ˜qƒ„q vpykhƒop¹‰xtkpy‚‘uŠ–››€•Œ› «›‰±©¤(Š“£kpj‘>±®Œª¼®®'Ÿ ¤§“˜”?¤”¬­º’™£$”Ó¶¸¶È†”ªœL¡¢½Š¼³’¢‹¥Æ†Õ¹ˆ¡É ‚ˆ‰—–“‹¨—ˆ¡›™«¤ŸºœšŸ—–›™™–¬—ˆ°¿‚¡âŸ~ƒ¯¥¡î°²œOX’_Rsaz‡PŠ[„wg~Xsywˆn“ˆe‰”n {ndswa‹“›‚œq…x~ƒx†vŒ|¢„~†w•}¤Œz|˜¬³¯¡‡­™(~[Ax}‘›Ÿ­¸‹‘³®Ÿ‘°—œ•ª{ƒ” ™°« ªxä”•¾¼|½¶ÀÎ´ëÄ‰‘›­šš¢§›¨¢¼Àæ˜§¤›£¥¦ ¤‡ƒ½²š›¹—¥«ÿ© —ì‰¯#¥±—£É¹½œ¥Õş¶¤¯¨¡¢šÅ* *åŞBlayer_norm_3_zero_point*"»kë9Blayer_norm_3_scale*4*ÿÏB+gemm_output_reshape_arg_token_46_zero_point*0"ã×½9B&gemm_output_reshape_arg_token_46_scale**Bval_141_zero_point*"ww7;Bval_141_scale*g€€Bval_141_quantizedj#
+locationencoder_model.onnx.dataj
+offset4045824j
+length589824p**Bgelu_3_zero_point*"C)d9Bgelu_3_scale*4*üûB+gemm_output_reshape_arg_token_52_zero_point*0"ÛÎ`9B&gemm_output_reshape_arg_token_52_scale**|Bval_150_zero_point*"Şİ-;Bval_150_scale*g€€Bval_150_quantizedj#
+locationencoder_model.onnx.dataj
+offset4635648j
+length589824p**í†Badd_4_zero_point*"wü˜9Badd_4_scale*6* B/layers.2.self_attn_layer_norm.weight_zero_point*4"ÃÂâ<B*layers.2.self_attn_layer_norm.weight_scale*¸€B.layers.2.self_attn_layer_norm.weight_quantizedJ€",$,3& *#<%#-'(#3/&66:6KE5:>Aş%C66<2>PO2;&CHD<RBC0>BH/2->:+DF@DE9D<CLR7;USLX|*DN3KI4EF5EHH.;Q0RNJHCI=RLKP?;/99nLeJ\V^<JX9#E9*D-9:+>CVF=>-_E?LA@3=:KB?N=5DH4I\:ZNIT@:\<8MSH7Eh)WL;=A??PQc=NI!&% -&03!6(09*&.[%((27/BN,=D>ÿ%K1B10 6L+34DA<?_DYA64AE/5@X;F-)<*<44A4P:L>DNK;1AIz?!A5@<C<K,O=2MOdIAQ67RE8=B:K<P?9R6n.4Jd<GBUPA`Z:=R@F@KJO505GN–JC7AQS@N75 VIWOOXMMx]BOf+cn-G7FrJ_RR]&EM;GCUCy* *œƒBlayer_norm_4_zero_point*"Ğ.:Blayer_norm_4_scale**Bval_162_zero_point*">>;Bval_162_scale*g€€Bval_162_quantizedj#
+locationencoder_model.onnx.dataj
+offset5225472j
+length147456p**¼ğBlinear_13_zero_point*"l¬9Blinear_13_scale*4*üûB+gemm_output_reshape_arg_token_58_zero_point*0"&fˆ9B&gemm_output_reshape_arg_token_58_scale**†Bval_154_zero_point*"ÏÎ;Bval_154_scale*g€€Bval_154_quantizedj#
+locationencoder_model.onnx.dataj
+offset5372928j
+length147456p*4*ÖòB+gemm_output_reshape_arg_token_64_zero_point*0"ºïC9B&gemm_output_reshape_arg_token_64_scale**ˆBval_169_zero_point*"AAá:Bval_169_scale*g€€Bval_169_quantizedj#
+locationencoder_model.onnx.dataj
+offset5520384j
+length147456p**üûBmul_2_zero_point*"&f8Bmul_2_scale**÷˜Bval_195_zero_point*"£C!:Bval_195_scale** Bval_196_zero_point*"€ €7Bval_196_scale*2*ŞïB)scaled_dot_product_attention_2_zero_point*."İ19B$scaled_dot_product_attention_2_scale*4*À•B+gemm_output_reshape_arg_token_70_zero_point*0"Û÷9B&gemm_output_reshape_arg_token_70_scale**„Bval_202_zero_point*"úù9;Bval_202_scale*g€€Bval_202_quantizedj#
+locationencoder_model.onnx.dataj
+offset5667840j
+length147456p**¬†Badd_5_zero_point*"&¨“9Badd_5_scale*2* B+layers.2.final_layer_norm.weight_zero_point*0"ÖÕ•<B&layers.2.final_layer_norm.weight_scale*´€B*layers.2.final_layer_norm.weight_quantizedJ€UŠuhyqzZs‡n†ˆt„Z¦€}Œ“ˆšƒ…•³„Œxˆˆ{¿ƒ†wy‘u€©…‹~‚™z‘“‹’‰§šš–™…œŸ–f¨’¦^ •—qŒn™I¡‡€Øw Ÿ¡r¬§d±œ¢šI° §]°œœˆªµ£ªÉª•“¦M·±Ğ¢Ú«œ•¢¦•—˜ ¤ š¡—›´©£—””«¤¦­¨´˜œ ¤¨¼¤£¦r«¨‹˜²—£¦˜’œ§¡ ºÆ¤|^TÀigƒx‰p‘p“‰€…š(i‰‚‚œ‚‡~…Š‚¡€ˆ‰ƒ‹„ƒm„v’˜‚sŒ„ey†Œ–|Šv‹~–—„Ÿ¨sš–„…¤®f¦£™ˆ_}|hk—“±ª– —¨«« ’ªt®Ÿs©c™“›©›°”Å°–»¶‰…¤ Å®¥§—•¢¥“Ÿ™‚¢«§¸¼Ÿ}µ¨¬¦™­ŠpÁ¹®«¦›¶ Ô§§ ºª°•Â­®³ß›£¯¦ÿ°©¾®­­¨©* *û÷Blayer_norm_5_zero_point*"Ò5:Blayer_norm_5_scale*3*òrB+gemm_output_reshape_arg_token_76_zero_point*0"^?';B&gemm_output_reshape_arg_token_76_scale**ŠBval_206_zero_point*"ÔÓS;Bval_206_scale*g€€Bval_206_quantizedj#
+locationencoder_model.onnx.dataj
+offset5815296j
+length589824p**VBgelu_4_zero_point*"ã;Bgelu_4_scale*3*õ4B+gemm_output_reshape_arg_token_82_zero_point*0"Øİˆ;B&gemm_output_reshape_arg_token_82_scale**[Bval_215_zero_point*"-;Bval_215_scale*g€€Bval_215_quantizedj#
+locationencoder_model.onnx.dataj
+offset6405120j
+length589824p**Å7Badd_6_zero_point*"½äŒ;Badd_6_scale*6* B/layers.3.self_attn_layer_norm.weight_zero_point*4"44´<B*layers.3.self_attn_layer_norm.weight_scale*¸€B.layers.3.self_attn_layer_norm.weight_quantizedJ€:_RDR_C=QdRRWPXCHg^XS]cZ]aYZ\^jb^OSYVj\s][\aZwtXcZVhzcWWVakid_WkbgMqo`DnƒaeşFncgŸQàc€ky]b`^€kU_m_]€Záp;tkzrSmi`äxxew^nae~d2td,c'_Fal^fddg[OŒiYl[rW{WVc[iL`b`btupzVqe[gh\ivuXXvjxb]kZ[]dcygg†B@!PCKPQULRTQ`GT=×KQ?ORLN]^Y]qwUjT_R_Y‚ecIS[cbtlufQRpcU^`kNz]:gbboebi‰PgdrzdXZ[uÿ|ak|Vsch‡j^lXWVgó]l>|C€`eSpjaUXp^Y\[@RSk^‚nua\wkTa[cdnorS|SSo\}isRj‚gSg7‡kn{_v{d“~`pˆzví\mbepsƒavbj~nYufnyx* *ŞÂBlayer_norm_6_zero_point*"Í[:Blayer_norm_6_scale**Bval_227_zero_point*";;{;Bval_227_scale*g€€Bval_227_quantizedj#
+locationencoder_model.onnx.dataj
+offset6994944j
+length147456p**¹…Blinear_19_zero_point*"Y¾°9Blinear_19_scale*4*†ûB+gemm_output_reshape_arg_token_88_zero_point*0"—ø¢9B&gemm_output_reshape_arg_token_88_scale**xBval_219_zero_point*"ÇÆ;Bval_219_scale*g€€Bval_219_quantizedj#
+locationencoder_model.onnx.dataj
+offset7142400j
+length147456p*4*è·B+gemm_output_reshape_arg_token_94_zero_point*0"x!¦9B&gemm_output_reshape_arg_token_94_scale**WBval_234_zero_point*"óò
+;Bval_234_scale*g€€Bval_234_quantizedj#
+locationencoder_model.onnx.dataj
+offset7289856j
+length147456p**†ûBmul_3_zero_point*"—ø"8Bmul_3_scale**÷ŒBval_260_zero_point*"Œn*:Bval_260_scale** Bval_261_zero_point*"€ €7Bval_261_scale*2*àB)scaled_dot_product_attention_3_zero_point*."Šl9B$scaled_dot_product_attention_3_scale*5*…£B,gemm_output_reshape_arg_token_100_zero_point*1"ïÇŒ9B'gemm_output_reshape_arg_token_100_scale**wBval_267_zero_point*"“’;Bval_267_scale*g€€Bval_267_quantizedj#
+locationencoder_model.onnx.dataj
+offset7437312j
+length147456p**ˆ4Badd_7_zero_point*"øi’;Badd_7_scale*2*	B+layers.3.final_layer_norm.weight_zero_point*0"KK†=B&layers.3.final_layer_norm.weight_scale*´€B*layers.3.final_layer_norm.weight_quantizedJ€Ÿ³¢§Ÿ·¦}»¾¹Šº·¥¥]5·¹®À¨»Ê¡¸¿¶¶Ñ”¿±±³«tËÆ’·À“¯}§¢¹À¨«q­¾Á½§Èª¼Ğ×§¨ÂÕË¦Ò·¿:ÍÂÉ ¹ÁÕKCÈPÉD{˜¼6ÙÊ½?Êİ9´ÅÎÊRÊtß2ÎÍÿ]²ÔÒËÑ¹äÉ¿†¥^ÑÕ÷Ëæ¹È£ÃÏÅÃ…Ï½±ÈĞ¾Ç·ÄµšÛÜÈÇĞÂËÍÛ¿ÕÑºËËÆÁÄÖÉÖÏKÎ¹ÈÁÍÊÀã×±Æ¼ËÏ°Ô×ÚR”T¬˜µ©Á¾¢ÊŸº¯¸§Ğ¼½«È½¬¼œ®¾—Ü»ª°¯¤²D«˜¿¸À¡]L}‹Ç®‘³–¨ÀÃÒ¤ªÙˆÒE”Äw~¹Õ¾H·ÅÄ¨FŸ	¡¦ƒy¹>¬¿¿ºÈÄ±ËÚÍ¾ĞŒÓÒ:ÕÀU¾Á½Ğ–×ÛÏãÎÚ¼¿ÒÛÂMÊÊÂ´ÔÙÉÒÔµ³ºË¶²|¥Â³¾ÑÑÑJÑÇÊÀ¯ÁËc¿¾ÍÎİËÔÅÕÌµÈÏòÃ³êÈÖÙß¹ÄÙŞ.ÏÊ­ÌÆÌ°Æ* *£ŞBlayer_norm_7_zero_point*"iC;Blayer_norm_7_scale*5*ãƒB,gemm_output_reshape_arg_token_106_zero_point*1"2	Ú;B'gemm_output_reshape_arg_token_106_scale**tBval_271_zero_point*"wwG;Bval_271_scale*g€€Bval_271_quantizedj#
+locationencoder_model.onnx.dataj
+offset7584768j
+length589824p**"Bgelu_5_zero_point*"8¢;Bgelu_5_scale*5*ÜäB,gemm_output_reshape_arg_token_112_zero_point*1"ÌÂ,;B'gemm_output_reshape_arg_token_112_scale**‡Bval_280_zero_point*"XX(;Bval_280_scale*g€€Bval_280_quantizedj#
+locationencoder_model.onnx.dataj
+offset8174592j
+length589824p**‘¥Badd_8_zero_point*"bMÊ;Badd_8_scale*#* Blayer_norm.weight_zero_point*!"ooo<Blayer_norm.weight_scale*¥€Blayer_norm.weight_quantizedJ€Q^UUXQF`b]aX\_SW›afWa]fg\caUfk\e[^aSnffXiYX_fh``ehMSjdZhbWcggfmXUebmThBƒ‚ogbôPqebœ‚jÉm…^eVŠ_fgtUcw]`njËgKho€firx\ÿgmiuVjgbo\Gek@mGWdYbiZebdNReaLiYbXjbhmRhYk_qVskanqaSkck`empedZdg]noQ\]hk\tioŠTA1ZVYYXbVW\XaY[OêW\\MaZNb[ZUbpPh\`VTa^_aXVWegjdXZeY\UNTch]c^Dkadƒei[z`mYpj]d^u[økah€]†dfnab`]`p`éif^feŒa\epWc`]mmaf_iISjih‰dn\Lprbhn^V`fgVrWVYZlgf‹jfld`NhHocZilXqfxmV]mudüVqb_qjldod2qb\hXf]`*%*Ë„Blast_hidden_state_zero_point*!"^¶	:Blast_hidden_state_scale*e€Bconv1.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8764416j
+length1536p*&Bconv1.bias_quantized_scaleJ=2
+4*&* Bconv1.bias_quantized_zero_point*e€Bconv2.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8765952j
+length1536p*&Bconv2.bias_quantized_scaleJÊ#5*&* Bconv2.bias_quantized_zero_point*}€B,layers.0.self_attn_layer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8767488j
+length1536p*>B2layers.0.self_attn_layer_norm.bias_quantized_scaleJ"‚M6*>* B7layers.0.self_attn_layer_norm.bias_quantized_zero_point*y€B(layers.0.self_attn.q_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8769024j
+length1536p*:B.layers.0.self_attn.q_proj.bias_quantized_scaleJÈ€²5*:* B3layers.0.self_attn.q_proj.bias_quantized_zero_point*y€B(layers.0.self_attn.v_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8770560j
+length1536p*:B.layers.0.self_attn.v_proj.bias_quantized_scaleJ/ä\5*:* B3layers.0.self_attn.v_proj.bias_quantized_zero_point*{€B*layers.0.self_attn.out_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8772096j
+length1536p*<B0layers.0.self_attn.out_proj.bias_quantized_scaleJ]è4*<* B5layers.0.self_attn.out_proj.bias_quantized_zero_point*y€B(layers.0.final_layer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8773632j
+length1536p*:B.layers.0.final_layer_norm.bias_quantized_scaleJN8	6*:* B3layers.0.final_layer_norm.bias_quantized_zero_point*l€Blayers.0.fc1.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8775168j
+length6144p*-B!layers.0.fc1.bias_quantized_scaleJ'qË5*-* B&layers.0.fc1.bias_quantized_zero_point*l€Blayers.0.fc2.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8781312j
+length1536p*-B!layers.0.fc2.bias_quantized_scaleJE5*-* B&layers.0.fc2.bias_quantized_zero_point*}€B,layers.1.self_attn_layer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8782848j
+length1536p*>B2layers.1.self_attn_layer_norm.bias_quantized_scaleJÌùõ5*>* B7layers.1.self_attn_layer_norm.bias_quantized_zero_point*y€B(layers.1.self_attn.q_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8784384j
+length1536p*:B.layers.1.self_attn.q_proj.bias_quantized_scaleJ$ˆI5*:* B3layers.1.self_attn.q_proj.bias_quantized_zero_point*y€B(layers.1.self_attn.v_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8785920j
+length1536p*:B.layers.1.self_attn.v_proj.bias_quantized_scaleJ$˜å4*:* B3layers.1.self_attn.v_proj.bias_quantized_zero_point*{€B*layers.1.self_attn.out_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8787456j
+length1536p*<B0layers.1.self_attn.out_proj.bias_quantized_scaleJLŸG4*<* B5layers.1.self_attn.out_proj.bias_quantized_zero_point*y€B(layers.1.final_layer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8788992j
+length1536p*:B.layers.1.final_layer_norm.bias_quantized_scaleJ^å5*:* B3layers.1.final_layer_norm.bias_quantized_zero_point*l€Blayers.1.fc1.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8790528j
+length6144p*-B!layers.1.fc1.bias_quantized_scaleJß·¨5*-* B&layers.1.fc1.bias_quantized_zero_point*l€Blayers.1.fc2.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8796672j
+length1536p*-B!layers.1.fc2.bias_quantized_scaleJ õ5*-* B&layers.1.fc2.bias_quantized_zero_point*}€B,layers.2.self_attn_layer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8798208j
+length1536p*>B2layers.2.self_attn_layer_norm.bias_quantized_scaleJEƒ7*>* B7layers.2.self_attn_layer_norm.bias_quantized_zero_point*y€B(layers.2.self_attn.q_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8799744j
+length1536p*:B.layers.2.self_attn.q_proj.bias_quantized_scaleJÀô×5*:* B3layers.2.self_attn.q_proj.bias_quantized_zero_point*y€B(layers.2.self_attn.v_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8801280j
+length1536p*:B.layers.2.self_attn.v_proj.bias_quantized_scaleJD(™5*:* B3layers.2.self_attn.v_proj.bias_quantized_zero_point*{€B*layers.2.self_attn.out_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8802816j
+length1536p*<B0layers.2.self_attn.out_proj.bias_quantized_scaleJæ§ 5*<* B5layers.2.self_attn.out_proj.bias_quantized_zero_point*y€B(layers.2.final_layer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8804352j
+length1536p*:B.layers.2.final_layer_norm.bias_quantized_scaleJiØ¬6*:* B3layers.2.final_layer_norm.bias_quantized_zero_point*l€Blayers.2.fc1.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8805888j
+length6144p*-B!layers.2.fc1.bias_quantized_scaleJ‹r6*-* B&layers.2.fc1.bias_quantized_zero_point*l€Blayers.2.fc2.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8812032j
+length1536p*-B!layers.2.fc2.bias_quantized_scaleJ+š¯6*-* B&layers.2.fc2.bias_quantized_zero_point*}€B,layers.3.self_attn_layer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8813568j
+length1536p*>B2layers.3.self_attn_layer_norm.bias_quantized_scaleJ [Æ8*>* B7layers.3.self_attn_layer_norm.bias_quantized_zero_point*y€B(layers.3.self_attn.q_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8815104j
+length1536p*:B.layers.3.self_attn.q_proj.bias_quantized_scaleJ¤ 6*:* B3layers.3.self_attn.q_proj.bias_quantized_zero_point*y€B(layers.3.self_attn.v_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8816640j
+length1536p*:B.layers.3.self_attn.v_proj.bias_quantized_scaleJ$Äí5*:* B3layers.3.self_attn.v_proj.bias_quantized_zero_point*{€B*layers.3.self_attn.out_proj.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8818176j
+length1536p*<B0layers.3.self_attn.out_proj.bias_quantized_scaleJ45*<* B5layers.3.self_attn.out_proj.bias_quantized_zero_point*y€B(layers.3.final_layer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8819712j
+length1536p*:B.layers.3.final_layer_norm.bias_quantized_scaleJ™9*:* B3layers.3.final_layer_norm.bias_quantized_zero_point*l€Blayers.3.fc1.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8821248j
+length6144p*-B!layers.3.fc1.bias_quantized_scaleJ…`7*-* B&layers.3.fc1.bias_quantized_zero_point*l€Blayers.3.fc2.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8827392j
+length1536p*-B!layers.3.fc2.bias_quantized_scaleJjU7*-* B&layers.3.fc2.bias_quantized_zero_point*j€Blayer_norm.bias_quantizedj#
+locationencoder_model.onnx.dataj
+offset8828928j
+length1536p*+Blayer_norm.bias_quantized_scaleJN6½8*+* B$layer_norm.bias_quantized_zero_pointR Z%
+input_features
+
+
+P
+¸b)
+last_hidden_state
+
+
+Ü
+€j
+add
+
+
+Ü
+€j
+add_1
+
+
+Ü
+€j
+add_2
+
+
+Ü
+€j
+add_3
+
+
+Ü
+€j
+add_4
+
+
+Ü
+€j
+add_5
+
+
+Ü
+€j
+add_6
+
+
+Ü
+€j
+add_7
+
+
+Ü
+€j
+add_8
+
+
+Ü
+€j
+arange
+	
+Üj
+
+conv1.bias
+	
+€j#
+conv1.weight
+
+€
+P
+j
+conv1d
+
+
+€
+¸j 
+conv1d_1
+
+
+€
+Üj
+
+conv2.bias
+	
+€j$
+conv2.weight
+
+€
+€
+j*
+embed_positions.weight
+
+
+Ü
+€j
+	embedding
+
+
+Ü
+€j
+gelu
+
+
+€
+¸j
+gelu_1
+
+
+€
+Üj
+gelu_2
+
+
+Ü
+€j
+gelu_3
+
+
+Ü
+€j
+gelu_4
+
+
+Ü
+€j
+gelu_5
+
+
+Ü
+€j"
+
+layer_norm
+
+
+Ü
+€j
+layer_norm.bias
+	
+€j 
+layer_norm.weight
+	
+€j$
+layer_norm_1
+
+
+Ü
+€j$
+layer_norm_2
+
+
+Ü
+€j$
+layer_norm_3
+
+
+Ü
+€j$
+layer_norm_4
+
+
+Ü
+€j$
+layer_norm_5
+
+
+Ü
+€j$
+layer_norm_6
+
+
+Ü
+€j$
+layer_norm_7
+
+
+Ü
+€j 
+layers.0.fc1.bias
+	
+€j 
+layers.0.fc2.bias
+	
+€j-
+layers.0.final_layer_norm.bias
+	
+€j/
+ layers.0.final_layer_norm.weight
+	
+€j/
+ layers.0.self_attn.out_proj.bias
+	
+€j-
+layers.0.self_attn.q_proj.bias
+	
+€j-
+layers.0.self_attn.v_proj.bias
+	
+€j1
+"layers.0.self_attn_layer_norm.bias
+	
+€j3
+$layers.0.self_attn_layer_norm.weight
+	
+€j 
+layers.1.fc1.bias
+	
+€j 
+layers.1.fc2.bias
+	
+€j-
+layers.1.final_layer_norm.bias
+	
+€j/
+ layers.1.final_layer_norm.weight
+	
+€j/
+ layers.1.self_attn.out_proj.bias
+	
+€j-
+layers.1.self_attn.q_proj.bias
+	
+€j-
+layers.1.self_attn.v_proj.bias
+	
+€j1
+"layers.1.self_attn_layer_norm.bias
+	
+€j3
+$layers.1.self_attn_layer_norm.weight
+	
+€j 
+layers.2.fc1.bias
+	
+€j 
+layers.2.fc2.bias
+	
+€j-
+layers.2.final_layer_norm.bias
+	
+€j/
+ layers.2.final_layer_norm.weight
+	
+€j/
+ layers.2.self_attn.out_proj.bias
+	
+€j-
+layers.2.self_attn.q_proj.bias
+	
+€j-
+layers.2.self_attn.v_proj.bias
+	
+€j1
+"layers.2.self_attn_layer_norm.bias
+	
+€j3
+$layers.2.self_attn_layer_norm.weight
+	
+€j 
+layers.3.fc1.bias
+	
+€j 
+layers.3.fc2.bias
+	
+€j-
+layers.3.final_layer_norm.bias
+	
+€j/
+ layers.3.final_layer_norm.weight
+	
+€j/
+ layers.3.self_attn.out_proj.bias
+	
+€j-
+layers.3.self_attn.q_proj.bias
+	
+€j-
+layers.3.self_attn.v_proj.bias
+	
+€j1
+"layers.3.self_attn_layer_norm.bias
+	
+€j3
+$layers.3.self_attn_layer_norm.weight
+	
+€j
+linear
+
+
+Ü
+€j 
+linear_1
+
+
+Ü
+€j!
+	linear_10
+
+
+Ü
+€j!
+	linear_11
+
+
+Ü
+€j!
+	linear_12
+
+
+Ü
+€j!
+	linear_13
+
+
+Ü
+€j!
+	linear_14
+
+
+Ü
+€j!
+	linear_15
+
+
+Ü
+€j!
+	linear_16
+
+
+Ü
+€j!
+	linear_17
+
+
+Ü
+€j!
+	linear_18
+
+
+Ü
+€j!
+	linear_19
+
+
+Ü
+€j 
+linear_2
+
+
+Ü
+€j!
+	linear_20
+
+
+Ü
+€j!
+	linear_21
+
+
+Ü
+€j!
+	linear_22
+
+
+Ü
+€j!
+	linear_23
+
+
+Ü
+€j 
+linear_3
+
+
+Ü
+€j 
+linear_4
+
+
+Ü
+€j 
+linear_5
+
+
+Ü
+€j 
+linear_6
+
+
+Ü
+€j 
+linear_7
+
+
+Ü
+€j 
+linear_8
+
+
+Ü
+€j 
+linear_9
+
+
+Ü
+€j
+mul
+
+
+Ü
+€j
+mul_1
+
+
+Ü
+€j
+mul_2
+
+
+Ü
+€j
+mul_3
+
+
+Ü
+€j
+permute
+
+
+Ü
+€j7
+scaled_dot_product_attention
+
+
+
+Ü
+@j9
+scaled_dot_product_attention_1
+
+
+
+Ü
+@j9
+scaled_dot_product_attention_2
+
+
+
+Ü
+@j9
+scaled_dot_product_attention_3
+
+
+
+Ü
+@j$
+	transpose
+
+
+
+Ü
+@j&
+transpose_1
+
+
+
+Ü
+@j'
+transpose_10
+
+
+
+Ü
+@j'
+transpose_11
+
+
+Ü
+
+@j'
+transpose_12
+
+
+
+Ü
+@j'
+transpose_13
+
+
+
+Ü
+@j'
+transpose_14
+
+
+
+Ü
+@j'
+transpose_15
+
+
+Ü
+
+@j&
+transpose_2
+
+
+
+Ü
+@j&
+transpose_3
+
+
+Ü
+
+@j&
+transpose_4
+
+
+
+Ü
+@j&
+transpose_5
+
+
+
+Ü
+@j&
+transpose_6
+
+
+
+Ü
+@j&
+transpose_7
+
+
+Ü
+
+@j&
+transpose_8
+
+
+
+Ü
+@j&
+transpose_9
+
+
+
+Ü
+@j
+val_0
+ j
+val_1
+
+
+€
+¸j
+val_104
+
+
+€
+€j
+val_105
+
+
+Ü
+€j
+val_11
+
+
+€
+Üj
+val_121
+
+
+Ü
+@j
+val_122
+
+
+@
+Üj"
+val_124
+
+
+
+@
+Üj
+val_13
+
+
+€
+Üj#
+val_130
+
+
+
+Ü
+Üj#
+val_131
+
+
+
+Ü
+Üj
+val_137
+
+
+€
+€j
+val_138
+
+
+Ü
+€j
+val_141
+
+
+€
+€j
+val_142
+
+
+Ü
+€j
+val_144
+
+
+Ü
+€j
+val_145
+
+
+Ü
+€j
+val_147
+
+
+Ü
+€j
+val_149
+
+
+Ü
+€j
+val_150
+
+
+€
+€j
+val_151
+
+
+Ü
+€j
+val_154
+
+
+€
+€j
+val_155
+
+
+Ü
+€j
+val_162
+
+
+€
+€j
+val_169
+
+
+€
+€j
+val_170
+
+
+Ü
+€j
+val_186
+
+
+Ü
+@j
+val_187
+
+
+@
+Üj"
+val_189
+
+
+
+@
+Üj#
+val_195
+
+
+
+Ü
+Üj#
+val_196
+
+
+
+Ü
+Üj
+val_2
+
+
+€
+¸j
+val_202
+
+
+€
+€j
+val_203
+
+
+Ü
+€j
+val_206
+
+
+€
+€j
+val_207
+
+
+Ü
+€j
+val_209
+
+
+Ü
+€j
+val_21
+
+
+€
+€j
+val_210
+
+
+Ü
+€j
+val_212
+
+
+Ü
+€j
+val_214
+
+
+Ü
+€j
+val_215
+
+
+€
+€j
+val_216
+
+
+Ü
+€j
+val_219
+
+
+€
+€j
+val_22
+
+
+Ü
+€j
+val_220
+
+
+Ü
+€j
+val_227
+
+
+€
+€j
+val_23
+ j
+val_234
+
+
+€
+€j
+val_235
+
+
+Ü
+€j
+val_251
+
+
+Ü
+@j
+val_252
+
+
+@
+Üj"
+val_254
+
+
+
+@
+Üj#
+val_260
+
+
+
+Ü
+Üj#
+val_261
+
+
+
+Ü
+Üj
+val_267
+
+
+€
+€j
+val_268
+
+
+Ü
+€j
+val_271
+
+
+€
+€j
+val_272
+
+
+Ü
+€j
+val_274
+
+
+Ü
+€j
+val_275
+
+
+Ü
+€j
+val_277
+
+
+Ü
+€j
+val_279
+
+
+Ü
+€j
+val_280
+
+
+€
+€j
+val_281
+
+
+Ü
+€j
+val_29
+
+
+j
+val_3
+ j
+val_30
+
+
+€
+€j
+val_36
+
+
+j
+val_37
+
+
+€
+€j
+val_38
+
+
+Ü
+€j
+val_4
+
+
+€
+¸j
+val_5
+ j
+val_55
+
+
+j
+val_56
+
+
+Ü
+@j
+val_57
+
+
+@
+Üj
+val_58
+
+
+j!
+val_59
+
+
+
+@
+Üj
+val_6
+
+
+€
+¸j"
+val_65
+
+
+
+Ü
+Üj"
+val_66
+
+
+
+Ü
+Üj
+val_71
+
+
+j
+val_72
+
+
+€
+€j
+val_73
+
+
+Ü
+€j
+val_76
+
+
+€
+€j
+val_77
+
+
+Ü
+€j
+val_79
+
+
+Ü
+€j
+val_8
+
+
+€
+Üj
+val_80
+
+
+Ü
+€j
+val_82
+
+
+Ü
+€j
+val_84
+
+
+Ü
+€j
+val_85
+
+
+€
+€j
+val_86
+
+
+Ü
+€j
+val_89
+
+
+€
+€j
+val_9
+
+
+€
+Üj
+val_90
+
+
+Ü
+€j
+val_97
+
+
+€
+€j
+view
+
+
+Ü
+
+@j!
+view_1
+
+
+Ü
+
+@j"
+view_10
+
+
+Ü
+
+@j
+view_11
+
+
+Ü
+€j"
+view_12
+
+
+Ü
+
+@j"
+view_13
+
+
+Ü
+
+@j"
+view_14
+
+
+Ü
+
+@j
+view_15
+
+
+Ü
+€j!
+view_2
+
+
+Ü
+
+@j
+view_3
+
+
+Ü
+€j!
+view_4
+
+
+Ü
+
+@j!
+view_5
+
+
+Ü
+
+@j!
+view_6
+
+
+Ü
+
+@j
+view_7
+
+
+Ü
+€j!
+view_8
+
+
+Ü
+
+@j!
+view_9
+
+
+Ü
+
+@j*
+gemm_input_reshape_arg
+
+
+Ü
+€j2
+gemm_input_reshape_arg_token_1
+
+
+Ü
+€j+
+gemm_output_reshape_arg
+
+
+Ü
+€j3
+gemm_output_reshape_arg_token_4
+
+
+Ü
+€j2
+gemm_input_reshape_arg_token_7
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_10
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_13
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_16
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_19
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_22
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_25
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_31
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_28
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_34
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_37
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_40
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_43
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_46
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_49
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_52
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_55
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_61
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_58
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_64
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_67
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_70
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_73
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_76
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_79
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_82
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_85
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_91
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_88
+
+
+Ü
+€j4
+ gemm_output_reshape_arg_token_94
+
+
+Ü
+€j3
+gemm_input_reshape_arg_token_97
+
+
+Ü
+€j5
+!gemm_output_reshape_arg_token_100
+
+
+Ü
+€j4
+ gemm_input_reshape_arg_token_103
+
+
+Ü
+€j5
+!gemm_output_reshape_arg_token_106
+
+
+Ü
+€j4
+ gemm_input_reshape_arg_token_109
+
+
+Ü
+€j5
+!gemm_output_reshape_arg_token_112
+
+
+Ü
+€B
+ B
+com.microsoft.nchwcB
+
+ai.onnx.mlB
+ai.onnx.trainingB
+ai.onnx.preview.trainingB
+com.microsoftB
+com.microsoft.experimentalB
+org.pytorch.atenr.
+
+onnx.infer onnxruntime.tools.qnn.preprocess

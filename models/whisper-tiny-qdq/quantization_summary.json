@@ -1,0 +1,27 @@
+{
+  "input_dir": "D:\\PROJECTS\\Dragonn\\models\\whisper-tiny-onnx",
+  "output_dir": "C:\\Users\\rishi\\AppData\\Local\\Temp\\qdq_realcal",
+  "weight_type": "UINT8",
+  "activation_type": "UINT16",
+  "calibrated": true,
+  "total_time_seconds": 28.06,
+  "models": {
+    "encoder_model.onnx": {
+      "input_model": "D:\\PROJECTS\\Dragonn\\models\\whisper-tiny-onnx\\encoder_model.onnx",
+      "output_model": "C:\\Users\\rishi\\AppData\\Local\\Temp\\qdq_realcal\\encoder_model.onnx",
+      "quant_format": "QDQ",
+      "weight_type": "UINT8",
+      "activation_type": "UINT16",
+      "calibrated": true,
+      "per_channel": false,
+      "input_size_mb": 31.47,
+      "output_size_mb": 8.54,
+      "compression_ratio": 3.68,
+      "total_nodes": 511,
+      "qdq_nodes": 364,
+      "qnn_compatible": true,
+      "format_error": null,
+      "quantization_time_seconds": 25.04
+    }
+  }
+}

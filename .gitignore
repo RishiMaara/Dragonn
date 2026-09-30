@@ -10,8 +10,13 @@ venv/
 # The evidence reports stay committed: they back every number in the README.
 models/*
 !models/reports/
+# The validated encoder travels with the repo (8.6 MB) so anyone with a
+# Snapdragon laptop can verify the exact model the results were measured on.
+!models/whisper-tiny-qdq/
 *.onnx
 *.onnx.data
+!models/whisper-tiny-qdq/*.onnx
+!models/whisper-tiny-qdq/*.onnx.data
 *.ort
 *.qnn
 

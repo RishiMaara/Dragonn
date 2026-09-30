@@ -1,0 +1,13 @@
+{
+  "model_type": "whisper",
+  "architectures": [
+    "WhisperModel"
+  ],
+  "model_id": "openai/whisper-tiny",
+  "num_mel_bins": 80,
+  "num_frames": 3000,
+  "d_model": 384,
+  "encoder_layers": 4,
+  "encoder_params": 8208384,
+  "static_shapes": true
+}
