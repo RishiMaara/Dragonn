@@ -26,6 +26,7 @@ param(
     [switch]$SkipVendor,                  # skip the 100 MB decoder bundle
     [switch]$SkipTests,
     [switch]$NoInstallPython,
+    [switch]$NoPause,                     # for automation; otherwise the window waits
     [string]$PythonVersion = "3.13.9"     # only used if Python has to be installed
 )
 
@@ -44,7 +45,15 @@ if (-not $OutDir) {
     if (-not $OutDir) { $OutDir = $env:USERPROFILE }
 }
 $log = Join-Path $OutDir "snapdragon-session.txt"
-try { Start-Transcript -Path $log -Force | Out-Null } catch {}
+$script:pythonLog = Join-Path $OutDir "snapdragon-output.txt"
+try { Start-Transcript -Path $log -Force | Out-Null } catch {
+    # An unwritable Desktop should not end the run: fall back to TEMP.
+    $OutDir = $env:TEMP
+    $log = Join-Path $OutDir "snapdragon-session.txt"
+    $script:pythonLog = Join-Path $OutDir "snapdragon-output.txt"
+    try { Start-Transcript -Path $log -Force | Out-Null } catch {}
+}
+Remove-Item -LiteralPath $script:pythonLog -ErrorAction SilentlyContinue
 
 Write-Host "`nHexagon Bridge - device verification" -ForegroundColor White
 Note "started $($started.ToString('yyyy-MM-dd HH:mm:ss'))"
@@ -54,12 +63,21 @@ function Finish($code) {
     $secs = [math]::Round(((Get-Date) - $started).TotalSeconds, 1)
     Head "FINISHED in $secs seconds"
     Note "Session log : $log"
+    Note "Output log  : $script:pythonLog"
     if (Test-Path (Join-Path $PWD "device-report.json")) {
         $dest = Join-Path $OutDir "device-report.json"
         try { Copy-Item (Join-Path $PWD "device-report.json") $dest -Force; Note "Measurements: $dest" } catch {}
     }
-    Note "Send back the two files above, or a photo of this window."
+    Note "Send back the files above, or a photo of this window."
     try { Stop-Transcript | Out-Null } catch {}
+    # Never let the window vanish with the output in it. A console opened just
+    # for this run closes the moment the script exits, which is how the first
+    # attempt disappeared without a trace.
+    if (-not $NoPause) {
+        Write-Host ""
+        Write-Host "Press Enter to close this window ..." -ForegroundColor Yellow
+        try { [void](Read-Host) } catch { Start-Sleep -Seconds 60 }
+    }
     exit $code
 }
 
@@ -197,7 +215,7 @@ if (-not $SkipVendor) { Note "includes a 100 MB download for the decoder measure
 $argsList = @("-m", "tools.device_report", "--runs", "$Runs")
 if ($SkipVendor) { $argsList += "--skip-vendor" }
 if ($SkipTests)  { $argsList += "--skip-tests" }
-& $vpy @argsList
+& $vpy @argsList 2>&1 | Tee-Object -FilePath $script:pythonLog -Append
 $code = $LASTEXITCODE
 if ($code -ne 0) { Bad "the report exited with code $code - the output above says where it stopped" }
 Finish $code
