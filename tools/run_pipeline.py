@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — Full Pipeline Runner
+Dragonn — Full Pipeline Runner
 ======================================
 One-command orchestrator that runs the entire pipeline:
   1. Export Whisper-Medium from HuggingFace → ONNX
@@ -9,7 +9,7 @@ One-command orchestrator that runs the entire pipeline:
   5. Generate combined report
 
 Usage:
-    # Full pipeline (on x86 for export/quantize, then transfer to ARM64 for profiling)
+    # Full pipeline (export/quantize on any machine, then transfer to ARM64 for profiling)
     python -m tools.run_pipeline --model openai/whisper-medium
 
     # Skip export if already have ONNX files
@@ -26,7 +26,7 @@ import sys
 import time
 from pathlib import Path
 
-logger = logging.getLogger("hexagon-bridge.pipeline")
+logger = logging.getLogger("dragonn.pipeline")
 
 
 def run_full_pipeline(
@@ -39,7 +39,7 @@ def run_full_pipeline(
     quick: bool = False,
 ) -> dict:
     """
-    Run the complete Hexagon Bridge pipeline.
+    Run the complete Dragonn pipeline.
 
     Returns:
         dict with results from each stage
@@ -226,7 +226,7 @@ def run_full_pipeline(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Hexagon Bridge — Full Pipeline Runner",
+        description="Dragonn — Full Pipeline Runner",
     )
     parser.add_argument(
         "--model",

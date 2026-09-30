@@ -1,5 +1,5 @@
 # ============================================
-# Project Dragonn — "Hexagon Bridge"
+# Project Dragonn — "Dragonn"
 # PREP HOST requirements (x64 or ARM64) — export + quantize + scan
 # Snapdragon AI Lab Challenge
 # ============================================

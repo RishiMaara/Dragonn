@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — INT8 QDQ Quantization
+Dragonn — INT8 QDQ Quantization
 =======================================
 Step 2 of the pipeline: Quantize ONNX models to STATIC QDQ
 (QuantizeLinear/DequantizeLinear) format — the only format QNN EP can consume.
@@ -39,7 +39,7 @@ from typing import Optional
 
 import numpy as np
 
-logger = logging.getLogger("hexagon-bridge.quantize")
+logger = logging.getLogger("dragonn.quantize")
 
 
 class WhisperCalibrationDataReader:
@@ -410,7 +410,7 @@ def quantize_qnn(
     input_path, output_path = Path(input_model_path), Path(output_model_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    work = Path(tempfile.mkdtemp(prefix="hexbridge_q_"))
+    work = Path(tempfile.mkdtemp(prefix="dragonn_q_"))
     try:
         # Rewrite -inf attention-mask constants first: calibrating on them
         # collapses every real activation to zero (see clamp_extreme_constants).
@@ -570,7 +570,7 @@ def quantize_onnx_model(
 
     # Step 1: Pre-process. Intermediates go to a scratch dir so they (and any
     # external-data sidecars) can never leak into the output directory.
-    work_dir = Path(tempfile.mkdtemp(prefix="hexbridge_quant_"))
+    work_dir = Path(tempfile.mkdtemp(prefix="dragonn_quant_"))
     preprocessed_path = work_dir / f"{input_path.stem}_pre.onnx"
 
     logger.info("  Step 1/3: Pre-processing...")
@@ -882,7 +882,7 @@ def quantize_whisper_pipeline(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Hexagon Bridge — INT8 QDQ Quantization for QNN EP",
+        description="Dragonn — INT8 QDQ Quantization for QNN EP",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

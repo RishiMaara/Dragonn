@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — Local HTP Compile Check
+Dragonn — Local HTP Compile Check
 ========================================
 Runs Qualcomm's actual Hexagon (HTP) graph compiler on this machine and reports
 how the model really partitions: how many separate NPU graphs it compiles into,
@@ -26,7 +26,7 @@ import time
 from collections import Counter
 from pathlib import Path
 
-logger = logging.getLogger("hexagon-bridge.htp-compile")
+logger = logging.getLogger("dragonn.htp-compile")
 
 # Snapdragon X Elite / X Plus: Hexagon v73, SoC model 60 (as reported by the
 # device in AI Hub runtime logs). X2 Elite is a later Hexagon generation.
@@ -79,7 +79,7 @@ def compile_check(
     source_ops = {n.op_type for n in onnx.load(str(model_path), load_external_data=False).graph.node}
     result["float_model"] = not source_ops & {"QuantizeLinear", "DequantizeLinear"}
 
-    work = Path(tempfile.mkdtemp(prefix="hexbridge_htp_"))
+    work = Path(tempfile.mkdtemp(prefix="dragonn_htp_"))
     ctx_path = work / "model_ctx.onnx"
 
     so = ort.SessionOptions()

@@ -1,5 +1,5 @@
 # ============================================
-# Project Dragonn — "Hexagon Bridge"
+# Project Dragonn — "Dragonn"
 # SNAPDRAGON X DEVICE (Windows on ARM64) requirements
 # ============================================
 #

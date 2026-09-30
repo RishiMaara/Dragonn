@@ -1,2 +1,2 @@
-# Project Dragonn — "Hexagon Bridge"
+# Project Dragonn — "Dragonn"
 # Snapdragon AI Lab Challenge

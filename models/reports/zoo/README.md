@@ -1,9 +1,9 @@
 # Model zoo: the silent failure, across popular models
 
-Each model through two paths — **naive** (`quantize_dynamic`, what most tutorials show) and **Hexagon Bridge** (static a16w8 QDQ, real calibration data) — checked by the scanner, Qualcomm's HTP compiler run locally, and accuracy on held-out real data.
+Each model through two paths — **naive** (`quantize_dynamic`, what most tutorials show) and **Dragonn** (static a16w8 QDQ, real calibration data) — checked by the scanner, Qualcomm's HTP compiler run locally, and accuracy on held-out real data.
 Reproduce: `python -m tools.model_zoo`.
 
-| Model | Use on a laptop | Naive path | Hexagon Bridge | Accuracy: FP32 → naive → bridge | Size FP32 → bridge |
+| Model | Use on a laptop | Naive path | Dragonn | Accuracy: FP32 → naive → bridge | Size FP32 → bridge |
 |---|---|---|---|---|---|
 | [minilm](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) | Text embeddings for local semantic search / RAG | wrong format (dynamic quantization) — 1 NPU graph(s); CPU: Gather ×1 | one NPU graph | same top search result: 100.0 → 63.3 → 97.3 | 86.15 → 33.18 MB |
 | [distilbert-sst2](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) | On-device text classification (sentiment) | wrong format (dynamic quantization) — 1 NPU graph(s); CPU: Gather ×1 | one NPU graph | SST-2 accuracy: 90.7 → 90.7 → 91.0 | 255.48 → 86.44 MB |

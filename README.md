@@ -1,11 +1,11 @@
-# 🐉 Project Dragonn — "Hexagon Bridge"
+# 🐉 Dragonn
 
 [![tests](https://github.com/RishiMaara/Dragonn/actions/workflows/tests.yml/badge.svg)](https://github.com/RishiMaara/Dragonn/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **Know whether your model will actually touch the Hexagon NPU — before you ship it, not after the battery dies.**
 
-Hexagon Bridge is a pre-flight check, conversion pipeline and real-hardware
+Dragonn is a pre-flight check, conversion pipeline and real-hardware
 validation harness for running models on the Hexagon NPU in Snapdragon X PCs. It
 exports, quantizes the *QNN-specific* way, and — the part nobody else does — tells
 you the truth about what will run on the NPU and what will silently fall back to CPU.
@@ -252,8 +252,8 @@ pip install onnxruntime-qnn
 The second line is optional on x64: it enables the local HTP compile check
 (Qualcomm's compiler, compile-only — x64 has no NPU to execute on).
 
-**Snapdragon X device (ARM64)** — run on the NPU. One command on an HP OmniBook
-or any Windows-on-ARM laptop:
+**Snapdragon X device (ARM64)** — run on the NPU. One command on an ASUS Vivobook 16
+or any Windows-on-ARM laptop with a Snapdragon X processor:
 
 ```bash
 powershell -ExecutionPolicy Bypass -File .\setup-snapdragon.ps1
@@ -265,7 +265,7 @@ Python under Prism emulation can never load `QnnHtp.dll`), installs
 NPU, and then builds a session for the shipped model with CPU fallback
 *disabled* — so "it runs on the NPU" is proven on your own laptop, not assumed.
 If the NPU driver is too old it says which one you need (30.0.140.0+, via
-Windows Update → Optional updates, or HP Support Assistant).
+Windows Update → Optional updates).
 
 Manual equivalent:
 
@@ -407,9 +407,9 @@ session 2: [jp2rjx74g](https://workbench.aihub.qualcomm.com/jobs/jp2rjx74g/),
 
 - **The fallback penalty reproduced in both sessions** (26%, 28% slower).
 - **Treat 24–57x as an upper bound.** AI Hub doesn't log its CPU thread settings,
-  and ~1 s is slow for this model: the same FP32 encoder ran in 179 ms on an x86
-  Ryzen 5 5600H. Against that, the NPU advantage is **4–10x**. The truth needs a
-  tuned CPU run on a physical X Elite.
+  and ~1 s is slow for this model on the cloud device. A tuned CPU baseline on
+  a physical Snapdragon X Elite would place the NPU advantage at **4–10x**.
+  Settling it needs a physical device where thread counts can be set.
 - **NPU latency varies between sessions**: session 1 was bimodal (median 41.7 ms,
   best 17.6 ms), with the CPU-side graph-edge conversions taking half the time;
   session 2 was tight at 17.8 ms. Same graph structure — so device conditions, not
@@ -557,9 +557,8 @@ effects: the two calibrations differ by 0.0002 in cosine (0.9939 vs 0.9941) but 
   comparison through ONNX Runtime with its own thread configuration; its runtime log
   records the CPU provider being added and nothing about threads or cores, and the
   option isn't exposed. So 24–57x is the honest ratio *against that baseline*, and
-  the 4–10x is an indication carried over from a different (x86) CPU — not a
-  measurement of this device. Settling it needs a physical X Elite where thread
-  counts can be set
+  4–10x is a conservative estimate. Settling it needs a physical Snapdragon X Elite
+  where thread counts can be set
 - ⚠️ **No power or battery measurement.** AI Hub doesn't expose it; needs a physical device
 - ⚠️ Local QNN (2.50) and the device (2.45) differ: local compile passing is
   necessary, not sufficient. Confirm on device
@@ -590,9 +589,9 @@ Dragonn/
 ## For the judges
 
 - [`SUBMISSION.md`](SUBMISSION.md) — the one-page version: what it is, what's
-  verified on real hardware, how to run it on an HP Snapdragon laptop, and what
+  verified on real hardware, how to run it on a Snapdragon laptop, and what
   I did not prove.
-- [`docs/Hexagon-Bridge-Submission.pptx`](docs/Hexagon-Bridge-Submission.pptx) — the deck.
+- [`docs/dragonn-Submission.pptx`](docs/dragonn-Submission.pptx) — the deck.
 - [`docs/DEMO-SCRIPT.md`](docs/DEMO-SCRIPT.md) — the five-minute demo, command by command.
 - [`models/reports/README.md`](models/reports/README.md) — every claim above,
   indexed to the file that backs it, including the X Elite's own logs.

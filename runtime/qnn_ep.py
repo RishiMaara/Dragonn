@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — QNN Execution Provider setup
+Dragonn — QNN Execution Provider setup
 =============================================
 The one place that attaches QNN EP to an ONNX Runtime session — correctly,
 across both packagings — and fails loudly when it silently doesn't attach.
@@ -27,7 +27,7 @@ import logging
 import platform
 from pathlib import Path
 
-logger = logging.getLogger("hexagon-bridge.qnn")
+logger = logging.getLogger("dragonn.qnn")
 
 EP = "QNNExecutionProvider"
 _registered = False

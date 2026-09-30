@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — ONNX Graph Analyzer
+Dragonn — ONNX Graph Analyzer
 =====================================
 Walks the ONNX computational graph node-by-node and checks each operator
 against the QNN EP supported operator registry.
@@ -21,7 +21,7 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Optional
 
-logger = logging.getLogger("hexagon-bridge.scanner")
+logger = logging.getLogger("dragonn.scanner")
 
 
 @dataclass
@@ -374,7 +374,7 @@ def analyze_directory(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Hexagon Bridge — QNN Operator Coverage Scanner",
+        description="Dragonn — QNN Operator Coverage Scanner",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

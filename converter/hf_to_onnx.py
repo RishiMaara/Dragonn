@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — HuggingFace to ONNX Converter
+Dragonn — HuggingFace to ONNX Converter
 ===============================================
 Stage 1 of the pipeline.
 Exports a HuggingFace model to ONNX format using optimum's CLI.
@@ -18,7 +18,7 @@ import subprocess
 from pathlib import Path
 from typing import Optional
 
-logger = logging.getLogger("hexagon-bridge.export")
+logger = logging.getLogger("dragonn.export")
 
 
 def export_whisper_to_onnx(
@@ -41,7 +41,7 @@ def export_whisper_to_onnx(
         model_id:   HuggingFace model identifier (e.g. "openai/whisper-medium")
         output_dir: Directory to save exported ONNX files
         opset:      ONNX opset version (17 recommended for QNN compatibility)
-        device:     Device for export tracing ("cpu" for x86 export)
+        device:     Device for export tracing ("cpu" for CPU export)
         fp16:       Whether to export in float16 (not recommended before QDQ quantization)
 
     Returns:
@@ -253,7 +253,7 @@ def export_generic_to_onnx(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Hexagon Bridge -- Export HuggingFace models to ONNX",
+        description="Dragonn -- Export HuggingFace models to ONNX",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

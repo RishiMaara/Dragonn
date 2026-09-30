@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — Whisper Transcription, Encoder on the NPU
+Dragonn — Whisper Transcription, Encoder on the NPU
 =========================================================
 Real speech-to-text:
 
@@ -24,7 +24,7 @@ import numpy as np
 
 from runtime.audio import CHUNK_SECONDS, SAMPLE_RATE, load_audio, resample  # noqa: F401 — re-exported
 
-logger = logging.getLogger("hexagon-bridge.transcriber")
+logger = logging.getLogger("dragonn.transcriber")
 
 
 def _model_id_for(encoder_path: Path) -> str:

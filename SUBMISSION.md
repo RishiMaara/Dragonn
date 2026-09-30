@@ -1,4 +1,4 @@
-# Hexagon Bridge — Snapdragon® AI Lab Build & Present Challenge 2026
+# Dragonn — Snapdragon® AI Lab Build & Present Challenge 2026
 
 **Make the Hexagon NPU reachable for models that aren't in anyone's catalog — and
 prove, on the laptop itself, that the NPU is really the thing running them.**
@@ -9,7 +9,7 @@ Author: Rishi (RishiMaara) · [github.com/RishiMaara/Dragonn](https://github.com
 
 ## The problem
 
-A Snapdragon X Elite HP laptop ships with a 45 TOPS Hexagon NPU. Take any model
+A Snapdragon X Elite laptop (such as the ASUS Vivobook S 15) ships with a 45 TOPS Hexagon NPU. Take any model
 that isn't already in a vendor catalog — a fine-tune, a newer checkpoint — and
 getting it onto that NPU fails in ways that produce **no error message**:
 
@@ -82,14 +82,14 @@ classifies 7% of images correctly. It needs per-channel weights, which nothing i
 the toolchain tells you. And the naive whisper-base didn't just lose accuracy: it
 **crashed the device runtime** with an access violation.
 
-## Why this matters on a Snapdragon-powered HP PC
+## Why this matters on a Snapdragon-powered PC
 
 The NPU is the reason to buy the laptop. Today it is reachable only for models
 someone else already converted. This turns "we should use the NPU" into a
 checkable claim for **your** model, on **your** machine, in seconds — and makes
 the failure modes loud instead of silent.
 
-## Try it on an HP OmniBook
+## Try it on a Snapdragon laptop
 
 ```powershell
 git clone https://github.com/RishiMaara/Dragonn; cd Dragonn

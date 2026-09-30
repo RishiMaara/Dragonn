@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — Coverage Report Formatter
+Dragonn — Coverage Report Formatter
 ===========================================
 Generates plain-English, human-readable reports from the coverage analysis.
 
@@ -19,7 +19,7 @@ from typing import Optional
 
 from scanner.op_registry import format_error_note
 
-logger = logging.getLogger("hexagon-bridge.report")
+logger = logging.getLogger("dragonn.report")
 
 
 def print_coverage_report(report, use_rich: bool = True, console=None) -> None:
@@ -122,7 +122,7 @@ def _print_rich_report(report, console=None) -> None:
         Panel(
             f"[bold]{report.model_name}[/bold]\n"
             f"[dim]{report.model_path}[/dim]",
-            title="🔍 Hexagon Bridge — QNN Coverage Report",
+            title="🔍 Dragonn — QNN Coverage Report",
             border_style="blue",
         )
     )
@@ -394,7 +394,7 @@ def _print_plain_report(report) -> None:
     """Plain text report (no colors, no rich dependency)."""
     print()
     print("=" * 70)
-    print("  HEXAGON BRIDGE — QNN COVERAGE REPORT")
+    print("  Dragonn — QNN COVERAGE REPORT")
     print("=" * 70)
     print(f"  Model: {report.model_name}")
     print(f"  Path:  {report.model_path}")
@@ -462,7 +462,7 @@ def save_json_report(
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     data = {
-        "tool": "Hexagon Bridge",
+        "tool": "Dragonn",
         "version": "1.0.0",
         "models": {},
     }

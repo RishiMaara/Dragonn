@@ -339,7 +339,7 @@ def main() -> int:
         if hasattr(stream, "reconfigure"):
             stream.reconfigure(encoding="utf-8", errors="replace")
 
-    print("\nHexagon Bridge - full device report")
+    print("\nDragonn - full device report")
     print(f"started {time.strftime('%Y-%m-%d %H:%M:%S')}")
     report["started"] = time.strftime("%Y-%m-%d %H:%M:%S")
 

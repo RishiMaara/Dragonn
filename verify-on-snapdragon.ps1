@@ -1,5 +1,5 @@
 <#
-    Hexagon Bridge - one command, on a machine with nothing installed.
+    Dragonn - one command, on a machine with nothing installed.
 
         powershell -ExecutionPolicy Bypass -Command "iwr -useb https://raw.githubusercontent.com/RishiMaara/Dragonn/main/verify-on-snapdragon.ps1 -OutFile $env:TEMP\verify.ps1; & $env:TEMP\verify.ps1"
 
@@ -55,7 +55,7 @@ try { Start-Transcript -Path $log -Force | Out-Null } catch {
 }
 Remove-Item -LiteralPath $script:pythonLog -ErrorAction SilentlyContinue
 
-Write-Host "`nHexagon Bridge - device verification" -ForegroundColor White
+Write-Host "`nDragonn - device verification" -ForegroundColor White
 Note "started $($started.ToString('yyyy-MM-dd HH:mm:ss'))"
 Note "this window shows everything; a copy is being written to $log"
 
@@ -169,12 +169,12 @@ Good "Using Python $($python.version) $($python.machine)  -  $($python.exe)"
 Head "STEP 3 - The project"
 $root = $PSScriptRoot
 if (-not $root -or -not (Test-Path (Join-Path $root "scanner"))) {
-    $root = Join-Path $env:TEMP "hexagon-bridge"
+    $root = Join-Path $env:TEMP "dragonn"
     if (-not (Test-Path (Join-Path $root "scanner"))) {
         Note "downloading (about 14 MB, includes the model under test) ..."
-        $zip = Join-Path $env:TEMP "hexagon-bridge.zip"
+        $zip = Join-Path $env:TEMP "dragonn.zip"
         Invoke-WebRequest "$REPO/archive/refs/heads/$Branch.zip" -OutFile $zip -UseBasicParsing
-        $expand = Join-Path $env:TEMP "hexagon-bridge-unzip"
+        $expand = Join-Path $env:TEMP "dragonn-unzip"
         if (Test-Path $expand) { Remove-Item -LiteralPath $expand -Recurse -Force }
         Expand-Archive -LiteralPath $zip -DestinationPath $expand -Force
         $inner = Get-ChildItem $expand -Directory | Select-Object -First 1

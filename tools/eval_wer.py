@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — Word Error Rate on Real Speech
+Dragonn — Word Error Rate on Real Speech
 ===============================================
 End-to-end accuracy: transcribe held-out LibriSpeech clips and score them
 against reference transcripts, for each encoder configuration:
@@ -31,7 +31,7 @@ import numpy as np
 
 from speech.transcriber import CHUNK_SECONDS, SAMPLE_RATE, WhisperTranscriber, load_audio, word_error_rate
 
-logger = logging.getLogger("hexagon-bridge.wer")
+logger = logging.getLogger("dragonn.wer")
 
 
 def load_rows(audio_dir: Path, limit: int | None) -> list[dict]:
@@ -108,9 +108,9 @@ def evaluate_on_aihub(encoder_path: Path, device_name: str, reference: WhisperTr
             owner.append(i)
 
     logger.info(f"Uploading encoder + {len(features)} feature windows to AI Hub...")
-    model = _upload(hub, encoder_path, "hexbridge-wer-encoder")
+    model = _upload(hub, encoder_path, "dragonn-wer-encoder")
     job = hub.submit_inference_job(
-        model=model, device=device, name="hexbridge-wer-npu",
+        model=model, device=device, name="dragonn-wer-npu",
         inputs={"input_features": features}, options=QNN_OPTIONS,
     )
     _wait(job, "Inference job")

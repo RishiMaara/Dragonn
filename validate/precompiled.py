@@ -23,7 +23,7 @@ from pathlib import Path
 
 from validate.aihub import with_network_retry, summarize_profile
 
-logger = logging.getLogger("hexagon-bridge.aihub")
+logger = logging.getLogger("dragonn.aihub")
 
 DEFAULT_DEVICE = "Snapdragon X Elite CRD"
 
@@ -42,7 +42,7 @@ def stage_for_hub(model_dir: Path) -> Path:
     model_dir = Path(model_dir)
     model_path = model_dir if model_dir.is_file() else next(iter(sorted(model_dir.glob("*.onnx"))))
     stem = model_path.stem
-    staged = Path(tempfile.mkdtemp(prefix="hexbridge_hub_"))
+    staged = Path(tempfile.mkdtemp(prefix="dragonn_hub_"))
 
     model = onnx.load(str(model_path), load_external_data=False)
 
@@ -82,7 +82,7 @@ def profile_precompiled(model_dir: Path, name: str, device_name: str, options: s
     model = with_network_retry(
         lambda: hub.upload_model(str(model_dir)), None, f"[{name}] upload"
     )
-    job = hub.submit_profile_job(model=model, device=device, name=f"hexagon-bridge {name}",
+    job = hub.submit_profile_job(model=model, device=device, name=f"dragonn {name}",
                                  options=options)
     logger.info(f"[{name}] profile job: {job.url}")
 

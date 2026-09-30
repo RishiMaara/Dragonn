@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — Real-Hardware Validation via Qualcomm AI Hub
+Dragonn — Real-Hardware Validation via Qualcomm AI Hub
 =============================================================
 Runs the quantized model on a real, cloud-hosted Snapdragon X Elite through
 ONNX Runtime + QNN EP, then checks the scanner's static prediction against what
@@ -47,7 +47,7 @@ from pathlib import Path
 
 import numpy as np
 
-logger = logging.getLogger("hexagon-bridge.aihub")
+logger = logging.getLogger("dragonn.aihub")
 
 DEFAULT_DEVICE = "Snapdragon X Elite CRD"
 DEFAULT_MODEL = "./models/whisper-tiny-qdq/encoder_model.onnx"
@@ -142,7 +142,7 @@ def ensure_inline_weights(model_path: Path) -> Path:
             "Upload it as an AI Hub model directory instead."
         )
 
-    inline_path = Path(tempfile.mkdtemp(prefix="hexbridge_aihub_")) / model_path.name
+    inline_path = Path(tempfile.mkdtemp(prefix="dragonn_aihub_")) / model_path.name
     onnx.save(full, str(inline_path), save_as_external_data=False)
     logger.info(f"Inlined external weights for upload -> {inline_path}")
     return inline_path
@@ -407,18 +407,18 @@ def run_cpu_baseline(hub, args, model_path: Path, fp32_path: Path) -> None:
         logger.info(f"Reusing NPU profile job {args.profile_job} on {device.name}")
     else:
         device = resolve_device(hub, args.device)
-        qdq_model = _upload(hub, model_path, f"hexbridge-{model_path.stem}")
+        qdq_model = _upload(hub, model_path, f"dragonn-{model_path.stem}")
         npu_job = hub.submit_profile_job(
-            model=qdq_model, device=device, name="hexbridge-baseline-qdq-npu", options=QNN_OPTIONS
+            model=qdq_model, device=device, name="dragonn-baseline-qdq-npu", options=QNN_OPTIONS
         )
 
     logger.info(f"Uploading FP32 reference model ({fp32_path})...")
-    fp32_model = _upload(hub, fp32_path, f"hexbridge-{fp32_path.stem}-fp32")
+    fp32_model = _upload(hub, fp32_path, f"dragonn-{fp32_path.stem}-fp32")
     jobs = [
         ("FP32 on CPU", "today, without this project", hub.submit_profile_job(
-            model=fp32_model, device=device, name="hexbridge-baseline-fp32-cpu", options=CPU_OPTIONS)),
+            model=fp32_model, device=device, name="dragonn-baseline-fp32-cpu", options=CPU_OPTIONS)),
         ("QDQ on CPU", "silent fallback", hub.submit_profile_job(
-            model=qdq_model, device=device, name="hexbridge-baseline-qdq-cpu", options=CPU_OPTIONS)),
+            model=qdq_model, device=device, name="dragonn-baseline-qdq-cpu", options=CPU_OPTIONS)),
         ("QDQ on NPU", "this project", npu_job),
     ]
 
@@ -466,7 +466,7 @@ def run_cpu_baseline(hub, args, model_path: Path, fp32_path: Path) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Hexagon Bridge — validate on a real Snapdragon X via Qualcomm AI Hub",
+        description="Dragonn — validate on a real Snapdragon X via Qualcomm AI Hub",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__.split("Usage:")[1],
     )
@@ -572,9 +572,9 @@ def main():
         device = resolve_device(hub, args.device)
         upload_path = ensure_inline_weights(model_path)
         logger.info(f"Step 3/4: Profiling on {args.device} (ONNX Runtime + QNN EP)")
-        uploaded = _upload(hub, upload_path, f"hexbridge-{model_path.stem}")
+        uploaded = _upload(hub, upload_path, f"dragonn-{model_path.stem}")
         profile_job = hub.submit_profile_job(
-            model=uploaded, device=device, name=f"hexbridge-profile-{model_path.stem}",
+            model=uploaded, device=device, name=f"dragonn-profile-{model_path.stem}",
             options=QNN_OPTIONS,
         )
     report["profile_job"] = profile_job.url
@@ -591,7 +591,7 @@ def main():
             inference_job = hub.get_job(args.inference_job)
         else:
             inference_job = hub.submit_inference_job(
-                model=uploaded, device=device, name=f"hexbridge-infer-{model_path.stem}",
+                model=uploaded, device=device, name=f"dragonn-infer-{model_path.stem}",
                 inputs={name: [value] for name, value in feeds.items()},
                 options=QNN_OPTIONS,
             )
@@ -619,7 +619,7 @@ def _write_and_print(report: dict, json_path: str) -> None:
 
     bar = "=" * 70
     pred = report["scanner_prediction"]
-    print(f"\n{bar}\n  HEXAGON BRIDGE — REAL-HARDWARE VALIDATION\n{bar}")
+    print(f"\n{bar}\n  Dragonn — REAL-HARDWARE VALIDATION\n{bar}")
     print(f"  Device:     {report['device']}{'   (DRY RUN — not contacted)' if report.get('dry_run') else ''}")
     print(f"  Scanner:    {pred['effective_coverage_percent']:.1f}% NPU predicted "
           f"({pred['compute_nodes']} compute nodes; partial: {', '.join(pred['partial_ops']) or 'none'})")

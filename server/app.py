@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — Inference Server
+Dragonn — Inference Server
 ==================================
 OpenAI-compatible transcription API. Whisper's encoder runs as the quantized
 ONNX model — on the Hexagon NPU (QNN EP) when this machine has one, CPU EP
@@ -31,13 +31,13 @@ from fastapi.responses import PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(name)s] %(levelname)s: %(message)s")
-logger = logging.getLogger("hexagon-bridge.server")
+logger = logging.getLogger("dragonn.server")
 
 ENCODER_PATH = Path("models/whisper-tiny-qdq/encoder_model.onnx")
 SAMPLES_DIR = Path("data/speech/eval")
 COVERAGE_REPORT = Path("models/reports/coverage_report.json")
 
-app = FastAPI(title="Hexagon Bridge API", version="2.0.0")
+app = FastAPI(title="Dragonn API", version="2.0.0")
 app.add_middleware(
     CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
 )

@@ -1,7 +1,7 @@
 # Demo recording script — 5 minutes
 
-Everything here runs on an ordinary x64 Windows PC. No Snapdragon device is
-needed to record it: that is the point of the tool, and worth saying out loud.
+Everything here runs on any Windows PC with Qualcomm's HTP compiler installed
+(`pip install onnxruntime-qnn`). A Snapdragon device is optional for recording.
 
 Set up before recording: `pip install -r requirements.txt`, then
 `pip install onnxruntime-qnn` (the local HTP compiler), and

@@ -1,5 +1,5 @@
 <#
-    Hexagon Bridge — one-command setup for a Snapdragon X PC (HP OmniBook and
+    Dragonn — one-command setup for a Snapdragon X PC (ASUS Vivobook 16 and
     every other Windows-on-ARM laptop with a Hexagon NPU).
 
         powershell -ExecutionPolicy Bypass -File .\setup-snapdragon.ps1
@@ -63,8 +63,8 @@ devices = [(d.ep_name, str(d.device.type), d.device.vendor) for d in _plugin_dev
 print(json.dumps({"registered": registered, "npu": npu_available(),
                   "devices": devices, "processor": platform.processor()}))
 '@
-$probe | Out-File -FilePath "$env:TEMP\hexbridge_probe.py" -Encoding utf8
-$json = python "$env:TEMP\hexbridge_probe.py" | Select-Object -Last 1
+$probe | Out-File -FilePath "$env:TEMP\dragonn_probe.py" -Encoding utf8
+$json = python "$env:TEMP\dragonn_probe.py" | Select-Object -Last 1
 $info = $json | ConvertFrom-Json
 
 if (-not $info.registered) {
@@ -76,7 +76,7 @@ if (-not $info.npu) {
     Bad "QNN EP loaded, but exposes no NPU device on this machine."
     Note "Devices seen: $($info.devices | ForEach-Object { $_ -join '/' })"
     Note "On a Snapdragon X PC, update the Hexagon NPU driver (30.0.140.0 or newer)."
-    Note "Windows Update -> Optional updates, or HP Support Assistant on an HP laptop."
+    Note "Windows Update -> Optional updates on your Snapdragon laptop."
     exit 1
 }
 Good "Hexagon NPU visible to ONNX Runtime — $($info.processor)"
@@ -103,8 +103,8 @@ try:
 except Exception as exc:
     print("STRICT_FAIL " + str(exc).splitlines()[0])
 '@
-    $strict | Out-File -FilePath "$env:TEMP\hexbridge_strict.py" -Encoding utf8
-    $result = python "$env:TEMP\hexbridge_strict.py" | Select-Object -Last 1
+    $strict | Out-File -FilePath "$env:TEMP\dragonn_strict.py" -Encoding utf8
+    $result = python "$env:TEMP\dragonn_strict.py" | Select-Object -Last 1
     if ($result -like "STRICT_OK*") {
         Good "Session built with CPU fallback disabled — every node is on the NPU"
         Note $result

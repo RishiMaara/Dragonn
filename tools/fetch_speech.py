@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — Real Speech for Calibration and Evaluation
+Dragonn — Real Speech for Calibration and Evaluation
 ===========================================================
 Downloads LibriSpeech's small test set (hf-internal-testing/librispeech_asr_dummy:
 73 clips of read English with reference transcripts) and writes it as WAV files
@@ -25,7 +25,7 @@ from pathlib import Path
 
 import numpy as np
 
-logger = logging.getLogger("hexagon-bridge.speech")
+logger = logging.getLogger("dragonn.speech")
 
 DATASET = "hf-internal-testing/librispeech_asr_dummy"
 SAMPLE_RATE = 16_000

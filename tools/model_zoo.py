@@ -1,10 +1,10 @@
 """
-Hexagon Bridge — Model Zoo: the silent failure, across popular models
+Dragonn — Model Zoo: the silent failure, across popular models
 =====================================================================
 Five models people run on laptops, each through two quantization paths:
 
   naive   onnxruntime.quantization.quantize_dynamic — what most tutorials show
-  bridge  Hexagon Bridge: static a16w8 QDQ (QNN helpers) with real calibration data
+  bridge  Dragonn: static a16w8 QDQ (QNN helpers) with real calibration data
 
 and three checks per path:
 
@@ -32,7 +32,7 @@ from typing import Callable
 
 import numpy as np
 
-logger = logging.getLogger("hexagon-bridge.zoo")
+logger = logging.getLogger("dragonn.zoo")
 
 ZOO_DIR = Path("models/zoo")
 DATA_DIR = Path("data/zoo")
@@ -410,7 +410,7 @@ def run_model(name: str) -> dict:
             notes["naive_needed_quant_pre_process"] = str(e).splitlines()[0][:160]
             logger.info(f"[{name}] quantize_dynamic failed; retrying after quant_pre_process")
             from onnxruntime.quantization.shape_inference import quant_pre_process
-            work = Path(tempfile.mkdtemp(prefix="hexbridge_zoo_"))
+            work = Path(tempfile.mkdtemp(prefix="dragonn_zoo_"))
             try:
                 pre = work / "pre.onnx"
                 quant_pre_process(str(paths["fp32"]), str(pre), auto_merge=True)
@@ -418,7 +418,7 @@ def run_model(name: str) -> dict:
             finally:
                 shutil.rmtree(work, ignore_errors=True)
     if not paths["bridge"].exists():
-        logger.info(f"[{name}] Hexagon Bridge path: static a16w8 QDQ, real calibration data")
+        logger.info(f"[{name}] Dragonn path: static a16w8 QDQ, real calibration data")
         result = quantize_qnn(paths["fp32"], paths["bridge"], spec.calib_feeds(),
                               per_channel=spec.per_channel)
         notes["mask_constants_clamped"] = result["mask_constants_clamped"]
@@ -475,11 +475,11 @@ def write_summary():
         "# Model zoo: the silent failure, across popular models",
         "",
         "Each model through two paths — **naive** (`quantize_dynamic`, what most tutorials "
-        "show) and **Hexagon Bridge** (static a16w8 QDQ, real calibration data) — checked by "
+        "show) and **Dragonn** (static a16w8 QDQ, real calibration data) — checked by "
         "the scanner, Qualcomm's HTP compiler run locally, and accuracy on held-out real data.",
         "Reproduce: `python -m tools.model_zoo`.",
         "",
-        "| Model | Use on a laptop | Naive path | Hexagon Bridge | Accuracy: FP32 → naive → bridge | Size FP32 → bridge |",
+        "| Model | Use on a laptop | Naive path | Dragonn | Accuracy: FP32 → naive → bridge | Size FP32 → bridge |",
         "|---|---|---|---|---|---|",
     ]
     for r in reports:
@@ -519,7 +519,7 @@ def write_summary():
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run popular models through naive vs Hexagon Bridge quantization")
+    parser = argparse.ArgumentParser(description="Run popular models through naive vs Dragonn quantization")
     parser.add_argument("--model", choices=list(MODELS), action="append",
                         help="Model(s) to run (default: all)")
     args = parser.parse_args()
@@ -528,8 +528,8 @@ def main():
         if hasattr(stream, "reconfigure"):
             stream.reconfigure(encoding="utf-8", errors="replace")
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(name)s] %(message)s", datefmt="%H:%M:%S")
-    for noisy in ("httpx", "transformers", "huggingface_hub", "hexagon-bridge.scanner",
-                  "hexagon-bridge.quantize", "hexagon-bridge.export", "root"):
+    for noisy in ("httpx", "transformers", "huggingface_hub", "dragonn.scanner",
+                  "dragonn.quantize", "dragonn.export", "root"):
         logging.getLogger(noisy).setLevel(logging.ERROR)
 
     for name in args.model or list(MODELS):

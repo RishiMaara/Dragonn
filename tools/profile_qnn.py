@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — QNN EP Session Profiler
+Dragonn — QNN EP Session Profiler
 =========================================
 Step 3: Run the quantized model through ONNX Runtime with QNN EP enabled
 and DON'T disable CPU fallback. Log which nodes land on QNN vs CPU.
@@ -14,7 +14,7 @@ Usage:
     # On Snapdragon X ARM64 device only (QNN EP requires Hexagon NPU):
     python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx
 
-    # Dry run on x86 (CPU EP only, validates the profiling code works):
+    # Dry run on any machine (CPU EP only, validates the profiling code works):
     python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --dry-run
 """
 
@@ -30,7 +30,7 @@ from typing import Optional
 
 import numpy as np
 
-logger = logging.getLogger("hexagon-bridge.profiler")
+logger = logging.getLogger("dragonn.profiler")
 
 
 def check_qnn_available() -> bool:
@@ -99,7 +99,7 @@ def profile_model_on_qnn(
     if enable_profiling:
         sess_options.enable_profiling = True
         # Profile file will be saved to temp directory
-        profile_dir = tempfile.mkdtemp(prefix="hexbridge_profile_")
+        profile_dir = tempfile.mkdtemp(prefix="dragonn_profile_")
         sess_options.profile_file_prefix = str(
             Path(profile_dir) / "qnn_profile"
         )
@@ -378,14 +378,14 @@ def _onnx_type_to_numpy(ort_type: str):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Hexagon Bridge — QNN EP Session Profiler",
+        description="Dragonn — QNN EP Session Profiler",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   # Profile on Snapdragon device (QNN EP available)
   python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx
 
-  # Dry run on x86 (CPU EP only, validates code)
+  # Dry run on any machine (CPU EP only, validates code)
   python -m tools.profile_qnn --input ./models/whisper-medium-int8/encoder_model.onnx --dry-run
 
   # Full before/after comparison

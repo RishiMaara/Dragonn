@@ -1,5 +1,5 @@
 """
-Hexagon Bridge — QNN Supported Operator Registry
+Dragonn — QNN Supported Operator Registry
 =================================================
 Maintains the list of ONNX operators supported by the QNN Execution Provider
 on Snapdragon X (Hexagon NPU).

@@ -35,7 +35,7 @@ from pathlib import Path
 
 import numpy as np
 
-logger = logging.getLogger("hexagon-bridge.npu-decoder")
+logger = logging.getLogger("dragonn.npu-decoder")
 
 # Qualcomm's published constants for the Whisper decoder bundles.
 MASK_NEG = -100.0          # not float32's min: see converter.quantize.clamp_extreme_constants
