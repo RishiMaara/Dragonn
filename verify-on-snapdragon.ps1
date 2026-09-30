@@ -1,4 +1,4 @@
-﻿<#
+<#
     Hexagon Bridge - one command, on a machine with nothing installed.
 
         powershell -ExecutionPolicy Bypass -Command "iwr -useb https://raw.githubusercontent.com/RishiMaara/Dragonn/main/verify-on-snapdragon.ps1 -OutFile $env:TEMP\verify.ps1; & $env:TEMP\verify.ps1"
@@ -215,7 +215,13 @@ if (-not $SkipVendor) { Note "includes a 100 MB download for the decoder measure
 $argsList = @("-m", "tools.device_report", "--runs", "$Runs")
 if ($SkipVendor) { $argsList += "--skip-vendor" }
 if ($SkipTests)  { $argsList += "--skip-tests" }
+# ORT 1.30 writes C++ warnings to stderr (e.g. duplicate config keys);
+# PowerShell treats those as terminating errors under Stop. Relax it here;
+# the exit code is still checked below.
+$prevEAP = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
 & $vpy @argsList 2>&1 | Tee-Object -FilePath $script:pythonLog -Append
 $code = $LASTEXITCODE
+$ErrorActionPreference = $prevEAP
 if ($code -ne 0) { Bad "the report exited with code $code - the output above says where it stopped" }
 Finish $code

@@ -86,6 +86,13 @@ def compile_check(
     so.log_severity_level = 3
     so.add_session_config_entry("ep.context_enable", "1")
     so.add_session_config_entry("ep.context_file_path", str(ctx_path))
+    # Set as a session config entry rather than a provider option: ORT 1.30's
+    # add_provider_for_devices converts provider options to session config
+    # entries internally, which duplicates this key and emits a C++ warning
+    # that PowerShell's ErrorActionPreference=Stop treats as a terminating error.
+    so.add_session_config_entry(
+        "ep.qnnexecutionprovider.htp_graph_finalization_optimization_mode", "3"
+    )
 
     started = time.time()
     try:
@@ -94,7 +101,6 @@ def compile_check(
             {
                 "htp_arch": htp_arch,
                 "soc_model": soc_model,
-                "htp_graph_finalization_optimization_mode": "3",
                 "offload_graph_io_quantization": "1",
             },
             so,
