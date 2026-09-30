@@ -1,7 +1,7 @@
 {
   "ep": {
     "registered": true,
-    "onnxruntime": "1.26.0",
+    "onnxruntime": "1.30.0",
     "onnxruntime_qnn": "2.6.0",
     "devices": [
       {
@@ -17,23 +17,22 @@
     "available": true,
     "qnn_version": "2.50.40",
     "float_model": false,
-    "compile_s": 4.7,
+    "compile_s": 3.2,
     "npu_graphs": 1,
     "cpu_ops": {},
     "boundary_ops": 2,
     "ok": true,
-    "wall_seconds": 4.8
+    "wall_seconds": 3.3
   },
   "strict_session": {
-    "attempted": true,
     "passed": true,
     "providers": [
       "QNNExecutionProvider",
       "CPUExecutionProvider"
     ],
-    "cold_load_seconds": 0.14
+    "cold_load_seconds": 0.11
   },
   "latency": {
-    "skipped": "no NPU on this machine - a latency number here would be a CPU number"
+    "skipped": "no Hexagon NPU on this machine - any timing here would be a CPU timing"
   }
 }
